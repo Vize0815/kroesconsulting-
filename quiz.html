@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konflikt-Quiz: Wie konfliktfähig ist Ihr Unternehmen? | Kroes Consulting</title>
+  <meta name="description" content="In 3 Minuten zur Antwort: Wie konfliktfähig ist Ihr Unternehmen? 10 Fragen, 4 Kategorien, persönliche Auswertung mit konkreten Empfehlungen.">
+  <link rel="canonical" href="https://www.kroes-consulting.com/quiz.html">
+
+  <meta property="og:title" content="Konflikt-Quiz | Kroes Consulting">
+  <meta property="og:description" content="In 3 Minuten zur Antwort: Wie konfliktfähig ist Ihr Unternehmen?">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:url" content="https://www.kroes-consulting.com/quiz.html">
+
+  <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ===== QUIZ — REFERENCE STYLE ===== */
+    .quiz-page { background: #fff; min-height: 100vh; }
+
+    /* INTRO */
+    .quiz-intro {
+      background: #fff; color: var(--ink-900);
+      padding-top: clamp(7rem, 14vh, 11rem);
+      padding-bottom: clamp(3.5rem, 8vh, 6rem);
+      position: relative; overflow: hidden;
+    }
+    .quiz-intro .breadcrumb-light {
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    }
+    .quiz-intro .breadcrumb-light a { color: rgba(20,18,16,0.45); }
+    .quiz-intro .breadcrumb-light a:hover { color: var(--peri); }
+    .quiz-intro .breadcrumb-light .sep { color: rgba(20,18,16,0.25); }
+    .quiz-intro .breadcrumb-light .current { color: var(--navy); }
+    .quiz-intro-inner { position: relative; z-index: 2; text-align: center; max-width: 760px; margin: 0 auto; }
+    .quiz-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.6875rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--peri); padding: 0.5rem 1.25rem;
+      border: 1px solid var(--peri); border-radius: 999px;
+      margin-bottom: 2rem; font-weight: 600;
+    }
+    .quiz-intro h1 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05;
+      color: var(--navy); letter-spacing: -0.02em; margin-bottom: 1.5rem;
+    }
+    .quiz-intro h1 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .quiz-intro p {
+      font-family: var(--font-body); font-size: 1.125rem;
+      line-height: 1.7; color: rgba(20,18,16,0.75);
+      max-width: 56ch; margin: 0 auto 2.5rem;
+    }
+    .quiz-meta {
+      display: flex; justify-content: center; gap: 2.5rem;
+      flex-wrap: wrap; margin-bottom: 3rem;
+      font-family: var(--font-body); font-size: 0.8125rem;
+      color: rgba(20,18,16,0.6); letter-spacing: 0.05em;
+    }
+    .quiz-meta-item { display: flex; align-items: center; gap: 0.5rem; }
+    .quiz-meta-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--peri); }
+    .quiz-start-btn {
+      display: inline-block;
+      background: var(--peri); color: var(--navy-dark);
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 1.25rem 2.75rem; text-decoration: none;
+      transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .quiz-start-btn:hover { background: var(--peri-hover); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(118,140,253,0.4); }
+
+    /* QUIZ STAGE */
+    .quiz-stage { padding: 5rem 0; min-height: 70vh; display: none; }
+    .quiz-stage.active { display: block; }
+
+    /* PROGRESS — peach line */
+    .quiz-progress {
+      max-width: 820px; margin: 0 auto 4rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .quiz-progress-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-body); font-size: 0.875rem;
+      color: var(--ink-500); font-weight: 500;
+    }
+    .quiz-progress-meta strong { color: var(--navy); font-weight: 700; }
+    .quiz-progress-meta-pct { color: var(--peri-dark); font-weight: 600; }
+    .quiz-progress-bar {
+      height: 3px; background: rgba(31,47,88,0.08); overflow: hidden; border-radius: 0;
+    }
+    .quiz-progress-fill {
+      height: 100%; background: var(--peri);
+      width: 0; transition: width 0.5s var(--ease-out);
+    }
+
+    /* QUESTION */
+    .quiz-card {
+      max-width: 820px; margin: 0 auto;
+      animation: cardIn 0.45s var(--ease-out);
+    }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    .quiz-cat-line {
+      width: 60px; height: 3px; background: var(--peri); margin-bottom: 1.75rem;
+    }
+    .quiz-question {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.625rem, 3vw, 2.5rem); line-height: 1.25;
+      color: var(--navy); margin-bottom: 0.875rem; letter-spacing: -0.01em;
+      max-width: 30ch;
+    }
+    .quiz-sub {
+      font-family: var(--font-display); font-style: italic; font-weight: 400;
+      font-size: 1rem; color: var(--ink-500);
+      margin-bottom: 2.5rem;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+    .quiz-option {
+      display: grid; grid-template-columns: 48px 1fr;
+      align-items: center; gap: 1.25rem;
+      padding: 1.5rem 1.75rem;
+      background: var(--warm-100);
+      border: 1.5px solid transparent;
+      border-radius: 16px;
+      cursor: pointer; transition: all 0.2s var(--ease-out);
+      font-family: var(--font-body); font-size: 1rem; line-height: 1.55;
+      color: var(--ink-800);
+      text-align: left;
+      width: 100%;
+    }
+    .quiz-option:hover {
+      border-color: var(--peri);
+      background: rgba(118,140,253,0.06);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -8px rgba(31,47,88,0.15);
+    }
+    .quiz-option.selected {
+      border-color: var(--peri);
+      background: var(--navy);
+      color: var(--warm-50);
+    }
+    .quiz-option-letter {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(31,47,88,0.18);
+      border-radius: 50%;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 700;
+      color: var(--ink-500); transition: all 0.2s;
+      letter-spacing: 0;
+    }
+    .quiz-option:hover .quiz-option-letter {
+      border-color: var(--peri); color: var(--peri-dark);
+    }
+    .quiz-option.selected .quiz-option-letter {
+      border-color: var(--peri); color: var(--peri); background: rgba(118,140,253,0.15);
+    }
+
+    .quiz-actions {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      max-width: 820px; margin: 0 auto;
+    }
+    .quiz-back, .quiz-next {
+      font-family: var(--font-body); font-size: 0.8125rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.875rem 1.875rem; border: none; cursor: pointer;
+      transition: all 0.2s; border-radius: 0;
+    }
+    .quiz-back {
+      background: transparent; color: var(--ink-500);
+      border: 1px solid rgba(31,47,88,0.2);
+    }
+    .quiz-back:hover { color: var(--navy); border-color: var(--navy); }
+    .quiz-back:disabled { opacity: 0.3; cursor: not-allowed; }
+    .quiz-next {
+      background: var(--peri); color: var(--navy-dark);
+    }
+    .quiz-next:hover:not(:disabled) { background: var(--peri-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(118,140,253,0.3); }
+    .quiz-next:disabled { opacity: 0.4; cursor: not-allowed; background: var(--ink-300); color: var(--warm-50); }
+
+    /* RESULT (unverändert vom vorherigen Stand) */
+    .quiz-result-stage { padding: 5rem 0 8rem; display: none; }
+    .quiz-result-stage.active { display: block; }
+    .result-hero { max-width: 880px; margin: 0 auto 4rem; text-align: center; }
+    .result-tag {
+      display: inline-block; font-family: var(--font-body);
+      font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--peri-dark); font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .result-score {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(5rem, 14vw, 11rem); line-height: 0.95;
+      color: var(--peri); letter-spacing: -0.04em;
+      margin-bottom: 0.5rem; text-shadow: 0 0 40px rgba(118,140,253,0.2);
+    }
+    .result-score-suffix { color: var(--ink-400); font-weight: 400; }
+    .result-tier {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.2;
+      color: var(--navy); max-width: 28ch; margin: 0 auto 1.25rem;
+      letter-spacing: -0.015em;
+    }
+    .result-tier em { font-style: italic; color: var(--peri); font-weight: 400; }
+    .result-summary {
+      font-family: var(--font-body); font-size: 1.0625rem;
+      line-height: 1.75; color: var(--ink-700);
+      max-width: 56ch; margin: 0 auto;
+    }
+    .result-section { max-width: 880px; margin: 0 auto 4rem; }
+    .result-section-tag {
+      display: flex; align-items: center; gap: 0.625rem;
+      font-family: var(--font-body); font-size: 0.6875rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--peri-dark); font-weight: 600; margin-bottom: 1.25rem;
+    }
+    .result-section-tag::before { content: ''; width: 24px; height: 1px; background: var(--peri); }
+    .result-section-h2 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.15;
+      color: var(--navy); margin-bottom: 2.5rem; letter-spacing: -0.01em;
+    }
+    .result-section-h2 em { font-style: italic; color: var(--peri); font-weight: 400; }
+    .cat-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .cat-row {
+      display: grid; grid-template-columns: 200px 1fr 70px;
+      gap: 1.5rem; align-items: center;
+    }
+    .cat-name { font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--navy); }
+    .cat-bar-track {
+      height: 14px; background: var(--warm-100);
+      border: 1px solid rgba(31,47,88,0.06);
+      border-radius: 999px; overflow: hidden;
+    }
+    .cat-bar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--peri), var(--peri-dark));
+      border-radius: 999px; width: 0; transition: width 1s var(--ease-out);
+    }
+    .cat-row.weakest .cat-bar-fill { background: linear-gradient(90deg, #ff8d5a, #ff5959); }
+    .cat-row.weakest .cat-name::after {
+      content: 'Schwächster Bereich'; display: block;
+      font-family: var(--font-body); font-size: 0.625rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: #ff5959; font-weight: 700; margin-top: 0.25rem;
+    }
+    .cat-row.strongest .cat-name::after {
+      content: 'Stärkster Bereich'; display: block;
+      font-family: var(--font-body); font-size: 0.625rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--peri-dark); font-weight: 700; margin-top: 0.25rem;
+    }
+    .cat-val { font-family: var(--font-body); font-weight: 600; font-size: 0.9375rem; color: var(--peri-dark); text-align: right; }
+
+    .reco-block {
+      background: var(--navy); color: var(--warm-50);
+      padding: 3rem 3rem 3.5rem; margin-bottom: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .reco-block::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(118,140,253,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(118,140,253,0.05) 1px, transparent 1px);
+      background-size: 50px 50px; pointer-events: none;
+    }
+    .reco-inner { position: relative; z-index: 2; }
+    .reco-block .result-section-tag { color: var(--peri); }
+    .reco-block .result-section-tag::before { background: var(--peri); }
+    .reco-block h3 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.5rem, 2.8vw, 2.25rem); line-height: 1.2;
+      color: var(--warm-50); margin-bottom: 1rem; letter-spacing: -0.01em;
+    }
+    .reco-block h3 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .reco-block p {
+      font-family: var(--font-body); font-size: 1.0625rem;
+      line-height: 1.75; color: rgba(250,248,245,0.78);
+      max-width: 60ch; margin-bottom: 2rem;
+    }
+    .reco-services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(118,140,253,0.2); }
+    .reco-service {
+      background: rgba(255,255,255,0.04); padding: 1.5rem 1.5rem 1.75rem;
+      transition: background 0.3s; text-decoration: none;
+      display: flex; flex-direction: column; gap: 0.625rem;
+    }
+    .reco-service:hover { background: rgba(118,140,253,0.1); }
+    .reco-service.recommended { background: var(--peri); color: var(--navy-dark); }
+    .reco-service.recommended:hover { background: var(--peri-hover); }
+    .reco-service-tag {
+      font-family: var(--font-body); font-size: 0.625rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(250,248,245,0.5); font-weight: 600;
+    }
+    .reco-service.recommended .reco-service-tag { color: var(--navy-dark); font-weight: 700; }
+    .reco-service h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--warm-50); line-height: 1.2; }
+    .reco-service.recommended h4 { color: var(--navy-dark); }
+    .reco-service p { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: rgba(250,248,245,0.65); margin: 0; padding: 0; }
+    .reco-service.recommended p { color: rgba(11,21,48,0.75); }
+    .reco-service-cta {
+      font-family: var(--font-body); font-size: 0.75rem;
+      letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
+      color: var(--peri); margin-top: auto;
+    }
+    .reco-service.recommended .reco-service-cta { color: var(--navy-dark); }
+
+    /* ===== Bridge-CTA (Quiz → Diagnose-Termin) ===== */
+    .q-bridge {
+      background: var(--navy); color: var(--warm-50);
+      padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem;
+      text-align: center; position: relative; overflow: hidden;
+      border-radius: 4px; margin: 0 auto;
+      max-width: 1100px;
+    }
+    .q-bridge::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(118,140,253,0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .q-bridge-inner { position: relative; max-width: 760px; margin: 0 auto; }
+    .q-bridge-eyebrow {
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--peri);
+      margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.75rem;
+    }
+    .q-bridge-eyebrow::before,
+    .q-bridge-eyebrow::after { content: ''; width: 28px; height: 1px; background: rgba(118,140,253,0.55); }
+    .q-bridge h2 {
+      font-family: var(--font-display); font-size: clamp(1.875rem, 4.4vw, 3.25rem);
+      font-weight: 700; color: var(--warm-50); line-height: 1.1; margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .q-bridge h2 em { font-style: italic; color: var(--peri); font-weight: 400; }
+    .q-bridge-sub {
+      font-family: var(--font-body); font-size: clamp(1rem, 1.4vw, 1.0625rem);
+      color: rgba(250,248,245,0.78); line-height: 1.65; max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .q-bridge-buttons {
+      display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .q-bridge-btn {
+      background: var(--warm-50); color: var(--navy);
+      padding: 1.125rem 2.25rem; font-family: var(--font-body); font-weight: 600;
+      letter-spacing: 0.02em; font-size: 0.9375rem;
+      text-decoration: none; border-radius: 6px; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1.5px solid var(--warm-50); cursor: pointer;
+    }
+    .q-bridge-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0,0,0,0.35); }
+    .q-bridge-btn--ghost {
+      background: transparent; color: var(--warm-50);
+      border: 1.5px solid rgba(250,248,245,0.4);
+    }
+    .q-bridge-btn--ghost:hover { background: rgba(250,248,245,0.08); border-color: var(--warm-50); box-shadow: none; }
+    .q-bridge-microcopy {
+      font-family: var(--font-body); font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(250,248,245,0.5);
+    }
+    .q-bridge-microcopy span { margin: 0 0.75rem; color: rgba(118,140,253,0.6); }
+    @media (max-width: 540px) {
+      .q-bridge-buttons { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+      .q-bridge-btn { justify-content: center; }
+      .q-bridge-microcopy { line-height: 2; }
+    }
+
+    /* ===== LOCKED + EMAIL GATE ===== */
+    .result-locked {
+      max-width: 880px; margin: 0 auto 4rem;
+      position: relative;
+    }
+    .locked-content {
+      filter: blur(8px); pointer-events: none; user-select: none;
+      transition: filter 0.6s var(--ease-out);
+      min-height: 800px;
+    }
+    .result-locked.unlocked .locked-content {
+      filter: none; pointer-events: auto; user-select: auto;
+    }
+    .result-locked.unlocked .email-gate {
+      opacity: 0; pointer-events: none;
+      transform: translate(-50%, -45%);
+      transition: all 0.5s var(--ease-out);
+    }
+    .email-gate {
+      position: absolute;
+      top: 8%; left: 50%;
+      transform: translateX(-50%);
+      width: min(560px, calc(100% - 2rem));
+      background: #fff;
+      border: 1px solid rgba(31,47,88,0.1);
+      box-shadow: 0 40px 80px -20px rgba(31,47,88,0.25);
+      padding: 3rem 2.5rem;
+      border-radius: 4px;
+      z-index: 10;
+    }
+    .email-gate-icon {
+      width: 56px; height: 56px;
+      background: var(--peri); color: var(--navy-dark);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem; border-radius: 50%;
+    }
+    .email-gate-icon svg { width: 26px; height: 26px; }
+    .email-gate-title {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.2;
+      color: var(--navy); margin-bottom: 0.875rem; letter-spacing: -0.01em;
+    }
+    .email-gate-text {
+      font-family: var(--font-body); font-size: 0.9375rem;
+      line-height: 1.65; color: var(--ink-700);
+      margin-bottom: 1.75rem;
+    }
+    .email-form { display: flex; flex-direction: column; gap: 1rem; }
+    /* Mobile-First: Vorname/Nachname stacked; Tablet+ side-by-side */
+    .email-row { display: flex; flex-direction: column; gap: 1rem; }
+    @media (min-width: 520px) {
+      .email-row { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    .email-field { display: flex; flex-direction: column; gap: 0.375rem; }
+    .email-field label {
+      font-family: var(--font-body); font-size: 0.6875rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); font-weight: 700;
+    }
+    .email-field input {
+      font-family: var(--font-body); font-size: 1rem;
+      padding: 0.875rem 1rem;
+      border: 1.5px solid rgba(31,47,88,0.15);
+      background: var(--warm-50); color: var(--navy);
+      transition: border-color 0.2s; border-radius: 4px;
+      outline: none;
+    }
+    .email-field input:focus { border-color: var(--peri); }
+    .email-field input.error { border-color: #ff5959; background: rgba(255,89,89,0.05); }
+    .email-checkbox {
+      display: grid; grid-template-columns: 18px 1fr; gap: 0.75rem;
+      align-items: start; font-family: var(--font-body);
+      font-size: 0.8125rem; color: var(--ink-600); line-height: 1.5;
+      cursor: pointer; padding: 0.25rem 0;
+    }
+    .email-checkbox input { margin-top: 3px; accent-color: var(--peri); }
+    .email-checkbox a { color: var(--peri-dark); text-decoration: underline; }
+    .email-submit {
+      margin-top: 0.75rem;
+      background: var(--peri); color: var(--navy-dark);
+      padding: 1rem 1.5rem; font-family: var(--font-body);
+      font-size: 0.875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: none; cursor: pointer; transition: all 0.2s;
+      border-radius: 4px;
+    }
+    .email-submit:hover:not(:disabled) {
+      background: var(--peri-hover); transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(118,140,253,0.4);
+    }
+    .email-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .email-submit.loading { background: var(--peri-dark); }
+    .email-note {
+      font-family: var(--font-body); font-size: 0.6875rem;
+      color: var(--ink-500); text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== RESULT DEEP TEXT ===== */
+    .result-deep-text {
+      font-family: var(--font-body); font-size: 1.0625rem;
+      line-height: 1.85; color: var(--ink-700);
+      max-width: 68ch;
+    }
+
+    /* ===== COST BLOCK ===== */
+    .cost-block {
+      background: linear-gradient(135deg, var(--warm-100) 0%, #fff 100%);
+      border: 1px solid rgba(31,47,88,0.08);
+      padding: 3rem; margin-bottom: 4rem;
+      border-radius: 4px;
+      position: relative; overflow: hidden;
+    }
+    .cost-block::before {
+      content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 6px;
+      background: linear-gradient(180deg, var(--peri), var(--peri-dark));
+    }
+    .cost-block-h2 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.2;
+      color: var(--navy); margin-bottom: 1.75rem; letter-spacing: -0.01em;
+    }
+    .cost-block-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .cost-headline {
+      display: flex; align-items: baseline; gap: 1.25rem;
+      flex-wrap: wrap; padding: 1.5rem 0 1.75rem;
+      border-bottom: 1px solid rgba(31,47,88,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .cost-range {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;
+      color: #ff5959; letter-spacing: -0.03em;
+    }
+    .cost-context {
+      font-family: var(--font-body); font-size: 0.9375rem;
+      color: var(--ink-600); font-weight: 500;
+    }
+    .cost-breakdown {
+      display: flex; flex-direction: column; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .cost-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.625rem 0;
+      border-bottom: 1px dashed rgba(31,47,88,0.12);
+      font-family: var(--font-body); font-size: 0.9375rem;
+      color: var(--ink-700);
+    }
+    .cost-row-val {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1.125rem; color: var(--navy);
+    }
+    .cost-source {
+      font-family: var(--font-body); font-size: 0.75rem;
+      color: var(--ink-500); font-style: italic;
+      line-height: 1.65; padding-top: 0.75rem;
+      border-top: 1px solid rgba(31,47,88,0.08);
+    }
+
+    /* SUCCESS POPUP — centered modal, Mobile-First */
+    .success-overlay {
+      position: fixed; inset: 0;
+      background: rgba(11, 21, 48, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s var(--ease-out);
+    }
+    .success-overlay.show { opacity: 1; pointer-events: auto; }
+    .success-popup {
+      background: #fff; color: var(--navy);
+      width: 100%; max-width: 460px;
+      padding: 2rem 1.75rem; border-radius: 12px;
+      box-shadow: 0 30px 80px -20px rgba(11, 21, 48, 0.4);
+      text-align: center;
+      transform: scale(0.92) translateY(8px);
+      transition: transform 0.35s var(--ease-out);
+      position: relative;
+    }
+    .success-overlay.show .success-popup { transform: scale(1) translateY(0); }
+    .success-popup-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--peri); color: var(--navy-dark);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem; font-size: 1.5rem; font-weight: 700;
+    }
+    .success-popup h3 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.375rem, 4vw, 1.75rem); line-height: 1.25;
+      color: var(--navy); margin-bottom: 0.75rem; letter-spacing: -0.01em;
+    }
+    .success-popup h3 strong { color: var(--peri); font-weight: 700; }
+    .success-popup p {
+      font-family: var(--font-body); font-size: 0.9375rem;
+      line-height: 1.65; color: var(--ink-700);
+    }
+    .success-popup-progress {
+      height: 3px; background: rgba(31,47,88,0.08);
+      margin-top: 1.5rem; border-radius: 999px; overflow: hidden;
+    }
+    .success-popup-progress-fill {
+      height: 100%; background: var(--peri);
+      width: 100%; border-radius: 999px;
+      transform-origin: right center;
+      animation: countdown 3s linear forwards;
+    }
+    @keyframes countdown { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+    @media (min-width: 520px) {
+      .success-popup { padding: 2.5rem 2.25rem; }
+    }
+
+    @media (max-width: 768px) {
+      .quiz-question { font-size: 1.5rem; }
+      .quiz-option { padding: 1.25rem; gap: 1rem; }
+      .quiz-actions { flex-direction: column-reverse; align-items: stretch; }
+      .quiz-back, .quiz-next { width: 100%; }
+      .cat-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .cat-val { text-align: left; }
+      .reco-services { grid-template-columns: 1fr; }
+      .reco-block { padding: 2rem 1.5rem; }
+      .email-gate { padding: 2rem 1.5rem; top: 4%; width: calc(100% - 1.5rem); }
+      .cost-block { padding: 2rem 1.5rem; }
+      .cost-headline { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body class="quiz-page">
+
+  <!-- Top utility bar: Kontakt + Rückruf -->
+  <div class="topbar" aria-label="Kontaktleiste">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <a href="tel:+43533820105" class="topbar-link topbar-link--phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+43 (0) 5338 20105</span>
+        </a>
+        <a href="mailto:info@kroes-consulting.com" class="topbar-link topbar-link--email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>info@kroes-consulting.com</span>
+        </a>
+      </div>
+      <div class="topbar-right">
+        <a href="#callback" class="topbar-cta" data-callback-trigger>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 1.7l.5 2.7a2 2 0 0 1-.5 1.8L8 11a16 16 0 0 0 5 5l1.8-1.5a2 2 0 0 1 1.8-.5l2.7.5a2 2 0 0 1 1.7 2V19a2 2 0 0 1-2 2 18 18 0 0 1-16-16z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="topbar-cta-label">Rückruf anfordern</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo nav-logo-mark"><img src="assets/img/logo.png" alt="Kroes Consulting" class="nav-logo-img"></a>
+      <div class="nav-end">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Start</a></li>
+          <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
+          <li><a href="ueber-uns.html" class="nav-link">Über mich</a></li>
+          <li><a href="medien.html" class="nav-link">Medien</a></li>
+          <li><a href="quiz.html" class="nav-link active">Konflikt-Quiz</a></li>
+        </ul>
+
+        <div class="nav-social" aria-label="Social Media">
+          <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+          </a>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Mobilnavigation">
+    <a href="index.html">Start</a>
+    <a href="leistungen.html">Leistungen</a>
+    <a href="ueber-uns.html">Über mich</a>
+    <a href="medien.html">Medien</a>
+    <a href="quiz.html">Konflikt-Quiz</a>
+    <a href="kontakt.html" class="accent">Kontakt</a>
+    <p class="mobile-menu-footer">Kroes Consulting · Tirol · Österreich</p>
+  </div>
+
+  <main>
+
+    <section class="quiz-intro" id="intro">
+      <div class="container">
+        <nav class="breadcrumb breadcrumb-light" aria-label="Seitenpfad">
+          <a href="index.html">Start</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">Konflikt-Quiz</span>
+        </nav>
+      </div>
+      <div class="container quiz-intro-inner">
+        <span class="quiz-tag">Konflikt-Quiz · 3 Min</span>
+        <h1>Wie konfliktfähig ist <em>Ihr Unternehmen</em>?</h1>
+        <p>10 Fragen zu vier Kategorien — Struktur, Kommunikation, Kultur, Entwicklung. Anonym, sofortig, mit konkreten Handlungs­empfehlungen für Ihren Betrieb.</p>
+        <div class="quiz-meta">
+          <span class="quiz-meta-item">10 Fragen</span>
+          <span class="quiz-meta-item">3 Minuten</span>
+          <span class="quiz-meta-item">Sofortige Auswertung</span>
+          <span class="quiz-meta-item">100% anonym</span>
+        </div>
+        <button class="quiz-start-btn" id="quizStart">Quiz starten →</button>
+      </div>
+    </section>
+
+    <section class="quiz-stage" id="quizStage">
+      <div class="container">
+        <div class="quiz-progress">
+          <div class="quiz-progress-meta">
+            <span>Frage <strong id="qNum">1</strong> von 10</span>
+            <span class="quiz-progress-meta-pct" id="qPct">10%</span>
+          </div>
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="qFill"></div></div>
+        </div>
+        <div class="quiz-card" id="qCard">
+          <div class="quiz-cat-line"></div>
+          <h2 class="quiz-question" id="qText">Frage</h2>
+          <p class="quiz-sub" id="qSub">Nimm dir einen Moment. Es gibt keine richtige Antwort.</p>
+          <div class="quiz-options" id="qOptions"></div>
+        </div>
+        <div class="quiz-actions">
+          <button class="quiz-back" id="qBack" disabled>← Zurück</button>
+          <button class="quiz-next" id="qNext" disabled>Weiter →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-result-stage" id="resultStage">
+      <div class="container">
+
+        <!-- IMMER SICHTBAR: Score + Kurz-Summary + Kategorien -->
+        <div class="result-hero">
+          <span class="result-tag">Ihre persönliche Auswertung</span>
+          <div class="result-score" id="resScore">0<span class="result-score-suffix">%</span></div>
+          <h2 class="result-tier" id="resTier">…</h2>
+          <p class="result-summary" id="resSummary">…</p>
+        </div>
+
+        <div class="result-section">
+          <div class="result-section-tag">Auswertung nach Kategorie</div>
+          <h3 class="result-section-h2">Wo Ihr Unternehmen <em>steht</em>.</h3>
+          <div class="cat-list" id="catList"></div>
+        </div>
+
+        <!-- LOCKED CONTENT: Blur + Email-Gate -->
+        <div class="result-locked" id="resultLocked">
+          <div class="locked-content" id="lockedContent">
+
+            <!-- Vertiefende Auswertung mit Konfliktkosten -->
+            <div class="result-section">
+              <div class="result-section-tag">Was Ihre Antworten zeigen</div>
+              <h3 class="result-section-h2">Die <em>vertiefende Interpretation</em>.</h3>
+              <p class="result-deep-text" id="resDeepText">…</p>
+            </div>
+
+            <!-- Konfliktkosten-Block -->
+            <div class="cost-block">
+              <div class="cost-block-inner">
+                <div class="result-section-tag">Was Sie das aktuell kostet</div>
+                <h3 class="cost-block-h2">Konflikt-Verluste · <em>nach aktuellen Studien</em></h3>
+                <div class="cost-headline">
+                  <div class="cost-range" id="costRange">€ 0 – 0</div>
+                  <div class="cost-context" id="costContext">…</div>
+                </div>
+                <div class="cost-breakdown" id="costBreakdown"></div>
+                <p class="cost-source" id="costSource">…</p>
+              </div>
+            </div>
+
+            <!-- Empfehlung -->
+            <div class="result-section">
+              <div class="result-section-tag">Persönliche Empfehlung</div>
+              <h3 class="result-section-h2">Ihr <em>nächster Schritt</em>.</h3>
+              <div class="reco-block">
+                <div class="reco-inner">
+                  <h3 id="recoTitle">Titel</h3>
+                  <p id="recoText">Beschreibung</p>
+                  <div class="reco-services" id="recoServices"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- E-Mail-Gate Overlay -->
+          <div class="email-gate" id="emailGate">
+            <div class="email-gate-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 8l8 5 8-5"/></svg>
+            </div>
+            <h3 class="email-gate-title">Vollständige Interpretation freischalten</h3>
+            <p class="email-gate-text">Tragen Sie Vorname und E-Mail ein, um Ihre persönliche Auswertung freizuschalten — mit konkreten Konfliktkosten, Stärken, Spannungs­feldern und Entwicklungs­impulsen. Die Zusammenfassung erhalten Sie zusätzlich als PDF per E-Mail.</p>
+
+            <form class="email-form" id="emailForm" novalidate>
+              <div class="email-row">
+                <div class="email-field">
+                  <label for="leadName">Vorname</label>
+                  <input type="text" id="leadName" name="name" required placeholder="Vorname" autocomplete="given-name">
+                </div>
+                <div class="email-field">
+                  <label for="leadLastName">Nachname</label>
+                  <input type="text" id="leadLastName" name="lastname" required placeholder="Nachname" autocomplete="family-name">
+                </div>
+              </div>
+              <div class="email-field">
+                <label for="leadEmail">E-Mail</label>
+                <input type="email" id="leadEmail" name="email" required placeholder="ihre.adresse@beispiel.com" autocomplete="email">
+              </div>
+              <label class="email-checkbox">
+                <input type="checkbox" id="leadDsgvo" required>
+                <span>Ich stimme der Verarbeitung meiner Daten zur Auswertung des Ergebnisses zu. <a href="datenschutz.html" target="_blank">Datenschutz</a> <span style="color:#ff5959;">*</span></span>
+              </label>
+              <label class="email-checkbox">
+                <input type="checkbox" id="leadNewsletter">
+                <span>Ich möchte gelegentlich inspirierende Impulse von Kroes Consulting &amp; Coaching bekommen.</span>
+              </label>
+              <button type="submit" class="email-submit">Vollständige Auswertung freischalten →</button>
+              <p class="email-note">100 % anonymisiert · keine Weitergabe an Dritte · DSGVO-konform</p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Bridge: Quiz-Auswertung → Konflikt-Diagnose-Termin -->
+        <section class="q-bridge" aria-labelledby="bridgeHeading">
+          <div class="q-bridge-inner">
+            <div class="q-bridge-eyebrow">Ihre Auswertung liegt vor</div>
+            <h2 id="bridgeHeading">Jetzt aus Zahlen<br>Ihren <em>nächsten Schritt</em> machen.</h2>
+            <p class="q-bridge-sub">In 30 Minuten gehen wir Ihre Auswertung gemeinsam durch — und beziffern, was ein einzelner ungelöster Konflikt Ihren Betrieb in den letzten 12 Monaten gekostet hat. Persönlich. Konkret. Ohne Vertriebsgespräch.</p>
+            <div class="q-bridge-buttons">
+              <a href="https://calendly.com/bewerbung-kroes-consulting/30min" target="_blank" rel="noopener" class="q-bridge-btn">Konflikt-Diagnose vereinbaren →</a>
+              <button type="button" class="q-bridge-btn q-bridge-btn--ghost" id="qRestart">Quiz neu starten</button>
+            </div>
+            <div class="q-bridge-microcopy">30 Min · Kostenfrei<span>·</span>Auswertung als PDF<span>·</span>Antwort innerhalb 24 Stunden</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 0.25rem;">
+            <span class="nav-logo-name" style="color: var(--warm-50);">Kroes Consulting</span>
+            <span class="nav-logo-sub">Consulting & Coaching</span>
+          </div>
+          <p>Professionelle Unternehmensberatung, Business-Coaching und Konfliktcoaching für KMU und Handwerk.</p>
+          <p class="footer-tagline">Fachlich. Strategisch. Persönlich.</p>
+          <div class="footer-certificates footer-certificates--start">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20.png" alt="Kroes Consulting — staatlich geprüft" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20ppc.png" alt="Kroes Consulting — staatlich geprüft, PPC" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting — staatlich geprüft, ÖCERT" loading="lazy">
+          </div>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Alexander Kroes</a></li>
+            <li><a href="medien.html">Medien</a></li>
+            <li><a href="quiz.html">Konflikt-Quiz</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul></div>
+        <div class="footer-col"><h4>Leistungen</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="leadresolve.html">LeadResolve</a></li>
+            <li><a href="leadshift.html">LeadShift</a></li>
+          </ul></div>
+        <div class="footer-col"><h4>Kontakt</h4>
+          <div class="footer-contact"><p>Alexander Kroes e.U.<br>Büro:<br>Unterer Stadtplatz 11<br>6330 Kufstein<br>Österreich<br><br><a href="tel:+43533820105" style="color:inherit;">+43 (0) 5338 20105</a><br><a href="mailto:info@kroes-consulting.com" style="color:inherit;">info@kroes-consulting.com</a></p></div></div>
+      </div>
+      <div class="footer-social-row" aria-label="Social Media">
+        <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Alexander Kroes e.U. Alle Rechte vorbehalten.</p>
+        <p class="footer-credit-text">Website by <a href="https://upprime-connect.at/" target="_blank" rel="noopener"><strong>Upprime</strong> <span class="credit-accent">Connect</span></a></p>
+        <nav class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+  <!-- jsPDF für PDF-Generierung -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- EmailJS für E-Mail-Versand (optional, siehe Setup-Hinweise unten) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    /* ============================================================
+       EMAIL-INTEGRATION SETUP (EmailJS)
+       Schritt 1: Account auf https://www.emailjs.com anlegen (kostenlos)
+       Schritt 2: Service (z.B. Gmail) verbinden + 2 Templates anlegen:
+                  - Template "lead_to_user" (Bestätigung an Nutzer)
+                  - Template "lead_to_admin" (Benachrichtigung an Alexander)
+       Schritt 3: Werte unten ersetzen:
+       ============================================================ */
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';      // EmailJS Public Key
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';      // EmailJS Service ID
+    const EMAILJS_USER_TEMPL  = 'lead_to_user';         // Template-ID Nutzer-Mail
+    const EMAILJS_ADMIN_TEMPL = 'lead_to_admin';        // Template-ID Admin-Mail
+    const ADMIN_EMAIL = 'info@kroes-consulting.com';
+    const CALENDLY_URL = 'https://calendly.com/bewerbung-kroes-consulting/30min';
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    // ===== QUIZ DATA — Emotional/Personal Style =====
+    const QUESTIONS = [
+      {
+        cat: 'Struktur',
+        text: 'Wenn Sie an Verantwortlichkeiten in Ihrem Unternehmen denken — was beschreibt es am besten?',
+        sub: 'Nehmen Sie sich einen Moment. Es gibt keine richtige Antwort.',
+        options: [
+          { label: 'Klar geregelt — jeder weiß, wer was entscheidet und verantwortet.', value: 4 },
+          { label: 'Im Großen klar, im Detail aber oft ungeklärt — wir improvisieren viel.', value: 3 },
+          { label: 'Vieles hängt von einzelnen Personen ab — schwer durchschaubar.', value: 2 },
+          { label: 'Unklarheit prägt den Alltag — und Konflikte sind die Folge.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Struktur',
+        text: 'Wie gehen Sie in Ihrem Betrieb mit schwierigen Konfliktsituationen um?',
+        sub: 'Beantworten Sie aus dem Bauch heraus.',
+        options: [
+          { label: 'Wir haben definierte Prozesse — und nutzen sie auch.', value: 4 },
+          { label: 'Wir haben einen groben Plan, aber jeder macht es etwas anders.', value: 3 },
+          { label: 'Es gibt keinen Prozess — wir reagieren situativ.', value: 2 },
+          { label: 'Konflikte werden ausgesessen, bis jemand kündigt.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Struktur',
+        text: 'Wie schnell werden bei Ihnen wichtige Entscheidungen getroffen?',
+        sub: 'Denken Sie an die letzten 6 Monate.',
+        options: [
+          { label: 'Zeitnah und nachvollziehbar — wir kommen voran.', value: 4 },
+          { label: 'In normalen Themen ja, bei heiklen Themen oft verzögert.', value: 3 },
+          { label: 'Vieles bleibt liegen — Entscheidungen ziehen sich hin.', value: 2 },
+          { label: 'Entscheidungs-Stau prägt den Alltag — nichts bewegt sich.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Kommunikation',
+        text: 'Wie werden in Ihrem Unternehmen schwierige Themen angesprochen?',
+        sub: 'Seien Sie ehrlich — es ist anonym.',
+        options: [
+          { label: 'Offen und direkt — wir reden über das, was wirklich zählt.', value: 4 },
+          { label: 'Unterschiedlich — manche Themen ja, andere bleiben Tabu.', value: 3 },
+          { label: 'Eher selten — wir vermeiden Konflikte, wo es geht.', value: 2 },
+          { label: 'Schwierige Themen werden konsequent verschwiegen.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Kommunikation',
+        text: 'Trauen sich Ihre Mitarbeiter, der Führung kritisches Feedback zu geben?',
+        sub: 'Wirklich. Nicht nur in Mitarbeitergesprächen.',
+        options: [
+          { label: 'Ja — und das wird auch ernst genommen und umgesetzt.', value: 4 },
+          { label: 'In Einzelfällen ja, aber selten von sich aus.', value: 3 },
+          { label: 'Wenig — die meisten halten lieber den Mund.', value: 2 },
+          { label: 'Niemand traut sich — Kritik wird als Angriff verstanden.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Kommunikation',
+        text: 'Was passiert mit Konflikten, die zwischen Mitarbeitern entstehen?',
+        sub: 'Was fällt Ihnen spontan dazu ein?',
+        options: [
+          { label: 'Sie werden geklärt — direkt oder mit moderierter Hilfe.', value: 4 },
+          { label: 'Manchmal geklärt, manchmal unter den Teppich gekehrt.', value: 3 },
+          { label: 'Sie schwelen lange weiter — niemand greift ein.', value: 2 },
+          { label: 'Sie eskalieren — bis es zu Kündigungen kommt.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Kultur',
+        text: 'Wie würden Sie das Klima in Ihrem Unternehmen beschreiben?',
+        sub: 'Nicht wie es sein sollte — wie es ist.',
+        options: [
+          { label: 'Vertrauensvoll und sicher — Menschen können sich zeigen.', value: 4 },
+          { label: 'Grundsätzlich okay, aber mit Spannungen in einzelnen Teams.', value: 3 },
+          { label: 'Angespannt — vieles wird vorsichtig formuliert.', value: 2 },
+          { label: 'Misstrauisch und politisch — jeder schützt seine Position.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Kultur',
+        text: 'Wie wird mit Fehlern in Ihrem Betrieb umgegangen?',
+        sub: 'Auch mit den eigenen.',
+        options: [
+          { label: 'Als Lernchance — wir analysieren und verbessern.', value: 4 },
+          { label: 'Meistens konstruktiv, manchmal mit Schuldzuweisungen.', value: 3 },
+          { label: 'Fehler werden vertuscht — niemand will sie zugeben.', value: 2 },
+          { label: 'Es geht um Schuld — nicht um Lösung.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Entwicklung',
+        text: 'Wie werden Ihre Führungskräfte in Konflikt- und Führungs­kompetenz entwickelt?',
+        sub: 'Konkret — nicht theoretisch.',
+        options: [
+          { label: 'Systematisch — mit Coaching, Sparring und Feedback-Schleifen.', value: 4 },
+          { label: 'Punktuell — bei Bedarf gibt es Schulungen.', value: 3 },
+          { label: 'Selten — meist learning by doing.', value: 2 },
+          { label: 'Gar nicht — Führung gilt bei uns als Talent, nicht als Handwerk.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Entwicklung',
+        text: 'Wie viel investieren Sie bewusst in die Weiterentwicklung von Teams und Strukturen?',
+        sub: 'Zeit, Geld, Aufmerksamkeit.',
+        options: [
+          { label: 'Bewusst und regelmäßig — es ist Teil unserer Strategie.', value: 4 },
+          { label: 'Wenn es brennt — dann reagieren wir.', value: 3 },
+          { label: 'Wenig — wir kommen nicht dazu.', value: 2 },
+          { label: 'Gar nicht — das Tagesgeschäft frisst alles auf.', value: 1 }
+        ]
+      }
+    ];
+
+    // Score-Reduktion: realistischer + erzeugt Bedarf für Service-Buchungen
+    const SCORE_FACTOR = 0.7;
+
+    const TIERS = [
+      {
+        min: 0, max: 25,
+        emTitle: 'Tief im <em>Konflikt-Modus</em>.',
+        // Sichtbar (vor E-Mail-Gate):
+        summary: 'Ihre Antworten zeigen ein klares Muster: In Struktur, Kommunikation und Führungskultur sind ernsthafte Schwächen erkennbar. Konflikte werden nicht systematisch gelöst — sie eskalieren oder werden ausgesessen.',
+        // Locked (nach E-Mail-Gate):
+        deepSummary: 'Was die meisten Inhaber unterschätzen: In dieser Konflikt­intensität verbrennen typische KMU laut aktueller Studien zwischen 8–15 % ihres Jahresumsatzes durch ungelöste Konflikte — Geld, das in keiner BWA auftaucht. Hauptkostentreiber: Produktivitäts­verlust durch innere Kündigung, Quiet Quitting und stille Sabotage; massiv erhöhter Krankenstand; eskalierende Fluktuation kostbarer Fachkräfte; teure Fehlentscheidungen, weil ehrliches Feedback fehlt.',
+        costRange: '180.000 – 280.000 €',
+        costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
+        costBreakdown: [
+          { label: 'Produktivitätsverlust (15–20 %)', value: '~ 96.000 €' },
+          { label: 'Fluktuation (3–5 Kündigungen)', value: '~ 78.000 €' },
+          { label: 'Erhöhter Krankenstand', value: '~ 38.000 €' },
+          { label: 'Fehlentscheidungen & Projektverzug', value: '~ 52.000 €' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Beginnen Sie mit der <em>Konfliktkosten-Analyse</em>.',
+        recoText: 'Da Sie das Quiz bereits abgeschlossen haben, ist die Vorbereitung erledigt: Wir nutzen Ihre persönliche Auswertung als Gesprächsgrundlage und beziffern in 30 Minuten konkret, was aktuell verbrannt wird — und welche Hebel kurzfristig den größten Effekt haben. Kostenfrei, vertraulich, sofort umsetzbar.',
+        primary: 'analyse'
+      },
+      {
+        min: 25, max: 45,
+        emTitle: 'Deutliche <em>Warnzeichen</em> sichtbar.',
+        summary: 'In mehreren Bereichen sind Risse sichtbar. Was heute noch wie Alltagsreibung aussieht, entwickelt sich erfahrungsgemäß in 6–12 Monaten zu spürbaren wirtschaftlichen Schäden — wenn nichts geschieht.',
+        deepSummary: 'In dieser Phase summieren sich die Kosten schleichend, aber konsequent. Studien zeigen: Unternehmen mit diesem Konfliktprofil verlieren im Schnitt 3–7 % ihres Jahresumsatzes, ohne dass es jemand benennen kann. Die typischen Treiber: ein um 30 % erhöhter Krankenstand, eine Fluktuationsrate die um 40–60 % über dem Branchenschnitt liegt, sowie ein zunehmendes „Quiet Quitting" — Mitarbeiter, die innerlich gekündigt haben, aber bleiben. Diese Phase ist die kritischste, weil noch handlungsfähig — aber das Zeitfenster wird kleiner.',
+        costRange: '80.000 – 150.000 €',
+        costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
+        costBreakdown: [
+          { label: 'Krankenstand (+30 %)', value: '~ 28.000 €' },
+          { label: 'Fluktuation (1–2 Kündigungen)', value: '~ 32.000 €' },
+          { label: 'Produktivitätsverlust (5–8 %)', value: '~ 42.000 €' },
+          { label: 'Quiet Quitting / Reibung', value: '~ 22.000 €' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Mit <em>LeadResolve</em> die Konflikte entschärfen.',
+        recoText: 'Konfliktcoaching für Führungskräfte: organisationale Konflikte verstehen, entschärfen und als Chance nutzen. Vertraulich, direkt, lösungs­orientiert — bevor sich aus Warnzeichen ein Notfall entwickelt.',
+        primary: 'leadresolve'
+      },
+      {
+        min: 45, max: 60,
+        emTitle: '<em>Solide Basis</em> mit deutlichem Luftraum.',
+        summary: 'Ihr Unternehmen ist grundsätzlich aufgestellt — aber es gibt klar erkennbare Bereiche, in denen Sie Führung, Kultur oder Strukturen systematisch weiterentwickeln können. Wer hier stehen bleibt, verschenkt Potenzial.',
+        deepSummary: 'Die schlechte Nachricht: Auch in dieser Phase entstehen messbare Verluste — sie sind nur schwerer sichtbar. Studien zeigen: Unternehmen mit diesem Profil verlieren typischerweise 1–3 % ihres Jahres­umsatzes durch nicht ausgeschöpfte Potenziale, suboptimale Team-Performance und einzelne Reibungsverluste. Die gute Nachricht: Sie haben das Fundament. Mit gezielter Führungs­entwicklung holen Sie typischerweise 5–8 % Mehr-Performance heraus — bei deutlich geringerem Aufwand als ein Konflikt­fall in der Akut­phase.',
+        costRange: '30.000 – 60.000 €',
+        costContext: 'p. a. ungenutztes Potenzial · 60-MA-Betrieb',
+        costBreakdown: [
+          { label: 'Suboptimale Team-Performance (1–2 %)', value: '~ 18.000 €' },
+          { label: 'Einzelne Reibungsverluste', value: '~ 14.000 €' },
+          { label: 'Ungenutzte Innovations-Impulse', value: '~ 16.000 €' },
+          { label: 'Verzögerte Entscheidungen', value: '~ 8.000 €' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Mit <em>LeadShift</em> auf das nächste Level.',
+        recoText: 'Leadership-Coaching für zukunftsorientierte Führungs­kräfte: Entscheidungs­sicherheit, Teamführung und kulturelle Transformation — praxisorientiert und ergebnis­orientiert. Holen Sie das ungenutzte Potenzial.',
+        primary: 'leadshift'
+      },
+      {
+        min: 60, max: 101,
+        emTitle: 'Sehr <em>gut aufgestellt</em> — Feinschliff lohnt.',
+        summary: 'Ihr Unternehmen verfügt über eine ausgereifte Konfliktkultur und solide Führungs­strukturen. Selbst hier gibt es jedoch typischerweise blinde Flecken — gerade die guten Betriebe profitieren überproportional von gezieltem Sparring.',
+        deepSummary: 'Die spannende Erkenntnis aus aktuellen Top-Performer-Studien: Selbst hochperformante Organisationen verlieren noch 0,5–1,5 % ihres Umsatzes durch blinde Flecken in Führung und Konfliktkultur. Der Effekt ist klein in Prozent — aber der Hebel ist groß: Top-Betriebe, die sich gezielt sparring-begleiten lassen, steigern ihre Wettbewerbsposition meist signifikant, weil die letzten 10 % Performance den entscheidenden Unterschied zur Konkurrenz machen. Es geht nicht mehr um Reparatur, sondern um Vorsprung.',
+        costRange: '12.000 – 30.000 €',
+        costContext: 'p. a. ungenutzter Wettbewerbs­vorsprung',
+        costBreakdown: [
+          { label: 'Blinde Flecken in Führung', value: '~ 8.000 €' },
+          { label: 'Verschenkte Top-Performer-Impulse', value: '~ 9.000 €' },
+          { label: 'Suboptimale Konfliktkultur in Spitzen', value: '~ 6.000 €' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Sparring auf <em>Augenhöhe</em>.',
+        recoText: 'In einem unverbindlichen Sparring-Gespräch reflektieren wir die spezifischen Hebel, die für Ihr Unternehmen den nächsten Wachstums­schritt ermöglichen — auf einem Niveau, auf dem die meisten Berater nicht mithalten.',
+        primary: 'leadshift'
+      }
+    ];
+
+    const SERVICES = {
+      analyse: { tag: 'Einstieg · Kostenfrei', title: 'Konfliktkosten-Analyse', desc: '30-Min-Strategiegespräch auf Basis Ihrer persönlichen Quiz-Auswertung. Konkret, vorbereitet, beziffert in €.', href: 'https://calendly.com/bewerbung-kroes-consulting/30min', cta: 'Termin buchen →' },
+      leadresolve: { tag: 'Leistung · LeadResolve', title: 'LeadResolve', desc: 'Konfliktcoaching für Führungskräfte — vertraulich, direkt, lösungsorientiert.', href: 'leadresolve.html', cta: 'Programm ansehen →' },
+      leadshift: { tag: 'Leistung · LeadShift', title: 'LeadShift', desc: 'Leadership-Coaching: Entscheidungssicherheit, Teamführung, kulturelle Transformation.', href: 'leadshift.html', cta: 'Gespräch anfragen →' }
+    };
+
+    let currentQ = 0;
+    let answers = new Array(QUESTIONS.length).fill(null);
+
+    const introEl = document.getElementById('intro');
+    const quizEl = document.getElementById('quizStage');
+    const resultEl = document.getElementById('resultStage');
+    const startBtn = document.getElementById('quizStart');
+    const qNumEl = document.getElementById('qNum');
+    const qPctEl = document.getElementById('qPct');
+    const qFillEl = document.getElementById('qFill');
+    const qTextEl = document.getElementById('qText');
+    const qSubEl = document.getElementById('qSub');
+    const qOptionsEl = document.getElementById('qOptions');
+    const qBackBtn = document.getElementById('qBack');
+    const qNextBtn = document.getElementById('qNext');
+    const qCardEl = document.getElementById('qCard');
+
+    startBtn.addEventListener('click', () => {
+      introEl.style.display = 'none';
+      quizEl.classList.add('active');
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQ];
+      const pct = Math.round((currentQ + 1) / QUESTIONS.length * 100);
+      qNumEl.textContent = currentQ + 1;
+      qPctEl.textContent = pct + '%';
+      qFillEl.style.width = pct + '%';
+      qTextEl.textContent = q.text;
+      qSubEl.textContent = q.sub;
+      qOptionsEl.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option' + (answers[currentQ] === i ? ' selected' : '');
+        btn.innerHTML = `<span class="quiz-option-letter">${letters[i]}</span><span>${opt.label}</span>`;
+        btn.addEventListener('click', () => {
+          answers[currentQ] = i;
+          renderQuestion();
+        });
+        qOptionsEl.appendChild(btn);
+      });
+      qBackBtn.disabled = currentQ === 0;
+      qNextBtn.disabled = answers[currentQ] === null;
+      qNextBtn.textContent = currentQ === QUESTIONS.length - 1 ? 'Auswerten →' : 'Weiter →';
+      qCardEl.style.animation = 'none';
+      void qCardEl.offsetWidth;
+      qCardEl.style.animation = '';
+    }
+
+    qBackBtn.addEventListener('click', () => {
+      if (currentQ > 0) { currentQ--; renderQuestion(); }
+    });
+    qNextBtn.addEventListener('click', () => {
+      if (answers[currentQ] === null) return;
+      if (currentQ < QUESTIONS.length - 1) {
+        currentQ++; renderQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    // Globaler Result-State für Form-Handler
+    let RESULT_STATE = null;
+
+    function showResult() {
+      quizEl.classList.remove('active');
+      resultEl.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      let total = 0, max = 0;
+      const cats = ['Struktur', 'Kommunikation', 'Kultur', 'Entwicklung'];
+      const catScores = {};
+      cats.forEach(c => { catScores[c] = { score: 0, max: 0 }; });
+
+      QUESTIONS.forEach((q, i) => {
+        const ansIdx = answers[i];
+        const val = q.options[ansIdx].value;
+        total += val;
+        max += 4;
+        catScores[q.cat].score += val;
+        catScores[q.cat].max += 4;
+      });
+
+      const pct = Math.round(total / max * 100 * SCORE_FACTOR);
+      const tier = TIERS.find(t => pct >= t.min && pct < t.max) || TIERS[TIERS.length - 1];
+
+      cats.forEach(c => { catScores[c].pct = Math.round(catScores[c].score / catScores[c].max * 100 * SCORE_FACTOR); });
+      const sortedCats = [...cats].sort((a, b) => catScores[a].pct - catScores[b].pct);
+      const weakest = sortedCats[0];
+      const strongest = sortedCats[sortedCats.length - 1];
+
+      RESULT_STATE = { pct, tier, catScores, weakest, strongest, cats };
+
+      // === SICHTBAR ===
+      const scoreEl = document.getElementById('resScore');
+      let val = 0;
+      const step = () => {
+        val = Math.min(val + 2, pct);
+        scoreEl.innerHTML = val + '<span class="result-score-suffix">%</span>';
+        if (val < pct) requestAnimationFrame(step);
+      };
+      step();
+
+      document.getElementById('resTier').innerHTML = tier.emTitle;
+      document.getElementById('resSummary').textContent = tier.summary;
+
+      const catList = document.getElementById('catList');
+      catList.innerHTML = '';
+      cats.forEach(c => {
+        const row = document.createElement('div');
+        row.className = 'cat-row' + (c === weakest ? ' weakest' : c === strongest ? ' strongest' : '');
+        row.innerHTML = `
+          <div class="cat-name">${c}</div>
+          <div class="cat-bar-track"><div class="cat-bar-fill" style="width:0"></div></div>
+          <div class="cat-val">${catScores[c].pct}%</div>
+        `;
+        catList.appendChild(row);
+        setTimeout(() => { row.querySelector('.cat-bar-fill').style.width = catScores[c].pct + '%'; }, 100);
+      });
+
+      // === LOCKED (vor Email-Eingabe blurred) ===
+      document.getElementById('resDeepText').textContent = tier.deepSummary;
+      document.getElementById('costRange').textContent = tier.costRange;
+      document.getElementById('costContext').textContent = tier.costContext;
+      document.getElementById('costSource').textContent = tier.sourceNote;
+      const costBd = document.getElementById('costBreakdown');
+      costBd.innerHTML = '';
+      tier.costBreakdown.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'cost-row';
+        row.innerHTML = `<span>${item.label}</span><span class="cost-row-val">${item.value}</span>`;
+        costBd.appendChild(row);
+      });
+
+      document.getElementById('recoTitle').innerHTML = tier.recoTitle;
+      document.getElementById('recoText').textContent = tier.recoText;
+      const recoServices = document.getElementById('recoServices');
+      recoServices.innerHTML = '';
+      ['analyse', 'leadresolve', 'leadshift'].forEach(key => {
+        const s = SERVICES[key];
+        const a = document.createElement('a');
+        a.href = key === 'analyse' ? CALENDLY_URL : s.href;
+        if (key === 'analyse') { a.target = '_blank'; a.rel = 'noopener'; }
+        a.className = 'reco-service' + (key === tier.primary ? ' recommended' : '');
+        a.innerHTML = `
+          <span class="reco-service-tag">${key === tier.primary ? '★ Empfohlen' : s.tag}</span>
+          <h4>${s.title}</h4>
+          <p>${s.desc}</p>
+          <span class="reco-service-cta">${s.cta}</span>
+        `;
+        recoServices.appendChild(a);
+      });
+    }
+
+    // ===== EMAIL FORM HANDLER =====
+    document.getElementById('emailForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nameEl = document.getElementById('leadName');
+      const lastNameEl = document.getElementById('leadLastName');
+      const emailEl = document.getElementById('leadEmail');
+      const dsgvoEl = document.getElementById('leadDsgvo');
+      const newsletterEl = document.getElementById('leadNewsletter');
+      const submitBtn = e.target.querySelector('.email-submit');
+
+      // Validation
+      let valid = true;
+      [nameEl, lastNameEl, emailEl].forEach(el => el.classList.remove('error'));
+      if (!nameEl.value.trim())     { nameEl.classList.add('error');     valid = false; }
+      if (!lastNameEl.value.trim()) { lastNameEl.classList.add('error'); valid = false; }
+      if (!emailEl.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+        emailEl.classList.add('error'); valid = false;
+      }
+      if (!dsgvoEl.checked) { valid = false; alert('Bitte stimmen Sie der Datenverarbeitung zu.'); }
+      if (!valid) return;
+
+      const firstName = nameEl.value.trim();
+      const lastName = lastNameEl.value.trim();
+      const fullName = `${firstName} ${lastName}`;
+      const email = emailEl.value.trim();
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+      submitBtn.textContent = 'Wird verarbeitet …';
+
+      try {
+        // 1. PDF generieren (async wegen Bild-Loading)
+        const pdfBlob = await generateResultPDF(fullName);
+
+        // 2. EmailJS — Mails senden (falls konfiguriert)
+        if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+          const params = buildEmailParams(firstName, lastName, fullName, email, newsletterEl.checked);
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_USER_TEMPL, params);
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_ADMIN_TEMPL, params);
+        } else {
+          console.warn('EmailJS noch nicht konfiguriert — siehe Setup-Hinweise im quiz.html Script-Block.');
+        }
+
+        // 3. PDF herunterladen
+        const url = URL.createObjectURL(pdfBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `Konflikt-Quiz-Auswertung_${fullName.replace(/\s+/g,'_')}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+        // 4. Unlock + zentriertes Popup
+        document.getElementById('resultLocked').classList.add('unlocked');
+        showSuccessPopup(fullName);
+
+      } catch (err) {
+        console.error(err);
+        alert('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie info@kroes-consulting.com');
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Vollständige Auswertung freischalten →';
+      }
+    });
+
+    function showSuccessPopup(fullName) {
+      const overlay = document.createElement('div');
+      overlay.className = 'success-overlay';
+      overlay.innerHTML = `
+        <div class="success-popup" role="dialog" aria-live="polite">
+          <div class="success-popup-icon" aria-hidden="true">✓</div>
+          <h3>Danke, <strong>${fullName}</strong>!</h3>
+          <p>Ihre PDF-Auswertung wurde heruntergeladen und an Ihre E-Mail gesendet.</p>
+          <div class="success-popup-progress" aria-hidden="true">
+            <div class="success-popup-progress-fill"></div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      // Force reflow then add show class to trigger animation
+      requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('show')));
+      // Auto-close nach 3 Sekunden
+      setTimeout(() => {
+        overlay.classList.remove('show');
+        setTimeout(() => overlay.remove(), 350);
+      }, 3000);
+    }
+
+    function buildEmailParams(firstName, lastName, fullName, email, newsletter) {
+      const r = RESULT_STATE;
+      const catLines = r.cats.map(c => `${c}: ${r.catScores[c].pct}%`).join('\n');
+      const tierTitle = r.tier.emTitle.replace(/<\/?em>/g, '').replace(/\.$/,'');
+      return {
+        to_name: fullName,
+        first_name: firstName,
+        last_name: lastName,
+        to_email: email,
+        admin_email: ADMIN_EMAIL,
+        score: r.pct + '%',
+        tier_title: tierTitle,
+        tier_summary: r.tier.summary,
+        deep_summary: r.tier.deepSummary,
+        cost_range: r.tier.costRange,
+        cost_context: r.tier.costContext,
+        category_breakdown: catLines,
+        weakest_category: r.weakest,
+        strongest_category: r.strongest,
+        reco_title: r.tier.recoTitle.replace(/<\/?em>/g, ''),
+        reco_text: r.tier.recoText,
+        primary_service: SERVICES[r.tier.primary].title,
+        calendly_url: CALENDLY_URL,
+        newsletter_optin: newsletter ? 'Ja' : 'Nein'
+      };
+    }
+
+    // ===== Helper: Image laden für PDF (als DataURL — vermeidet Canvas-Taint) =====
+    async function loadImageAsDataURL(src) {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error('Image fetch failed: ' + res.status);
+      const blob = await res.blob();
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+    // Bild zusätzlich als HTMLImage laden, um Maße zu kennen
+    function loadImageDimensions(dataURL) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+        img.onerror = reject;
+        img.src = dataURL;
+      });
+    }
+
+    // ===== PDF GENERATION (async wegen Bild) =====
+    async function generateResultPDF(name) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const r = RESULT_STATE;
+
+      const NAVY = [31, 47, 88];
+      const PERI = [118, 140, 253];
+      const WARM = [250, 248, 245];
+      const INK  = [48, 46, 40];
+      const RED  = [255, 89, 89];
+
+      const W = 210, M = 18;
+      let y = 0;
+
+      // === HEADER mit LinkedIn-Bild ===
+      let headerHeight = 0;
+      let imgLoaded = false;
+      // Versuche zuerst die Datei mit Bindestrich, danach Variante mit Leerzeichen
+      const candidates = ['assets/img/kroes-consulting-header.png', 'assets/img/Kroes Consulting.png', 'assets/img/Kroes%20Consulting.png'];
+      for (const src of candidates) {
+        try {
+          const dataURL = await loadImageAsDataURL(src);
+          const dims = await loadImageDimensions(dataURL);
+          // Bild über volle Seitenbreite (randlos oben)
+          const imgW = W;
+          const imgH = imgW * (dims.h / dims.w);
+          doc.addImage(dataURL, 'PNG', 0, 0, imgW, imgH);
+          headerHeight = imgH;
+          imgLoaded = true;
+          break;
+        } catch (err) {
+          console.warn('Header-Bild ' + src + ' nicht ladbar:', err);
+        }
+      }
+      if (!imgLoaded) {
+        // Fallback: Navy-Brand-Block
+        doc.setFillColor(...NAVY);
+        doc.rect(0, 0, W, 50, 'F');
+        doc.setTextColor(...WARM);
+        doc.setFont('times', 'bold');
+        doc.setFontSize(26);
+        doc.text('KROES CONSULTING', M, 26);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.setTextColor(...PERI);
+        doc.text('CONSULTING & COACHING · KMU & HANDWERK', M, 34);
+        headerHeight = 50;
+      }
+
+      // === Untertitel unter dem Bild ===
+      y = headerHeight + 8;
+      doc.setDrawColor(...PERI);
+      doc.setLineWidth(0.6);
+      doc.line(M, y, M + 24, y);
+      y += 6;
+      doc.setFont('times', 'bold');
+      doc.setFontSize(15);
+      doc.setTextColor(...NAVY);
+      doc.text('Auswertung Konflikt-Quiz', M, y);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...INK);
+      y += 6;
+      doc.text('Persönliche Auswertung', M, y);
+      doc.setFontSize(9);
+      doc.setTextColor(...PERI);
+      doc.text(new Date().toLocaleDateString('de-AT', { day: '2-digit', month: 'long', year: 'numeric' }), W - M, y, { align: 'right' });
+      y += 12;
+
+      // === FÜR-Block ===
+      doc.setTextColor(...INK);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.text('Erstellt für', M, y);
+      doc.setFont('times', 'bold');
+      doc.setFontSize(16);
+      doc.setTextColor(...NAVY);
+      doc.text(name, M, y + 8);
+      y += 22;
+
+      // === SCORE ===
+      doc.setFillColor(...WARM);
+      doc.rect(M, y, W - 2*M, 32, 'F');
+      doc.setFont('times', 'bold');
+      doc.setFontSize(38);
+      doc.setTextColor(...PERI);
+      doc.text(r.pct + '%', M + 6, y + 22);
+      doc.setFont('times', 'bold');
+      doc.setFontSize(14);
+      doc.setTextColor(...NAVY);
+      const tierTitleClean = r.tier.emTitle.replace(/<\/?em>/g, '');
+      doc.text(tierTitleClean, M + 38, y + 16);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(...INK);
+      doc.text('Gesamtscore · Konfliktfähigkeit Ihres Unternehmens', M + 38, y + 24);
+      y += 42;
+
+      // === KURZ-SUMMARY ===
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...INK);
+      const summaryLines = doc.splitTextToSize(r.tier.summary, W - 2*M);
+      doc.text(summaryLines, M, y);
+      y += summaryLines.length * 5 + 6;
+
+      // === KATEGORIE-BREAKDOWN ===
+      doc.setFont('times', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(...NAVY);
+      doc.text('Auswertung nach Kategorie', M, y);
+      y += 6;
+      doc.setDrawColor(...PERI);
+      doc.setLineWidth(0.6);
+      doc.line(M, y, M + 18, y);
+      y += 8;
+
+      r.cats.forEach(c => {
+        const pct = r.catScores[c].pct;
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        doc.setTextColor(...NAVY);
+        doc.text(c, M, y);
+        // Track
+        doc.setFillColor(235, 232, 226);
+        doc.rect(M + 50, y - 3, 100, 3, 'F');
+        // Fill
+        const fillColor = c === r.weakest ? RED : PERI;
+        doc.setFillColor(...fillColor);
+        doc.rect(M + 50, y - 3, pct, 3, 'F');
+        // Value
+        doc.setTextColor(...PERI);
+        doc.setFont('helvetica', 'bold');
+        doc.text(pct + '%', W - M, y, { align: 'right' });
+        y += 8;
+      });
+      y += 4;
+
+      // === DEEP SUMMARY ===
+      doc.setFont('times', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(...NAVY);
+      doc.text('Vertiefende Interpretation', M, y);
+      y += 6;
+      doc.line(M, y, M + 18, y);
+      y += 8;
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...INK);
+      const deepLines = doc.splitTextToSize(r.tier.deepSummary, W - 2*M);
+      doc.text(deepLines, M, y);
+      y += deepLines.length * 5 + 8;
+
+      // Page break check
+      if (y > 220) { doc.addPage(); y = M; }
+
+      // === KONFLIKTKOSTEN-BLOCK ===
+      doc.setFillColor(...WARM);
+      doc.rect(M, y, W - 2*M, 56, 'F');
+      doc.setFillColor(...PERI);
+      doc.rect(W - M - 1.5, y, 1.5, 56, 'F');
+      const yc = y + 8;
+      doc.setFont('times', 'bold');
+      doc.setFontSize(11);
+      doc.setTextColor(...NAVY);
+      doc.text('WAS SIE DAS AKTUELL KOSTET', M + 4, yc);
+      doc.setFont('times', 'bold');
+      doc.setFontSize(20);
+      doc.setTextColor(...RED);
+      doc.text(r.tier.costRange, M + 4, yc + 11);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(...INK);
+      doc.text(r.tier.costContext, M + 4, yc + 18);
+
+      // Breakdown
+      let yb = yc + 24;
+      doc.setFontSize(9);
+      r.tier.costBreakdown.forEach(item => {
+        doc.setTextColor(...INK);
+        doc.text(item.label, M + 4, yb);
+        doc.setTextColor(...NAVY);
+        doc.setFont('helvetica', 'bold');
+        doc.text(item.value, W - M - 4, yb, { align: 'right' });
+        doc.setFont('helvetica', 'normal');
+        yb += 5;
+      });
+      y += 64;
+
+      // Source
+      doc.setFontSize(7.5);
+      doc.setTextColor(120, 116, 108);
+      doc.setFont('helvetica', 'italic');
+      const srcLines = doc.splitTextToSize(r.tier.sourceNote, W - 2*M);
+      doc.text(srcLines, M, y);
+      y += srcLines.length * 3.5 + 6;
+
+      if (y > 230) { doc.addPage(); y = M; }
+
+      // === EMPFEHLUNG (Navy Box) ===
+      doc.setFillColor(...NAVY);
+      doc.rect(M, y, W - 2*M, 50, 'F');
+      doc.setFont('times', 'bold');
+      doc.setFontSize(9);
+      doc.setTextColor(...PERI);
+      doc.text('IHR NÄCHSTER SCHRITT', M + 6, y + 9);
+      doc.setFont('times', 'bold');
+      doc.setFontSize(14);
+      doc.setTextColor(...WARM);
+      const recoTitleClean = r.tier.recoTitle.replace(/<\/?em>/g, '');
+      doc.text(recoTitleClean, M + 6, y + 18);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(220, 218, 213);
+      const recoLines = doc.splitTextToSize(r.tier.recoText, W - 2*M - 12);
+      doc.text(recoLines, M + 6, y + 26);
+      y += 56;
+
+      // === CTA-Block ===
+      doc.setFillColor(...PERI);
+      doc.rect(M, y, W - 2*M, 26, 'F');
+      doc.setFont('times', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(...NAVY);
+      doc.text('Konfliktkosten-Analyse buchen', M + 6, y + 10);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.text('Kostenfreies 30-Min-Strategiegespräch · auf Basis Ihrer Auswertung', M + 6, y + 16);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.setTextColor(...NAVY);
+      doc.textWithLink('Termin online buchen →', M + 6, y + 22, { url: CALENDLY_URL });
+      y += 32;
+
+      // === FOOTER ===
+      const footerY = 285;
+      doc.setDrawColor(220, 218, 213);
+      doc.setLineWidth(0.3);
+      doc.line(M, footerY, W - M, footerY);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      doc.setTextColor(120, 116, 108);
+      doc.text('Alexander Kroes e.U. · Unterer Stadtplatz 11 · 6330 Kufstein · Österreich', M, footerY + 5);
+      doc.text('+43 (0) 5338 20105 · info@kroes-consulting.com · www.kroes-consulting.com', M, footerY + 9);
+
+      return doc.output('blob');
+    }
+
+    document.getElementById('qRestart').addEventListener('click', () => {
+      currentQ = 0;
+      answers = new Array(QUESTIONS.length).fill(null);
+      resultEl.classList.remove('active');
+      introEl.style.display = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

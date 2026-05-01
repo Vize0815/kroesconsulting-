@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V1 ZAHLEN-SHOCK | Kroes Consulting</title>
+  <meta name="description" content="Konflikte kosten Unternehmen Geld. Wir machen diese Verluste sichtbar und lösen sie systematisch.">
+  <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ===== NAV-Overrides (v1) ===== */
+    .nav-social { border-inline-start-color: rgba(118,140,253,0.55); }
+    /* ===== EDITORIAL HERO ===== */
+    .lb-hero {
+      background: var(--warm-50);
+      padding: clamp(8rem, 13vw, 12rem) 0 clamp(0.75rem, 1.5vw, 1.5rem);
+      position: relative;
+      overflow: hidden;
+    }
+    /* dezenter Hintergrund-Akzent oben rechts */
+    .lb-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(118,140,253,0.10) 0%, rgba(118,140,253,0) 70%);
+      pointer-events: none;
+    }
+    .lb-hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+    /* LEFT: CONTENT */
+    .lb-content { display: flex; flex-direction: column; gap: 1.5rem; }
+    .lb-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.85rem;
+      font-family: var(--font-body);
+      font-size: clamp(0.72rem, 1vw, 0.85rem);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .lb-eyebrow::before {
+      content: '';
+      width: 42px; height: 2px;
+      background: var(--peri);
+    }
+    .lb-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 6.6vw, 5.8rem);
+      line-height: 1;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin: 0;
+    }
+    .lb-headline .lb-row2 { display: block; }
+    .lb-headline .lb-accent {
+      color: var(--peri);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+    }
+    .lb-headline .lb-accent::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0.05em;
+      height: 0.18em;
+      background: rgba(118,140,253,0.22);
+      z-index: -1;
+    }
+    .lb-sub {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+      font-weight: 400;
+      color: var(--ink-900);
+      margin: 0;
+      line-height: 1.5;
+      max-width: 560px;
+    }
+    .lb-lede {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+      font-weight: 400;
+      color: var(--ink-700, rgba(20,18,16,0.78));
+      margin: 0;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+    /* Credentials-Reihe */
+    .lb-creds {
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+      margin-top: 0.25rem;
+      font-family: var(--font-body); font-size: 0.78rem;
+      font-weight: 500; color: var(--navy);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .lb-creds span { display: inline-flex; align-items: center; gap: 0.6rem; }
+    .lb-creds span + span::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--peri); margin-right: 0.6rem;
+    }
+    /* CTA-Reihe */
+    .lb-cta-row {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;
+      align-items: center;
+    }
+    .lb-btn-primary {
+      background: var(--peri); color: var(--navy);
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 1.1rem 2rem; text-decoration: none;
+      transition: all 0.2s; display: inline-block;
+      border-radius: 4px;
+    }
+    .lb-btn-primary:hover { background: #5e76ec; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(118,140,253,0.35); }
+    .lb-btn-ghost {
+      color: var(--navy); padding: 1.05rem 1.85rem;
+      border: 1.5px solid var(--navy);
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      transition: all 0.2s; border-radius: 4px;
+    }
+    .lb-btn-ghost:hover { background: var(--navy); color: #fff; }
+    /* Badge inline neben CTAs */
+    .lb-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-family: var(--font-body); font-size: 0.85rem; font-weight: 500;
+      color: var(--ink-900); letter-spacing: 0.01em;
+    }
+    .lb-badge strong {
+      font-weight: 700; color: var(--navy);
+    }
+    /* Zertifikat-Icons Strip */
+    .lb-certs {
+      display: flex; align-items: center; justify-content: flex-start;
+      flex-wrap: wrap; gap: 1.75rem;
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(31,47,88,0.12);
+    }
+    .lb-certs img {
+      height: 72px; width: auto; object-fit: contain;
+      display: block;
+    }
+    /* RIGHT: PORTRAIT — Frame im About-Style */
+    .lb-portrait {
+      position: relative;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      width: 100%;
+      /* Oberkante des Bildes bündig mit Wort "Strukturen": Eyebrow-Box + Content-Gap + Playfair-Top-Halbleading der H1 */
+      margin-top: calc(0.85rem * 1.2 + 1.5rem + clamp(0.25rem, 0.6vw, 0.55rem));
+    }
+    .lb-portrait-frame {
+      position: relative;
+      width: 100%;
+      max-width: 504px;
+      aspect-ratio: 504 / 631;
+      background: var(--warm-100);
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 1px 0 rgba(31,47,88,0.08), 0 18px 40px -20px rgba(31,47,88,0.25);
+      transform: translateZ(0);
+      transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+    .lb-portrait-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(31,47,88,0.08);
+      pointer-events: none;
+      transition: border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  inset 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .lb-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .lb-portrait-frame:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1px 0 rgba(31,47,88,0.10), 0 28px 55px -22px rgba(31,47,88,0.40);
+    }
+    .lb-portrait-frame:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.08) contrast(1.02);
+    }
+    .lb-portrait-frame:hover::after {
+      border-color: rgba(118,140,253,0.55);
+      inset: 6px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lb-portrait-frame,
+      .lb-portrait-frame img,
+      .lb-portrait-frame::after { transition: none; }
+      .lb-portrait-frame:hover { transform: none; }
+      .lb-portrait-frame:hover img { transform: none; filter: none; }
+    }
+    .lb-portrait-cap {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .lb-portrait-cap span {
+      display: block;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--ink-500, rgba(20,18,16,0.55));
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .lb-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .lb-portrait { order: 2; margin-top: 0; }
+      .lb-content { order: 1; }
+      .lb-portrait-frame { max-width: 340px; }
+    }
+    @media (max-width: 640px) {
+      .lb-headline { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+      .lb-creds { font-size: 0.7rem; gap: 0.4rem 1rem; }
+      .lb-press { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .lb-cta-row { flex-direction: column; align-items: stretch; }
+      .lb-cta-row a { text-align: center; }
+    }
+
+    /* ===== BEKANNT AUS — Press-Logos ===== */
+    .v1-press {
+      background: var(--warm-50);
+      padding: clamp(0.75rem, 1.5vw, 1.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+      border-bottom: 1px solid rgba(31,47,88,0.06);
+    }
+    .v1-press-tag {
+      display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+      font-family: var(--font-body); font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--peri);
+      margin-bottom: clamp(1.5rem, 3vw, 2.2rem);
+    }
+    .v1-press-tag::before,
+    .v1-press-tag::after {
+      content: ''; width: 32px; height: 1px; background: var(--peri);
+    }
+    .v1-press-grid {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: center;
+      gap: clamp(2rem, 6vw, 4.5rem);
+    }
+    .v1-press-grid img {
+      max-height: 90px; width: auto; max-width: 280px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .v1-press-grid img[src*="wko"] {
+      max-height: 130px; max-width: 220px;
+    }
+    .v1-press-grid img:hover {
+      transform: scale(1.08);
+    }
+    @media (max-width: 768px) {
+      .v1-press-grid { gap: 2rem; }
+      .v1-press-grid img { max-height: 64px; max-width: 180px; }
+      .v1-press-grid img[src*="wko"] { max-height: 92px; max-width: 150px; }
+    }
+
+    /* BENTO PROBLEM */
+    .v1-bento { background: var(--warm-50); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+    .v1-bento-head { max-width: 640px; margin-bottom: 3rem; }
+    .v1-bento-h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--navy); line-height: 1.15; letter-spacing: -0.01em;
+    }
+    .v1-bento-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-bento-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; gap: 1rem;
+    }
+    .v1-bento-card {
+      background: var(--warm-100); padding: 2rem;
+      border: 1px solid rgba(31,47,88,0.08);
+      transition: all 0.3s; position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .v1-bento-card:hover {
+      transform: translateY(-4px); border-color: var(--peri);
+      box-shadow: 0 12px 28px rgba(31,47,88,0.1);
+    }
+    .v1-bento-card.big { grid-column: span 2; grid-row: span 2; background: var(--navy); color: var(--warm-50); }
+    .v1-bento-card.peri { background: var(--peri); color: var(--navy-dark); }
+    .v1-bento-num {
+      font-family: var(--font-display); font-size: 3rem; font-weight: 700;
+      color: #d4d4d4; line-height: 1;
+    }
+    .v1-bento-card.big .v1-bento-num { font-size: 5rem; }
+    .v1-bento-card h3 {
+      font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; line-height: 1.2;
+    }
+    .v1-bento-card.big h3 { font-size: 2rem; max-width: 18ch; }
+    .v1-bento-card p {
+      font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6;
+      color: var(--ink-600); margin-top: 0.5rem;
+    }
+    .v1-bento-card.big p { color: rgba(250,248,245,0.7); font-size: 1rem; max-width: 38ch; }
+    .v1-bento-card.peri p { color: rgba(11,21,48,0.75); }
+
+    /* BENTO MOTIFS — abstrakte CSS-Hintergrund-Treatments pro Karte */
+    .v1-bento-card > * { position: relative; z-index: 1; }
+    .v1-bento-card::after,
+    .v1-bento-card::before {
+      content: ""; position: absolute; pointer-events: none; z-index: 0;
+      background-repeat: no-repeat; background-size: contain;
+      transition: opacity 0.3s var(--ease-out), transform 0.4s var(--ease-out);
+    }
+    .v1-bento-card:hover::after { opacity: 0.85; }
+
+    /* 01 — Führung vs. Team: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(1) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/konfliktarten.png");
+      background-size: cover;
+      background-position: center;
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(1)::after { display: none; }
+
+    /* 02 — Generationen-Clash: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(2) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/konflikt-am-bau.webp");
+      background-size: cover;
+      background-position: center;
+      color: var(--warm-50);
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(2) p { color: rgba(250,248,245,0.85); }
+    .v1-bento-grid > .v1-bento-card:nth-child(2)::after { display: none; }
+
+    /* 03 — Rollenkonflikte: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(3) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/rollenkonflikt-am-bau.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: var(--warm-50);
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(3) p { color: rgba(250,248,245,0.85); }
+    .v1-bento-grid > .v1-bento-card:nth-child(3)::after { display: none; }
+
+    /* 04 — Kommunikation: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(4) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/kommunikations-konflikt.webp");
+      background-size: cover;
+      background-position: center;
+      color: var(--warm-50);
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(4) p { color: rgba(250,248,245,0.85); }
+    .v1-bento-grid > .v1-bento-card:nth-child(4)::after { display: none; }
+
+    /* 05 — Werte-Kollision: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(5) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/wertekonflikt.webp");
+      background-size: cover;
+      background-position: center;
+      color: var(--warm-50);
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(5) p { color: rgba(250,248,245,0.85); }
+    .v1-bento-grid > .v1-bento-card:nth-child(5)::after { display: none; }
+
+    /* 06 — Familienbetrieb: Foto-Hintergrund mit Navy-Overlay */
+    .v1-bento-grid > .v1-bento-card:nth-child(6) {
+      background-image:
+        linear-gradient(rgba(20,30,60,0.78), rgba(20,30,60,0.62)),
+        url("assets/img/familienkonflikt.png");
+      background-size: cover;
+      background-position: center;
+      color: var(--warm-50);
+    }
+    .v1-bento-grid > .v1-bento-card:nth-child(6) p { color: rgba(250,248,245,0.85); }
+    .v1-bento-grid > .v1-bento-card:nth-child(6)::after { display: none; }
+
+    /* Hover-Lift für Motive (subtile Reaktion) */
+    .v1-bento-grid > .v1-bento-card:nth-child(1):hover::after { transform: translate(-6px, -6px); }
+    .v1-bento-grid > .v1-bento-card:nth-child(2):hover::after { transform: rotate(8deg); }
+    .v1-bento-grid > .v1-bento-card:nth-child(3):hover::after,
+    .v1-bento-grid > .v1-bento-card:nth-child(4):hover::after,
+    .v1-bento-grid > .v1-bento-card:nth-child(5):hover::after,
+    .v1-bento-grid > .v1-bento-card:nth-child(6):hover::after { transform: translateY(-50%) translateX(-8px); }
+
+    /* BAR CHART AUSWIRKUNGEN */
+    .v1-bars { background: var(--warm-100); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+    .v1-bars-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 0; align-items: center; }
+    .v1-bars-h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--navy); line-height: 1.15;
+    }
+    .v1-bars-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-bars-sub { color: var(--ink-600); margin-top: 1rem; max-width: 38ch; line-height: 1.7; }
+    .v1-bars-list { display: flex; flex-direction: column; gap: 1.5rem; padding-right: 4rem; }
+    .v1-bars-text { border-left: 1px solid rgba(118, 140, 253, 0.55); padding-left: 4rem; }
+    .v1-bar { display: flex; flex-direction: column; gap: 0.4rem; padding-bottom: 1.25rem; border-bottom: 1px dashed rgba(31,47,88,0.12); }
+    .v1-bar:last-child { border-bottom: none; padding-bottom: 0; }
+    .v1-bar-row { display: grid; grid-template-columns: 240px 1fr 100px; gap: 1.25rem; align-items: center; }
+    .v1-bar-label { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500; color: var(--navy); }
+    .v1-bar-track { background: var(--warm-50); height: 12px; border-radius: 999px; overflow: hidden; border: 1px solid rgba(31,47,88,0.08); }
+    .v1-bar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--peri), var(--peri-dark));
+      border-radius: 999px; width: 0; transition: width 1.2s var(--ease-out);
+    }
+    .v1-bar.in-view .v1-bar-fill { width: var(--w); }
+    .v1-bar-val { font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; font-weight: 600; color: var(--peri-dark); text-align: right; }
+    .v1-bar-src {
+      font-size: 0.6875rem; font-style: italic; color: var(--ink-500);
+      line-height: 1.5; opacity: 0.85; max-width: 95%;
+      padding-left: 240px;
+    }
+
+    /* SZENARIEN — 3 BETRIEBSGRÖSSEN */
+    .v1-scenarios { background: var(--warm-50); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+    .v1-scenarios-head { max-width: 720px; margin-bottom: 4rem; }
+    .v1-scenarios-h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.15; color: var(--navy); margin-top: 0.75rem;
+    }
+    .v1-scenarios-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-scenarios-sub { color: var(--ink-600); margin-top: 1.25rem; line-height: 1.75; max-width: 62ch; }
+    .v1-scenarios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+    .v1-scen-card {
+      background: #fff; border: 1px solid rgba(31,47,88,0.10); border-radius: 4px;
+      padding: 2.25rem 1.875rem; display: flex; flex-direction: column;
+      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+    }
+    .v1-scen-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -12px rgba(31,47,88,0.18); border-color: rgba(118,140,253,0.4); }
+    .v1-scen-card.featured { background: var(--navy); color: var(--warm-50); border-color: var(--navy); }
+    .v1-scen-card.featured:hover { box-shadow: 0 22px 50px -12px rgba(31,47,88,0.45); }
+    .v1-scen-tag {
+      font-family: var(--font-body); font-size: 0.6875rem; letter-spacing: 0.18em;
+      font-weight: 600; text-transform: uppercase; color: var(--peri);
+    }
+    .v1-scen-size {
+      font-family: var(--font-display); font-size: 3rem; font-weight: 700;
+      color: var(--navy); line-height: 1; margin: 0.625rem 0 0.25rem;
+    }
+    .v1-scen-card.featured .v1-scen-size { color: var(--warm-50); }
+    .v1-scen-size-sub {
+      font-size: 0.8125rem; color: var(--ink-500); margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .v1-scen-card.featured .v1-scen-size-sub { color: rgba(250,248,245,0.7); }
+    .v1-scen-context {
+      font-size: 0.875rem; line-height: 1.65; color: var(--ink-700);
+      font-style: italic; padding-bottom: 1.5rem; margin-bottom: 1.25rem;
+      border-bottom: 1px dashed rgba(31,47,88,0.18);
+    }
+    .v1-scen-card.featured .v1-scen-context { color: rgba(250,248,245,0.85); border-color: rgba(250,248,245,0.18); }
+    .v1-scen-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1rem; padding: 0.55rem 0; font-size: 0.875rem;
+    }
+    .v1-scen-row span:first-child { color: var(--ink-600); line-height: 1.4; }
+    .v1-scen-row span:last-child { font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; white-space: nowrap; font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; }
+    .v1-scen-card.featured .v1-scen-row span:first-child { color: rgba(250,248,245,0.75); }
+    .v1-scen-card.featured .v1-scen-row span:last-child { color: var(--peri); }
+    .v1-scen-total {
+      margin-top: auto; padding-top: 1.25rem; border-top: 2px solid var(--navy);
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+    }
+    .v1-scen-total span:first-child {
+      font-family: var(--font-body); font-size: 0.6875rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ink-500); font-weight: 600;
+    }
+    .v1-scen-total span:last-child {
+      font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--navy);
+      font-variant-numeric: tabular-nums;
+    }
+    .v1-scen-card.featured .v1-scen-total { border-top-color: var(--peri); }
+    .v1-scen-card.featured .v1-scen-total span:first-child { color: rgba(250,248,245,0.6); }
+    .v1-scen-card.featured .v1-scen-total span:last-child { color: var(--peri); }
+
+    .v1-scen-sources {
+      margin-top: 4rem; padding: 2.25rem 2.25rem;
+      background: var(--warm-100); border-left: 3px solid var(--peri); border-radius: 2px;
+    }
+    .v1-scen-sources h3 {
+      font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 600; color: var(--navy); margin-bottom: 1.25rem;
+    }
+    .v1-scen-sources ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.875rem; }
+    .v1-scen-sources li {
+      font-size: 0.875rem; line-height: 1.65; color: var(--ink-700);
+      padding-left: 1.25rem; position: relative;
+    }
+    .v1-scen-sources li::before {
+      content: ""; position: absolute; left: 0; top: 0.65em;
+      width: 6px; height: 6px; background: var(--peri); border-radius: 50%;
+    }
+    .v1-scen-sources li strong { color: var(--navy); font-weight: 600; }
+    .v1-scen-disclaimer {
+      margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(31,47,88,0.12);
+      font-size: 0.8125rem; color: var(--ink-500); font-style: italic; line-height: 1.65;
+    }
+
+    /* RECEIPT EXAMPLE */
+    .v1-receipt-wrap { background: var(--warm-50); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+    .v1-receipt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .v1-receipt-h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--navy); line-height: 1.15;
+    }
+    .v1-receipt-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-receipt-sub { color: var(--ink-600); margin-top: 1.25rem; line-height: 1.75; max-width: 40ch; }
+    .v1-receipt {
+      background: #fff; padding: 2.5rem 2rem;
+      border: 1px dashed rgba(31,47,88,0.3);
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 30px 50px -20px rgba(31,47,88,0.15);
+      position: relative;
+    }
+    .v1-receipt::before, .v1-receipt::after {
+      content: ''; position: absolute; left: 0; right: 0; height: 12px;
+      background-image: radial-gradient(circle at 6px 6px, var(--warm-50) 6px, transparent 6px);
+      background-size: 12px 12px;
+    }
+    .v1-receipt::before { top: -6px; }
+    .v1-receipt::after { bottom: -6px; transform: rotate(180deg); }
+    .v1-receipt-h { text-align: center; margin-bottom: 1.5rem; }
+    .v1-receipt-h h3 { font-size: 0.75rem; letter-spacing: 0.2em; color: var(--ink-500); }
+    .v1-receipt-h p { font-size: 0.6875rem; color: var(--ink-400); margin-top: 0.25rem; }
+    .v1-receipt-item { padding: 0.625rem 0; border-bottom: 1px dashed rgba(31,47,88,0.15); }
+    .v1-receipt-line {
+      display: flex; justify-content: space-between;
+      font-size: 0.875rem; color: var(--ink-700);
+    }
+    .v1-receipt-line span:last-child { font-weight: 600; color: var(--navy); }
+    .v1-receipt-src {
+      font-size: 0.6875rem; font-style: italic; color: var(--ink-500);
+      margin-top: 0.3rem; line-height: 1.5; opacity: 0.85; max-width: 90%;
+    }
+    .v1-receipt-total {
+      display: flex; justify-content: space-between; padding-top: 1rem; margin-top: 0.75rem;
+      border-top: 2px solid var(--navy); font-size: 1.125rem; font-weight: 700; color: #ff3838;
+    }
+    .v1-receipt-total span:last-child { font-size: 1.5rem; }
+
+    /* OFFER */
+    .v1-offer { background: var(--navy); padding: clamp(3.5rem, 7vw, 6rem) 0; color: var(--warm-50); }
+    .v1-offer-h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      color: var(--warm-50); line-height: 1.15; margin-bottom: 0.75rem;
+    }
+    .v1-offer-h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-offer-sub { color: rgba(250,248,245,0.6); max-width: 50ch; margin-bottom: 3rem; }
+    .v1-offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .v1-offer-card {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(118,140,253,0.2);
+      padding: 2.5rem 2rem; transition: all 0.3s;
+    }
+    .v1-offer-card:hover { background: rgba(118,140,253,0.08); border-color: var(--peri); transform: translateY(-4px); }
+    .v1-offer-card.featured { background: var(--peri); color: var(--navy-dark); border-color: var(--peri); }
+    .v1-offer-num { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: rgba(118,140,253,0.4); }
+    .v1-offer-card.featured .v1-offer-num { color: rgba(11,21,48,0.3); }
+    .v1-offer-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.875rem; }
+    .v1-offer-card p { font-size: 0.9375rem; line-height: 1.7; opacity: 0.75; margin-bottom: 1.5rem; }
+    .v1-offer-card-price { font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--peri); }
+    .v1-offer-card.featured .v1-offer-card-price { color: var(--navy-dark); }
+    .v1-offer-link {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; text-decoration: none; color: var(--peri);
+      border-bottom: 1px solid var(--peri); padding-bottom: 2px;
+    }
+    .v1-offer-card.featured .v1-offer-link { color: var(--navy-dark); border-color: var(--navy-dark); }
+    .v1-offer-portrait {
+      width: 70%; height: auto; display: block;
+      margin-left: auto; margin-right: 0;
+      border-radius: 8px; border: 2px solid #FAF8F5;
+    }
+    @media (max-width: 768px) {
+      .v1-offer-portrait { width: 100%; max-width: 380px; margin: 0 auto; }
+    }
+
+    /* QUIZ CTA — between offer and final CTA */
+    .v1-quiz-cta {
+      background: var(--warm-100); padding: clamp(3.5rem, 7vw, 6rem) 0;
+      position: relative; overflow: hidden;
+    }
+    .v1-quiz-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 80% 20%, rgba(118,140,253,0.12), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(31,47,88,0.06), transparent 50%);
+      pointer-events: none;
+    }
+    .v1-quiz-cta-inner {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .v1-quiz-cta-tag {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-family: var(--font-body); font-size: 0.6875rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--peri-dark); font-weight: 600; margin-bottom: 1.25rem;
+    }
+    .v1-quiz-cta-tag::before { content: ''; width: 24px; height: 1px; background: var(--peri); }
+    .v1-quiz-cta h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -0.015em;
+      margin-bottom: 1.25rem;
+    }
+    .v1-quiz-cta h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-quiz-cta-desc {
+      font-family: var(--font-body); font-size: 1.0625rem;
+      line-height: 1.75; color: var(--ink-700);
+      margin-bottom: 2rem; max-width: 48ch;
+    }
+    .v1-quiz-chips {
+      display: flex; gap: 0.625rem; flex-wrap: wrap; margin-bottom: 2.25rem;
+    }
+    .v1-quiz-chip {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      color: var(--navy); padding: 0.5rem 0.875rem;
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(31,47,88,0.12);
+      border-radius: 999px; letter-spacing: 0.02em;
+    }
+    .v1-quiz-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--peri); }
+    .v1-quiz-cta-btn {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      background: var(--peri); color: var(--navy-dark);
+      padding: 1.125rem 2.25rem;
+      font-family: var(--font-body); font-size: 0.875rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .v1-quiz-cta-btn:hover { background: var(--peri-hover); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(118,140,253,0.4); }
+    .v1-quiz-cta-btn-arrow { transition: transform 0.2s; }
+    .v1-quiz-cta-btn:hover .v1-quiz-cta-btn-arrow { transform: translateX(4px); }
+
+    /* Mockup */
+    .v1-quiz-mockup {
+      background: #fff; border-radius: 16px;
+      box-shadow: 0 30px 60px -25px rgba(31,47,88,0.25);
+      padding: 2rem;
+      transition: transform 0.4s var(--ease-out);
+    }
+    .v1-quiz-mockup:hover { transform: translateY(-4px); }
+    .v1-quiz-mockup-progress {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-body); font-size: 0.75rem;
+      color: var(--ink-500); margin-bottom: 0.5rem;
+    }
+    .v1-quiz-mockup-progress strong { color: var(--navy); }
+    .v1-quiz-mockup-progress-pct { color: var(--peri-dark); font-weight: 600; }
+    .v1-quiz-mockup-bar {
+      height: 3px; background: rgba(31,47,88,0.08); margin-bottom: 1.5rem; border-radius: 0;
+    }
+    .v1-quiz-mockup-bar div {
+      width: 30%; height: 100%; background: var(--peri);
+    }
+    .v1-quiz-mockup-line {
+      width: 50px; height: 3px; background: var(--peri); margin-bottom: 1.25rem;
+    }
+    .v1-quiz-mockup-q {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 1.125rem; color: var(--navy);
+      line-height: 1.3; margin-bottom: 1.25rem;
+    }
+    .v1-quiz-mockup-options {
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .v1-quiz-mockup-option {
+      display: grid; grid-template-columns: 28px 1fr; gap: 0.75rem; align-items: center;
+      padding: 0.625rem 0.875rem;
+      background: var(--warm-100);
+      border: 1.5px solid transparent;
+      border-radius: 10px;
+      font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-700);
+    }
+    .v1-quiz-mockup-option.active {
+      background: var(--navy); color: var(--warm-50); border-color: var(--peri);
+    }
+    .v1-quiz-mockup-letter {
+      display: flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px;
+      border: 1.5px solid rgba(31,47,88,0.18);
+      border-radius: 50%;
+      font-family: var(--font-body); font-size: 0.625rem; font-weight: 700;
+      color: var(--ink-500);
+    }
+    .v1-quiz-mockup-option.active .v1-quiz-mockup-letter { border-color: var(--peri); color: var(--peri); background: rgba(118,140,253,0.15); }
+
+    @media (max-width: 1024px) {
+      .v1-quiz-cta-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .v1-quiz-mockup { max-width: 460px; margin: 0 auto; }
+    }
+
+    /* TESTIMONIALS — Social Proof direkt vor finalem CTA */
+    .v1-testimonials {
+      background: #faf8f5; color: var(--ink-900);
+      padding: clamp(5rem, 9vw, 8rem) 0;
+      position: relative; overflow: hidden;
+    }
+    .v1-testimonials .container { position: relative; z-index: 1; }
+    .v1-test-header {
+      display: grid; grid-template-columns: 1.15fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: end;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+    .v1-test-eyebrow {
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy);
+      margin-bottom: 1.75rem; display: inline-flex; align-items: center; gap: 0.75rem;
+    }
+    .v1-test-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(31,47,88,0.4); }
+    .v1-test-headline {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.05;
+      letter-spacing: -0.015em; color: var(--navy);
+      margin-bottom: 0;
+    }
+    .v1-test-headline em { font-style: italic; color: var(--peri); font-weight: 400; }
+    .v1-test-intro {
+      font-family: var(--font-body); font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+      color: rgba(20,18,16,0.72); line-height: 1.7;
+      max-width: 46ch; margin: 0;
+    }
+    .v1-test-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .v1-test-card {
+      background: #ffffff;
+      border: 1px solid rgba(31,47,88,0.10);
+      border-radius: 6px;
+      padding: clamp(1.75rem, 2.5vw, 2.25rem);
+      display: flex; flex-direction: column;
+      transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .v1-test-card:hover {
+      border-color: rgba(118,140,253,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(31,47,88,0.10);
+    }
+    .v1-test-stars {
+      color: var(--peri); font-size: 0.95rem; letter-spacing: 0.18em;
+      margin-bottom: 1.5rem;
+    }
+    .v1-test-quote {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(1.0625rem, 1.25vw, 1.1875rem);
+      line-height: 1.6; color: var(--navy);
+      margin: 0 0 2rem; flex: 1;
+    }
+    .v1-test-author {
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(31,47,88,0.12);
+    }
+    .v1-test-name {
+      font-family: var(--font-body); font-weight: 600;
+      font-size: 0.9375rem; color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .v1-test-role {
+      font-family: var(--font-body); font-size: 0.8125rem;
+      color: rgba(20,18,16,0.55);
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 1024px) {
+      .v1-test-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
+    }
+    @media (max-width: 768px) {
+      .v1-test-header { grid-template-columns: 1fr; gap: 2rem; align-items: start; }
+    }
+
+    /* TRUST + CTA — Full-Width Unified Block */
+    .v1-trust {
+      background: var(--navy); color: var(--warm-50);
+      position: relative; overflow: hidden;
+    }
+    .v1-trust-grid {
+      display: block;
+    }
+    .v1-trust-photo {
+      position: relative; background: var(--ink-900); overflow: hidden;
+      width: min(340px, 80%); aspect-ratio: 1 / 1;
+      margin: 0 auto 2.5rem;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.4);
+    }
+    .v1-trust-photo img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      display: block;
+      filter: contrast(1.06) saturate(1.04);
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .v1-trust-block {
+      padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 5vw, 5rem);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .v1-trust-block::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 0%, rgba(118,140,253,0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .v1-trust-block > * { position: relative; z-index: 1; }
+    .v1-trust-eyebrow {
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--peri);
+      margin-bottom: 1.75rem; display: inline-flex; align-items: center; gap: 0.75rem;
+    }
+    .v1-trust-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(118,140,253,0.55); }
+    .v1-trust-headline {
+      font-family: var(--font-display); font-size: clamp(1.875rem, 3.6vw, 2.875rem);
+      font-weight: 700; color: var(--warm-50); line-height: 1.1; letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+    .v1-trust-headline em { font-style: italic; color: var(--peri); font-weight: 400; }
+    .v1-trust-sub {
+      font-family: var(--font-body); font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+      color: rgba(250,248,245,0.78); line-height: 1.65;
+      max-width: 640px; margin: 0 auto 2.25rem;
+    }
+    .v1-trust-buttons {
+      display: flex; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 1.75rem; justify-content: center;
+    }
+    .v1-trust-btn {
+      background: var(--warm-50); color: var(--navy);
+      padding: 1.05rem 2rem; font-family: var(--font-body); font-weight: 600;
+      letter-spacing: 0.02em; font-size: 0.9375rem;
+      text-decoration: none; border-radius: 6px; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1.5px solid var(--warm-50);
+    }
+    .v1-trust-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0,0,0,0.35); }
+    .v1-trust-btn--ghost {
+      background: transparent; color: var(--warm-50);
+      border: 1.5px solid rgba(250,248,245,0.4);
+    }
+    .v1-trust-btn--ghost:hover { background: rgba(250,248,245,0.08); border-color: var(--warm-50); box-shadow: none; transform: translateY(-2px); }
+    .v1-trust-microcopy {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 0.4rem 0.75rem;
+      font-family: var(--font-body); font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(250,248,245,0.5);
+    }
+    .v1-trust-microcopy span { color: rgba(118,140,253,0.6); }
+    @media (max-width: 900px) {
+      .v1-trust-photo { width: min(280px, 70%); }
+    }
+    @media (max-width: 540px) {
+      .v1-trust-buttons { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+      .v1-trust-btn { justify-content: center; }
+      .v1-trust-microcopy span { display: none; }
+    }
+
+    /* FAQ — 2-Spalten-Layout: links Sticky-Header + CTA, rechts Frageliste */
+    .v1-faq { background: var(--warm-50); padding: clamp(4rem, 8vw, 7rem) 0; }
+    .v1-faq-grid {
+      display: grid; grid-template-columns: minmax(280px, 380px) 1fr;
+      gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start;
+    }
+    .v1-faq-aside { position: sticky; top: 6rem; }
+    .v1-faq-eyebrow {
+      font-family: var(--font-body); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--peri);
+      margin-bottom: 1.5rem;
+    }
+    .v1-faq-aside h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 3.6vw, 2.875rem);
+      font-weight: 700; color: var(--navy); line-height: 1.1; letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .v1-faq-aside h2 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .v1-faq-aside p {
+      font-family: var(--font-body); color: var(--ink-600);
+      font-size: 1rem; line-height: 1.65; margin-bottom: 2rem; max-width: 340px;
+    }
+    .v1-faq-cta {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      background: var(--navy); color: var(--warm-50);
+      padding: 1rem 1.75rem; font-family: var(--font-body); font-weight: 600;
+      letter-spacing: 0.02em; font-size: 0.9375rem;
+      text-decoration: none; border-radius: 6px;
+      border: 1.5px solid var(--navy); transition: all 0.2s;
+    }
+    .v1-faq-cta:hover { background: var(--peri); border-color: var(--peri); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(31,47,88,0.22); }
+    .v1-faq-cta-arrow { transition: transform 0.2s; }
+    .v1-faq-cta:hover .v1-faq-cta-arrow { transform: translateX(4px); }
+    .v1-faq-list { display: block; }
+    .v1-faq-item {
+      border-top: 1px solid rgba(31,47,88,0.14);
+      transition: background 0.2s;
+    }
+    .v1-faq-item:last-child { border-bottom: 1px solid rgba(31,47,88,0.14); }
+    .v1-faq-item summary {
+      padding: 1.5rem 0; cursor: pointer; font-weight: 500; color: var(--navy);
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      gap: 1.5rem; font-size: 1.0625rem; line-height: 1.4;
+      font-family: var(--font-body);
+    }
+    .v1-faq-item summary::-webkit-details-marker { display: none; }
+    .v1-faq-item summary::after {
+      content: '+'; font-size: 1.5rem; color: var(--peri);
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); flex-shrink: 0; line-height: 1;
+    }
+    .v1-faq-item[open] summary::after { transform: rotate(45deg); }
+    .v1-faq-item[open] summary { color: var(--peri); }
+    .v1-faq-answer {
+      padding: 0 2.5rem 1.75rem 0; color: var(--ink-600); line-height: 1.75;
+      font-family: var(--font-body); font-size: 0.9875rem;
+    }
+    .v1-faq-answer p { margin-bottom: 0.85rem; }
+    .v1-faq-answer p:last-child { margin-bottom: 0; }
+    .v1-faq-answer strong { color: var(--navy); font-weight: 600; }
+
+    /* Smooth open/close animation (modern browsers: Chrome 131+, Edge 131+) */
+    .v1-faq-list { interpolate-size: allow-keywords; }
+    .v1-faq-item::details-content {
+      block-size: 0;
+      opacity: 0;
+      overflow: clip;
+      transition:
+        content-visibility 0.45s allow-discrete,
+        block-size 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.35s ease 0.05s;
+    }
+    .v1-faq-item[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+
+    /* Fallback fade-in for browsers without ::details-content support */
+    @supports not selector(::details-content) {
+      @keyframes v1FaqFadeIn {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .v1-faq-item[open] .v1-faq-answer {
+        animation: v1FaqFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .v1-faq-item::details-content { transition: none; }
+      .v1-faq-item[open] .v1-faq-answer { animation: none; }
+    }
+
+    @media (max-width: 900px) {
+      .v1-faq-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .v1-faq-aside { position: static; }
+      .v1-faq-aside p { max-width: none; }
+    }
+
+    @media (max-width: 1024px) {
+      .v1-bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .v1-bento-card.big { grid-column: span 2; grid-row: span 2; }
+      .v1-bars-grid, .v1-receipt-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .v1-bars-list { padding-right: 0; }
+      .v1-bars-text { border-left: none; padding-left: 0; }
+      .v1-scenarios-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .v1-scen-sources { padding: 1.75rem 1.5rem; }
+      .v1-offer-grid { grid-template-columns: 1fr; }
+      .v1-bar-row { grid-template-columns: 180px 1fr 90px; }
+      .v1-bar-src { padding-left: 180px; }
+    }
+    @media (max-width: 640px) {
+      .v1-bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+      .v1-bento-card.big { grid-column: span 1; }
+      .v1-bento-grid > .v1-bento-card:nth-child(1)::after { width: 280px; height: 180px; bottom: -20px; right: -20px; opacity: 0.4; }
+      .v1-bento-grid > .v1-bento-card:nth-child(2)::after { width: 180px; height: 180px; top: -50px; right: -50px; opacity: 0.65; }
+      .v1-bento-grid > .v1-bento-card:nth-child(n+3)::after { width: 150px; opacity: 0.18; }
+      .v1-bar-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .v1-bar-track { order: 2; }
+      .v1-bar-val { text-align: left; order: 3; }
+      .v1-bar-src { padding-left: 0; }
+    }
+
+    /* INSURANCE / TRUST BANNER */
+    .v1-insurance {
+      background: var(--warm-50);
+      padding: clamp(2rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+    .v1-insurance-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: clamp(2rem, 5vw, 4rem);
+      background: #fff;
+      border: 1px solid rgba(31,47,88,0.08);
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(31,47,88,0.06);
+      padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 5vw, 3.5rem);
+    }
+    .v1-insurance-text h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      margin: 0 0 0.85rem;
+    }
+    .v1-insurance-text p {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      line-height: 1.65;
+      color: rgba(20,18,16,0.72);
+      margin: 0;
+      max-width: 62ch;
+    }
+    .v1-insurance-badge {
+      flex-shrink: 0;
+    }
+    .v1-insurance-badge img {
+      display: block;
+      width: clamp(110px, 12vw, 140px);
+      height: auto;
+    }
+    @media (max-width: 720px) {
+      .v1-insurance-card {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        text-align: left;
+      }
+      .v1-insurance-badge { justify-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top utility bar: Kontakt + Rückruf -->
+  <div class="topbar" aria-label="Kontaktleiste">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <a href="tel:+43533820105" class="topbar-link topbar-link--phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+43 (0) 5338 20105</span>
+        </a>
+        <a href="mailto:info@kroes-consulting.com" class="topbar-link topbar-link--email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>info@kroes-consulting.com</span>
+        </a>
+      </div>
+      <div class="topbar-right">
+        <a href="#callback" class="topbar-cta" data-callback-trigger>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 1.7l.5 2.7a2 2 0 0 1-.5 1.8L8 11a16 16 0 0 0 5 5l1.8-1.5a2 2 0 0 1 1.8-.5l2.7.5a2 2 0 0 1 1.7 2V19a2 2 0 0 1-2 2 18 18 0 0 1-16-16z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="topbar-cta-label">Rückruf anfordern</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo nav-logo-mark"><img src="assets/img/logo.png" alt="Kroes Consulting" class="nav-logo-img"></a>
+      <div class="nav-end">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link active">Start</a></li>
+          <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
+          <li><a href="ueber-uns.html" class="nav-link">Über mich</a></li>
+          <li><a href="medien.html" class="nav-link">Medien</a></li>
+          <li><a href="quiz.html" class="nav-link">Konflikt-Quiz</a></li>
+        </ul>
+
+        <div class="nav-social" aria-label="Social Media">
+          <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+          </a>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO: Editorial-Style -->
+    <section class="lb-hero">
+      <div class="lb-hero-grid">
+        <!-- LEFT: Content -->
+        <div class="lb-content">
+          <div class="lb-eyebrow">Kroes Consulting &amp; Coaching</div>
+          <h1 class="lb-headline">
+            Strukturen
+            <span class="lb-row2">statt <span class="lb-accent">Symptome</span></span>
+          </h1>
+          <p class="lb-sub">Konfliktlösungssysteme für Führungskräfte aus KMU &amp; Handwerk</p>
+          <p class="lb-lede">Ich unterstütze Sie als Unternehmer, Geschäftsführer und Führungskraft dabei, Konfliktdynamiken im Unternehmen gezielt zu entschärfen und wieder handlungsfähig zu werden — ohne dauerhaft in Reibung und operativen Druck festzustecken.</p>
+          <p class="lb-lede">Denn jede Konfliktsituation ist eine Chance, Klarheit über Strukturen, Beziehungen und Entscheidungen zu gewinnen und daraus eine stabilere, leistungsfähigere Zusammenarbeit zu entwickeln.</p>
+          <div class="lb-creds">
+            <span>Zert. Unternehmensberater</span>
+            <span>Zert. Diplom Konflikt Coach</span>
+          </div>
+          <div class="lb-cta-row">
+            <a href="https://calendly.com/bewerbung-kroes-consulting/30min" target="_blank" rel="noopener" class="lb-btn-primary">Erstgespräch vereinbaren</a>
+            <a href="#angebot" class="lb-btn-ghost">Das Angebot</a>
+          </div>
+        </div>
+        <!-- RIGHT: Portrait -->
+        <div class="lb-portrait">
+          <div class="lb-portrait-frame">
+            <img src="assets/img/alexander-kroes-konfliktmanagement.webp" alt="Alexander Kroes — Kroes Consulting &amp; Coaching" loading="eager">
+          </div>
+          <p class="lb-portrait-cap">Alexander Kroes<br><span>Gründer · Kroes Consulting &amp; Coaching</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEKANNT AUS — Press-Logos -->
+    <section class="v1-press" aria-label="Bekannt aus">
+      <div class="container">
+        <div class="v1-press-tag">Bekannt aus</div>
+        <div class="v1-press-grid">
+          <img src="assets/img/tiroler%20wirtschaftswoche.png" alt="Tiroler Wirtschaftswoche" loading="lazy">
+          <img src="assets/img/Innovationsraum.png" alt="Innovationsraum" loading="lazy">
+          <img src="assets/img/openpr.png" alt="openPR" loading="lazy">
+          <img src="assets/img/wko.png" alt="WKO – Wirtschaftskammer Österreich" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO TYPISCHE KONFLIKTE -->
+    <section class="v1-bento" id="problem">
+      <div class="container">
+        <div class="v1-bento-head">
+          <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Typische Konflikte</div>
+          <h2 class="v1-bento-h2">Sechs Konfliktarten, die täglich <em>Ihre Abläufe stören</em> und Ergebnisse schwächen.</h2>
+        </div>
+        <div class="v1-bento-grid">
+          <div class="v1-bento-card big">
+            <div class="v1-bento-num">01</div>
+            <div>
+              <h3>Führung vs. Team</h3>
+              <p>Der häufigste Konflikt — und der teuerste. Ungeklärte Erwartungen, fehlende Anerkennung, harte Töne. Folge: stille Kündigung, Quiet Quitting, Fluktuation.</p>
+            </div>
+          </div>
+          <div class="v1-bento-card peri">
+            <div class="v1-bento-num">02</div>
+            <div>
+              <h3>Generationen-Konflikt</h3>
+              <p>Alter Meister, junge Lehrlinge.</p>
+            </div>
+          </div>
+          <div class="v1-bento-card">
+            <div class="v1-bento-num">03</div>
+            <div>
+              <h3>Rollen-Konflikt</h3>
+              <p>Wer entscheidet was?</p>
+            </div>
+          </div>
+          <div class="v1-bento-card">
+            <div class="v1-bento-num">04</div>
+            <div>
+              <h3>Kommunikations-Konflikt</h3>
+              <p>Halbe Sätze, ganze Schäden.</p>
+            </div>
+          </div>
+          <div class="v1-bento-card">
+            <div class="v1-bento-num">05</div>
+            <div>
+              <h3>Werte-Konflikt</h3>
+              <p>Tempo vs. Qualität.</p>
+            </div>
+          </div>
+          <div class="v1-bento-card peri">
+            <div class="v1-bento-num">06</div>
+            <div>
+              <h3>Familienbetriebs-Konflikt</h3>
+              <p>Nachfolge & Geschwister.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAR CHART REALE AUSWIRKUNGEN -->
+    <section class="v1-bars">
+      <div class="container">
+        <div class="v1-bars-grid">
+          <div class="v1-bars-list">
+            <div class="v1-bar" style="--w: 40%">
+              <div class="v1-bar-row">
+                <div class="v1-bar-label">Führungszeit für Konflikte</div>
+                <div class="v1-bar-track"><div class="v1-bar-fill"></div></div>
+                <div class="v1-bar-val">30–50 %</div>
+              </div>
+              <div class="v1-bar-src">KPMG-Konfliktkostenstudie: Führungskräfte verbringen 30–50 % ihrer Arbeitszeit mit Konfliktbearbeitung statt Wertschöpfung.</div>
+            </div>
+            <div class="v1-bar" style="--w: 5%">
+              <div class="v1-bar-row">
+                <div class="v1-bar-label">Verlorene Arbeitszeit pro MA</div>
+                <div class="v1-bar-track"><div class="v1-bar-fill"></div></div>
+                <div class="v1-bar-val">2,1 Std/Wo</div>
+              </div>
+              <div class="v1-bar-src">CPP Global Human Capital Report: Mitarbeiter verlieren im Schnitt 2,1 Stunden pro Woche durch Konflikte am Arbeitsplatz.</div>
+            </div>
+            <div class="v1-bar" style="--w: 18%">
+              <div class="v1-bar-row">
+                <div class="v1-bar-label">Innerlich gekündigte MA</div>
+                <div class="v1-bar-track"><div class="v1-bar-fill"></div></div>
+                <div class="v1-bar-val">18 %</div>
+              </div>
+              <div class="v1-bar-src">Gallup Engagement Index Deutschland: rund 18 % der Mitarbeiter haben innerlich gekündigt — keine Eigeninitiative, keine Verantwortung.</div>
+            </div>
+            <div class="v1-bar" style="--w: 70%">
+              <div class="v1-bar-row">
+                <div class="v1-bar-label">Engagement hängt an Führung</div>
+                <div class="v1-bar-track"><div class="v1-bar-fill"></div></div>
+                <div class="v1-bar-val">70 %</div>
+              </div>
+              <div class="v1-bar-src">Gallup „It's the Manager": 70 % der Varianz in Mitarbeiter-Engagement gehen direkt auf die Führungskraft zurück.</div>
+            </div>
+            <div class="v1-bar" style="--w: 37%">
+              <div class="v1-bar-row">
+                <div class="v1-bar-label">Verlorene Meeting-Zeit</div>
+                <div class="v1-bar-track"><div class="v1-bar-fill"></div></div>
+                <div class="v1-bar-val">37 %</div>
+              </div>
+              <div class="v1-bar-src">Doodle State of Meetings Report: 37 % der Meeting-Zeit gehen für unnötige oder schlecht vorbereitete Termine verloren.</div>
+            </div>
+          </div>
+          <div class="v1-bars-text">
+            <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Reale Auswirkungen</div>
+            <h2 class="v1-bars-h2">So viel <em>Produktivität</em> verlieren Sie.</h2>
+            <p class="v1-bars-sub">Konflikte kosten Geld. Täglich. Nicht direkt sichtbar — aber messbar in Produktivitätsverlust, Reibungen im Team, Fluktuation und Fehlentscheidungen auf Führungsebene. Diese Kosten tauchen in keiner klassischen Auswertung auf — bis sie im Jahresabschluss sichtbar werden, ohne dass jemand die Ursache benennen kann.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECEIPT EXAMPLE -->
+    <!-- DREI BETRIEBSGRÖSSEN — STATISCHE SZENARIEN-RECHNUNG -->
+    <section class="v1-scenarios" id="szenarien">
+      <div class="container">
+        <div class="v1-scenarios-head">
+          <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Was Konflikte wirklich kosten</div>
+          <h2 class="v1-scenarios-h2">Drei Betriebe.<br>Drei Szenarien.<br><em>Nachvollziehbare Zahlen.</em></h2>
+          <p class="v1-scenarios-sub">Konservativ kalkuliert auf Basis öffentlich zugänglicher Studien — keine Schätzwerte aus dem Marketing-Lehrbuch. Jede Position ist quellenbelegt; die vollständigen Belege finden Sie unter den Karten.</p>
+        </div>
+
+        <div class="v1-scenarios-grid">
+          <!-- Szenario 1: Kleinbetrieb -->
+          <article class="v1-scen-card">
+            <div class="v1-scen-tag">Szenario · Klein</div>
+            <div class="v1-scen-size">8</div>
+            <div class="v1-scen-size-sub">Mitarbeiter · Handwerksbetrieb</div>
+            <p class="v1-scen-context">Ungelöster Konflikt zwischen Meister und zwei langgedienten Gesellen. Zieht sich seit Monaten — niemand spricht es offen an, alle merken es.</p>
+            <div class="v1-scen-row"><span>Produktivitätsverlust (3 MA)</span><span>19.800 €</span></div>
+            <div class="v1-scen-row"><span>Erhöhte Krankenstände</span><span>3.900 €</span></div>
+            <div class="v1-scen-row"><span>Führungszeit Inhaber</span><span>17.500 €</span></div>
+            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 41.200 €</span></div>
+          </article>
+
+          <!-- Szenario 2: Mittelbetrieb -->
+          <article class="v1-scen-card featured">
+            <div class="v1-scen-tag">Szenario · Mittel</div>
+            <div class="v1-scen-size">25</div>
+            <div class="v1-scen-size-sub">Mitarbeiter · KMU</div>
+            <p class="v1-scen-context">Eskalierter Teamkonflikt zwischen zwei Bereichen. Erste Kündigung steht im Raum, das Klima kippt — der Inhaber greift täglich ein.</p>
+            <div class="v1-scen-row"><span>Produktivitätsverlust (8 MA)</span><span>52.800 €</span></div>
+            <div class="v1-scen-row"><span>Erhöhte Krankenstände</span><span>10.300 €</span></div>
+            <div class="v1-scen-row"><span>Führungszeit-Bindung</span><span>22.500 €</span></div>
+            <div class="v1-scen-row"><span>1 Fluktuation</span><span>44.000 €</span></div>
+            <div class="v1-scen-row"><span>Recruiting &amp; Onboarding</span><span>13.750 €</span></div>
+            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 143.350 €</span></div>
+          </article>
+
+          <!-- Szenario 3: Größerer Betrieb -->
+          <article class="v1-scen-card">
+            <div class="v1-scen-tag">Szenario · Größer</div>
+            <div class="v1-scen-size">50</div>
+            <div class="v1-scen-size-sub">Mitarbeiter · Mittelständisches Handwerk</div>
+            <p class="v1-scen-context">Führungskonflikt zwischen Geschäftsführung und zwei Bereichsleitern. Fachkräfte verlassen den Betrieb — nicht wegen des Geldes.</p>
+            <div class="v1-scen-row"><span>Produktivitätsverlust (15 MA)</span><span>107.250 €</span></div>
+            <div class="v1-scen-row"><span>Erhöhte Krankenstände</span><span>22.600 €</span></div>
+            <div class="v1-scen-row"><span>Führungszeit (2 FK)</span><span>56.000 €</span></div>
+            <div class="v1-scen-row"><span>2 Fluktuationen</span><span>99.000 €</span></div>
+            <div class="v1-scen-row"><span>Recruiting &amp; Onboarding</span><span>27.500 €</span></div>
+            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 312.350 €</span></div>
+          </article>
+        </div>
+
+        <div class="v1-scen-sources">
+          <h3>Quellen &amp; Berechnungsgrundlage</h3>
+          <ul>
+            <li><strong>KPMG-Konfliktkostenstudie:</strong> Führungskräfte verbringen 30–50 % ihrer Arbeitszeit mit Konfliktbearbeitung; bei betroffenen Mitarbeitern führen ungelöste Konflikte zu 10–15 % Produktivitätsverlust.</li>
+            <li><strong>Gallup Engagement Index Deutschland (2023):</strong> 18 % der Beschäftigten haben innerlich gekündigt; geschätzter Produktivitätsverlust ca. 14 % je betroffener Person.</li>
+            <li><strong>Fehlzeiten-Report (WIdO / AOK):</strong> Konfliktbedingte psychische Belastungen erhöhen die Krankenstandstage signifikant — im Schnitt 5–8 zusätzliche Ausfalltage pro betroffenem Mitarbeiter und Jahr.</li>
+            <li><strong>Hays HR-Report &amp; Kienbaum HR-Benchmark:</strong> Vollkosten einer ungeplanten Nachbesetzung liegen bei 0,75–1,0 × Jahresgehalt; Recruiting &amp; Onboarding zusätzlich ca. 25 % eines Jahresgehalts.</li>
+            <li><strong>Gehaltsbasis (Annahme):</strong> Durchschnitts-Bruttogehalt KMU/Handwerk Österreich 55.000 € p.a. inkl. Lohnnebenkosten; Führungskräfte 75–80.000 € p.a.</li>
+          </ul>
+          <p class="v1-scen-disclaimer">Konservativ kalkuliert. In der Praxis liegen die tatsächlichen Kosten häufig höher — etwa durch Projektverzug, Pönalen, Imageverlust oder Kettenreaktionen im Team. Die Zahlen oben sind belastbar, aber kein Pauschalwert: Jeder Betrieb ist anders. Eine konkrete Analyse für Ihren Betrieb ist Teil der kostenfreien Konfliktkosten-Analyse.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LÖSUNG / OFFER -->
+    <section class="v1-offer" id="angebot">
+      <div class="container">
+        <div class="section-tag-v2" style="color: var(--peri);"><span class="section-tag-v2-line"></span>Die Lösung</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 2.5rem 4rem; align-items: flex-start;">
+          <div style="flex: 1 1 440px; min-width: 0;">
+            <h2 class="v1-offer-h2" style="margin-top: 0;">Drei Wege zu einem<br><em>führungsstarken und konfliktbefreiten</em><br>Unternehmen</h2>
+            <p class="v1-offer-sub">Kroes Consulting wendet keine Standard-Konzepte an, denn jedes Unternehmen hat seine eigene Geschichte, seine eigenen Menschen und Kulturen und seine eigenen Konfliktsituationen. Deshalb wird jede Begleitung individuell auf Ihre aktuellen Herausforderungen und Ihre Führungskulturen mit Ihren wirtschaftlichen Zielen zugeschnitten.</p>
+            <p class="v1-offer-sub" style="font-style: italic; margin-top: 1.25rem;">Die Basis dafür sind die Expertise und über 20 Jahre Praxis-Erfahrungen aus KMU und Handwerk.</p>
+            <p style="margin: 1.75rem 0 0; display: flex; flex-wrap: wrap; gap: 2rem; font-family: var(--font-body); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-50);">
+              <span style="display:inline-flex; align-items:center; gap:0.5rem;"><span style="width:6px; height:6px; border-radius:50%; background:var(--peri);"></span>Vertraulich</span>
+              <span style="display:inline-flex; align-items:center; gap:0.5rem;"><span style="width:6px; height:6px; border-radius:50%; background:var(--peri);"></span>Verbindlich</span>
+              <span style="display:inline-flex; align-items:center; gap:0.5rem;"><span style="width:6px; height:6px; border-radius:50%; background:var(--peri);"></span>Persönlich</span>
+            </p>
+          </div>
+          <div style="flex: 1 1 340px; min-width: 0; align-self: flex-start;">
+            <img src="assets/img/alexander-kroes-konfliktcoach.webp" alt="Alexander Kroes — Konfliktcoach für KMU & Handwerk" loading="lazy" class="v1-offer-portrait">
+          </div>
+        </div>
+        <div class="v1-offer-grid" style="margin-top: 3rem;">
+          <article class="v1-offer-card featured">
+            <div class="v1-offer-num">01</div>
+            <h3>Konfliktkosten-Analyse</h3>
+            <p>30-minütiges Strategiegespräch — exklusiv nach abgeschlossenem Konflikt-Quiz. Ihre persönliche Auswertung dient als Grundlage, damit wir die Zeit konkret und vorbereitet nutzen.</p>
+            <div class="v1-offer-card-price">Kostenfrei · nach Quiz-Auswertung</div>
+            <a href="quiz.html" class="v1-offer-link">→ Quiz starten</a>
+          </article>
+          <article class="v1-offer-card">
+            <div class="v1-offer-num">02</div>
+            <h3>LeadResolve</h3>
+            <p>Konfliktcoaching für Führungskräfte. Spannungen im Betrieb verstehen, entschärfen und als Wendepunkt nutzen — vertraulich, direkt und konsequent lösungsorientiert begleitet.</p>
+            <div class="v1-offer-card-price">Auf Anfrage</div>
+            <a href="leadresolve.html" class="v1-offer-link">→ Programm ansehen</a>
+          </article>
+          <article class="v1-offer-card">
+            <div class="v1-offer-num">03</div>
+            <h3>LeadShift</h3>
+            <p>Leadership-Coaching für moderne Führungskräfte. Entscheidungssicherheit gewinnen, Teams stabil führen und kulturelle Transformation gestalten — praxisnah und ergebnisorientiert begleitet.</p>
+            <div class="v1-offer-card-price">Projektbasiert</div>
+            <a href="leadshift.html" class="v1-offer-link">→ Gespräch anfragen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ CTA — Selbstcheck zwischen Lösung & Final-CTA -->
+    <section class="v1-quiz-cta" id="quiz-teaser">
+      <div class="container v1-quiz-cta-inner">
+        <div>
+          <div class="v1-quiz-cta-tag">Selbstcheck · 3 Minuten</div>
+          <h2>Wie konfliktfähig ist <em>Ihr Unternehmen</em> wirklich?</h2>
+          <p class="v1-quiz-cta-desc">Bevor Sie investieren — finden Sie heraus, wo Ihr Unternehmen aktuell steht. 10 ehrliche Fragen, vier Kategorien, sofortige Auswertung mit konkreten Empfehlungen.</p>
+          <p class="v1-quiz-cta-desc">Der Fokus liegt nicht auf Bewertung, sondern auf Reflexion und Entwicklung.</p>
+          <div class="v1-quiz-chips">
+            <span class="v1-quiz-chip">10 Fragen</span>
+            <span class="v1-quiz-chip">4 Kategorien</span>
+            <span class="v1-quiz-chip">Sofortige Auswertung</span>
+            <span class="v1-quiz-chip">100% anonym</span>
+          </div>
+          <a href="quiz.html" class="v1-quiz-cta-btn">
+            Quiz starten <span class="v1-quiz-cta-btn-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="v1-quiz-mockup" aria-hidden="true">
+          <div class="v1-quiz-mockup-progress">
+            <span>Frage <strong>3</strong> von 10</span>
+            <span class="v1-quiz-mockup-progress-pct">30%</span>
+          </div>
+          <div class="v1-quiz-mockup-bar"><div></div></div>
+          <div class="v1-quiz-mockup-line"></div>
+          <div class="v1-quiz-mockup-q">Wie werden bei Ihnen schwierige Themen angesprochen?</div>
+          <div class="v1-quiz-mockup-options">
+            <div class="v1-quiz-mockup-option"><span class="v1-quiz-mockup-letter">A</span><span>Offen und direkt — wir reden über das, was zählt.</span></div>
+            <div class="v1-quiz-mockup-option active"><span class="v1-quiz-mockup-letter">B</span><span>Unterschiedlich — manche Themen ja, andere bleiben Tabu.</span></div>
+            <div class="v1-quiz-mockup-option"><span class="v1-quiz-mockup-letter">C</span><span>Eher selten — wir vermeiden Konflikte, wo es geht.</span></div>
+            <div class="v1-quiz-mockup-option"><span class="v1-quiz-mockup-letter">D</span><span>Schwierige Themen werden konsequent verschwiegen.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS — Social Proof direkt vor finalem CTA -->
+    <!-- ⚠️ PLATZHALTER: Quotes, Namen & Rollen durch echte Kundenstimmen ersetzen -->
+    <section class="v1-testimonials" id="stimmen" aria-labelledby="testHeading">
+      <div class="container">
+        <div class="v1-test-header">
+          <div>
+            <div class="v1-test-eyebrow">Das sagen meine Kunden</div>
+            <h2 class="v1-test-headline" id="testHeading">Führungskräfte, die <em>wieder führen</em> — statt zu löschen.</h2>
+          </div>
+          <p class="v1-test-intro">Die Zusammenarbeit basiert nicht auf Standardlösungen, sondern auf einem klaren Verständnis für Strukturen, Mitarbeiter und Entscheidungsprozesse — speziell in Betrieben, in denen Leistung und Zusammenarbeit direkt zusammenhängen.</p>
+        </div>
+
+        <div class="v1-test-grid">
+          <article class="v1-test-card">
+            <div class="v1-test-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="v1-test-quote">„Endlich jemand, der nicht in Theorien spricht, sondern versteht, wie ein Handwerksbetrieb wirklich tickt. Nach drei Monaten haben wir Konflikte gelöst, die uns vorher monatelang gelähmt haben."</blockquote>
+            <div class="v1-test-author">
+              <div class="v1-test-name">Thomas B.</div>
+              <div class="v1-test-role">Geschäftsführer · Elektrotechnik</div>
+            </div>
+          </article>
+
+          <article class="v1-test-card">
+            <div class="v1-test-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="v1-test-quote">„Wir haben nicht nur eine bessere Stimmung im Team, sondern endlich Strukturen, die funktionieren. Auch wenn ich mal nicht im Betrieb bin. Das war für mich der entscheidende Unterschied."</blockquote>
+            <div class="v1-test-author">
+              <div class="v1-test-name">Lorenz M.</div>
+              <div class="v1-test-role">Inhaber · Tischlerei</div>
+            </div>
+          </article>
+
+          <article class="v1-test-card">
+            <div class="v1-test-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote class="v1-test-quote">„Klare Sprache, kein Geschwafel, keine Folien-Schlachten. Alexander hat in zwei Gesprächen mehr bewegt als andere in einem halben Jahr. Genau das, was ein Praktiker braucht."</blockquote>
+            <div class="v1-test-author">
+              <div class="v1-test-name">Michael F.</div>
+              <div class="v1-test-role">Prokurist · Maler</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST + CTA — Full-Width Unified Block -->
+    <section class="v1-trust" aria-labelledby="trustHeading">
+      <div class="v1-trust-grid">
+        <div class="v1-trust-block">
+          <div class="v1-trust-photo">
+            <img src="assets/img/alexander-kroes-18.webp" alt="Alexander Kroes. Konfliktcoach für KMU & Handwerk" loading="lazy" decoding="async">
+          </div>
+          <div class="v1-trust-eyebrow">Keine Folien. Keine Floskeln.</div>
+          <h2 class="v1-trust-headline" id="trustHeading">Strukturen statt Symptome.<br><em>Konfliktlösungssysteme für Führungskräfte.</em></h2>
+          <p class="v1-trust-sub">Ich baue Ihnen die Strukturen, die Konflikte nicht nur lösen, sondern verhindern. Damit Sie Fachkräfte halten, klare Entscheidungen treffen und Ihr Handwerksbetrieb profitabel wächst.</p>
+          <div class="v1-trust-buttons">
+            <a href="quiz.html" class="v1-trust-btn">Konflikt-Diagnose vereinbaren →</a>
+            <a href="quiz.html" class="v1-trust-btn v1-trust-btn--ghost">Konflikt-Quiz starten</a>
+          </div>
+          <div class="v1-trust-microcopy">Schriftliche Auswertung<span>·</span>Kein Vertriebsgespräch<span>·</span>Antwort innerhalb 24 Stunden</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="v1-faq" aria-labelledby="faqHeading">
+      <div class="container">
+        <div class="v1-faq-grid">
+          <aside class="v1-faq-aside">
+            <div class="v1-faq-eyebrow">Häufige Fragen</div>
+            <h2 id="faqHeading">Ihre Fragen,<br><em>klar beantwortet.</em></h2>
+            <p>Sie haben eine Frage, die hier nicht beantwortet wird? Schreiben Sie mir direkt — ich antworte persönlich innerhalb von 24 Stunden.</p>
+            <a href="mailto:info@kroes-consulting.com?subject=Anfrage%20Konfliktmanagement" class="v1-faq-cta">
+              Direkt anfragen <span class="v1-faq-cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </aside>
+
+          <div class="v1-faq-list">
+            <details class="v1-faq-item">
+              <summary>Woran erkenne ich, dass Konflikte mir gerade Geld kosten — auch wenn keiner offen streitet?</summary>
+              <div class="v1-faq-answer">
+                <p>Wenn auf der Baustelle plötzlich langsamer gearbeitet wird, Übergaben nicht sauber laufen oder kleine Fehler sich häufen, dann ist das selten Zufall. Oft sprechen die Leute nicht mehr miteinander — sondern nur noch das Nötigste.</p>
+                <p>Das kostet Sie jeden Tag Zeit, Nerven und vor allem <strong>Marge</strong>. Und das Gefährlichste: Es passiert schleichend. Sie merken es erst dann richtig, wenn Termine „platzen" oder Kunden sich beschweren und schlecht über Ihren Betrieb reden.</p>
+              </div>
+            </details>
+
+            <details class="v1-faq-item">
+              <summary>Warum eskalieren Konflikte in Handwerksbetrieben oft schneller als in anderen Unternehmen?</summary>
+              <div class="v1-faq-answer">
+                <p>Weil hier unter höherem Druck gearbeitet wird. Enge Zeitpläne, körperliche Arbeit, direkte Kommunikation — da reicht oftmals nur ein falsches Wort und es kippt.</p>
+                <p>Was dann passiert: Dinge werden persönlich genommen, Fronten verhärten sich und plötzlich geht es nicht mehr um die Sache, sondern ums <strong>„Recht haben"</strong>.</p>
+                <p>Und genau da verlieren Sie als Geschäftsführer die Kontrolle, wenn Sie keine klaren Strukturen für den Umgang mit solchen Situationen haben.</p>
+              </div>
+            </details>
+
+            <details class="v1-faq-item">
+              <summary>Was ist das größte Risiko, wenn ich Konflikte einfach laufen lasse?</summary>
+              <div class="v1-faq-answer">
+                <p><strong>Sie verlieren die besten Leute — nicht die lautesten.</strong></p>
+                <p>Die Guten gehen leise, wenn sie keine Lust mehr auf Spannungen und Aussichtslosigkeit haben. Zurück bleiben oftmals genau die, die Teil des Problems sind.</p>
+                <p>Parallel sinkt die Leistung im Team, Fehler nehmen zu und Sie sind irgendwann nur noch damit beschäftigt, Probleme als „Feuerwehrmann" zu löschen, statt das Unternehmen weiterzuentwickeln.</p>
+              </div>
+            </details>
+
+            <details class="v1-faq-item">
+              <summary>Warum reicht es nicht, wenn ich als Geschäftsführer einfach ein Machtwort spreche?</summary>
+              <div class="v1-faq-answer">
+                <p>Weil Sie damit punktuelle Symptome unterdrücken, aber nicht die eigentlichen <strong>Ursachen</strong> lösen.</p>
+                <p>Kurzfristig ist Ruhe — aber unter der Oberfläche bleibt alles bestehen. Beim nächsten Druck eskaliert es wieder, oft stärker als zuvor.</p>
+                <p>Ein funktionierendes System sorgt dafür, dass Konflikte im Team geklärt werden, ohne dass Sie jedes Mal eingreifen müssen. Genau da setzt professionelles Konfliktmanagement an.</p>
+              </div>
+            </details>
+
+            <details class="v1-faq-item">
+              <summary>Warum sollte ich das Thema extern lösen lassen — und nicht intern?</summary>
+              <div class="v1-faq-answer">
+                <p>Weil Sie <strong>Teil des Systems</strong> sind. Ihre Sicht ist nicht neutral — und genau das merken Ihre Mitarbeiter.</p>
+                <p>Ein externer Blick bringt Struktur, Klarheit und vor allem eines: Lösungen, die akzeptiert werden. Ich arbeite nicht mit Standard-Methoden oder theoretischen Modellen, sondern mit einem klaren, praxiserprobten Vorgehen — speziell für Betriebe, in denen Leistung und Zusammenarbeit direkt zusammenhängen.</p>
+                <p>Ziel ist nicht nur eine „bessere Stimmung", sondern ein echter Team-Spirit, der funktioniert — zuverlässig, belastbar und ohne ständiges Eingreifen Ihrerseits.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSURANCE / TRUST BANNER -->
+    <section class="v1-insurance" aria-label="Berufshaftpflicht-Versicherung">
+      <div class="container">
+        <div class="v1-insurance-card">
+          <div class="v1-insurance-text">
+            <h2>Beratung mit Substanz. Sicherheit mit System.</h2>
+            <p>Verantwortung heißt, zu den eigenen Empfehlungen zu stehen. Mit Haltung und Absicherung. Deshalb ist Kroes Consulting professionell versichert — für die maximale Sicherheit meiner Kunden.</p>
+          </div>
+          <div class="v1-insurance-badge">
+            <img src="assets/img/exali-haftpflicht-sicher.png" alt="exali Haftpflicht-Sicher Siegel — Berufshaftpflicht-Versicherung von Kroes Consulting" loading="lazy" decoding="async" width="140" height="140">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 0.25rem;">
+            <span class="nav-logo-name" style="color: var(--warm-50);">Kroes Consulting</span>
+            <span class="nav-logo-sub">Consulting & Coaching</span>
+          </div>
+          <p>Professionelle Unternehmensberatung, Business-Coaching und Konfliktcoaching für KMU und Handwerk.</p>
+          <p class="footer-tagline">Fachlich. Strategisch. Persönlich.</p>
+          <div class="footer-certificates footer-certificates--start">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20.png" alt="Kroes Consulting — staatlich geprüft" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20ppc.png" alt="Kroes Consulting — staatlich geprüft, PPC" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting — staatlich geprüft, ÖCERT" loading="lazy">
+          </div>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Alexander Kroes</a></li>
+            <li><a href="medien.html">Medien</a></li>
+            <li><a href="quiz.html">Konflikt-Quiz</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul></div>
+        <div class="footer-col"><h4>Leistungen</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="leadresolve.html">LeadResolve</a></li>
+            <li><a href="leadshift.html">LeadShift</a></li>
+          </ul></div>
+        <div class="footer-col"><h4>Kontakt</h4>
+          <div class="footer-contact"><p>Alexander Kroes e.U.<br>Büro:<br>Unterer Stadtplatz 11<br>6330 Kufstein<br>Österreich<br><br><a href="tel:+43533820105" style="color:inherit;">+43 (0) 5338 20105</a><br><a href="mailto:info@kroes-consulting.com" style="color:inherit;">info@kroes-consulting.com</a></p></div></div>
+      </div>
+      <div class="footer-social-row" aria-label="Social Media">
+        <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Alexander Kroes e.U. Alle Rechte vorbehalten.</p>
+        <p class="footer-credit-text">Website by <a href="https://upprime-connect.at/" target="_blank" rel="noopener"><strong>Upprime</strong> <span class="credit-accent">Connect</span></a></p>
+        <nav class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Counter Animation (only if counter element exists)
+    const counter = document.getElementById('v1Counter');
+    if (counter) {
+      const target = 247000;
+      const duration = 2400;
+      let start = null;
+      function animate(t) {
+        if (!start) start = t;
+        const progress = Math.min((t - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.floor(target * eased);
+        counter.textContent = '€' + value.toLocaleString('de-DE');
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    }
+
+    // Bar reveal on scroll
+    const bars = document.querySelectorAll('.v1-bar');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+    }, { threshold: 0.4 });
+    bars.forEach(b => obs.observe(b));
+  </script>
+</body>
+</html>

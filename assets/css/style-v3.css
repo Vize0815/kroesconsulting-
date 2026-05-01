@@ -1,0 +1,1312 @@
+/* =============================================================
+   KROES CONSULTING — DESIGN-ENTWURF 3
+   Aesthetic: Blueprint Precision / Modern Authority
+   Fonts: Syne (display, bold geometric) + Outfit (body, clean)
+   Palette: Deep Navy #1F2F58 · Periwinkle #768CFD · Ice White
+   Kein Serif. Kein Gold. Kein Grün. Reine Geometrie & Farbe.
+   ============================================================= */
+
+/* --- 1. Design Tokens --------------------------------------- */
+:root {
+  /* Brand — die zwei Vorgabe-Farben */
+  --navy:          #1F2F58;
+  --navy-hover:    #273a6e;
+  --navy-light:    #2d4484;
+  --navy-deep:     #14203e;
+  --navy-darkest:  #0b1530;
+
+  --peri:          #768CFD;
+  --peri-hover:    #8fa0fe;
+  --peri-dark:     #5a72e8;
+  --peri-darker:   #3d56d0;
+  --peri-light:    #b4c1fe;
+  --peri-subtle:   rgba(118, 140, 253, 0.08);
+  --peri-border:   rgba(118, 140, 253, 0.2);
+
+  /* Neutrals — bewusst kalt (passt zu den blauen Tönen) */
+  --white:         #ffffff;
+  --off-white:     #f6f7fc;
+  --ice:           #eef0f8;
+  --ink:           #111827;
+  --ink-mid:       #374151;
+  --ink-soft:      #6b7280;
+  --ink-faint:     #9da6b8;
+  --border:        #e4e7f2;
+  --border-mid:    #cdd1e8;
+
+  /* Typografie — kein Serif in diesem Entwurf */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'Outfit', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-section: 7rem;
+  --space-group:   4rem;
+
+  /* Maxwidth */
+  --w-xl: 1280px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:   130ms ease;
+  --t-base:   260ms ease;
+  --t-slow:   520ms var(--ease-out);
+}
+
+/* --- 2. Reset ---------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--ink-mid);
+  background: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img  { max-width: 100%; display: block; }
+a    { color: inherit; text-decoration: none; }
+ul   { list-style: none; }
+button { cursor: pointer; font-family: inherit; background: none; border: none; }
+
+/* --- 3. Typografie ----------------------------------------- */
+
+/* Hauptdarsteller: riesig, fett, kein Serif */
+.t-hero {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.04em;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.t-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.t-subhead {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.t-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--peri);
+}
+
+.t-label-dark {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.t-body-lg {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+
+.t-body {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.t-small {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+/* --- 4. Layout --------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--w-xl);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+.section    { padding-block: var(--space-section); }
+.section-sm { padding-block: var(--space-group); }
+
+/* --- 5. Periwinkle Accent Elemente ------------------------- */
+
+.peri-rule {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--peri);
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow-row-center { justify-content: center; }
+
+/* --- 6. Navigation ----------------------------------------- */
+
+.nav-v3 {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 200;
+  padding-block: 1.5rem;
+  transition: background var(--t-base), border-color var(--t-base), padding var(--t-base);
+  border-bottom: 1px solid transparent;
+}
+
+/* Transparent über hero (dunkel), scrolled wird weiß */
+.nav-v3.scrolled {
+  padding-block: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: var(--border);
+  box-shadow: 0 1px 24px rgba(31, 47, 88, 0.06);
+}
+
+.nav-v3.scrolled .nav-logo-v3-name { color: var(--navy); }
+.nav-v3.scrolled .nav-logo-v3-sub  { color: var(--peri-dark); }
+.nav-v3.scrolled .nav-links-v3 a   { color: var(--ink-soft); }
+.nav-v3.scrolled .nav-links-v3 a:hover { color: var(--navy); }
+.nav-v3.scrolled .nav-toggle span  { background: var(--navy); }
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.nav-logo-v3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.1;
+}
+
+.nav-logo-v3-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: color var(--t-base);
+}
+
+.nav-logo-v3-sub {
+  font-family: var(--font-body);
+  font-size: 0.475rem;
+  letter-spacing: 0.28em;
+  font-weight: 400;
+  color: var(--peri-light);
+  text-transform: uppercase;
+  transition: color var(--t-base);
+}
+
+/* Nav links */
+.nav-links-v3 {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links-v3 a {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.65);
+  position: relative;
+  transition: color var(--t-fast);
+}
+
+.nav-links-v3 a::after {
+  content: '';
+  position: absolute;
+  inset-block-end: -3px;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: var(--peri);
+  transition: width var(--t-base);
+}
+
+.nav-links-v3 a:hover         { color: var(--white); }
+.nav-links-v3 a:hover::after  { width: 100%; }
+.nav-links-v3 a.active        { color: var(--white); }
+.nav-links-v3 a.active::after { width: 100%; }
+
+/* Nav CTA */
+.nav-cta-v3 {
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  color: var(--navy) !important;
+  background: var(--peri);
+  padding: 0.625rem 1.375rem;
+  border: 1px solid var(--peri);
+  transition: background var(--t-fast), border-color var(--t-fast) !important;
+}
+.nav-cta-v3::after  { display: none !important; }
+.nav-cta-v3:hover   { background: var(--peri-hover) !important; border-color: var(--peri-hover) !important; }
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform var(--t-base), opacity var(--t-fast), background var(--t-base);
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile overlay */
+.mobile-overlay-v3 {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--navy-darkest);
+  z-index: 199;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+}
+.mobile-overlay-v3.open { display: flex; }
+.mobile-overlay-v3 nav { display: flex; flex-direction: column; gap: 1.25rem; }
+.mobile-overlay-v3 a {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: -0.02em;
+  transition: color var(--t-fast);
+}
+.mobile-overlay-v3 a:hover  { color: var(--white); }
+.mobile-overlay-v3 a.accent { color: var(--peri); }
+
+/* --- 7. Buttons -------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1.5px solid transparent;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn svg {
+  width: 13px; height: 13px;
+  stroke: currentColor; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform var(--t-fast);
+}
+.btn:hover svg { transform: translateX(3px); }
+
+/* Periwinkle solid — primär */
+.btn-peri {
+  background: var(--peri);
+  color: var(--navy-darkest);
+  border-color: var(--peri);
+  font-weight: 600;
+}
+.btn-peri:hover { background: var(--peri-hover); border-color: var(--peri-hover); }
+
+/* Navy solid */
+.btn-navy {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.btn-navy:hover { background: var(--navy-hover); border-color: var(--navy-hover); }
+
+/* White outline (auf dunklem Hintergrund) */
+.btn-outline-white {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Peri outline (auf hellem Hintergrund) */
+.btn-outline-peri {
+  background: transparent;
+  color: var(--peri-dark);
+  border-color: var(--peri);
+}
+.btn-outline-peri:hover {
+  background: var(--peri);
+  color: var(--navy-darkest);
+}
+
+/* Navy outline */
+.btn-outline-navy {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn-outline-navy:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Weiß auf Periwinkle-Hintergrund */
+.btn-white-solid {
+  background: var(--white);
+  color: var(--navy);
+  border-color: var(--white);
+  font-weight: 700;
+}
+.btn-white-solid:hover { background: var(--ice); border-color: var(--ice); }
+
+/* --- 8. Hero ----------------------------------------------- */
+
+.hero-v3 {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+/* Sehr subtile diagonale Streifen */
+.hero-v3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 80px,
+    rgba(118, 140, 253, 0.025) 80px,
+    rgba(118, 140, 253, 0.025) 81px
+  );
+  pointer-events: none;
+}
+
+/* Geometrische Ringe — das differenzierende Element */
+.hero-rings {
+  position: absolute;
+  right: -5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70vmin;
+  height: 70vmin;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--peri-border);
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.ring-2 {
+  inset: 10%;
+  border-color: rgba(118, 140, 253, 0.15);
+  animation-delay: 0.5s;
+}
+
+.ring-3 {
+  inset: 20%;
+  border-color: rgba(118, 140, 253, 0.12);
+  animation-delay: 1s;
+}
+
+.ring-4 {
+  inset: 30%;
+  border-color: rgba(118, 140, 253, 0.1);
+  animation-delay: 1.5s;
+}
+
+.ring-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--peri);
+  opacity: 0.5;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+/* Periwinkle glow hinter den Ringen */
+.hero-glow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(ellipse, rgba(118, 140, 253, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-v3-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 9rem;
+  padding-bottom: 5rem;
+  max-width: 65%;
+}
+
+/* Hero Label */
+.hero-v3-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-v3-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--peri);
+}
+
+/* DER HAUPTDARSTELLER — fett, keine Serifen */
+.hero-v3-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+}
+
+/* Das Periwinkle-Keyword */
+.hero-v3-title .peri-word {
+  color: var(--peri);
+  display: block;
+}
+
+.hero-v3-sub {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 44ch;
+  margin-bottom: 3rem;
+}
+
+.hero-v3-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Scroll hint */
+.hero-v3-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.5rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  z-index: 2;
+  animation: scrollFloat 2.5s ease-in-out infinite;
+}
+
+.hero-v3-scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--peri), transparent);
+}
+
+@keyframes scrollFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(7px); }
+}
+
+/* --- 9. Stats Bar ------------------------------------------ */
+
+.stats-v3 {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-v3-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-v3 {
+  padding: 2.25rem 2rem;
+  text-align: center;
+  border-right: 1px solid var(--border);
+  transition: background var(--t-base);
+}
+
+.stat-v3:last-child { border-right: none; }
+.stat-v3:hover { background: var(--peri-subtle); }
+
+.stat-v3-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 3vw, 2.625rem);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+}
+
+.stat-v3-label {
+  font-size: 0.5875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+/* --- 10. Services ------------------------------------------ */
+
+.services-v3 {
+  padding-block: var(--space-section);
+  background: var(--white);
+}
+
+.services-v3-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3.5rem;
+}
+
+.service-v3-card {
+  background: var(--white);
+  padding: 3rem 2.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--t-slow);
+}
+
+/* Periwinkle fill von oben bei Hover */
+.service-v3-card::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 3px;
+  background: var(--peri);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.service-v3-card:hover::before  { transform: scaleX(1); }
+.service-v3-card:hover          { background: var(--peri-subtle); }
+
+.service-v3-num {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--peri);
+  margin-bottom: 1.75rem;
+}
+
+/* Icon-Kreis */
+.service-v3-icon-wrap {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--peri-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--peri-dark);
+  margin-bottom: 1.5rem;
+  transition: background var(--t-base), border-color var(--t-base);
+}
+
+.service-v3-card:hover .service-v3-icon-wrap {
+  background: var(--peri);
+  border-color: var(--peri);
+  color: var(--navy-darkest);
+}
+
+.service-v3-icon-wrap svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.service-v3-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.875rem;
+}
+
+.service-v3-card p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+.service-v3-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--peri-dark);
+  font-weight: 600;
+  transition: gap var(--t-fast), color var(--t-fast);
+}
+
+.service-v3-link svg {
+  width: 11px; height: 11px;
+  stroke: currentColor; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.service-v3-card:hover .service-v3-link { gap: 0.75rem; color: var(--peri-darker); }
+
+/* --- 11. Positionierung / Intro (Navy Split) --------------- */
+
+.positioning-v3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.positioning-v3-dark {
+  background: var(--navy);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Kleiner dekorativer Ring im Hintergrund des Navy-Panels */
+.positioning-v3-dark::after {
+  content: '';
+  position: absolute;
+  right: -4rem;
+  bottom: -4rem;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  border: 1px solid rgba(118, 140, 253, 0.15);
+  pointer-events: none;
+}
+
+.positioning-v3-light {
+  background: var(--off-white);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Periwinkle Nummerierung im Navy-Panel */
+.positioning-v3-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.positioning-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.positioning-num {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--peri);
+  padding-top: 0.15em;
+  flex-shrink: 0;
+  width: 2rem;
+}
+
+.positioning-text h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.3rem;
+}
+
+.positioning-text p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* --- 12. Werte --------------------------------------------- */
+
+.values-v3 {
+  padding-block: var(--space-section);
+  background: var(--white);
+}
+
+.values-v3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.value-v3 {
+  padding: 2.5rem;
+  border: 1.5px solid var(--border);
+  position: relative;
+  transition: border-color var(--t-base), background var(--t-base);
+}
+
+.value-v3::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block: 0;
+  width: 3px;
+  background: var(--peri);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.value-v3:hover { border-color: var(--peri-border); background: var(--peri-subtle); }
+.value-v3:hover::before { transform: scaleY(1); }
+
+.value-v3-num {
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--peri);
+  margin-bottom: 1.25rem;
+}
+
+.value-v3-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.value-v3-text {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* --- 13. Prozess ------------------------------------------- */
+
+.process-v3 {
+  padding-block: var(--space-section);
+  background: var(--ice);
+}
+
+.process-v3-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.process-v3-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* Verbindungslinie zwischen Steps */
+.process-v3-steps::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 1px;
+  background: var(--border-mid);
+}
+
+.process-v3-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-block: 1.75rem;
+  position: relative;
+}
+
+.process-v3-step-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--ink-faint);
+  letter-spacing: -0.01em;
+  transition: background var(--t-base), border-color var(--t-base), color var(--t-base);
+  z-index: 1;
+}
+
+.process-v3-step:hover .process-v3-step-circle {
+  background: var(--peri);
+  border-color: var(--peri);
+  color: var(--navy-darkest);
+}
+
+.process-v3-step-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.375rem;
+}
+
+.process-v3-step-body p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* Zitat rechts neben dem Prozess */
+.process-v3-quote {
+  background: var(--navy);
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.process-v3-quote::before {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  right: -3rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  border: 1px solid rgba(118, 140, 253, 0.15);
+  pointer-events: none;
+}
+
+.process-v3-quote-mark {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 0.7;
+  color: var(--peri);
+  opacity: 0.35;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.process-v3-quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+}
+
+.process-v3-quote-attr {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* --- 14. CTA Section — PERIWINKLE !! ----------------------- */
+
+/* Das differenzierende Element: komplette Periwinkle-Fläche */
+.cta-v3 {
+  background: var(--peri);
+  padding-block: var(--space-section);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navy Kreisring im Hintergrund */
+.cta-v3::before {
+  content: '';
+  position: absolute;
+  left: -8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60vmin;
+  height: 60vmin;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 47, 88, 0.15);
+  pointer-events: none;
+}
+
+.cta-v3::after {
+  content: '';
+  position: absolute;
+  left: -3vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 47, 88, 0.1);
+  pointer-events: none;
+}
+
+.cta-v3-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4rem;
+}
+
+.cta-v3-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--navy-darkest);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.cta-v3-inner h2 .light {
+  font-weight: 400;
+  color: rgba(12, 21, 48, 0.7);
+}
+
+.cta-v3-sub {
+  font-size: 1rem;
+  color: rgba(12, 21, 48, 0.6);
+  margin-top: 0.75rem;
+  font-weight: 300;
+}
+
+/* --- 15. Contact Form -------------------------------------- */
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+.form-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--ink-mid);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  padding: 0.875rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--peri);
+  box-shadow: 0 0 0 3px rgba(118, 140, 253, 0.12);
+}
+
+.form-textarea { resize: vertical; min-height: 130px; line-height: 1.7; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+.form-checkbox {
+  display: flex; gap: 0.875rem; align-items: flex-start; margin-bottom: 2rem;
+}
+.form-checkbox input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--peri); flex-shrink: 0; }
+.form-checkbox label { font-size: 0.8125rem; line-height: 1.55; color: var(--ink-soft); }
+.form-checkbox a { color: var(--peri-dark); text-decoration: underline; }
+
+.form-message { display: none; padding: 1rem 1.25rem; font-size: 0.875rem; margin-top: 1rem; }
+.form-message.success { display: block; background: rgba(26,76,48,0.08); border: 1px solid rgba(26,76,48,0.25); color: #145230; }
+.form-message.error   { display: block; background: rgba(160,32,32,0.07); border: 1px solid rgba(160,32,32,0.2);  color: #8a1f1f; }
+
+/* --- 16. Page Header (Unterseiten) ------------------------- */
+
+.page-header-v3 {
+  padding-top: 9.5rem;
+  padding-bottom: 5rem;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header-v3::after {
+  content: '';
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  border: 1px solid rgba(118, 140, 253, 0.18);
+  pointer-events: none;
+}
+
+.breadcrumb {
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 1.25rem;
+}
+.breadcrumb a { color: rgba(255,255,255,0.3); transition: color var(--t-fast); }
+.breadcrumb a:hover { color: var(--peri-light); }
+.breadcrumb span { color: var(--peri); }
+
+.page-header-v3 h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-header-v3 p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  max-width: 44ch;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- 17. Contact Split ------------------------------------- */
+
+.contact-split-v3 { display: grid; grid-template-columns: 1fr 1.5fr; }
+
+.contact-info-v3 {
+  background: var(--navy-deep);
+  padding: 4.5rem 3.5rem;
+}
+
+.contact-form-v3 {
+  padding: 4.5rem 3.5rem;
+  background: var(--off-white);
+}
+
+.contact-detail {
+  display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem;
+}
+
+.contact-icon {
+  width: 2rem; height: 2rem; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--peri);
+}
+.contact-icon svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+.contact-detail-label { font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--peri); margin-bottom: 0.25rem; }
+.contact-detail-value { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* --- 18. Footer -------------------------------------------- */
+
+.footer-v3 {
+  background: var(--navy-darkest);
+  border-top: 3px solid var(--peri);
+}
+
+.footer-v3-main {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-v3-brand p { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.3); margin-top: 1rem; max-width: 30ch; }
+
+.footer-v3-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.5625rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--peri); font-weight: 600; margin-bottom: 1.5rem;
+}
+
+.footer-v3-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-v3-links a { font-size: 0.875rem; color: rgba(255,255,255,0.35); transition: color var(--t-fast); }
+.footer-v3-links a:hover { color: var(--white); }
+
+.footer-v3-contact p { font-size: 0.875rem; color: rgba(255,255,255,0.35); line-height: 1.8; }
+
+.footer-v3-bottom {
+  padding-block: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+.footer-v3-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.15); }
+
+.footer-v3-legal { display: flex; gap: 1.75rem; }
+.footer-v3-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.15); transition: color var(--t-fast); }
+.footer-v3-legal a:hover { color: rgba(255,255,255,0.5); }
+
+/* --- 19. Scroll-Animationen -------------------------------- */
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-fade { opacity: 0; transition: opacity 0.7s var(--ease-out); }
+.reveal-fade.visible { opacity: 1; }
+
+.d-1 { transition-delay: 0.1s; }
+.d-2 { transition-delay: 0.2s; }
+.d-3 { transition-delay: 0.3s; }
+.d-4 { transition-delay: 0.4s; }
+
+/* --- 20. Utilities ----------------------------------------- */
+
+.color-peri  { color: var(--peri); }
+.color-navy  { color: var(--navy); }
+.color-white { color: var(--white); }
+.color-muted { color: var(--ink-soft); }
+
+.bg-navy   { background: var(--navy); }
+.bg-dark   { background: var(--navy-darkest); }
+.bg-ice    { background: var(--ice); }
+.bg-peri   { background: var(--peri); }
+
+.text-center { text-align: center; }
+.mt-sm { margin-top: 1.5rem; }
+.mt-md { margin-top: 2.5rem; }
+.mt-lg { margin-top: 4rem; }
+.mb-sm { margin-bottom: 1rem; }
+.mb-md { margin-bottom: 2rem; }
+.mb-lg { margin-bottom: 3.5rem; }
+
+/* --- 21. Responsive ---------------------------------------- */
+
+@media (max-width: 1024px) {
+  :root { --space-section: 5.5rem; }
+  .positioning-v3  { grid-template-columns: 1fr; }
+  .positioning-v3-dark,
+  .positioning-v3-light { padding: 4rem 2.5rem; }
+  .process-v3-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .values-v3-grid  { grid-template-columns: repeat(2, 1fr); }
+  .cta-v3-inner    { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-v3-main  { grid-template-columns: 1fr 1fr; }
+  .contact-split-v3 { grid-template-columns: 1fr; }
+  .contact-info-v3, .contact-form-v3 { padding: 3.5rem 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  :root { --space-section: 4.5rem; }
+  .container { padding-inline: 1.25rem; }
+  .nav-links-v3 { display: none; }
+  .nav-toggle { display: flex; }
+  .services-v3-grid { grid-template-columns: 1fr; }
+  .values-v3-grid { grid-template-columns: 1fr; }
+  .stats-v3-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-v3-main { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-v3-bottom { flex-direction: column; align-items: flex-start; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-rings { display: none; }
+  .hero-glow { display: none; }
+  .hero-v3-content { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero-v3-actions { flex-direction: column; align-items: flex-start; }
+  .btn { width: 100%; justify-content: center; }
+  .stats-v3-grid { grid-template-columns: 1fr 1fr; }
+}

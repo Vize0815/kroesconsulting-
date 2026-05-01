@@ -1,0 +1,1167 @@
+/* =============================================================
+   KROES CONSULTING — DESIGN-ENTWURF 2
+   Aesthetic: Editorial Authority / Helles Tageslicht
+   Fonts: Playfair Display (display) + Libre Franklin (body)
+   Palette: Warm White · Forest Green · Ink Charcoal
+   Gegenentwurf zu Draft 1 (dunkel, Gold, Nacht-Luxus)
+   ============================================================= */
+
+/* --- 1. Design Tokens --------------------------------------- */
+:root {
+  /* Forest Green — Vertrauen, Wachstum, Nachhaltigkeit */
+  --green-950: #071510;
+  --green-900: #0d2218;
+  --green-800: #133322;
+  --green-700: #1c4c30;
+  --green-600: #276642;
+  --green-500: #348054;
+  --green-400: #4da070;
+  --green-200: #a8d4ba;
+  --green-100: #d4ede0;
+  --green-50:  #eaf5ef;
+
+  /* Warm Gold — sparsam eingesetzt, nur als Highlight */
+  --gold-500: #c49a2e;
+  --gold-400: #d4ae46;
+  --gold-300: #e4c870;
+
+  /* Tinte / Charcoal — Typografie */
+  --ink-950: #0a0908;
+  --ink-900: #141210;
+  --ink-800: #201e1a;
+  --ink-700: #302e28;
+  --ink-600: #484540;
+  --ink-500: #645f58;
+  --ink-400: #8a8680;
+  --ink-300: #b8b4ac;
+  --ink-200: #d8d4cc;
+  --ink-100: #eae8e3;
+
+  /* Warm White — Seitenhintergrund */
+  --warm-50:  #faf8f5;
+  --warm-100: #f3f0ea;
+  --warm-200: #e8e3d8;
+  --warm-300: #d5cfc0;
+
+  /* Typografie */
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body:    'Libre Franklin', 'system-ui', sans-serif;
+
+  /* Spacing */
+  --space-section: 7rem;
+  --space-group:   4rem;
+  --space-el:      1.5rem;
+
+  /* Maxis */
+  --w-xl: 1280px;
+  --w-lg: 1024px;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:   140ms ease;
+  --t-base:   280ms ease;
+  --t-slow:   560ms var(--ease-out);
+}
+
+/* --- 2. Reset ----------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--ink-800);
+  background: var(--warm-50);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a   { color: inherit; text-decoration: none; }
+ul  { list-style: none; }
+button { cursor: pointer; font-family: inherit; background: none; border: none; }
+
+/* --- 3. Typografie-System ----------------------------------- */
+
+.t-hero {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  font-weight: 700;
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+}
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.t-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.t-subhead {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.t-label {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-700);
+}
+
+.t-body-lg {
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--ink-600);
+}
+
+.t-body {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--ink-600);
+}
+
+.t-small {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--ink-400);
+}
+
+em, .italic { font-style: italic; }
+
+/* --- 4. Layout ---------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--w-xl);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.section { padding-block: var(--space-section); }
+.section-sm { padding-block: var(--space-group); }
+
+/* --- 5. Green Accent Elemente ------------------------------ */
+
+.green-rule {
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background: var(--green-700);
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow-row-center { justify-content: center; }
+
+/* Trennlinie — ganzseitige Linie */
+.full-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--ink-200);
+}
+
+/* --- 6. Navigation ------------------------------------------ */
+
+.nav-v2 {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 200;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid transparent;
+  transition: background var(--t-base), border-color var(--t-base), padding var(--t-base);
+}
+
+.nav-v2.scrolled {
+  padding-block: 1rem;
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--ink-200);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo — auf hellem Hintergrund */
+.nav-logo-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.1;
+}
+
+.nav-logo-v2-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-900);
+}
+
+.nav-logo-v2-sub {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.28em;
+  font-weight: 400;
+  color: var(--green-600);
+  text-transform: uppercase;
+}
+
+.nav-links-v2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links-v2 a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+  position: relative;
+  transition: color var(--t-fast);
+}
+
+.nav-links-v2 a::after {
+  content: '';
+  position: absolute;
+  inset-block-end: -3px;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green-700);
+  transition: width var(--t-base);
+}
+
+.nav-links-v2 a:hover         { color: var(--ink-900); }
+.nav-links-v2 a:hover::after  { width: 100%; }
+.nav-links-v2 a.active        { color: var(--ink-900); }
+.nav-links-v2 a.active::after { width: 100%; }
+
+.nav-cta-v2 {
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  color: var(--warm-50) !important;
+  background: var(--green-800);
+  padding: 0.625rem 1.375rem;
+  border: 1px solid var(--green-800);
+  transition: background var(--t-fast), color var(--t-fast) !important;
+}
+
+.nav-cta-v2::after { display: none !important; }
+.nav-cta-v2:hover  { background: var(--green-700) !important; border-color: var(--green-700) !important; }
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink-800);
+  transition: transform var(--t-base), opacity var(--t-fast);
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile Overlay */
+.mobile-overlay-v2 {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--warm-50);
+  z-index: 199;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  border-left: 4px solid var(--green-700);
+}
+.mobile-overlay-v2.open { display: flex; }
+.mobile-overlay-v2 nav { display: flex; flex-direction: column; gap: 1.25rem; }
+.mobile-overlay-v2 a {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ink-800);
+  transition: color var(--t-fast);
+}
+.mobile-overlay-v2 a:hover  { color: var(--green-700); }
+.mobile-overlay-v2 a.accent { color: var(--green-700); }
+
+/* --- 7. Buttons --------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: 1.5px solid transparent;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--t-fast);
+}
+.btn:hover svg { transform: translateX(3px); }
+
+/* Green solid — primär */
+.btn-green {
+  background: var(--green-800);
+  color: var(--warm-50);
+  border-color: var(--green-800);
+}
+.btn-green:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
+}
+
+/* Green outline */
+.btn-outline-green {
+  background: transparent;
+  color: var(--green-800);
+  border-color: var(--green-800);
+}
+.btn-outline-green:hover {
+  background: var(--green-800);
+  color: var(--warm-50);
+}
+
+/* Ink outline */
+.btn-outline-ink {
+  background: transparent;
+  color: var(--ink-800);
+  border-color: var(--ink-300);
+}
+.btn-outline-ink:hover {
+  background: var(--ink-800);
+  color: var(--warm-50);
+  border-color: var(--ink-800);
+}
+
+/* White (auf dunklem Hintergrund) */
+.btn-white {
+  background: var(--warm-50);
+  color: var(--green-900);
+  border-color: var(--warm-50);
+}
+.btn-white:hover {
+  background: transparent;
+  color: var(--warm-50);
+}
+
+/* --- 8. Hero — Editorial Format ---------------------------- */
+
+.hero-v2 {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: stretch;
+  background: var(--warm-50);
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.hero-v2-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100svh;
+  width: 100%;
+}
+
+/* Linke Spalte: Text-Hauptdarsteller */
+.hero-v2-text {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--ink-200);
+}
+
+.hero-v2-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-v2-label::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--green-700);
+}
+
+/* DER HAUPTDARSTELLER */
+.hero-v2-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.75rem, 7.5vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.93;
+  letter-spacing: -0.035em;
+  color: var(--ink-900);
+  margin-bottom: 2.5rem;
+}
+
+.hero-v2-title .accent {
+  color: var(--green-700);
+}
+
+.hero-v2-title .italic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-700);
+}
+
+.hero-v2-sub {
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  line-height: 1.8;
+  color: var(--ink-500);
+  max-width: 38ch;
+  margin-bottom: 3rem;
+}
+
+.hero-v2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Rechte Spalte: Strukturierte Kennzahlen + Dekoration */
+.hero-v2-aside {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Großes grünes "K" als Dekoration */
+.hero-v2-deco {
+  position: absolute;
+  right: -0.1em;
+  bottom: -0.1em;
+  font-family: var(--font-display);
+  font-size: clamp(14rem, 25vw, 26rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--green-100);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.hero-v2-stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--green-700);
+  padding-left: 2rem;
+}
+
+.hero-stat {
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--ink-100);
+}
+
+.hero-stat:last-child { border-bottom: none; }
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--green-800);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-stat-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+  font-weight: 400;
+}
+
+/* Scroll hint */
+.hero-v2-scroll {
+  position: absolute;
+  bottom: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.5625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-300);
+  z-index: 2;
+  animation: floatDown 2.5s ease-in-out infinite;
+}
+
+.hero-v2-scroll-line {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--green-600), transparent);
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* --- 9. Newspaper-Intro-Strip ------------------------------ */
+
+.intro-v2 {
+  background: var(--green-800);
+  padding-block: 3.5rem;
+  overflow: hidden;
+}
+
+.intro-v2-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.intro-v2-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--warm-50);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.intro-v2-divider {
+  width: 1px;
+  height: 4rem;
+  background: rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+.intro-v2-byline {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  flex-shrink: 0;
+}
+
+/* --- 10. Leistungen — horizontale Streifen ---------------- */
+
+.services-v2 {
+  padding-block: var(--space-section);
+  background: var(--warm-50);
+}
+
+.services-v2-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--ink-200);
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 4rem 1fr 1fr auto;
+  align-items: center;
+  gap: 2.5rem;
+  padding-block: 2.5rem;
+  border-bottom: 1px solid var(--ink-200);
+  transition: background var(--t-base);
+  cursor: default;
+}
+
+.service-row:hover { background: var(--green-50); }
+.service-row:hover .service-row-num { color: var(--green-700); }
+.service-row:hover .service-row-title { color: var(--green-800); }
+.service-row:hover .service-row-arrow { transform: translateX(4px); opacity: 1; }
+
+.service-row-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-300);
+  transition: color var(--t-base);
+}
+
+.service-row-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--ink-900);
+  transition: color var(--t-base);
+}
+
+.service-row-desc {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-500);
+  max-width: 42ch;
+}
+
+.service-row-arrow {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-700);
+  opacity: 0;
+  transition: transform var(--t-base), opacity var(--t-base);
+}
+
+.service-row-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- 11. Werte — große Typografie-Kacheln ---------------- */
+
+.values-v2 {
+  padding-block: var(--space-section);
+  background: var(--warm-100);
+}
+
+.values-v2-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-200);
+}
+
+.value-v2-card {
+  background: var(--warm-100);
+  padding: 3rem 2.5rem;
+  transition: background var(--t-slow);
+}
+
+.value-v2-card:hover { background: var(--green-800); }
+.value-v2-card:hover .value-v2-num   { color: var(--green-300); }
+.value-v2-card:hover .value-v2-title { color: var(--warm-50); }
+.value-v2-card:hover .value-v2-text  { color: rgba(250,248,245,0.6); }
+
+.value-v2-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink-200);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  transition: color var(--t-slow);
+}
+
+.value-v2-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 0.75rem;
+  transition: color var(--t-slow);
+}
+
+.value-v2-text {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-500);
+  transition: color var(--t-slow);
+}
+
+/* --- 12. Prozess ------------------------------------------- */
+
+.process-v2 {
+  padding-block: var(--space-section);
+}
+
+.process-v2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.process-v2-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--ink-200);
+}
+
+.process-v2-step {
+  background: var(--warm-50);
+  padding: 2.5rem;
+  transition: background var(--t-slow);
+}
+
+.process-v2-step:hover { background: var(--green-50); }
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ink-100);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: 0.625rem;
+}
+
+.step-text {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--ink-500);
+}
+
+/* --- 13. Zitat-Banner -------------------------------------- */
+
+.quote-v2 {
+  padding-block: 5rem;
+  background: var(--warm-50);
+  border-block: 1px solid var(--ink-200);
+}
+
+.quote-v2-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.quote-v2-mark {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 0.7;
+  color: var(--green-200);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.quote-v2-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2.5vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-800);
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+.quote-v2-attr {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+/* --- 14. CTA Section --------------------------------------- */
+
+.cta-v2 {
+  background: var(--green-900);
+  padding-block: var(--space-section);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Großes K im Hintergrund */
+.cta-v2::after {
+  content: 'K';
+  position: absolute;
+  right: -0.05em;
+  bottom: -0.15em;
+  font-family: var(--font-display);
+  font-size: clamp(20rem, 35vw, 35rem);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.025);
+  pointer-events: none;
+  user-select: none;
+}
+
+.cta-v2-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.cta-v2-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
+  color: var(--warm-50);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.cta-v2-inner h2 .italic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-200);
+}
+
+/* --- 15. Contact Form -------------------------------------- */
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+.form-label {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+  font-weight: 600;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--ink-800);
+  background: var(--warm-50);
+  border: 1.5px solid var(--ink-200);
+  padding: 0.875rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--t-fast);
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.form-input:focus,
+.form-textarea:focus { border-color: var(--green-700); }
+
+.form-textarea { resize: vertical; min-height: 130px; line-height: 1.7; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+.form-checkbox {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.form-checkbox input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--green-700); flex-shrink: 0; }
+.form-checkbox label { font-size: 0.8125rem; line-height: 1.55; color: var(--ink-500); }
+.form-checkbox a { color: var(--green-700); text-decoration: underline; }
+
+.form-message {
+  display: none;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+.form-message.success { display: block; background: rgba(26,76,48,0.08); border: 1px solid rgba(26,76,48,0.25); color: #145230; }
+.form-message.error   { display: block; background: rgba(160,32,32,0.07); border: 1px solid rgba(160,32,32,0.2);  color: #8a1f1f; }
+
+/* --- 16. Page Header (Unterseiten) ------------------------ */
+
+.page-header-v2 {
+  padding-top: 9.5rem;
+  padding-bottom: 4.5rem;
+  background: var(--warm-50);
+  border-bottom: 1px solid var(--ink-200);
+  position: relative;
+}
+
+.breadcrumb {
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-300);
+  margin-bottom: 1.25rem;
+}
+.breadcrumb a { color: var(--ink-300); transition: color var(--t-fast); }
+.breadcrumb a:hover { color: var(--green-700); }
+.breadcrumb span { color: var(--green-700); }
+
+.page-header-v2 h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 700;
+  color: var(--ink-900);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.page-header-v2 p {
+  font-size: 1rem;
+  color: var(--ink-500);
+  max-width: 44ch;
+  line-height: 1.7;
+}
+
+/* --- 17. Split Layouts ------------------------------------ */
+
+.about-split-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-visual-v2 {
+  background: var(--green-800);
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+}
+
+.about-visual-v2-deco {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 14vw, 14rem);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.about-content-v2 {
+  padding: 5rem 4rem;
+  background: var(--warm-50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-split-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.contact-info-v2 {
+  background: var(--green-800);
+  padding: 4.5rem 3.5rem;
+}
+
+.contact-form-v2 {
+  padding: 4.5rem 3.5rem;
+  background: var(--warm-50);
+}
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-300);
+}
+.contact-icon svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+.contact-detail-label { font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-400); margin-bottom: 0.25rem; }
+.contact-detail-value { font-size: 0.9rem; color: rgba(250,248,245,0.65); line-height: 1.6; }
+
+/* --- 18. Footer ------------------------------------------- */
+
+.footer-v2 {
+  background: var(--ink-950);
+  border-top: 3px solid var(--green-700);
+}
+
+.footer-v2-main {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-v2-brand p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(250,248,245,0.35);
+  margin-top: 1rem;
+  max-width: 30ch;
+}
+
+.footer-v2-col h4 {
+  font-size: 0.5625rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-500);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.footer-v2-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-v2-links a { font-size: 0.875rem; color: rgba(250,248,245,0.38); transition: color var(--t-fast); }
+.footer-v2-links a:hover { color: var(--warm-50); }
+
+.footer-v2-contact p { font-size: 0.875rem; color: rgba(250,248,245,0.38); line-height: 1.8; }
+
+.footer-v2-bottom {
+  padding-block: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-v2-bottom p { font-size: 0.75rem; color: rgba(250,248,245,0.18); }
+
+.footer-v2-legal { display: flex; gap: 1.75rem; }
+.footer-v2-legal a { font-size: 0.75rem; color: rgba(250,248,245,0.18); transition: color var(--t-fast); }
+.footer-v2-legal a:hover { color: rgba(250,248,245,0.5); }
+
+/* --- 19. Scroll-Animationen ------------------------------ */
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-fade { opacity: 0; transition: opacity 0.75s var(--ease-out); }
+.reveal-fade.visible { opacity: 1; }
+
+.d-1 { transition-delay: 0.1s; }
+.d-2 { transition-delay: 0.2s; }
+.d-3 { transition-delay: 0.3s; }
+.d-4 { transition-delay: 0.4s; }
+.d-5 { transition-delay: 0.5s; }
+
+/* --- 20. Utilities ---------------------------------------- */
+
+.color-green   { color: var(--green-700); }
+.color-ink     { color: var(--ink-900); }
+.color-white   { color: var(--warm-50); }
+.color-muted   { color: var(--ink-500); }
+
+.bg-green      { background: var(--green-800); }
+.bg-dark       { background: var(--ink-950); }
+.bg-warm       { background: var(--warm-100); }
+
+.text-center   { text-align: center; }
+.mt-sm { margin-top: 1.5rem; }
+.mt-md { margin-top: 2.5rem; }
+.mt-lg { margin-top: 4rem; }
+.mb-sm { margin-bottom: 1rem; }
+.mb-md { margin-bottom: 2rem; }
+.mb-lg { margin-bottom: 3.5rem; }
+
+/* --- 21. Responsive --------------------------------------- */
+
+@media (max-width: 1024px) {
+  :root { --space-section: 5.5rem; }
+  .hero-v2-layout { grid-template-columns: 1fr; }
+  .hero-v2-text { padding-right: 0; border-right: none; padding-top: 9rem; }
+  .hero-v2-aside { padding-left: 0; padding-top: 3rem; border-top: 1px solid var(--ink-200); }
+  .hero-v2-deco { display: none; }
+  .hero-v2-stats { flex-direction: row; gap: 0; border-left: none; border-top: 2px solid var(--green-700); padding-left: 0; padding-top: 1.5rem; }
+  .hero-stat { padding-block: 0; padding-right: 2rem; border-bottom: none; border-right: 1px solid var(--ink-200); margin-right: 2rem; }
+  .hero-stat:last-child { border-right: none; margin-right: 0; }
+  .process-v2-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-split-v2 { grid-template-columns: 1fr; }
+  .about-visual-v2 { min-height: 320px; }
+  .about-content-v2 { padding: 3.5rem 2.5rem; }
+  .contact-split-v2 { grid-template-columns: 1fr; }
+  .contact-info-v2, .contact-form-v2 { padding: 3.5rem 2.5rem; }
+  .footer-v2-main { grid-template-columns: 1fr 1fr; }
+  .cta-v2-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .values-v2-grid { grid-template-columns: repeat(2, 1fr); }
+  .intro-v2-inner { flex-direction: column; gap: 1.5rem; }
+  .intro-v2-divider { display: none; }
+}
+
+@media (max-width: 768px) {
+  :root { --space-section: 4.5rem; }
+  .container { padding-inline: 1.25rem; }
+  .nav-links-v2 { display: none; }
+  .nav-toggle { display: flex; }
+  .service-row { grid-template-columns: 3rem 1fr; gap: 1.25rem; }
+  .service-row-desc { display: none; }
+  .service-row-arrow { display: none; }
+  .values-v2-grid { grid-template-columns: 1fr; }
+  .process-v2-steps { grid-template-columns: 1fr; }
+  .footer-v2-main { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-v2-bottom { flex-direction: column; align-items: flex-start; }
+  .form-row { grid-template-columns: 1fr; }
+  .quote-v2-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .quote-v2-mark { font-size: 4rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-v2-actions { flex-direction: column; align-items: flex-start; }
+  .btn { width: 100%; justify-content: center; }
+}

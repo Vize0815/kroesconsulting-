@@ -1,0 +1,12 @@
+# Kroes Consulting — robots.txt
+# https://www.kroes-consulting.de
+
+User-agent: *
+Allow: /
+
+# Block irrelevant paths (adjust as needed)
+Disallow: /assets/
+Disallow: /.agents/
+
+# Sitemap
+Sitemap: https://www.kroes-consulting.de/sitemap.xml

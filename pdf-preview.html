@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF-Preview · Konflikt-Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { background: var(--warm-50); padding: 4rem 2rem; }
+    .preview-wrap { max-width: 720px; margin: 0 auto; }
+    h1 { font-family: var(--font-display); color: var(--navy); font-size: 2.5rem; margin-bottom: 0.5rem; }
+    h1 em { color: var(--peri); font-style: italic; font-weight: 400; }
+    .lead { color: var(--ink-600); margin-bottom: 2rem; line-height: 1.7; }
+    .tier-grid { display: grid; gap: 1rem; }
+    .tier-btn {
+      display: grid; grid-template-columns: 60px 1fr auto; gap: 1.25rem; align-items: center;
+      padding: 1.5rem 1.75rem;
+      background: #fff; border: 1.5px solid rgba(31,47,88,0.1);
+      border-radius: 8px; cursor: pointer;
+      transition: all 0.2s; text-align: left;
+      font-family: var(--font-body); font-size: 1rem; color: var(--navy);
+      width: 100%;
+    }
+    .tier-btn:hover {
+      border-color: var(--peri); transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px rgba(31,47,88,0.15);
+    }
+    .tier-pct {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.75rem;
+      color: var(--peri); line-height: 1;
+    }
+    .tier-info strong { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+    .tier-info span { font-size: 0.8125rem; color: var(--ink-500); }
+    .tier-arrow { color: var(--peri); font-size: 1.25rem; }
+    .note {
+      margin-top: 2rem; padding: 1rem 1.25rem;
+      background: var(--warm-100); border-left: 3px solid var(--peri);
+      font-size: 0.875rem; color: var(--ink-600); line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-wrap">
+    <h1>PDF-<em>Preview</em></h1>
+    <p class="lead">Klick auf eine der vier Tier-Stufen — die fertige Konflikt-Quiz-PDF wird sofort generiert und heruntergeladen.</p>
+
+    <div class="tier-grid">
+      <button class="tier-btn" data-tier="0">
+        <span class="tier-pct">17%</span>
+        <span class="tier-info"><strong>Tier 1 · Tief im Konflikt-Modus</strong><span>Empfehlung: Konfliktkosten-Analyse</span></span>
+        <span class="tier-arrow">→</span>
+      </button>
+      <button class="tier-btn" data-tier="1">
+        <span class="tier-pct">38%</span>
+        <span class="tier-info"><strong>Tier 2 · Deutliche Warnzeichen</strong><span>Empfehlung: LeadResolve</span></span>
+        <span class="tier-arrow">→</span>
+      </button>
+      <button class="tier-btn" data-tier="2">
+        <span class="tier-pct">52%</span>
+        <span class="tier-info"><strong>Tier 3 · Solide Basis</strong><span>Empfehlung: LeadShift</span></span>
+        <span class="tier-arrow">→</span>
+      </button>
+      <button class="tier-btn" data-tier="3">
+        <span class="tier-pct">68%</span>
+        <span class="tier-info"><strong>Tier 4 · Gut aufgestellt</strong><span>Empfehlung: Sparring</span></span>
+        <span class="tier-arrow">→</span>
+      </button>
+    </div>
+
+    <div class="note">
+      <strong>Hinweis:</strong> Die PDF wird mit jsPDF clientseitig erzeugt und automatisch heruntergeladen. Im echten Quiz-Flow wird sie zusätzlich per E-Mail an den Lead gesendet (sobald EmailJS konfiguriert ist).
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script>
+    const SCORE_FACTOR = 0.7;
+    const CALENDLY_URL = 'https://calendly.com/bewerbung-kroes-consulting/30min';
+
+    const TIERS = [
+      {
+        emTitle: 'Tief im Konflikt-Modus.',
+        summary: 'Ihre Antworten zeigen ein klares Muster: In Struktur, Kommunikation und Führungskultur sind ernsthafte Schwächen erkennbar. Konflikte werden nicht systematisch gelöst — sie eskalieren oder werden ausgesessen.',
+        deepSummary: 'Was die meisten Inhaber unterschätzen: In dieser Konfliktintensität verbrennen typische KMU laut aktueller Studien zwischen 8–15 % ihres Jahresumsatzes durch ungelöste Konflikte — Geld, das in keiner BWA auftaucht. Hauptkostentreiber: Produktivitätsverlust durch innere Kündigung, Quiet Quitting und stille Sabotage; massiv erhöhter Krankenstand; eskalierende Fluktuation kostbarer Fachkräfte; teure Fehlentscheidungen, weil ehrliches Feedback fehlt.',
+        costRange: '180.000 – 280.000 EUR',
+        costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
+        costBreakdown: [
+          { label: 'Produktivitaetsverlust (15-20 %)', value: '~ 96.000 EUR' },
+          { label: 'Fluktuation (3-5 Kuendigungen)', value: '~ 78.000 EUR' },
+          { label: 'Erhoehter Krankenstand', value: '~ 38.000 EUR' },
+          { label: 'Fehlentscheidungen & Projektverzug', value: '~ 52.000 EUR' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Beginnen Sie mit der Konfliktkosten-Analyse.',
+        recoText: 'Da Sie das Quiz bereits abgeschlossen haben, ist die Vorbereitung erledigt: Wir nutzen Ihre persoenliche Auswertung als Gespraechsgrundlage und beziffern in 30 Minuten konkret, was aktuell verbrannt wird — und welche Hebel kurzfristig den groessten Effekt haben. Kostenfrei, vertraulich, sofort umsetzbar.',
+        primary: 'analyse',
+        pct: 17,
+        catScores: { 'Struktur': { pct: 18 }, 'Kommunikation': { pct: 12 }, 'Kultur': { pct: 22 }, 'Entwicklung': { pct: 16 } },
+        weakest: 'Kommunikation', strongest: 'Kultur'
+      },
+      {
+        emTitle: 'Deutliche Warnzeichen sichtbar.',
+        summary: 'In mehreren Bereichen sind Risse sichtbar. Was heute noch wie Alltagsreibung aussieht, entwickelt sich erfahrungsgemaess in 6-12 Monaten zu spuerbaren wirtschaftlichen Schaeden — wenn nichts geschieht.',
+        deepSummary: 'In dieser Phase summieren sich die Kosten schleichend, aber konsequent. Studien zeigen: Unternehmen mit diesem Konfliktprofil verlieren im Schnitt 3-7 % ihres Jahresumsatzes, ohne dass es jemand benennen kann. Die typischen Treiber: ein um 30 % erhoehter Krankenstand, eine Fluktuationsrate die um 40-60 % ueber dem Branchenschnitt liegt, sowie ein zunehmendes Quiet Quitting — Mitarbeiter, die innerlich gekuendigt haben, aber bleiben.',
+        costRange: '80.000 – 150.000 EUR',
+        costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
+        costBreakdown: [
+          { label: 'Krankenstand (+30 %)', value: '~ 28.000 EUR' },
+          { label: 'Fluktuation (1-2 Kuendigungen)', value: '~ 32.000 EUR' },
+          { label: 'Produktivitaetsverlust (5-8 %)', value: '~ 42.000 EUR' },
+          { label: 'Quiet Quitting / Reibung', value: '~ 22.000 EUR' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Mit LeadResolve die Konflikte entschaerfen.',
+        recoText: 'Konfliktcoaching fuer Fuehrungskraefte: organisationale Konflikte verstehen, entschaerfen und als Chance nutzen. Vertraulich, direkt, loesungsorientiert.',
+        primary: 'leadresolve',
+        pct: 38,
+        catScores: { 'Struktur': { pct: 42 }, 'Kommunikation': { pct: 28 }, 'Kultur': { pct: 45 }, 'Entwicklung': { pct: 38 } },
+        weakest: 'Kommunikation', strongest: 'Kultur'
+      },
+      {
+        emTitle: 'Solide Basis mit deutlichem Luftraum.',
+        summary: 'Ihr Unternehmen ist grundsaetzlich aufgestellt — aber es gibt klar erkennbare Bereiche, in denen Sie Fuehrung, Kultur oder Strukturen systematisch weiterentwickeln koennen.',
+        deepSummary: 'Die schlechte Nachricht: Auch in dieser Phase entstehen messbare Verluste — sie sind nur schwerer sichtbar. Studien zeigen: Unternehmen mit diesem Profil verlieren typischerweise 1-3 % ihres Jahresumsatzes durch nicht ausgeschoepfte Potenziale. Die gute Nachricht: Sie haben das Fundament. Mit gezielter Fuehrungsentwicklung holen Sie typischerweise 5-8 % Mehr-Performance heraus.',
+        costRange: '30.000 – 60.000 EUR',
+        costContext: 'p. a. ungenutztes Potenzial · 60-MA-Betrieb',
+        costBreakdown: [
+          { label: 'Suboptimale Team-Performance', value: '~ 18.000 EUR' },
+          { label: 'Einzelne Reibungsverluste', value: '~ 14.000 EUR' },
+          { label: 'Ungenutzte Innovations-Impulse', value: '~ 16.000 EUR' },
+          { label: 'Verzoegerte Entscheidungen', value: '~ 8.000 EUR' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Mit LeadShift auf das naechste Level.',
+        recoText: 'Leadership-Coaching fuer zukunftsorientierte Fuehrungskraefte: Entscheidungssicherheit, Teamfuehrung und kulturelle Transformation.',
+        primary: 'leadshift',
+        pct: 52,
+        catScores: { 'Struktur': { pct: 55 }, 'Kommunikation': { pct: 48 }, 'Kultur': { pct: 58 }, 'Entwicklung': { pct: 52 } },
+        weakest: 'Kommunikation', strongest: 'Kultur'
+      },
+      {
+        emTitle: 'Sehr gut aufgestellt — Feinschliff lohnt.',
+        summary: 'Ihr Unternehmen verfuegt ueber eine ausgereifte Konfliktkultur und solide Fuehrungsstrukturen. Selbst hier gibt es jedoch typischerweise blinde Flecken.',
+        deepSummary: 'Die spannende Erkenntnis aus aktuellen Top-Performer-Studien: Selbst hochperformante Organisationen verlieren noch 0,5-1,5 % ihres Umsatzes durch blinde Flecken in Fuehrung und Konfliktkultur. Der Effekt ist klein in Prozent — aber der Hebel ist gross.',
+        costRange: '12.000 – 30.000 EUR',
+        costContext: 'p. a. ungenutzter Wettbewerbsvorsprung',
+        costBreakdown: [
+          { label: 'Blinde Flecken in Fuehrung', value: '~ 8.000 EUR' },
+          { label: 'Verschenkte Top-Performer-Impulse', value: '~ 9.000 EUR' },
+          { label: 'Suboptimale Konfliktkultur in Spitzen', value: '~ 6.000 EUR' }
+        ],
+        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        recoTitle: 'Sparring auf Augenhoehe.',
+        recoText: 'In einem unverbindlichen Sparring-Gespraech reflektieren wir die spezifischen Hebel, die fuer Ihr Unternehmen den naechsten Wachstumsschritt ermoeglichen.',
+        primary: 'leadshift',
+        pct: 68,
+        catScores: { 'Struktur': { pct: 70 }, 'Kommunikation': { pct: 64 }, 'Kultur': { pct: 72 }, 'Entwicklung': { pct: 66 } },
+        weakest: 'Kommunikation', strongest: 'Kultur'
+      }
+    ];
+
+    async function loadImageAsDataURL(src) {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error('Image fetch failed: ' + res.status);
+      const blob = await res.blob();
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+    function loadImageDimensions(dataURL) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+        img.onerror = reject;
+        img.src = dataURL;
+      });
+    }
+
+    async function generatePDF(tierIndex, name) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+      const r = TIERS[tierIndex];
+      r.cats = ['Struktur', 'Kommunikation', 'Kultur', 'Entwicklung'];
+
+      const NAVY = [31, 47, 88];
+      const PERI = [118, 140, 253];
+      const WARM = [250, 248, 245];
+      const INK  = [48, 46, 40];
+      const RED  = [255, 89, 89];
+      const W = 210, M = 18;
+      let y = 0;
+
+      // === HEADER mit LinkedIn-Bild ===
+      let headerHeight = 0;
+      let imgLoaded = false;
+      const candidates = ['assets/img/kroes-consulting-header.png', 'assets/img/Kroes Consulting.png', 'assets/img/Kroes%20Consulting.png'];
+      for (const src of candidates) {
+        try {
+          const dataURL = await loadImageAsDataURL(src);
+          const dims = await loadImageDimensions(dataURL);
+          const imgW = W;
+          const imgH = imgW * (dims.h / dims.w);
+          doc.addImage(dataURL, 'PNG', 0, 0, imgW, imgH);
+          headerHeight = imgH;
+          imgLoaded = true;
+          break;
+        } catch (err) {
+          console.warn('Header-Bild ' + src + ' nicht ladbar:', err);
+        }
+      }
+      if (!imgLoaded) {
+        doc.setFillColor(...NAVY); doc.rect(0, 0, W, 50, 'F');
+        doc.setTextColor(...WARM); doc.setFont('times', 'bold'); doc.setFontSize(26);
+        doc.text('KROES CONSULTING', M, 26);
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(...PERI);
+        doc.text('CONSULTING & COACHING · KMU & HANDWERK', M, 34);
+        headerHeight = 50;
+      }
+
+      // === Untertitel ===
+      y = headerHeight + 8;
+      doc.setDrawColor(...PERI); doc.setLineWidth(0.6);
+      doc.line(M, y, M + 24, y);
+      y += 6;
+      doc.setFont('times', 'bold'); doc.setFontSize(15); doc.setTextColor(...NAVY);
+      doc.text('Auswertung Konflikt-Quiz', M, y);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(...INK);
+      y += 6;
+      doc.text('Persoenliche Auswertung', M, y);
+      doc.setFontSize(9); doc.setTextColor(...PERI);
+      doc.text(new Date().toLocaleDateString('de-AT', { day: '2-digit', month: 'long', year: 'numeric' }), W - M, y, { align: 'right' });
+      y += 12;
+
+      doc.setTextColor(...INK); doc.setFont('helvetica', 'normal'); doc.setFontSize(10);
+      doc.text('Erstellt fuer', M, y);
+      doc.setFont('times', 'bold'); doc.setFontSize(16); doc.setTextColor(...NAVY);
+      doc.text(name, M, y + 8);
+      y += 22;
+
+      // SCORE
+      doc.setFillColor(...WARM); doc.rect(M, y, W - 2*M, 32, 'F');
+      doc.setFont('times', 'bold'); doc.setFontSize(38); doc.setTextColor(...PERI);
+      doc.text(r.pct + '%', M + 6, y + 22);
+      doc.setFont('times', 'bold'); doc.setFontSize(14); doc.setTextColor(...NAVY);
+      doc.text(r.emTitle, M + 38, y + 16);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(...INK);
+      doc.text('Gesamtscore · Konfliktfaehigkeit Ihres Unternehmens', M + 38, y + 24);
+      y += 42;
+
+      // SUMMARY
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(...INK);
+      const summaryLines = doc.splitTextToSize(r.summary, W - 2*M);
+      doc.text(summaryLines, M, y);
+      y += summaryLines.length * 5 + 6;
+
+      // CATEGORIES
+      doc.setFont('times', 'bold'); doc.setFontSize(12); doc.setTextColor(...NAVY);
+      doc.text('Auswertung nach Kategorie', M, y); y += 6;
+      doc.setDrawColor(...PERI); doc.setLineWidth(0.6); doc.line(M, y, M + 18, y); y += 8;
+
+      r.cats.forEach(c => {
+        const pct = r.catScores[c].pct;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(...NAVY);
+        doc.text(c, M, y);
+        doc.setFillColor(235, 232, 226); doc.rect(M + 50, y - 3, 100, 3, 'F');
+        const fillColor = c === r.weakest ? RED : PERI;
+        doc.setFillColor(...fillColor); doc.rect(M + 50, y - 3, pct, 3, 'F');
+        doc.setTextColor(...PERI); doc.setFont('helvetica', 'bold');
+        doc.text(pct + '%', W - M, y, { align: 'right' });
+        y += 8;
+      });
+      y += 4;
+
+      // DEEP SUMMARY
+      doc.setFont('times', 'bold'); doc.setFontSize(12); doc.setTextColor(...NAVY);
+      doc.text('Vertiefende Interpretation', M, y); y += 6;
+      doc.line(M, y, M + 18, y); y += 8;
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(...INK);
+      const deepLines = doc.splitTextToSize(r.deepSummary, W - 2*M);
+      doc.text(deepLines, M, y);
+      y += deepLines.length * 5 + 8;
+
+      if (y > 220) { doc.addPage(); y = M; }
+
+      // COST BLOCK
+      doc.setFillColor(...WARM); doc.rect(M, y, W - 2*M, 56, 'F');
+      doc.setFillColor(...PERI); doc.rect(W - M - 1.5, y, 1.5, 56, 'F');
+      const yc = y + 8;
+      doc.setFont('times', 'bold'); doc.setFontSize(11); doc.setTextColor(...NAVY);
+      doc.text('WAS SIE DAS AKTUELL KOSTET', M + 4, yc);
+      doc.setFont('times', 'bold'); doc.setFontSize(20); doc.setTextColor(...RED);
+      doc.text(r.costRange, M + 4, yc + 11);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(...INK);
+      doc.text(r.costContext, M + 4, yc + 18);
+
+      let yb = yc + 24;
+      doc.setFontSize(9);
+      r.costBreakdown.forEach(item => {
+        doc.setTextColor(...INK); doc.text(item.label, M + 4, yb);
+        doc.setTextColor(...NAVY); doc.setFont('helvetica', 'bold');
+        doc.text(item.value, W - M - 4, yb, { align: 'right' });
+        doc.setFont('helvetica', 'normal');
+        yb += 5;
+      });
+      y += 64;
+
+      doc.setFontSize(7.5); doc.setTextColor(120, 116, 108); doc.setFont('helvetica', 'italic');
+      const srcLines = doc.splitTextToSize(r.sourceNote, W - 2*M);
+      doc.text(srcLines, M, y);
+      y += srcLines.length * 3.5 + 6;
+
+      if (y > 230) { doc.addPage(); y = M; }
+
+      // RECO
+      doc.setFillColor(...NAVY); doc.rect(M, y, W - 2*M, 50, 'F');
+      doc.setFont('times', 'bold'); doc.setFontSize(9); doc.setTextColor(...PERI);
+      doc.text('IHR NAECHSTER SCHRITT', M + 6, y + 9);
+      doc.setFont('times', 'bold'); doc.setFontSize(14); doc.setTextColor(...WARM);
+      doc.text(r.recoTitle, M + 6, y + 18);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor(220, 218, 213);
+      const recoLines = doc.splitTextToSize(r.recoText, W - 2*M - 12);
+      doc.text(recoLines, M + 6, y + 26);
+      y += 56;
+
+      // CTA
+      doc.setFillColor(...PERI); doc.rect(M, y, W - 2*M, 26, 'F');
+      doc.setFont('times', 'bold'); doc.setFontSize(12); doc.setTextColor(...NAVY);
+      doc.text('Konfliktkosten-Analyse buchen', M + 6, y + 10);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(9);
+      doc.text('Kostenfreies 30-Min-Strategiegespraech · auf Basis Ihrer Auswertung', M + 6, y + 16);
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...NAVY);
+      doc.textWithLink('Termin online buchen ->', M + 6, y + 22, { url: CALENDLY_URL });
+      y += 32;
+
+      // FOOTER
+      const footerY = 285;
+      doc.setDrawColor(220, 218, 213); doc.setLineWidth(0.3);
+      doc.line(M, footerY, W - M, footerY);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(120, 116, 108);
+      doc.text('Alexander Kroes e.U. · Unterer Stadtplatz 11 · 6330 Kufstein · Oesterreich', M, footerY + 5);
+      doc.text('+43 (0) 5338 20105 · info@kroes-consulting.com · www.kroes-consulting.com', M, footerY + 9);
+
+      doc.save(`Konflikt-Quiz_Tier${tierIndex+1}_${r.pct}pct.pdf`);
+    }
+
+    document.querySelectorAll('.tier-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const t = parseInt(btn.dataset.tier);
+        generatePDF(t, 'Max Mustermann');
+      });
+    });
+  </script>
+</body>
+</html>
