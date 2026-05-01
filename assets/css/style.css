@@ -1284,6 +1284,24 @@ em, .italic { font-style: italic; }
   .cta-portrait-media:hover img { transform: none; filter: none; }
 }
 
+/* Eckige Variante (z. B. Medien-Seite) */
+.cta-portrait-media--rect,
+.cta-portrait-media--rect img {
+  border-radius: 14px;
+}
+.cta-portrait-media--rect {
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+}
+.cta-portrait-media--rect::after {
+  border-radius: 14px;
+  border-color: rgba(31,47,88,0.10);
+}
+.cta-portrait-media--rect:hover::after {
+  inset: 6px;
+  border-radius: 10px;
+}
+
 .cta-portrait-content h2 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.25rem);
