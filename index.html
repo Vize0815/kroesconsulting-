@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V1 ZAHLEN-SHOCK | Kroes Consulting</title>
   <meta name="description" content="Konflikte kosten Unternehmen Geld. Wir machen diese Verluste sichtbar und lösen sie systematisch.">
+  <!-- Hero-Bild vorab laden (Speed Index / LCP) -->
+  <link rel="preload" as="image" href="assets/img/alexander-kroes-konfliktmanagement.webp" fetchpriority="high">
   <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -1081,7 +1083,7 @@
 
   <nav class="nav" id="nav" aria-label="Hauptnavigation">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-logo nav-logo-mark"><img src="assets/img/logo.png" alt="Kroes Consulting" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logo nav-logo-mark"><img src="assets/img/logo.png" alt="Kroes Consulting" class="nav-logo-img" width="300" height="100" decoding="async"></a>
       <div class="nav-end">
         <ul class="nav-links" role="list">
           <li><a href="index.html" class="nav-link active">Start</a></li>
@@ -1131,7 +1133,7 @@
         <!-- RIGHT: Portrait -->
         <div class="lb-portrait">
           <div class="lb-portrait-frame">
-            <img src="assets/img/alexander-kroes-konfliktmanagement.webp" alt="Alexander Kroes — Kroes Consulting &amp; Coaching" loading="eager">
+            <img src="assets/img/alexander-kroes-konfliktmanagement.webp" alt="Alexander Kroes — Kroes Consulting &amp; Coaching" loading="eager" fetchpriority="high" decoding="async" width="1401" height="1121">
           </div>
           <p class="lb-portrait-cap">Alexander Kroes<br><span>Gründer · Kroes Consulting &amp; Coaching</span></p>
         </div>
@@ -1598,7 +1600,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
     // Counter Animation (only if counter element exists)
     const counter = document.getElementById('v1Counter');
