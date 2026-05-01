@@ -6,29 +6,16 @@
    ============================================================= */
 
 /* --- 0. Self-hosted Fonts (DSGVO-konform, kein Google-Transfer) --- */
-/* Libre Franklin — Body / UI */
-@font-face { font-family: 'Libre Franklin'; font-style: normal; font-weight: 300; font-display: swap; src: url('../../fonts/libre-franklin-300.woff2') format('woff2'); }
-@font-face { font-family: 'Libre Franklin'; font-style: normal; font-weight: 400; font-display: swap; src: url('../../fonts/libre-franklin-400.woff2') format('woff2'); }
-@font-face { font-family: 'Libre Franklin'; font-style: normal; font-weight: 500; font-display: swap; src: url('../../fonts/libre-franklin-500.woff2') format('woff2'); }
-@font-face { font-family: 'Libre Franklin'; font-style: normal; font-weight: 600; font-display: swap; src: url('../../fonts/libre-franklin-600.woff2') format('woff2'); }
-@font-face { font-family: 'Libre Franklin'; font-style: normal; font-weight: 700; font-display: swap; src: url('../../fonts/libre-franklin-700.woff2') format('woff2'); }
-
-/* Playfair Display — Display / Headings */
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 400; font-display: swap; src: url('../../fonts/playfair-display-400.woff2') format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 400; font-display: swap; src: url('../../fonts/playfair-display-400-italic.woff2') format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('../../fonts/playfair-display-700.woff2') format('woff2'); }
-@font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 700; font-display: swap; src: url('../../fonts/playfair-display-700-italic.woff2') format('woff2'); }
-
-/* Cormorant Garamond — Display (Legacy / Index / Quiz) */
-@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('../../fonts/cormorant-garamond-400.woff2') format('woff2'); }
-@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('../../fonts/cormorant-garamond-400-italic.woff2') format('woff2'); }
-@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('../../fonts/cormorant-garamond-600.woff2') format('woff2'); }
-@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; font-display: swap; src: url('../../fonts/cormorant-garamond-700.woff2') format('woff2'); }
-@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 700; font-display: swap; src: url('../../fonts/cormorant-garamond-700-italic.woff2') format('woff2'); }
-
-/* JetBrains Mono — Mono (Index, optional) */
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('../../fonts/jetbrains-mono-400.woff2') format('woff2'); }
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('../../fonts/jetbrains-mono-500.woff2') format('woff2'); }
+/* Nur Libre Franklin Regular ist vorhanden; weitere Schnitte werden vom
+   Browser synthetisiert (Faux-Bold/Italic). Display-Schnitte fallen auf
+   Georgia/serif zurueck. */
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../fonts/libre-franklin-400.woff2') format('woff2');
+}
 
 /* --- 1. Design Tokens --------------------------------------- */
 :root {
