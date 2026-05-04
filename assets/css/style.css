@@ -317,8 +317,10 @@ em, .italic { font-style: italic; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
+
+.nav-logo { margin-inline-end: 2rem; }
 
 /* Logo */
 .nav-logo {
@@ -1306,7 +1308,7 @@ em, .italic { font-style: italic; }
 
 .cta-portrait-content .cta-sub {
   margin-top: 1.25rem;
-  max-width: 38ch;
+  max-width: none;
 }
 
 .cta-portrait-action {
@@ -1585,6 +1587,74 @@ em, .italic { font-style: italic; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-400);
+}
+
+.quote-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.quote-portrait-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--warm-100);
+  box-shadow: 0 1px 0 rgba(31,47,88,0.08), 0 24px 50px -22px rgba(31,47,88,0.30);
+  transform: translateZ(0);
+  transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  isolation: isolate;
+}
+.quote-portrait-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  border: 2px solid rgba(31,47,88,0.10);
+  pointer-events: none;
+  z-index: 2;
+  transition: border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              inset 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.quote-portrait-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              filter 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.quote-portrait-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 0 rgba(31,47,88,0.10), 0 32px 60px -22px rgba(31,47,88,0.40);
+}
+.quote-portrait-img:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.02);
+}
+.quote-portrait-img:hover::after {
+  border-color: rgba(118,140,253,0.65);
+  inset: 6px;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .quote-portrait {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quote-portrait-img,
+  .quote-portrait-img img,
+  .quote-portrait-img::after {
+    transition: none;
+  }
+  .quote-portrait-img:hover { transform: none; }
+  .quote-portrait-img:hover img { transform: none; filter: none; }
 }
 
 /* --- 19. Contact Split ------------------------------------- */
@@ -1872,7 +1942,7 @@ em, .italic { font-style: italic; }
   .footer-certificates img { max-height: 56px; max-width: 96px; padding: 0.35rem 0.5rem; }
 }
 
-.footer-col h4 {
+.footer-col .footer-col-title {
   font-family: var(--font-body);
   font-size: 0.625rem;
   letter-spacing: 0.25em;
@@ -2441,7 +2511,9 @@ em, .italic { font-style: italic; }
   .nav-links  { display: none; }
   .nav-social { display: none; }
   .nav-end    { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-toggle { display: flex; margin-inline-start: 2.5rem; }
+  .nav-inner  { gap: 2.5rem; }
+  .nav-logo-img { height: 44px; }
 
   /* Hero LinkedIn */
   .hero-lk-badge { white-space: normal; }
@@ -3890,6 +3962,142 @@ body.callback-modal-open {
 }
 
 /* =============================================================
+   ÜBER MICH — Persönliches Credo (Pull-Quote)
+   ============================================================= */
+
+.about-credo {
+  background: var(--warm-50);
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+.about-credo-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.about-credo-media {
+  margin: 0;
+}
+
+.about-credo-figure {
+  position: relative;
+  margin: 0;
+  max-width: 56ch;
+}
+
+.about-credo-mark {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(5rem, 9vw, 8rem);
+  line-height: 0.8;
+  color: var(--peri);
+  opacity: 0.55;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  user-select: none;
+}
+
+.about-credo-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--navy);
+  letter-spacing: -0.005em;
+}
+
+.about-credo-quote em {
+  font-style: italic;
+  color: var(--peri-dark);
+  font-weight: 500;
+}
+
+.about-credo-cite {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.about-credo-dash {
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--navy);
+  opacity: 0.55;
+}
+
+@media (max-width: 768px) {
+  .about-credo-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .about-credo-media {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+  .about-credo-figure {
+    margin-inline: auto;
+  }
+  .about-credo-cite {
+    justify-content: center;
+  }
+}
+
+/* =============================================================
+   STARTSEITE — Decision Pull-Quote (vor finalem CTA)
+   ============================================================= */
+
+.v1-decision {
+  background: #faf8f5;
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.v1-decision-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.v1-decision-line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+.v1-decision-line--strong {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: var(--navy);
+}
+
+.v1-decision-line--strong em {
+  font-style: italic;
+  color: var(--peri-dark);
+  font-weight: 500;
+}
+
+.v1-decision-line--muted {
+  margin-top: 0.35rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  color: rgba(31, 47, 88, 0.45);
+}
+
+/* =============================================================
    ÜBER MICH — Wydra-Style Personal-Page
    ============================================================= */
 
@@ -3949,8 +4157,8 @@ body.callback-modal-open {
 .about-hero-title {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.8rem, 6.6vw, 5.8rem);
-  line-height: 1;
+  font-size: clamp(2.1rem, 4.4vw, 3.8rem);
+  line-height: 1.2;
   letter-spacing: -0.015em;
   color: var(--navy);
   margin-top: 1.25rem;
@@ -3976,7 +4184,26 @@ body.callback-modal-open {
 }
 
 @media (max-width: 640px) {
-  .about-hero-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+  .about-hero-title { font-size: clamp(1.85rem, 6.8vw, 2.6rem); }
+}
+
+/* Eyebrow auf Leistungen + Über mich exakt wie Startseiten-Hero */
+.about-hero .eyebrow-row {
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.about-hero .eyebrow-row .peri-rule {
+  width: 42px;
+  height: 2px;
+  background: var(--peri);
+}
+.about-hero .eyebrow-row .t-label {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--navy);
 }
 
 #lr-hero-heading.about-hero-title,

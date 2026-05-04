@@ -18,7 +18,7 @@
     /* ===== EDITORIAL HERO ===== */
     .lb-hero {
       background: var(--warm-50);
-      padding: clamp(8rem, 13vw, 12rem) 0 clamp(0.75rem, 1.5vw, 1.5rem);
+      padding: clamp(11rem, 17vw, 16rem) 0 clamp(0.75rem, 1.5vw, 1.5rem);
       position: relative;
       overflow: hidden;
     }
@@ -59,9 +59,9 @@
     }
     .lb-headline {
       font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2.8rem, 6.6vw, 5.8rem);
-      line-height: 1;
+      font-weight: 400;
+      font-size: clamp(2.1rem, 4.4vw, 3.8rem);
+      line-height: 1.2;
       letter-spacing: -0.015em;
       color: var(--navy);
       margin: 0;
@@ -70,6 +70,7 @@
     .lb-headline .lb-accent {
       color: var(--peri);
       font-style: italic;
+      font-weight: 400;
       position: relative;
       display: inline-block;
     }
@@ -159,8 +160,8 @@
       position: relative;
       display: flex; flex-direction: column; align-items: center; gap: 1rem;
       width: 100%;
-      /* Oberkante des Bildes bündig mit Wort "Strukturen": Eyebrow-Box + Content-Gap + Playfair-Top-Halbleading der H1 */
-      margin-top: calc(0.85rem * 1.2 + 1.5rem + clamp(0.25rem, 0.6vw, 0.55rem));
+      /* Oberkante des Bildes auf gleicher Höhe wie Eyebrow "Strukturen statt Symptome" */
+      margin-top: 0;
     }
     .lb-portrait-frame {
       position: relative;
@@ -240,7 +241,7 @@
       .lb-portrait-frame { max-width: 340px; }
     }
     @media (max-width: 640px) {
-      .lb-headline { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+      .lb-headline { font-size: clamp(1.85rem, 6.8vw, 2.6rem); }
       .lb-creds { font-size: 0.7rem; gap: 0.4rem 1rem; }
       .lb-press { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
       .lb-cta-row { flex-direction: column; align-items: stretch; }
@@ -599,9 +600,27 @@
       width: 70%; height: auto; display: block;
       margin-left: auto; margin-right: 0;
       border-radius: 8px; border: 2px solid #FAF8F5;
+      transform: translateZ(0);
+      transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+      cursor: pointer;
+    }
+    .v1-offer-portrait:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: var(--peri);
+      box-shadow: 0 28px 55px -22px rgba(0,0,0,0.45);
+      filter: saturate(1.08) contrast(1.02);
     }
     @media (max-width: 768px) {
       .v1-offer-portrait { width: 100%; max-width: 380px; margin: 0 auto; }
+      .v1-offer-portrait-caption { width: 100%; max-width: 380px; margin: 0.75rem auto 0 !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .v1-offer-portrait { transition: none; }
+      .v1-offer-portrait:hover { transform: none; filter: none; }
     }
 
     /* QUIZ CTA — between offer and final CTA */
@@ -1109,6 +1128,25 @@
     </div>
   </nav>
 
+  <!-- Mobile Menü -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Mobilnavigation">
+    <a href="index.html">Start</a>
+    <a href="leistungen.html">Leistungen</a>
+    <a href="ueber-uns.html">Über mich</a>
+    <a href="medien.html">Medien</a>
+    <a href="quiz.html">Konflikt-Quiz</a>
+    <a href="kontakt.html" class="accent">Kontakt</a>
+    <div class="mobile-menu-social" aria-label="Social Media">
+      <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+      </a>
+    </div>
+    <p class="mobile-menu-footer">Kroes Consulting · Tirol · Österreich</p>
+  </div>
+
   <main>
 
     <!-- HERO: Editorial-Style -->
@@ -1116,12 +1154,12 @@
       <div class="lb-hero-grid">
         <!-- LEFT: Content -->
         <div class="lb-content">
-          <div class="lb-eyebrow">Kroes Consulting &amp; Coaching</div>
+          <div class="lb-eyebrow">Strukturen statt Symptome</div>
           <h1 class="lb-headline">
-            Strukturen
-            <span class="lb-row2">statt <span class="lb-accent">Symptome</span></span>
+            Konfliktlösungssysteme
+            <span class="lb-row2">für Führungskräfte aus <span class="lb-accent">KMU &amp; Handwerk</span></span>
           </h1>
-          <p class="lb-sub">Konfliktlösungssysteme für Führungskräfte aus KMU &amp; Handwerk</p>
+          <p class="lb-sub">Konflikte entstehen nicht plötzlich – sie entwickeln sich im Alltag: in der Kommunikation, in der Zusammenarbeit und oft unbemerkt über Wochen oder Monate. Wenn Spannungen im Team bestehen bleiben, verlieren Unternehmen nicht nur Zeit und Energie, sondern auch Leistung und Vertrauen.</p>
           <p class="lb-lede">Ich unterstütze Sie als Unternehmer, Geschäftsführer und Führungskraft dabei, Konfliktdynamiken im Unternehmen gezielt zu entschärfen und wieder handlungsfähig zu werden — ohne dauerhaft in Reibung und operativen Druck festzustecken.</p>
           <p class="lb-lede">Denn jede Konfliktsituation ist eine Chance, Klarheit über Strukturen, Beziehungen und Entscheidungen zu gewinnen und daraus eine stabilere, leistungsfähigere Zusammenarbeit zu entwickeln.</p>
           <div class="lb-creds">
@@ -1161,48 +1199,48 @@
       <div class="container">
         <div class="v1-bento-head">
           <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Typische Konflikte</div>
-          <h2 class="v1-bento-h2">Sechs Konfliktarten, die täglich <em>Ihre Abläufe stören</em> und Ergebnisse schwächen.</h2>
+          <h2 class="v1-bento-h2">Sechs typische <em>Mitarbeiterkonflikte</em> — täglich, teuer, lösbar.</h2>
         </div>
         <div class="v1-bento-grid">
           <div class="v1-bento-card big">
             <div class="v1-bento-num">01</div>
             <div>
-              <h3>Führung vs. Team</h3>
+              <h3>Probleme zwischen Chef und Mitarbeiter</h3>
               <p>Der häufigste Konflikt — und der teuerste. Ungeklärte Erwartungen, fehlende Anerkennung, harte Töne. Folge: stille Kündigung, Quiet Quitting, Fluktuation.</p>
             </div>
           </div>
           <div class="v1-bento-card peri">
             <div class="v1-bento-num">02</div>
             <div>
-              <h3>Generationen-Konflikt</h3>
+              <h3>Generationenkonflikte im Betrieb</h3>
               <p>Alter Meister, junge Lehrlinge.</p>
             </div>
           </div>
           <div class="v1-bento-card">
             <div class="v1-bento-num">03</div>
             <div>
-              <h3>Rollen-Konflikt</h3>
+              <h3>Probleme zwischen Mitarbeitern</h3>
               <p>Wer entscheidet was?</p>
             </div>
           </div>
           <div class="v1-bento-card">
             <div class="v1-bento-num">04</div>
             <div>
-              <h3>Kommunikations-Konflikt</h3>
+              <h3>Mitarbeiter reden nicht miteinander</h3>
               <p>Halbe Sätze, ganze Schäden.</p>
             </div>
           </div>
           <div class="v1-bento-card">
             <div class="v1-bento-num">05</div>
             <div>
-              <h3>Werte-Konflikt</h3>
+              <h3>Schlechte Stimmung im Betrieb</h3>
               <p>Tempo vs. Qualität.</p>
             </div>
           </div>
           <div class="v1-bento-card peri">
             <div class="v1-bento-num">06</div>
             <div>
-              <h3>Familienbetriebs-Konflikt</h3>
+              <h3>Teamprobleme im Familienbetrieb</h3>
               <p>Nachfolge & Geschwister.</p>
             </div>
           </div>
@@ -1258,7 +1296,7 @@
           </div>
           <div class="v1-bars-text">
             <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Reale Auswirkungen</div>
-            <h2 class="v1-bars-h2">So viel <em>Produktivität</em> verlieren Sie.</h2>
+            <h2 class="v1-bars-h2">Was <em>Mitarbeiterkonflikte</em> Ihr Unternehmen wirklich kosten.</h2>
             <p class="v1-bars-sub">Konflikte kosten Geld. Täglich. Nicht direkt sichtbar — aber messbar in Produktivitätsverlust, Reibungen im Team, Fluktuation und Fehlentscheidungen auf Führungsebene. Diese Kosten tauchen in keiner klassischen Auswertung auf — bis sie im Jahresabschluss sichtbar werden, ohne dass jemand die Ursache benennen kann.</p>
           </div>
         </div>
@@ -1271,7 +1309,7 @@
       <div class="container">
         <div class="v1-scenarios-head">
           <div class="section-tag-v2"><span class="section-tag-v2-line"></span>Was Konflikte wirklich kosten</div>
-          <h2 class="v1-scenarios-h2">Drei Betriebe.<br>Drei Szenarien.<br><em>Nachvollziehbare Zahlen.</em></h2>
+          <h2 class="v1-scenarios-h2">Drei Betriebe.<br>Drei reale Konfliktszenarien.<br><em>Konkrete Zahlen.</em></h2>
           <p class="v1-scenarios-sub">Konservativ kalkuliert auf Basis öffentlich zugänglicher Studien — keine Schätzwerte aus dem Marketing-Lehrbuch. Jede Position ist quellenbelegt; die vollständigen Belege finden Sie unter den Karten.</p>
         </div>
 
@@ -1297,9 +1335,8 @@
             <div class="v1-scen-row"><span>Produktivitätsverlust (8 MA)</span><span>52.800 €</span></div>
             <div class="v1-scen-row"><span>Erhöhte Krankenstände</span><span>10.300 €</span></div>
             <div class="v1-scen-row"><span>Führungszeit-Bindung</span><span>22.500 €</span></div>
-            <div class="v1-scen-row"><span>1 Fluktuation</span><span>44.000 €</span></div>
-            <div class="v1-scen-row"><span>Recruiting &amp; Onboarding</span><span>13.750 €</span></div>
-            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 143.350 €</span></div>
+            <div class="v1-scen-row"><span>1 Fluktuation (inkl. Recruiting &amp; Einarbeitung)</span><span>13.700 €</span></div>
+            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 99.300 €</span></div>
           </article>
 
           <!-- Szenario 3: Größerer Betrieb -->
@@ -1311,22 +1348,21 @@
             <div class="v1-scen-row"><span>Produktivitätsverlust (15 MA)</span><span>107.250 €</span></div>
             <div class="v1-scen-row"><span>Erhöhte Krankenstände</span><span>22.600 €</span></div>
             <div class="v1-scen-row"><span>Führungszeit (2 FK)</span><span>56.000 €</span></div>
-            <div class="v1-scen-row"><span>2 Fluktuationen</span><span>99.000 €</span></div>
-            <div class="v1-scen-row"><span>Recruiting &amp; Onboarding</span><span>27.500 €</span></div>
-            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 312.350 €</span></div>
+            <div class="v1-scen-row"><span>2 Fluktuationen (inkl. Recruiting &amp; Einarbeitung)</span><span>27.400 €</span></div>
+            <div class="v1-scen-total"><span>Pro Jahr</span><span>≈ 213.250 €</span></div>
           </article>
         </div>
 
         <div class="v1-scen-sources">
           <h3>Quellen &amp; Berechnungsgrundlage</h3>
           <ul>
-            <li><strong>KPMG-Konfliktkostenstudie:</strong> Führungskräfte verbringen 30–50 % ihrer Arbeitszeit mit Konfliktbearbeitung; bei betroffenen Mitarbeitern führen ungelöste Konflikte zu 10–15 % Produktivitätsverlust.</li>
+            <li><strong>KPMG-Konfliktkostenstudie (2009/2012):</strong> Führungskräfte verbringen 30–50 % ihrer Arbeitszeit mit Konfliktbearbeitung; bei betroffenen Mitarbeitern führen ungelöste Konflikte zu 10–15 % Produktivitätsverlust.</li>
             <li><strong>Gallup Engagement Index Deutschland (2023):</strong> 18 % der Beschäftigten haben innerlich gekündigt; geschätzter Produktivitätsverlust ca. 14 % je betroffener Person.</li>
-            <li><strong>Fehlzeiten-Report (WIdO / AOK):</strong> Konfliktbedingte psychische Belastungen erhöhen die Krankenstandstage signifikant — im Schnitt 5–8 zusätzliche Ausfalltage pro betroffenem Mitarbeiter und Jahr.</li>
-            <li><strong>Hays HR-Report &amp; Kienbaum HR-Benchmark:</strong> Vollkosten einer ungeplanten Nachbesetzung liegen bei 0,75–1,0 × Jahresgehalt; Recruiting &amp; Onboarding zusätzlich ca. 25 % eines Jahresgehalts.</li>
+            <li><strong>Fehlzeiten-Report (WIdO / AOK) &amp; ÖGK-Fehlzeitenbericht:</strong> Konfliktbedingte psychische Belastungen erhöhen die Krankenstandstage signifikant — im Schnitt 5–8 zusätzliche Ausfalltage pro betroffenem Mitarbeiter und Jahr; Tageskosten Krankenstand AT/DE laut WIFO/IW Köln ca. 250–300 €.</li>
+            <li><strong>Deloitte Österreich (2019), Fluktuationskostenstudie:</strong> durchschnittliche Vollkosten pro verlorener Stelle 14.900 € (Gesamtdurchschnitt), <strong>13.705 € in Unternehmen mit weniger als 100 Mitarbeitern</strong> — inkl. Recruiting, Onboarding und Übergangsverlust. Bei Führungspositionen typischerweise höher.</li>
             <li><strong>Gehaltsbasis (Annahme):</strong> Durchschnitts-Bruttogehalt KMU/Handwerk Österreich 55.000 € p.a. inkl. Lohnnebenkosten; Führungskräfte 75–80.000 € p.a.</li>
           </ul>
-          <p class="v1-scen-disclaimer">Konservativ kalkuliert. In der Praxis liegen die tatsächlichen Kosten häufig höher — etwa durch Projektverzug, Pönalen, Imageverlust oder Kettenreaktionen im Team. Die Zahlen oben sind belastbar, aber kein Pauschalwert: Jeder Betrieb ist anders. Eine konkrete Analyse für Ihren Betrieb ist Teil der kostenfreien Konfliktkosten-Analyse.</p>
+          <p class="v1-scen-disclaimer">Konservativ kalkuliert auf Basis der unteren Bandbreite der zitierten Studien. In der Praxis liegen die tatsächlichen Kosten häufig höher — etwa durch Projektverzug, Pönalen, Imageverlust, Kettenreaktionen im Team oder den Verlust qualifizierter Fachkräfte (deren Nachbesetzung deutlich über dem Deloitte-Durchschnitt liegen kann). Die Zahlen oben sind belastbar, aber kein Pauschalwert: Jeder Betrieb ist anders. Eine konkrete Analyse für Ihren Betrieb ist Teil der kostenfreien Konfliktkosten-Analyse.</p>
         </div>
       </div>
     </section>
@@ -1337,7 +1373,7 @@
         <div class="section-tag-v2" style="color: var(--peri);"><span class="section-tag-v2-line"></span>Die Lösung</div>
         <div style="display: flex; flex-wrap: wrap; gap: 2.5rem 4rem; align-items: flex-start;">
           <div style="flex: 1 1 440px; min-width: 0;">
-            <h2 class="v1-offer-h2" style="margin-top: 0;">Drei Wege zu einem<br><em>führungsstarken und konfliktbefreiten</em><br>Unternehmen</h2>
+            <h2 class="v1-offer-h2" style="margin-top: 0;">Mitarbeiterkonflikte lösen — <em>drei Wege</em> für KMU &amp; Handwerk</h2>
             <p class="v1-offer-sub">Kroes Consulting wendet keine Standard-Konzepte an, denn jedes Unternehmen hat seine eigene Geschichte, seine eigenen Menschen und Kulturen und seine eigenen Konfliktsituationen. Deshalb wird jede Begleitung individuell auf Ihre aktuellen Herausforderungen und Ihre Führungskulturen mit Ihren wirtschaftlichen Zielen zugeschnitten.</p>
             <p class="v1-offer-sub" style="font-style: italic; margin-top: 1.25rem;">Die Basis dafür sind die Expertise und über 20 Jahre Praxis-Erfahrungen aus KMU und Handwerk.</p>
             <p style="margin: 1.75rem 0 0; display: flex; flex-wrap: wrap; gap: 2rem; font-family: var(--font-body); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-50);">
@@ -1347,7 +1383,8 @@
             </p>
           </div>
           <div style="flex: 1 1 340px; min-width: 0; align-self: flex-start;">
-            <img src="assets/img/alexander-kroes-konfliktcoach.webp" alt="Alexander Kroes — Konfliktcoach für KMU & Handwerk" loading="lazy" class="v1-offer-portrait">
+            <img src="assets/img/alexander-kroes-4.webp" alt="Alexander Kroes — Diplom Konfliktcoach für KMU & Handwerk" loading="lazy" class="v1-offer-portrait">
+            <p class="v1-offer-portrait-caption" style="width: 70%; margin: 0.75rem 0 0 auto; text-align: center; font-family: var(--font-display); font-style: italic; font-size: 0.8125rem; font-weight: 400; color: var(--warm-50); opacity: 0.85;">Diplom Konfliktcoach Herr Alexander Kroes</p>
           </div>
         </div>
         <div class="v1-offer-grid" style="margin-top: 3rem;">
@@ -1420,7 +1457,7 @@
         <div class="v1-test-header">
           <div>
             <div class="v1-test-eyebrow">Das sagen meine Kunden</div>
-            <h2 class="v1-test-headline" id="testHeading">Führungskräfte, die <em>wieder führen</em> — statt zu löschen.</h2>
+            <h2 class="v1-test-headline" id="testHeading">Streit im Team gelöst — <em>Stimmen aus KMU &amp; Handwerk</em>.</h2>
           </div>
           <p class="v1-test-intro">Die Zusammenarbeit basiert nicht auf Standardlösungen, sondern auf einem klaren Verständnis für Strukturen, Mitarbeiter und Entscheidungsprozesse — speziell in Betrieben, in denen Leistung und Zusammenarbeit direkt zusammenhängen.</p>
         </div>
@@ -1431,7 +1468,7 @@
             <blockquote class="v1-test-quote">„Endlich jemand, der nicht in Theorien spricht, sondern versteht, wie ein Handwerksbetrieb wirklich tickt. Nach drei Monaten haben wir Konflikte gelöst, die uns vorher monatelang gelähmt haben."</blockquote>
             <div class="v1-test-author">
               <div class="v1-test-name">Thomas B.</div>
-              <div class="v1-test-role">Geschäftsführer · Elektrotechnik</div>
+              <div class="v1-test-role">Geschäftsführer · Metallverarbeitung</div>
             </div>
           </article>
 
@@ -1456,6 +1493,16 @@
       </div>
     </section>
 
+    <!-- DECISION — Pull-Quote vor finalem CTA -->
+    <section class="v1-decision" aria-label="Entscheidungsmoment">
+      <div class="container">
+        <div class="v1-decision-inner reveal">
+          <p class="v1-decision-line v1-decision-line--strong">Wer Veränderung will, <em>sucht Wege.</em></p>
+          <p class="v1-decision-line v1-decision-line--muted">Wer zögert, findet Gründe.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST + CTA — Full-Width Unified Block -->
     <section class="v1-trust" aria-labelledby="trustHeading">
       <div class="v1-trust-grid">
@@ -1464,7 +1511,7 @@
             <img src="assets/img/alexander-kroes-18.webp" alt="Alexander Kroes. Konfliktcoach für KMU & Handwerk" loading="lazy" decoding="async">
           </div>
           <div class="v1-trust-eyebrow">Keine Folien. Keine Floskeln.</div>
-          <h2 class="v1-trust-headline" id="trustHeading">Strukturen statt Symptome.<br><em>Konfliktlösungssysteme für Führungskräfte.</em></h2>
+          <h2 class="v1-trust-headline" id="trustHeading">Konflikte im Team <em>pragmatisch lösen.</em><br>Statt schweigen &amp; aussitzen.</h2>
           <p class="v1-trust-sub">Ich baue Ihnen die Strukturen, die Konflikte nicht nur lösen, sondern verhindern. Damit Sie Fachkräfte halten, klare Entscheidungen treffen und Ihr Handwerksbetrieb profitabel wächst.</p>
           <div class="v1-trust-buttons">
             <a href="quiz.html" class="v1-trust-btn">Konflikt-Diagnose vereinbaren →</a>
@@ -1481,7 +1528,7 @@
         <div class="v1-faq-grid">
           <aside class="v1-faq-aside">
             <div class="v1-faq-eyebrow">Häufige Fragen</div>
-            <h2 id="faqHeading">Ihre Fragen,<br><em>klar beantwortet.</em></h2>
+            <h2 id="faqHeading">Mitarbeiter-Konflikte:<br><em>Häufige Fragen</em> aus dem Betriebsalltag.</h2>
             <p>Sie haben eine Frage, die hier nicht beantwortet wird? Schreiben Sie mir direkt — ich antworte persönlich innerhalb von 24 Stunden.</p>
             <a href="mailto:info@kroes-consulting.com?subject=Anfrage%20Konfliktmanagement" class="v1-faq-cta">
               Direkt anfragen <span class="v1-faq-cta-arrow" aria-hidden="true">→</span>
@@ -1542,7 +1589,7 @@
       <div class="container">
         <div class="v1-insurance-card">
           <div class="v1-insurance-text">
-            <h2>Beratung mit Substanz. Sicherheit mit System.</h2>
+            <h2>Konflikt-Beratung mit Substanz. Sicherheit mit System.</h2>
             <p>Verantwortung heißt, zu den eigenen Empfehlungen zu stehen. Mit Haltung und Absicherung. Deshalb ist Kroes Consulting professionell versichert — für die maximale Sicherheit meiner Kunden.</p>
           </div>
           <div class="v1-insurance-badge">
@@ -1570,7 +1617,7 @@
             <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting — staatlich geprüft, ÖCERT" loading="lazy">
           </div>
         </div>
-        <div class="footer-col"><h4>Navigation</h4>
+        <div class="footer-col"><p class="footer-col-title">Navigation</p>
           <ul class="footer-links" role="list">
             <li><a href="index.html">Startseite</a></li>
             <li><a href="leistungen.html">Leistungen</a></li>
@@ -1579,12 +1626,12 @@
             <li><a href="quiz.html">Konflikt-Quiz</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul></div>
-        <div class="footer-col"><h4>Leistungen</h4>
+        <div class="footer-col"><p class="footer-col-title">Leistungen</p>
           <ul class="footer-links" role="list">
             <li><a href="leadresolve.html">LeadResolve</a></li>
             <li><a href="leadshift.html">LeadShift</a></li>
           </ul></div>
-        <div class="footer-col"><h4>Kontakt</h4>
+        <div class="footer-col"><p class="footer-col-title">Kontakt</p>
           <div class="footer-contact"><p>Alexander Kroes e.U.<br>Büro:<br>Unterer Stadtplatz 11<br>6330 Kufstein<br>Österreich<br><br><a href="tel:+43533820105" style="color:inherit;">+43 (0) 5338 20105</a><br><a href="mailto:info@kroes-consulting.com" style="color:inherit;">info@kroes-consulting.com</a></p></div></div>
       </div>
       <div class="footer-social-row" aria-label="Social Media">

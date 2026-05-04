@@ -527,7 +527,7 @@
 
     var bannerHTML =
       '<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis" hidden>' +
-        '<h2 class="cookie-banner-title">Datenschutz &amp; Cookies</h2>' +
+        '<p class="cookie-banner-title" role="heading" aria-level="2">Datenschutz &amp; Cookies</p>' +
         '<p class="cookie-banner-text">' +
           'Wir verwenden ausschließlich technisch notwendige Cookies, um den Betrieb dieser Website zu gewährleisten. ' +
           'Weitere Cookies (z. B. für Statistik oder Marketing) setzen wir nur mit Ihrer ausdrücklichen Einwilligung. ' +
@@ -543,11 +543,11 @@
     var modalHTML =
       '<div class="cookie-modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">' +
         '<div class="cookie-modal-card">' +
-          '<h2 class="cookie-modal-title" id="cookieModalTitle">Cookie-Einstellungen</h2>' +
+          '<p class="cookie-modal-title" id="cookieModalTitle" role="heading" aria-level="2">Cookie-Einstellungen</p>' +
           '<p class="cookie-modal-intro">Wählen Sie, welche Kategorien Sie zulassen möchten. Sie können Ihre Auswahl jederzeit über den Button „Cookie-Einstellungen" links unten widerrufen oder anpassen.</p>' +
           '<div class="cookie-cat">' +
             '<div class="cookie-cat-info">' +
-              '<h3 class="cookie-cat-name">Notwendig</h3>' +
+              '<p class="cookie-cat-name" role="heading" aria-level="3">Notwendig</p>' +
               '<p class="cookie-cat-desc">Für den Betrieb der Website unverzichtbar (z. B. Sitzungsführung, Sicherheits-Tokens, Speicherung Ihrer Cookie-Auswahl). Diese Cookies können nicht deaktiviert werden.</p>' +
             '</div>' +
             '<label class="cookie-switch" aria-label="Notwendige Cookies (immer aktiv)">' +
@@ -557,7 +557,7 @@
           '</div>' +
           '<div class="cookie-cat">' +
             '<div class="cookie-cat-info">' +
-              '<h3 class="cookie-cat-name">Statistik</h3>' +
+              '<p class="cookie-cat-name" role="heading" aria-level="3">Statistik</p>' +
               '<p class="cookie-cat-desc">Anonyme Reichweitenmessung, um die Website zu verbessern. Aktuell nicht im Einsatz — Schalter wird vorgehalten für künftige Erweiterungen.</p>' +
             '</div>' +
             '<label class="cookie-switch" aria-label="Statistik-Cookies">' +
@@ -567,7 +567,7 @@
           '</div>' +
           '<div class="cookie-cat">' +
             '<div class="cookie-cat-info">' +
-              '<h3 class="cookie-cat-name">Marketing</h3>' +
+              '<p class="cookie-cat-name" role="heading" aria-level="3">Marketing</p>' +
               '<p class="cookie-cat-desc">Cookies für personalisierte Werbung oder Conversion-Tracking. Aktuell nicht im Einsatz.</p>' +
             '</div>' +
             '<label class="cookie-switch" aria-label="Marketing-Cookies">' +
