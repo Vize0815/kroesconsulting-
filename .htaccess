@@ -1,0 +1,8 @@
+# Kroes Consulting — Apache config
+
+# XML-Dateien (sitemap.xml) korrekt als application/xml ausliefern,
+# damit Google/Bing sie als gueltige Sitemap erkennen.
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddCharset UTF-8 .xml
+</IfModule>
