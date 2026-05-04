@@ -664,4 +664,55 @@
     });
   })();
 
+  /* ----------------------------------------------------------
+     Calendly popup — lazy-loaded, centered, smooth
+  ---------------------------------------------------------- */
+  (function () {
+    var DEFAULT_URL = 'https://calendly.com/bewerbung-kroes-consulting/30min';
+    var CSS_HREF = 'https://assets.calendly.com/assets/external/widget.css';
+    var JS_SRC   = 'https://assets.calendly.com/assets/external/widget.js';
+    var loadingPromise = null;
+
+    function loadCalendly() {
+      if (window.Calendly && window.Calendly.initPopupWidget) return Promise.resolve();
+      if (loadingPromise) return loadingPromise;
+
+      loadingPromise = new Promise(function (resolve, reject) {
+        if (!document.querySelector('link[data-calendly-css]')) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = CSS_HREF;
+          link.setAttribute('data-calendly-css', '');
+          document.head.appendChild(link);
+        }
+        var existing = document.querySelector('script[data-calendly-js]');
+        if (existing) {
+          existing.addEventListener('load', function () { resolve(); });
+          existing.addEventListener('error', reject);
+          return;
+        }
+        var s = document.createElement('script');
+        s.src = JS_SRC;
+        s.async = true;
+        s.setAttribute('data-calendly-js', '');
+        s.onload = function () { resolve(); };
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+      return loadingPromise;
+    }
+
+    document.addEventListener('click', function (e) {
+      var trigger = e.target.closest && e.target.closest('[data-calendly]');
+      if (!trigger) return;
+      e.preventDefault();
+      var url = trigger.getAttribute('data-calendly') || DEFAULT_URL;
+      loadCalendly().then(function () {
+        if (window.Calendly && window.Calendly.initPopupWidget) {
+          window.Calendly.initPopupWidget({ url: url });
+        }
+      });
+    });
+  })();
+
 })();
