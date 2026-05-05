@@ -1690,6 +1690,10 @@ em, .italic { font-style: italic; }
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  border-radius: 12px;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
 }
 
 .contact-portrait img {
@@ -1700,6 +1704,43 @@ em, .italic { font-style: italic; }
   border-radius: 12px;
   display: block;
   box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.6s ease;
+  will-change: transform;
+}
+
+.contact-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1.5px solid transparent;
+  pointer-events: none;
+  transition: inset 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.5s ease;
+}
+
+.contact-portrait:hover {
+  transform: translateY(-4px);
+}
+
+.contact-portrait:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.02);
+}
+
+.contact-portrait:hover::after {
+  border-color: rgba(118, 140, 253, 0.65);
+  inset: 6px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-portrait,
+  .contact-portrait img,
+  .contact-portrait::after {
+    transition: none;
+  }
+  .contact-portrait:hover { transform: none; }
+  .contact-portrait:hover img { transform: none; filter: none; }
 }
 
 .contact-detail {
@@ -1784,6 +1825,17 @@ em, .italic { font-style: italic; }
   text-transform: uppercase;
   color: var(--ink-400);
   font-weight: 600;
+}
+
+.form-required {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d92d20;
+  vertical-align: middle;
+  margin-left: 0.25em;
+  transform: translateY(-1px);
 }
 
 .form-input,
