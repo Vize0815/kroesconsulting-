@@ -1677,8 +1677,8 @@ em, .italic { font-style: italic; }
 .contact-info-row {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: center;
 }
 
 .contact-info-details {
@@ -1687,15 +1687,15 @@ em, .italic { font-style: italic; }
 
 .contact-portrait {
   margin: 0;
-  align-self: stretch;
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-portrait img {
-  width: clamp(180px, 18vw, 260px);
-  height: 100%;
-  max-height: 360px;
+  width: clamp(130px, 14vw, 180px);
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 12px;
   display: block;
@@ -2605,9 +2605,8 @@ em, .italic { font-style: italic; }
   .contact-info-panel,
   .contact-form-panel { padding: 2.5rem 1.5rem; }
 
-  .contact-info-row { grid-template-columns: 1fr; }
-  .contact-portrait { justify-content: center; }
-  .contact-portrait img { width: 100%; max-width: 280px; max-height: 320px; }
+  .contact-info-row { gap: 1.25rem; }
+  .contact-portrait img { width: clamp(110px, 28vw, 150px); }
 
   .page-header { padding-top: 7rem; }
 }
