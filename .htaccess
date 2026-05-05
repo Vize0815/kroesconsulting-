@@ -6,3 +6,69 @@
   AddType application/xml .xml
   AddCharset UTF-8 .xml
 </IfModule>
+
+# Browser-Caching: lange Cache-Zeiten fuer statische Assets,
+# kurze fuer HTML (damit Aenderungen schnell sichtbar werden).
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 month"
+
+  # Bilder: 1 Jahr (aendern sich selten, Dateinamen sind eindeutig)
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType image/x-icon              "access plus 1 year"
+
+  # Fonts: 1 Jahr (selbst gehostet, versioniert)
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType font/woff                 "access plus 1 year"
+  ExpiresByType application/font-woff2    "access plus 1 year"
+
+  # CSS / JS: 1 Monat
+  ExpiresByType text/css                  "access plus 1 month"
+  ExpiresByType application/javascript    "access plus 1 month"
+  ExpiresByType text/javascript           "access plus 1 month"
+
+  # HTML: 1 Stunde (damit Inhaltsaenderungen rasch sichtbar werden)
+  ExpiresByType text/html                 "access plus 1 hour"
+
+  # XML / Sitemap: 1 Tag
+  ExpiresByType application/xml           "access plus 1 day"
+  ExpiresByType text/xml                  "access plus 1 day"
+</IfModule>
+
+# Cache-Control Header zusaetzlich setzen (mod_headers).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|png|jpe?g|gif|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Kompression (gzip/deflate) fuer Text-Assets.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Brotli falls verfuegbar (Apache 2.4 + mod_brotli).
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html
+  AddOutputFilterByType BROTLI_COMPRESS text/css
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/xml
+</IfModule>
