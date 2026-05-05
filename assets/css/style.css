@@ -3923,12 +3923,11 @@ body.callback-modal-open {
 
 .v1-manifest-stage {
   position: relative;
-  min-height: clamp(220px, 24vw, 320px);
+  display: grid;
   margin-bottom: clamp(0.3rem, 0.6vw, 0.6rem);
 }
 .v1-manifest-slide {
-  position: absolute;
-  top: 0; left: 0; right: 0;
+  grid-area: 1 / 1;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: clamp(0.5rem, 1.2vw, 1.1rem);
@@ -4045,7 +4044,6 @@ body.callback-modal-open {
   .v1-manifest-slide { grid-template-columns: 1fr; gap: 0.4rem; align-items: start; }
   .v1-manifest-body { grid-column: 1 / 2; }
   .v1-manifest-num { font-size: 3rem; }
-  .v1-manifest-stage { min-height: clamp(280px, 70vw, 380px); }
   .v1-manifest-nav { justify-content: center; gap: 0.6rem 0.7rem; }
   .v1-manifest-nav::before { display: none; }
   .v1-manifest-dot { padding: 0.7rem 1.1rem; font-size: 0.9rem; }
