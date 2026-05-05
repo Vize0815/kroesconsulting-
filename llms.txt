@@ -53,5 +53,6 @@ Beratungsprozess in fünf Phasen: Erstgespräch & Kennenlernen → Analyse & Sta
 
 ## Optional
 
+- [Vollständige Inhalte (llms-full.txt)](https://www.kroes-consulting.com/llms-full.txt): Komplette Seiteninhalte aller Hauptseiten in einer Markdown-Datei — für KI-Systeme, die den vollen Kontext benötigen.
 - [Impressum](https://www.kroes-consulting.com/impressum.html): Pflichtangaben gemäß §5 ECG und §25 MedienG (Österreich).
 - [Datenschutzerklärung](https://www.kroes-consulting.com/datenschutz.html): DSGVO-konforme Datenschutzhinweise.

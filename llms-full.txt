@@ -1,0 +1,454 @@
+# Kroes Consulting & Coaching — Vollständige Inhalte
+
+> Konfliktmanagement und Führungskräftecoaching für KMU und Handwerksbetriebe in Österreich. Inhaber Alexander Kroes (Alexander Kroes e.U.) macht die wirtschaftlichen Verluste durch ungelöste Konflikte sichtbar und beseitigt sie systematisch — damit Unternehmen Fachkräfte halten, Konflikte lösen und profitabel wachsen.
+
+Diese Datei enthält die vollständigen Inhalte aller Hauptseiten von kroes-consulting.com in strukturierter Markdown-Form. Für eine kompakte Übersicht siehe [llms.txt](https://www.kroes-consulting.com/llms.txt).
+
+**Positionierung:** „Konflikte kosten Unternehmen Geld – ich mache diese Verluste sichtbar und beseitige sie systematisch."
+
+**Zielgruppe:** Inhaber und Geschäftsführer von KMU und Handwerksbetrieben (DACH-Raum, Schwerpunkt Österreich/Tirol).
+
+**Standort:** Unterer Stadtplatz 11, 6330 Kufstein, Österreich.
+
+**Qualifikationen Alexander Kroes:**
+- Elektrotechnikermeister (staatlich geprüft)
+- Betriebswirt des Handwerks (Handwerkskammer)
+- Zertifizierter Unternehmensberater
+- Zertifizierter Business Coach
+- Zertifizierter Konfliktcoach (kein Mediator)
+
+**Signature-Programme:**
+- **LeadResolve** — Konfliktcoaching für Führungskräfte
+- **LEADSHIFT** — Leadership- und Führungskräftecoaching
+
+---
+
+## Startseite — Konflikte im Unternehmen lösen
+
+URL: https://www.kroes-consulting.com/index.html
+
+### Hero
+**Konfliktlösungssysteme für Führungskräfte aus KMU & Handwerk**
+
+Konflikte entstehen nicht plötzlich – sie entwickeln sich im Alltag: in der Kommunikation, in der Zusammenarbeit und oft unbemerkt über Wochen oder Monate. Wenn Spannungen im Team bestehen bleiben, verlieren Unternehmen nicht nur Zeit und Energie, sondern auch Leistung und Vertrauen.
+
+Ich unterstütze Sie als Unternehmer, Geschäftsführer und Führungskraft dabei, Konfliktdynamiken im Unternehmen gezielt zu entschärfen und wieder handlungsfähig zu werden — ohne dauerhaft in Reibung und operativen Druck festzustecken.
+
+Denn jede Konfliktsituation ist eine Chance, Klarheit über Strukturen, Beziehungen und Entscheidungen zu gewinnen und daraus eine stabilere, leistungsfähigere Zusammenarbeit zu entwickeln.
+
+### Sechs typische Mitarbeiterkonflikte — täglich, teuer, lösbar
+
+1. **Probleme zwischen Chef und Mitarbeiter** — Der häufigste Konflikt und der teuerste. Ungeklärte Erwartungen, fehlende Anerkennung, harte Töne. Folge: stille Kündigung, Quiet Quitting, Fluktuation.
+2. **Generationenkonflikte im Betrieb** — Alter Meister, junge Lehrlinge.
+3. **Probleme zwischen Mitarbeitern** — Wer entscheidet was?
+4. **Mitarbeiter reden nicht miteinander** — Halbe Sätze, ganze Schäden.
+5. **Schlechte Stimmung im Betrieb** — Tempo vs. Qualität.
+6. **Teamprobleme im Familienbetrieb** — Nachfolge & Geschwister.
+
+### Konflikt-Kennzahlen (mit Quellen)
+
+- **30–50 % Führungszeit** für Konfliktbearbeitung statt Wertschöpfung (KPMG-Konfliktkostenstudie).
+- **2,1 Stunden pro Woche** verlorene Arbeitszeit pro Mitarbeiter durch Konflikte (CPP Global Human Capital Report).
+- **18 % der Mitarbeiter** haben innerlich gekündigt — keine Eigeninitiative, keine Verantwortung (Gallup Engagement Index Deutschland).
+- **70 % der Varianz** in Mitarbeiter-Engagement gehen direkt auf die Führungskraft zurück (Gallup „It's the Manager").
+- **37 % der Meeting-Zeit** gehen für unnötige oder schlecht vorbereitete Termine verloren (Doodle State of Meetings Report).
+
+### Was Mitarbeiterkonflikte Ihr Unternehmen wirklich kosten
+
+Konflikte kosten Geld. Täglich. Nicht direkt sichtbar — aber messbar in Produktivitätsverlust, Reibungen im Team, Fluktuation und Fehlentscheidungen auf Führungsebene. Diese Kosten tauchen in keiner klassischen Auswertung auf — bis sie im Jahresabschluss sichtbar werden, ohne dass jemand die Ursache benennen kann.
+
+### Drei Betriebe. Drei reale Konfliktszenarien. Konkrete Zahlen.
+
+Konservativ kalkuliert auf Basis öffentlich zugänglicher Studien — keine Schätzwerte aus dem Marketing-Lehrbuch.
+
+**Szenario · Klein (8 Mitarbeiter · Handwerksbetrieb):** Ungelöster Konflikt zwischen Meister und zwei langgedienten Gesellen. Zieht sich seit Monaten — niemand spricht es offen an, alle merken es.
+- Produktivitätsverlust (3 MA): 19.800 €
+- Erhöhte Krankenstände: 3.900 €
+- Führungszeit Inhaber: 17.500 €
+- **Pro Jahr ≈ 41.200 €**
+
+**Szenario · Mittel (25 Mitarbeiter · KMU):** Eskalierter Teamkonflikt zwischen zwei Bereichen. Erste Kündigung steht im Raum, das Klima kippt — der Inhaber greift täglich ein.
+- Produktivitätsverlust (8 MA): 52.800 €
+- Erhöhte Krankenstände: 10.300 €
+- Führungszeit-Bindung: 22.500 €
+- 1 Fluktuation (inkl. Recruiting & Einarbeitung): 13.700 €
+- **Pro Jahr ≈ 99.300 €**
+
+**Szenario · Größer (50 Mitarbeiter · Mittelständisches Handwerk):** Führungskonflikt zwischen Geschäftsführung und zwei Bereichsleitern. Fachkräfte verlassen den Betrieb — nicht wegen des Geldes.
+- Produktivitätsverlust (15 MA): 107.250 €
+- Erhöhte Krankenstände: 22.600 €
+- Führungszeit (2 FK): 56.000 €
+- 2 Fluktuationen (inkl. Recruiting & Einarbeitung): 27.400 €
+- **Pro Jahr ≈ 213.250 €**
+
+### Quellen & Berechnungsgrundlage
+
+- **KPMG-Konfliktkostenstudie (2009/2012):** Führungskräfte verbringen 30–50 % ihrer Arbeitszeit mit Konfliktbearbeitung; bei betroffenen Mitarbeitern führen ungelöste Konflikte zu 10–15 % Produktivitätsverlust.
+- **Gallup Engagement Index Deutschland (2023):** 18 % der Beschäftigten haben innerlich gekündigt; geschätzter Produktivitätsverlust ca. 14 % je betroffener Person.
+- **Fehlzeiten-Report (WIdO / AOK) & ÖGK-Fehlzeitenbericht:** Konfliktbedingte psychische Belastungen erhöhen Krankenstandstage signifikant — im Schnitt 5–8 zusätzliche Ausfalltage pro betroffenem Mitarbeiter und Jahr; Tageskosten Krankenstand AT/DE laut WIFO/IW Köln ca. 250–300 €.
+- **Deloitte Österreich (2019):** Fluktuationskostenstudie — durchschnittliche Vollkosten pro verlorener Stelle 14.900 € (Gesamtdurchschnitt), 13.705 € in Unternehmen mit weniger als 100 Mitarbeitern. Bei Führungspositionen typischerweise höher.
+- **Gehaltsbasis (Annahme):** Durchschnitts-Bruttogehalt KMU/Handwerk Österreich 55.000 € p.a. inkl. Lohnnebenkosten; Führungskräfte 75–80.000 € p.a.
+
+### Drei Wege zur Konfliktlösung
+
+1. **Konfliktkosten-Analyse** — 30-minütiges Strategiegespräch, exklusiv nach abgeschlossenem Konflikt-Quiz. Kostenfrei.
+2. **LeadResolve** — Konfliktcoaching für Führungskräfte. Spannungen verstehen, entschärfen und als Wendepunkt nutzen. Auf Anfrage.
+3. **LeadShift** — Leadership-Coaching für moderne Führungskräfte. Entscheidungssicherheit gewinnen, Teams stabil führen, kulturelle Transformation gestalten. Projektbasiert.
+
+### Selbstcheck · Konflikt-Quiz (3 Minuten)
+
+Wie konfliktfähig ist Ihr Unternehmen wirklich? 10 Fragen, 4 Kategorien, sofortige Auswertung mit konkreten Empfehlungen. Der Fokus liegt nicht auf Bewertung, sondern auf Reflexion und Entwicklung. 100 % anonym.
+
+### Stimmen aus KMU & Handwerk
+
+> „Endlich jemand, der nicht in Theorien spricht, sondern versteht, wie ein Handwerksbetrieb wirklich tickt. Nach drei Monaten haben wir Konflikte gelöst, die uns vorher monatelang gelähmt haben."
+> — Thomas B., Geschäftsführer · Metallverarbeitung
+
+> „Wir haben nicht nur eine bessere Stimmung im Team, sondern endlich Strukturen, die funktionieren. Auch wenn ich mal nicht im Betrieb bin. Das war für mich der entscheidende Unterschied."
+> — Lorenz M., Inhaber · Tischlerei
+
+> „Klare Sprache, kein Geschwafel, keine Folien-Schlachten. Alexander hat in zwei Gesprächen mehr bewegt als andere in einem halben Jahr. Genau das, was ein Praktiker braucht."
+> — Michael F., Prokurist · Maler
+
+### FAQ Startseite
+
+**Woran erkenne ich, dass Konflikte mir gerade Geld kosten — auch wenn keiner offen streitet?**
+Wenn auf der Baustelle plötzlich langsamer gearbeitet wird, Übergaben nicht sauber laufen oder kleine Fehler sich häufen, dann ist das selten Zufall. Oft sprechen die Leute nicht mehr miteinander — sondern nur noch das Nötigste. Das kostet Sie jeden Tag Zeit, Nerven und vor allem Marge. Und das Gefährlichste: Es passiert schleichend.
+
+**Warum eskalieren Konflikte in Handwerksbetrieben oft schneller als in anderen Unternehmen?**
+Weil hier unter höherem Druck gearbeitet wird. Enge Zeitpläne, körperliche Arbeit, direkte Kommunikation — da reicht oftmals nur ein falsches Wort und es kippt. Dinge werden persönlich genommen, Fronten verhärten sich, und plötzlich geht es nicht mehr um die Sache, sondern ums „Recht haben".
+
+**Was ist das größte Risiko, wenn ich Konflikte einfach laufen lasse?**
+Sie verlieren die besten Leute — nicht die lautesten. Die Guten gehen leise. Zurück bleiben oftmals genau die, die Teil des Problems sind.
+
+**Warum reicht es nicht, wenn ich als Geschäftsführer einfach ein Machtwort spreche?**
+Weil Sie damit punktuelle Symptome unterdrücken, aber nicht die eigentlichen Ursachen lösen. Kurzfristig ist Ruhe — aber unter der Oberfläche bleibt alles bestehen. Beim nächsten Druck eskaliert es wieder, oft stärker als zuvor.
+
+**Warum sollte ich das Thema extern lösen lassen — und nicht intern?**
+Weil Sie Teil des Systems sind. Ihre Sicht ist nicht neutral — und genau das merken Ihre Mitarbeiter. Ein externer Blick bringt Struktur, Klarheit und Lösungen, die akzeptiert werden.
+
+---
+
+## Leistungen — Konfliktmanagement für Unternehmen
+
+URL: https://www.kroes-consulting.com/leistungen.html
+
+**Konflikt-Management für Unternehmen** — Zwei Programme für Führungskräfte in KMU & Handwerk: Konflikte lösen, Führung stärken, Unternehmen profitabel führen.
+
+Konflikte kosten Unternehmen Geld. Schlechte Führung kostet Fachkräfte. Beides ist kein Zufall — sondern ein Systemproblem. Meine Arbeit setzt genau dort an: praxisnah & pragmatisch mit Fokus auf das, was im Betriebsalltag wirklich trägt.
+
+- **LeadResolve** macht Konflikte sichtbar und beseitigt sie systematisch.
+- **LEADSHIFT** entwickelt Sie als Führungskraft mit Klarheit, Entscheidungssicherheit und Wirkung.
+
+Beides zugeschnitten auf KMU & Handwerk — basierend auf über 20 Jahren Praxis.
+
+### LeadResolve — Konfliktcoaching: Mitarbeiterkonflikte systematisch lösen
+
+Ungelöste Konflikte kosten Zeit, Geld, Energie und Motivation — und schwächen Teamdynamik wie Mitarbeiterbindung. LeadResolve macht diese Verluste sichtbar und beseitigt sie systematisch: zielorientiert, diskret und mit Fokus auf langfristige Wirkung im Betriebsalltag.
+
+Bis zu 50 % der Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte. Bei Führungskräften bindet Konfliktarbeit oft 30–50 % der wöchentlichen Arbeitszeit.
+
+**Leistungsumfang:**
+- 1:1 Coaching für Führungskräfte & Unternehmer
+- Reflexions- & Strategiesessions
+- Team-Workshops zu Konfliktdynamik
+- Kleingruppen-Coaching (4–6 Teilnehmer)
+- Konfliktanalyse & Mustererkennung
+- Praxis-Transfer in den Führungsalltag
+
+**Für wen:** Unternehmer:innen & Geschäftsführer:innen, Bereichs- & Abteilungsleiter:innen, Projektmanager:innen.
+
+**Format:** Inhouse, intern oder nach Absprache. Persönlich · diskret · nachhaltig. Absolute Verschwiegenheit garantiert.
+
+### LEADSHIFT — Führungskräftecoaching: Führungsexpertise mit Wirkung
+
+Führung entscheidet über Motivation, Leistung und Zukunftsfähigkeit — und damit direkt über Ihren Unternehmenserfolg. LEADSHIFT entwickelt Sie als moderne Führungskraft mit Klarheit, Entscheidungssicherheit und Wirkung.
+
+Unternehmen mit effektiver Führung sind bis zu 3,5-mal erfolgreicher und erzielen bis zu 38 % bessere Business-Performance.
+
+**Leistungsumfang:**
+- 1:1 Coaching (Präsenz oder online)
+- Blended Learning
+- Team-Workshops zu Leadership & New Work
+- Kleingruppen-Coaching (4–6 Teilnehmer)
+- Follow-up & Transfer-Coaching
+- Aufbau psychologischer Sicherheit im Team
+
+**Für wen:** Führungskräfte in KMU & Handwerk, Team- & Abteilungsleiter:innen in Übergangssituationen, Unternehmer:innen, die Leadership menschlicher gestalten möchten.
+
+**Format:** Inhouse, online oder nach Absprache. Praxisorientiert · ergebnisorientiert. Basierend auf 20+ Jahren Projekt- & Führungserfahrung.
+
+> Wir lösen akute Konflikte im Unternehmen und entwickeln gleichzeitig die Fähigkeit, zukünftige Spannungen frühzeitig zu erkennen und sicher zu steuern.
+
+---
+
+## LeadResolve — Mitarbeiterkonflikte im Betrieb lösen
+
+URL: https://www.kroes-consulting.com/leadresolve.html
+
+**LeadResolve** ist das Konfliktcoaching-Programm für Inhaber, Geschäftsführer und Führungskräfte in KMU & Handwerk. Es macht Konflikte im Unternehmen sichtbar und beseitigt sie systematisch, bevor sie weitere Zeit, Geld und Fachkräfte kosten.
+
+Konflikte erkennen. Klarheit gewinnen. Führungsstärke entfalten.
+
+### Wenn Konflikte Ihrem Unternehmen viel Geld kosten, ist das kein Zufall
+
+Ungelöste Konflikte ziehen sich wie Wasser durch jeden Betrieb: durch Krankenstände, durch Fluktuation, durch verlorene Aufträge und durch Führungskräfte, die ihre Energie in die falschen Themen stecken. Bis zu 50 % aller Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte. Bei Führungskräften bindet Konfliktarbeit oft 30–50 % der wöchentlichen Arbeitszeit.
+
+LeadResolve setzt genau dort an. Das Programm vermittelt Führungskräften, wie sie Konflikte frühzeitig erkennen, strukturiert auflösen und so eine Kultur etablieren, in der Probleme nicht eskalieren, sondern produktiv werden. Im Zentrum steht keine Theorie, sondern Ihr konkreter Betriebsalltag — auf Augenhöhe, mit über 25 Jahren Praxis aus Handwerk, Projektmanagement und Beratung.
+
+**Das Ergebnis:** Sichere Mitarbeiterbindung, weniger Fluktuation, geringere Krankenstände. Und ein Unternehmen, das als Arbeitgeber wieder spürbar attraktiver wird.
+
+### Programm im Überblick
+
+**Zielgruppe:** Unternehmer:innen, Geschäftsführer:innen, Bereichsleiter:innen, Abteilungsleiter:innen, Projektmanager:innen — Führungskräfte, die echte Verantwortung tragen und Veränderung wirklich wollen.
+
+**Methoden & Formate:** 1:1 Coaching, Reflexions- & Strategie-Sessions, Team-Workshops. Persönlich, diskret, nachhaltig. Praxisnah und sofort anwendbar — keine PowerPoint-Theorie, sondern Werkzeuge für den Montagmorgen.
+
+**Ort:** Inhouse bei Ihnen im Betrieb, intern in unseren Räumen in Kufstein, oder online nach Absprache.
+
+**Anzahl Teilnehmende:** Einzelcoaching (1 Person), Kleingruppen (4–6 Personen), Workshops (6–10 Personen). Bevorzugt arbeite ich in Kleingruppen mit max. 6 Führungskräften.
+
+**Zeitraum:** Sprint (4–6 Wochen), Standard-Programm (3 Monate), Begleitung (bis 12 Monate).
+
+**Investition:** Individuell auf Format & Umfang abgestimmt. Schriftliches Angebot nach Erstgespräch. Klares Preis-Leistungs-Verhältnis.
+
+### Konflikte sind teuer — Sie wissen es nur (noch) nicht
+
+- **50 %** der Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte.¹
+- **30–50 %** der wöchentlichen Arbeitszeit binden Konflikte bei Führungskräften.¹
+- **25.000–50.000 €** durchschnittliche Kosten pro Mobbingfall im Unternehmen.⁴
+- **14.900 €** durchschnittliche Fluktuationskosten pro verlorener Stelle in Österreich. In KMU rund 13.700 €, bei Führungspositionen deutlich höher.⁵
+
+### Beispielrechnung: Was LeadResolve in einem 100-MA-Betrieb bewegt
+
+Konservative Schätzung, basiert auf Branchendaten zu Krankenstand, Konfliktanteil und durchschnittlichen Tageskosten. Indirekte Kosten durch Fluktuation, Recruiting und Produktivitätsverluste sind hier noch nicht berücksichtigt.
+
+- Gesamt-Krankenstandstage / Jahr: 1.500 Tage
+- davon psychisch bedingt (≈ 10 %)²: 150 Tage
+- davon konfliktbedingt (bis zu 50 %)³: 75 Tage
+- Kosten pro Krankheitstag⁶: ≈ 250 €
+- **Einsparpotenzial pro Jahr: 18.750 €**
+
+Volkswirtschaftlich allein in AT & DE über 50 Mrd. €⁷ jährlich durch ungelöste Konflikte.
+
+### Quellen & Methodik (LeadResolve)
+
+1. KPMG (2009/2012): Konfliktkostenstudie. „Konfliktkosten. Reibungsverluste in Unternehmen". KPMG AG Wirtschaftsprüfungsgesellschaft, Frankfurt.
+2. Fehlzeiten-Report (WIdO/AOK Deutschland) sowie ÖGK-Fehlzeitenberichte für Österreich.
+3. Anteil konfliktbedingter Anteile an psychisch bedingten Fehlzeiten — konservativer Richtwert auf Basis arbeitspsychologischer Forschung (Leymann; Esser/Wolmerath; Bundespsychotherapeutenkammer-Reports). Bandbreite 30–60 %; hier mit „bis zu 50 %" zurückhaltend angesetzt.
+4. Durchschnittliche Kosten pro Mobbingfall: 25.000–50.000 €. Erhebung Hernstein-Institut sowie Mobbingforschung nach Leymann (1993) und Esser/Wolmerath.
+5. Deloitte Österreich (2019): Studie zu Fluktuationskosten österreichischer Unternehmen, Befragung von 110 Führungskräften.
+6. WIFO, IW Köln, Statistik Austria — Tageskosten Krankenstand inkl. Lohnfortzahlung, Produktivitätsausfall, anteilige Lohnnebenkosten.
+7. Volkswirtschaftliche Hochrechnung Konfliktkosten DACH-Raum, Synthese aus KPMG-Konfliktkostenstudie und Berechnungen Bertelsmann-Stiftung sowie IW Köln.
+
+Quellenstand: Mai 2026.
+
+### LeadResolve — FAQ
+
+**Wie läuft das Coaching ab?** Jedes Coaching beginnt mit einem unverbindlichen Kennenlerngespräch. Danach definieren wir gemeinsam Ihre aktuellen Herausforderungen und Ziele und legen einen klaren Ablauf fest. Strukturiert, lösungsorientiert, praxisnah — in vertraulicher Atmosphäre.
+
+**Wie lange dauert ein Coachingprozess?** Übliche Formate reichen von einem fokussierten 4-Wochen-Sprint bis zu einer 6-Monats-Begleitung. Kürzer als nötig wäre oberflächlich, länger als nötig wäre teuer.
+
+**Für wen eignet sich LeadResolve?** Inhaber, Geschäftsführer, Führungskräfte in KMU und Handwerk; Bereichs-, Abteilungs- und Projektleiter:innen; Unternehmer:innen vor einem Generationenwechsel.
+
+**Wie individuell wird auf meine Situation eingegangen?** Komplett individuell. Es gibt kein Standard-Curriculum. Methoden und Tempo passen sich Ihnen an, nicht umgekehrt.
+
+**Was unterscheidet Ihr Coaching?** Drei Dinge: Praxis (über 25 Jahre Erfahrung in Handwerk, Projektmanagement und Beratung), spitze Positionierung (KMU und Handwerk, nicht Konzern), echte Menschlichkeit (vertrauliche Gespräche, individuelle Anpassung, kein Schema F).
+
+**Wie ist die Vertraulichkeit gewährleistet?** Absolute Verschwiegenheit. Inhalte aus Coachings, Sessions und Workshops verlassen den Raum nicht. Bei Bedarf werden Vertraulichkeitsvereinbarungen schriftlich fixiert.
+
+**Was kostet LeadResolve?** Investition richtet sich nach Format, Umfang und Zielsetzung. Schriftliches Angebot nach kostenlosem Erstgespräch. Vergleichswert: Ein einziger konfliktbedingter Krankenstand-Cluster kostet KMU oft mehr als ein vollständiges Coaching-Programm.
+
+**Ist ein unverbindliches Erstgespräch möglich?** Ja, kostenfrei. 30–45 Minuten — kein Verkaufsgespräch, sondern offenes Sondieren auf Augenhöhe.
+
+---
+
+## LEADSHIFT — Führungskraft-Konflikte lösen, Team führen
+
+URL: https://www.kroes-consulting.com/leadshift.html
+
+**LEADSHIFT** ist das Führungskräfte-Coaching für Inhaber, Geschäftsführer und Führungskräfte in KMU & Handwerk. Es entwickelt Sie als moderne Führungskraft mit Klarheit, Entscheidungssicherheit und der Fähigkeit, Veränderung wirksam zu gestalten.
+
+Sinn stiften. Orientierung geben. Echte Verbindung schaffen.
+
+Schlechte Führung kostet Fachkräfte. Gute Führung gewinnt sie. Führung entscheidet über Motivation, Leistung und Zukunftsfähigkeit — und damit direkt über Ihren Unternehmenserfolg.
+
+### Führung entscheidet über Motivation, Leistung und Zukunftsfähigkeit
+
+Viele Führungskräfte navigieren täglich zwischen wirtschaftlichem Druck, Mitarbeiterführung und strategischen Zielen. Wer in diesem Spannungsfeld Klarheit und Wirkung behält, hält Fachkräfte, gewinnt neue und sichert Wachstum. Wer das nicht schafft, verliert beides — Menschen und Marktanteile.
+
+LEADSHIFT setzt genau hier an. Im geschützten Rahmen entwickeln Sie die Klarheit, mit der Sie sicher entscheiden, Teams führen und Veränderung umsetzen.
+
+**Das Ergebnis:** Sichere Entscheidungen, höheres Team-Engagement, strukturierte Veränderungsumsetzung — und ein Betrieb, in dem Führung wieder spürbar trägt.
+
+### Programm im Überblick
+
+**Zielgruppe:** Führungskräfte in KMU & Handwerk, Team- & Abteilungsleiter:innen in Übergangssituationen, Unternehmer:innen mit Wachstumsambition.
+
+**Methoden & Formate:** 1:1 Coaching (Präsenz & online), Blended Learning, Team-Workshops, Follow-up & Transfer-Coaching. Praxisnah, nicht akademisch — Werkzeuge für den nächsten Montagmorgen.
+
+**Ort:** Inhouse bei Ihnen, online flexibel, intern in Kufstein.
+
+**Anzahl Teilnehmende:** Einzelcoaching (1 Person), Kleingruppen (4–6 Personen), Workshops (6–10 Personen).
+
+**Zeitraum:** Sprint (6 Wochen), Standard-Programm (3–6 Monate), Begleitung (bis 12 Monate). Führungsentwicklung ist kein Workshop — nachhaltiger Transfer braucht Wiederholung.
+
+**Investition:** Individuell auf Format & Umfang abgestimmt. Schriftliches Angebot nach Erstgespräch. Studien zeigen 10–15x Return-on-Invest.
+
+### Führung ist der Hebel — Messbar. Nachhaltig.
+
+- **70 %** der Variation im Team-Engagement geht direkt auf die Führungskraft zurück.¹
+- **23 %** höhere Profitabilität in Unternehmen mit top-engagierten Teams gegenüber dem Branchenschnitt.²
+- **43 %** niedrigere Fluktuation in top-engagierten Teams gegenüber dem Branchenschnitt.²
+- **14.900 €** durchschnittliche Fluktuationskosten pro verlorener Stelle in Österreich. Bei Führungspositionen deutlich höher.³
+
+### Beispielrechnung: Was LEADSHIFT in einem Jahr bewegt
+
+Konservative Schätzung für einen 100-Mitarbeiter-Betrieb, basiert auf veröffentlichten Branchen-Benchmarks zu Fehlzeiten, Fluktuation und Produktivität.
+
+- Reduktion Fehlzeiten (≈ 10 % weniger Tage)⁴: ≈ 35.000 €
+- Geringere Fluktuation (2–4 vermiedene Stellenwechsel)³: 30.000–60.000 €
+- Produktivitätssteigerung (konservativ ≈ 3 %)²: ≈ 90.000 €
+- **Gesamtnutzen pro Jahr: 155.000–185.000 €**
+
+Bei einem typischen Programm-Umfang ergibt sich daraus ein Return-on-Invest im Bereich von 5x bis 8x — bereits innerhalb des ersten Jahres, ohne mittelfristige Effekte auf Strategie und Kultur einzurechnen.⁵
+
+### Quellen & Methodik (LEADSHIFT)
+
+1. Gallup (2015): „State of the American Manager". Manager erklären rund 70 % der Variation in Team-Engagement-Werten.
+2. Gallup Q12 Meta-Analysis (10. Auflage, 2020): Top-Quartile-Teams erzielen 23 % höhere Profitabilität, 18 % höhere Produktivität, 43 % niedrigere Fluktuation. Methodik basiert auf 112.312 Geschäftseinheiten in 96 Ländern.
+3. Deloitte Österreich (2019): Studie zu Fluktuationskosten österreichischer Unternehmen.
+4. Berechnung Reduktion Fehlzeiten: 100 MA × ≈ 14 Krankenstandstage/Jahr × ≈ 250 € Tageskosten × 10 % Reduktion bei verbessertem Führungsklima.
+5. DDI Global Leadership Forecast 2023: Unternehmen mit hoher Führungsqualität sind 4,5x wahrscheinlicher unter den Top-Finanzperformern. Bestätigt durch McKinsey „Decoding Leadership" (2015) und BCG.
+
+Quellenstand: Mai 2026.
+
+### LEADSHIFT — FAQ
+
+**Wie lange dauert ein LEADSHIFT-Programm?** Übliche Formate reichen von 6-Wochen-Sprint bis 12-Monats-Begleitung. Führungsentwicklung ist kein Eintags-Workshop — Wiederholung und Transfer schaffen die nachhaltige Wirkung.
+
+**Für wen eignet sich LEADSHIFT?** Führungskräfte in KMU und Handwerk, Team- und Abteilungsleiter:innen in Übergangssituationen, Unternehmer:innen, die Leadership menschlicher und wirksamer gestalten möchten. Auch Quereinsteiger:innen in Führungspositionen profitieren stark.
+
+**Was unterscheidet Ihr Coaching?** Praxis (über 25 Jahre Erfahrung), spitze Positionierung (KMU und Handwerk, nicht Konzern-Theorie), Verbindung (Führungsentwicklung & Konfliktlösung aus einer Hand).
+
+**Was kostet LEADSHIFT?** Studien zeigen für effektive Führungsentwicklung einen Return-on-Invest von 10–15x — bereits innerhalb des ersten Jahres.
+
+---
+
+## Über Alexander Kroes
+
+URL: https://www.kroes-consulting.com/ueber-uns.html
+
+**Alexander Kroes — Konfliktcoach für KMU & Handwerk**
+
+Vom Lehrling im Handwerk über 20 Jahre internationale Projektleitung bis zum Konfliktcoach. Ich kenne die Welt von Inhabern und Geschäftsführern aus eigener Erfahrung — und ich weiß, was im Betriebsalltag wirklich zählt.
+
+Mein Werdegang begann nicht im Hörsaal, sondern in der Werkstatt. Als Elektrotechnikermeister und später Betriebswirt des Handwerks habe ich gelernt, was es bedeutet, mit den Händen zu arbeiten und gleichzeitig den Betrieb zu führen.
+
+Über 20 Jahre lang war ich anschließend als Projektmanager in internationalen Großprojekten unterwegs — unter anderem in einem Finnland-Projekt für einen führenden Mobiltelefon-Hersteller. Termine, Budgets, Teams, Kulturen. Und immer wieder: Konflikte, die unter Druck eskalieren.
+
+Dann kam ein persönlicher Schicksalsschlag, der alles veränderte. „Erst als alles stillstand, wurde vieles klar und DEUTLICH." Aus dieser Wendung entstand meine heutige Arbeit: Konfliktcoaching für KMU und Handwerk.
+
+### Was ich aus 25 Jahren Praxis mitgenommen habe
+
+1. Wer im Handwerk gelernt hat, weiß: Saubere Arbeit beginnt nicht beim Werkzeug — sondern bei der ehrlichen Auseinandersetzung mit dem Auftrag.
+2. Wer Projekte über Ländergrenzen führt, lernt schnell: Die größten Hindernisse stehen selten auf dem Plan — sondern entstehen durch unterschiedliche Ziele, Rollen und Erwartungen.
+3. Erst als bei mir selbst alles stillstand, wurde mir DEUTLICH, was Führung wirklich bedeutet — und warum Konflikte nie das Problem, sondern immer der Hinweis sind.
+
+### Mein Weg in Stationen
+
+- **Lehre & Meisterprüfung** — Start im Handwerk: Elektrotechniker-Lehre, später Meisterprüfung. Hier habe ich gelernt, dass Qualität immer zuerst eine Haltung ist.
+- **Betriebswirt des Handwerks** — Weiterbildung mit Fokus auf Betriebsführung, Kalkulation, Mitarbeiterführung und Projektabwicklung im Alltag eines Handwerksbetriebs.
+- **15 Jahre internationale Projektleitung** — Unterschiedlichste Projekte im In- und Ausland, u.a. mehrjähriges Finnland-Projekt für einen damals führenden Mobiltelefon-Hersteller. Verantwortung für Termine, Budgets, Teams und kulturelle Reibungen.
+- **Persönliche Wendung** — Ein einschneidendes Ereignis bringt alles zum Stillstand. Und macht klar, was zählt: Klarheit, Verantwortung, ehrliche Kommunikation.
+- **Gründung Kroes Consulting & Coaching** — Heute begleite ich KMU und Handwerksbetriebe als Konfliktcoach & Unternehmensberater mit dem Anspruch, Konflikte sichtbar zu machen und systematisch zu beseitigen.
+
+### Geprüfte Praxis & Expertise
+
+> „Meine Leidenschaft für beste Lösungen basiert nicht auf grauer Theorie oder Buzzwords, sondern auf staatlich geprüften Qualifikationen und über 25 Jahren operativer Erfahrung in unterschiedlichen Unternehmen, Teams und Kulturen."
+
+- Elektrotechnikermeister (staatlich geprüft)
+- Betriebswirt des Handwerks (Handwerkskammer)
+- Zertifizierter Unternehmensberater (geprüftes Zertifikat)
+- Zertifizierter Business Coach (geprüftes Zertifikat)
+- Zertifizierter Konfliktcoach (Spezialisierung)
+- Leidenschaftlicher Unternehmer (Inhaber & Gründer)
+
+### Was Sie von mir erwarten dürfen
+
+**01 Klartext** — Spricht die Sprache der Praxis. Im Alltag von Unternehmen zählen keine Theorien, sondern Ergebnisse. Verständlich, direkt, ohne Beratersprech.
+
+**02 Menschlichkeit** — Zertifiziert. Spezialisiert. Erfahren. Mensch. Fachwissen schafft Vertrauen, aber erst der Mensch dahinter macht Veränderung möglich.
+
+**03 Wesentliches** — Erkennt, was wirklich zählt. Komplexität wird nicht verwaltet, sondern reduziert. Statt Symptome zu pflegen, identifiziere ich die Hebel, an denen Veränderung wirklich beginnt.
+
+**04 Chancen** — Macht aus Konflikten Chancen für alle Beteiligten. Konflikte sind selten das eigentliche Problem, sondern ein Hinweis auf tiefere Ursachen. Ein gut geführter Konflikt ist kein Risiko, sondern ein Wendepunkt.
+
+**05 Change** — Erfahrung. Führung. Für echte Change-Prozesse. 20 Jahre Praxis im Handwerk und Projektmanagement zeigen mir, wo Veränderung gelingt — und wo sie scheitert.
+
+> Es ist erfüllend und beglückend zu sehen, wie Menschen mit Zuwendung, Wertschätzung und anhaltender Achtsamkeit auf gute Lösungen zu bringen sind.
+> — Alexander Kroes
+
+---
+
+## Kontakt — Konfliktberatung für Unternehmen in Tirol
+
+URL: https://www.kroes-consulting.com/kontakt.html
+
+Nehmen Sie Kontakt auf — unverbindlich, vertraulich und auf Augenhöhe. Wir melden uns innerhalb von 24 Stunden.
+
+### So erreichen Sie uns
+
+- **Telefon:** +43 (0) 5338 - 20105
+- **E-Mail:** info@kroes-consulting.com
+- **Büro:** Unterer Stadtplatz 11, 6330 Kufstein, Österreich
+- **Erreichbarkeit:** Mo–Fr 9:00–18:00 Uhr (Termine auch außerhalb möglich)
+
+**Diskretion & Vertraulichkeit:** Jede Anfrage wird streng vertraulich behandelt. Wir unterliegen einer beruflichen Schweigepflicht und geben keine Informationen an Dritte weiter.
+
+### Kontakt-FAQ
+
+**Was kostet das Erstgespräch?** Vollständig kostenlos und unverbindlich. Bis zu 30 Minuten per ZOOM Call. Es dient dazu, Ihre Situation kennenzulernen und zu klären, ob und wie wir helfen können.
+
+**Wie schnell erhalte ich eine Antwort?** In der Regel innerhalb von 24 Stunden auf Werktage bezogen. Bei dringenden Anliegen empfehlen wir die direkte Kontaktaufnahme per Telefon.
+
+**Arbeiten Sie auch remote / online?** Ja. Beratung und Coaching können vollständig online durchgeführt werden per Zoom-Call. Die persönliche Begleitung hat sich für die Umsetzung jedoch bewährt.
+
+**Für welche Unternehmensgrößen sind Sie tätig?** Wir arbeiten mit kleinen und mittleren Unternehmen (KMU) sowie Handwerksbetrieben aus jeder Branche. Entscheidend ist nicht die Größe des Betriebs, sondern die Herausforderung.
+
+**Wie vertraulich sind Ihre Leistungen?** Absolut vertraulich. Wir unterliegen einer beruflichen Schweigepflicht. Alle geteilten Informationen bleiben ausschließlich zwischen uns — ohne Ausnahmen.
+
+**Wie lange dauert ein typisches Mandat?** Hängt stark von der jeweiligen Herausforderung und den gewünschten Zielen ab. Wir klären das transparent im Erstgespräch.
+
+---
+
+## Konflikt-Quiz
+
+URL: https://www.kroes-consulting.com/quiz.html
+
+**Wie konfliktfähig ist Ihr Unternehmen wirklich?** 10 Fragen, 4 Kategorien (Kommunikation, Führung, Strukturen, Kultur), persönliche Auswertung mit konkreten Empfehlungen. 100 % anonym, ohne E-Mail-Pflicht. Ergebnis dient als Grundlage für die kostenfreie Konfliktkosten-Analyse (30-minütiges Strategiegespräch).
+
+---
+
+## Medien & Presse
+
+URL: https://www.kroes-consulting.com/medien.html
+
+Berichte, Interviews und Veröffentlichungen über Kroes Consulting & Coaching.
+
+- **Januar 2026 · openPR** — „Kroes Consulting – die Menschen im Blick, den Unternehmenserfolg im Sinn". Unternehmensprofil mit Einblick in die Beratungsangebote: Führungskräfteentwicklung, Strategie und Konfliktmanagement für KMU und Handwerk.
+- **August 2025 · Tiroler Wirtschaft** — „Beratung, die Menschen und Unternehmen in Bewegung bringt". Bericht über die Beratungsarbeit von Alexander Kroes mit Fokus auf nachhaltigen Wandel durch Führung, Strategie und Konfliktlösung.
+
+Interesse an einem Interview oder Beitrag? Alexander Kroes steht Medien und Redaktionen für Gespräche, Fachbeiträge und Interviews zu Themen wie Unternehmensführung, KMU, Handwerk und Konfliktmanagement zur Verfügung.
+
+---
+
+## Kontakt & Impressum
+
+- **Firma:** Alexander Kroes e.U.
+- **Adresse:** Unterer Stadtplatz 11, 6330 Kufstein, Österreich
+- **Telefon:** +43 (0) 5338 20105
+- **E-Mail:** info@kroes-consulting.com
+- **Website:** https://www.kroes-consulting.com/
+- **Impressum:** https://www.kroes-consulting.com/impressum.html
+- **Datenschutz:** https://www.kroes-consulting.com/datenschutz.html
