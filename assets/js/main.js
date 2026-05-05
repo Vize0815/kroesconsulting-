@@ -589,10 +589,12 @@
         '<span>Cookie-Einstellungen</span>' +
       '</button>';
 
-    // DOM einfügen
-    var container = document.createElement('div');
-    container.innerHTML = bannerHTML + modalHTML + reopenHTML;
-    while (container.firstChild) document.body.appendChild(container.firstChild);
+    // DOM einfügen — nur als Fallback, falls Banner nicht bereits inline gerendert wurde
+    if (!document.getElementById('cookieBanner')) {
+      var container = document.createElement('div');
+      container.innerHTML = bannerHTML + modalHTML + reopenHTML;
+      while (container.firstChild) document.body.appendChild(container.firstChild);
+    }
 
     var banner = document.getElementById('cookieBanner');
     var modal = document.getElementById('cookieModal');
