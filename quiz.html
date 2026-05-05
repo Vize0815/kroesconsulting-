@@ -1403,7 +1403,7 @@
       let headerHeight = 0;
       let imgLoaded = false;
       // Versuche zuerst die Datei mit Bindestrich, danach Variante mit Leerzeichen
-      const candidates = ['assets/img/kroes-consulting-header.png', 'assets/img/Kroes Consulting.png', 'assets/img/Kroes%20Consulting.png'];
+      const candidates = ['assets/img/kroes-consulting-header.webp', 'assets/img/Kroes Consulting.png', 'assets/img/Kroes%20Consulting.png'];
       for (const src of candidates) {
         try {
           const dataURL = await loadImageAsDataURL(src);
