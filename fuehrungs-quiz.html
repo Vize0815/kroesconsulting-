@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konflikt-Quiz: Wie konfliktfähig ist Ihr Unternehmen? | Kroes Consulting</title>
+  <meta name="robots" content="noindex, follow">
+  <title>Führungskräfte-Quiz: Wie bewusst führen Sie wirklich? | Kroes Consulting</title>
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <meta name="description" content="In 3 Minuten zur Antwort: Wie konfliktfähig ist Ihr Unternehmen? 10 Fragen, 4 Kategorien, persönliche Auswertung mit konkreten Empfehlungen.">
-  <link rel="canonical" href="https://www.kroes-consulting.com/quiz.html">
+  <meta name="description" content="In 3 Minuten zur Reflexion: Wie bewusst führen Sie? 10 Fragen, 4 Kategorien, persönliche Auswertung mit konkreten Entwicklungsimpulsen für Ihre Führung.">
+  <link rel="canonical" href="https://www.kroes-consulting.com/fuehrungs-quiz.html">
 
-  <meta property="og:title" content="Konflikt-Quiz | Kroes Consulting">
-  <meta property="og:description" content="In 3 Minuten zur Antwort: Wie konfliktfähig ist Ihr Unternehmen?">
+  <meta property="og:title" content="Führungskräfte-Quiz | Kroes Consulting">
+  <meta property="og:description" content="10 Reflexionsfragen zu Klarheit, Reflexion, Souveränität und Beziehung in Ihrer Führung — anonym, sofortige Auswertung.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_AT">
-  <meta property="og:url" content="https://www.kroes-consulting.com/quiz.html">
+  <meta property="og:url" content="https://www.kroes-consulting.com/fuehrungs-quiz.html">
 
   <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
   <link rel="stylesheet" href="assets/css/style.min.css">
@@ -182,7 +183,7 @@
     .quiz-next:disabled { opacity: 0.4; cursor: not-allowed; background: var(--ink-300); color: var(--warm-50); }
 
     /* RESULT (unverändert vom vorherigen Stand) */
-    .quiz-result-stage { padding: 5rem 0 8rem; display: none; }
+    .quiz-result-stage { padding: clamp(7rem, 14vh, 10rem) 0 8rem; display: none; }
     .quiz-result-stage.active { display: block; }
     .result-hero { max-width: 880px; margin: 0 auto 4rem; text-align: center; }
     .result-tag {
@@ -630,7 +631,7 @@
           <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
           <li><a href="ueber-uns.html" class="nav-link">Über mich</a></li>
           <li><a href="medien.html" class="nav-link">Medien</a></li>
-          <li><a href="quiz.html" class="nav-link active">Konflikt-Quiz</a></li>
+          <li><a href="quiz.html" class="nav-link">Konflikt-Quiz</a></li>
         </ul>
 
         <div class="nav-social" aria-label="Social Media">
@@ -663,13 +664,13 @@
         <nav class="breadcrumb breadcrumb-light" aria-label="Seitenpfad">
           <a href="index.html">Start</a>
           <span class="sep" aria-hidden="true">/</span>
-          <span class="current">Konflikt-Quiz</span>
+          <span class="current">Führungskräfte-Quiz</span>
         </nav>
       </div>
       <div class="container quiz-intro-inner">
-        <span class="quiz-tag">Konflikt-Quiz · 3 Min</span>
-        <h1>Wie konfliktfähig ist <em>Ihr Unternehmen</em>?</h1>
-        <p>10 Fragen zu vier Kategorien — Struktur, Kommunikation, Kultur, Entwicklung. Anonym, sofortig, mit konkreten Handlungs­empfehlungen für Ihren Betrieb.</p>
+        <span class="quiz-tag">Führungs-Quiz · 3 Min</span>
+        <h1>Wie bewusst <em>führen Sie</em> wirklich?</h1>
+        <p>10 Reflexionsfragen zu vier Kategorien — Klarheit, Reflexion, Souveränität, Beziehung. Anonym, sofortige Auswertung, mit konkreten Entwicklungs­impulsen für Ihre Führung.</p>
         <div class="quiz-meta">
           <span class="quiz-meta-item">10 Fragen</span>
           <span class="quiz-meta-item">3 Minuten</span>
@@ -715,7 +716,7 @@
 
         <div class="result-section">
           <div class="result-section-tag">Auswertung nach Kategorie</div>
-          <h3 class="result-section-h2">Wo Ihr Unternehmen <em>steht</em>.</h3>
+          <h3 class="result-section-h2">Wo Sie als Führungskraft <em>stehen</em>.</h3>
           <div class="cat-list" id="catList"></div>
         </div>
 
@@ -723,18 +724,18 @@
         <div class="result-locked" id="resultLocked">
           <div class="locked-content" id="lockedContent">
 
-            <!-- Vertiefende Auswertung mit Konfliktkosten -->
+            <!-- Vertiefende Auswertung mit Führungskosten -->
             <div class="result-section">
               <div class="result-section-tag">Was Ihre Antworten zeigen</div>
               <h3 class="result-section-h2">Die <em>vertiefende Interpretation</em>.</h3>
               <p class="result-deep-text" id="resDeepText">…</p>
             </div>
 
-            <!-- Konfliktkosten-Block -->
+            <!-- Führungskosten-Block -->
             <div class="cost-block">
               <div class="cost-block-inner">
-                <div class="result-section-tag">Was Sie das aktuell kostet</div>
-                <h3 class="cost-block-h2">Konflikt-Verluste · <em>nach aktuellen Studien</em></h3>
+                <div class="result-section-tag">Was schwache Führung Ihr Unternehmen kostet</div>
+                <h3 class="cost-block-h2">Führungs-Verluste · <em>nach aktuellen Studien</em></h3>
                 <div class="cost-headline">
                   <div class="cost-range" id="costRange">€ 0 – 0</div>
                   <div class="cost-context" id="costContext">…</div>
@@ -765,7 +766,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 8l8 5 8-5"/></svg>
             </div>
             <h3 class="email-gate-title">Vollständige Interpretation freischalten</h3>
-            <p class="email-gate-text">Tragen Sie Vorname und E-Mail ein, um Ihre persönliche Auswertung freizuschalten — mit konkreten Konfliktkosten, Stärken, Spannungs­feldern und Entwicklungs­impulsen. Die Zusammenfassung erhalten Sie zusätzlich als PDF per E-Mail.</p>
+            <p class="email-gate-text">Tragen Sie Vorname und E-Mail ein, um Ihre persönliche Auswertung freizuschalten — mit vertiefender Reflexion, Stärken, Spannungs­feldern und konkreten Entwicklungs­impulsen für Ihre Führung. Die Zusammenfassung erhalten Sie zusätzlich als PDF per E-Mail.</p>
 
             <form class="email-form" id="emailForm" novalidate>
               <div class="email-row">
@@ -796,14 +797,14 @@
           </div>
         </div>
 
-        <!-- Bridge: Quiz-Auswertung → Konflikt-Diagnose-Termin -->
+        <!-- Bridge: Quiz-Auswertung → Führungs-Standortgespräch -->
         <section class="q-bridge" aria-labelledby="bridgeHeading">
           <div class="q-bridge-inner">
-            <div class="q-bridge-eyebrow">Ihre Auswertung liegt vor</div>
-            <h2 id="bridgeHeading">Jetzt aus Zahlen<br>Ihren <em>nächsten Schritt</em> machen.</h2>
-            <p class="q-bridge-sub">In 30 Minuten gehen wir Ihre Auswertung gemeinsam durch — und beziffern, was ein einzelner ungelöster Konflikt Ihren Betrieb in den letzten 12 Monaten gekostet hat. Persönlich. Konkret. Ohne Vertriebsgespräch.</p>
+            <div class="q-bridge-eyebrow">Ihre Reflexion liegt vor</div>
+            <h2 id="bridgeHeading">Jetzt aus Reflexion<br>Ihren <em>nächsten Führungsschritt</em> machen.</h2>
+            <p class="q-bridge-sub">In 30 Minuten gehen wir Ihre Auswertung gemeinsam durch — und identifizieren konkret die zwei, drei Hebel, die Ihre Führung in den nächsten 6 Monaten am stärksten weiterbringen. Persönlich. Konkret. Ohne Vertriebsgespräch.</p>
             <div class="q-bridge-buttons">
-              <a href="https://calendly.com/bewerbung-kroes-consulting/30min" target="_blank" rel="noopener" class="q-bridge-btn">Konflikt-Diagnose vereinbaren →</a>
+              <a href="https://calendly.com/bewerbung-kroes-consulting/30min" target="_blank" rel="noopener" class="q-bridge-btn">Führungs-Standortgespräch vereinbaren →</a>
               <button type="button" class="q-bridge-btn q-bridge-btn--ghost" id="qRestart">Quiz neu starten</button>
             </div>
             <div class="q-bridge-microcopy">30 Min · Kostenfrei<span>·</span>Auswertung als PDF<span>·</span>Antwort innerhalb 24 Stunden</div>
@@ -891,116 +892,116 @@
       emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
     }
 
-    // ===== QUIZ DATA — Emotional/Personal Style =====
+    // ===== QUIZ DATA — Führungs-Reflexion (Quelle: Leadership-Selbsttest, jens.digi-labs.ai) =====
     const QUESTIONS = [
       {
-        cat: 'Struktur',
-        text: 'Wenn Sie an Verantwortlichkeiten in Ihrem Unternehmen denken — was beschreibt es am besten?',
+        cat: 'Klarheit',
+        text: 'Wenn Sie ehrlich an Ihre aktuelle Führungsrolle denken — was überwiegt?',
         sub: 'Nehmen Sie sich einen Moment. Es gibt keine richtige Antwort.',
         options: [
-          { label: 'Klar geregelt — jeder weiß, wer was entscheidet und verantwortet.', value: 4 },
-          { label: 'Im Großen klar, im Detail aber oft ungeklärt — wir improvisieren viel.', value: 3 },
-          { label: 'Vieles hängt von einzelnen Personen ab — schwer durchschaubar.', value: 2 },
-          { label: 'Unklarheit prägt den Alltag — und Konflikte sind die Folge.', value: 1 }
+          { label: 'Ein klares Gefühl von Sinn und Richtung — ich weiß, wofür ich führe.', value: 4 },
+          { label: 'Verantwortung und Antrieb — aber auch das Gefühl, selten wirklich innezuhalten.', value: 3 },
+          { label: 'Eine wachsende Unsicherheit darüber, ob mein Führen wirklich das ist, was gebraucht wird.', value: 2 },
+          { label: 'Das Gefühl, noch zu suchen — nach meiner eigenen Art zu führen.', value: 1 }
         ]
       },
       {
-        cat: 'Struktur',
-        text: 'Wie gehen Sie in Ihrem Betrieb mit schwierigen Konfliktsituationen um?',
-        sub: 'Beantworten Sie aus dem Bauch heraus.',
+        cat: 'Reflexion',
+        text: 'Wie oft reflektieren Sie bewusst Ihre Wirkung auf andere?',
+        sub: 'Nicht wie oft Sie es sich vornehmen — sondern wie oft es wirklich passiert.',
         options: [
-          { label: 'Wir haben definierte Prozesse — und nutzen sie auch.', value: 4 },
-          { label: 'Wir haben einen groben Plan, aber jeder macht es etwas anders.', value: 3 },
-          { label: 'Es gibt keinen Prozess — wir reagieren situativ.', value: 2 },
-          { label: 'Konflikte werden ausgesessen, bis jemand kündigt.', value: 1 }
+          { label: 'Regelmäßig. Es ist ein fester Teil meines Führungsalltags.', value: 4 },
+          { label: 'Nach größeren Situationen oder Konflikten — dann schon.', value: 3 },
+          { label: 'Selten. Im Alltag bleibt dafür kaum Raum.', value: 2 },
+          { label: 'Ehrlich gesagt: fast nie. Die Arbeit hat mich fest im Griff.', value: 1 }
         ]
       },
       {
-        cat: 'Struktur',
-        text: 'Wie schnell werden bei Ihnen wichtige Entscheidungen getroffen?',
-        sub: 'Denken Sie an die letzten 6 Monate.',
+        cat: 'Souveränität',
+        text: 'Wenn Sie eine schwierige Entscheidung treffen mussten — wie haben Sie sich dabei erlebt?',
+        sub: 'Denken Sie an eine konkrete Situation aus den letzten Monaten.',
         options: [
-          { label: 'Zeitnah und nachvollziehbar — wir kommen voran.', value: 4 },
-          { label: 'In normalen Themen ja, bei heiklen Themen oft verzögert.', value: 3 },
-          { label: 'Vieles bleibt liegen — Entscheidungen ziehen sich hin.', value: 2 },
-          { label: 'Entscheidungs-Stau prägt den Alltag — nichts bewegt sich.', value: 1 }
+          { label: 'Ich habe bewusst innegehalten, meine Werte befragt und dann klar entschieden.', value: 4 },
+          { label: 'Ich habe Gespräche gesucht, verschiedene Perspektiven eingeholt — und dann entschieden.', value: 3 },
+          { label: 'Ich habe pragmatisch entschieden — der Zeitdruck ließ wenig Raum für tieferes Nachdenken.', value: 2 },
+          { label: 'Ich habe mich unsicher gefühlt — und im Nachhinein bin ich noch nicht sicher, ob es richtig war.', value: 1 }
         ]
       },
       {
-        cat: 'Kommunikation',
-        text: 'Wie werden in Ihrem Unternehmen schwierige Themen angesprochen?',
+        cat: 'Klarheit',
+        text: 'Wenn jemand Sie nach Ihren drei wichtigsten Führungswerten fragen würde — wie sicher wäre Ihre Antwort?',
+        sub: 'Nicht das Lehrbuch — Ihre echten Werte.',
+        options: [
+          { label: 'Sehr sicher. Ich könnte sie sofort nennen — und sie spiegeln sich in meinem Alltag.', value: 4 },
+          { label: 'Ich hätte eine Antwort — aber ob sie wirklich mein Handeln prägt, wäre eine andere Frage.', value: 3 },
+          { label: 'Ich würde etwas nennen — aber ehrlich gesagt habe ich darüber selten nachgedacht.', value: 2 },
+          { label: 'Ich würde zögern. Das Thema Werte in der Führung ist für mich noch wenig greifbar.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Beziehung',
+        text: 'Wie bewusst gestalten Sie Ihre Beziehung zu den Menschen, die Sie führen?',
+        sub: 'Nicht nur fachlich — sondern als Mensch zu Mensch.',
+        options: [
+          { label: 'Sehr bewusst. Echte Beziehungen sehe ich als Kern guter Führung.', value: 4 },
+          { label: 'Es ist mir wichtig — aber der Alltag lässt mir oft weniger Raum dafür als ich möchte.', value: 3 },
+          { label: 'Ich fokussiere mich mehr auf Ergebnisse. Die Beziehungsebene kommt manchmal zu kurz.', value: 2 },
+          { label: 'Ich merke, dass mir hier ein klareres Verständnis fehlt — was gute Führungsbeziehungen wirklich ausmacht.', value: 1 }
+        ]
+      },
+      {
+        cat: 'Reflexion',
+        text: 'Wissen Sie, wie Sie als Führungsperson wirklich wahrgenommen werden — nicht wie Sie wahrgenommen werden wollen?',
         sub: 'Seien Sie ehrlich — es ist anonym.',
         options: [
-          { label: 'Offen und direkt — wir reden über das, was wirklich zählt.', value: 4 },
-          { label: 'Unterschiedlich — manche Themen ja, andere bleiben Tabu.', value: 3 },
-          { label: 'Eher selten — wir vermeiden Konflikte, wo es geht.', value: 2 },
-          { label: 'Schwierige Themen werden konsequent verschwiegen.', value: 1 }
+          { label: 'Ja. Ich hole regelmäßig Feedback ein und habe ein klares Bild meiner Außenwirkung.', value: 4 },
+          { label: 'Ich glaube schon — aber wirklich sicher bin ich nicht. Offenes Feedback ist selten.', value: 3 },
+          { label: 'Wahrscheinlich nicht vollständig. Ich lasse das selten wirklich zu.', value: 2 },
+          { label: 'Nein — und das beschäftigt mich manchmal.', value: 1 }
         ]
       },
       {
-        cat: 'Kommunikation',
-        text: 'Trauen sich Ihre Mitarbeiter, der Führung kritisches Feedback zu geben?',
-        sub: 'Wirklich. Nicht nur in Mitarbeitergesprächen.',
+        cat: 'Souveränität',
+        text: 'Wie verändert sich Ihre Führung, wenn Sie unter Druck stehen — zum Beispiel in stressigen Phasen?',
+        sub: 'Beobachten Sie sich selbst ehrlich.',
         options: [
-          { label: 'Ja — und das wird auch ernst genommen und umgesetzt.', value: 4 },
-          { label: 'In Einzelfällen ja, aber selten von sich aus.', value: 3 },
-          { label: 'Wenig — die meisten halten lieber den Mund.', value: 2 },
-          { label: 'Niemand traut sich — Kritik wird als Angriff verstanden.', value: 1 }
+          { label: 'Ich bleibe mir im Wesentlichen treu — Druck bringt mich nicht wirklich aus der Bahn.', value: 4 },
+          { label: 'Ich werde fokussierter — aber auch schneller, direkter, manchmal weniger aufmerksam für andere.', value: 3 },
+          { label: 'Ich merke, dass ich anders werde — aber im Moment des Drucks ist mir das kaum bewusst.', value: 2 },
+          { label: 'Unter starkem Druck verliere ich manchmal den Faden — und die Kontrolle über meine Reaktionen.', value: 1 }
         ]
       },
       {
-        cat: 'Kommunikation',
-        text: 'Was passiert mit Konflikten, die zwischen Mitarbeitern entstehen?',
-        sub: 'Was fällt Ihnen spontan dazu ein?',
+        cat: 'Klarheit',
+        text: 'Wenn Sie an Ihre Führung in fünf Jahren denken — was möchten Sie dann anders machen als heute?',
+        sub: 'Was würde sich tatsächlich verändern?',
         options: [
-          { label: 'Sie werden geklärt — direkt oder mit moderierter Hilfe.', value: 4 },
-          { label: 'Manchmal geklärt, manchmal unter den Teppich gekehrt.', value: 3 },
-          { label: 'Sie schwelen lange weiter — niemand greift ein.', value: 2 },
-          { label: 'Sie eskalieren — bis es zu Kündigungen kommt.', value: 1 }
+          { label: 'Ich bin auf einem guten Weg. Mehr Tiefe und noch bewusstere Präsenz wären das Ziel.', value: 4 },
+          { label: 'Mehr Zeit für Menschen nehmen — weniger im operativen Strom mitgeschwemmt werden.', value: 3 },
+          { label: 'Klarer werden: Wofür stehe ich eigentlich? Was ist mir wirklich wichtig?', value: 2 },
+          { label: 'Ich habe darüber noch wenig nachgedacht. Das ist eine gute Frage — und keine leichte.', value: 1 }
         ]
       },
       {
-        cat: 'Kultur',
-        text: 'Wie würden Sie das Klima in Ihrem Unternehmen beschreiben?',
-        sub: 'Nicht wie es sein sollte — wie es ist.',
+        cat: 'Beziehung',
+        text: 'Wie nachhaltig ist Ihre Art zu führen — für Sie selbst?',
+        sub: 'Nicht nur für das Unternehmen oder die anderen — sondern für Sie persönlich.',
         options: [
-          { label: 'Vertrauensvoll und sicher — Menschen können sich zeigen.', value: 4 },
-          { label: 'Grundsätzlich okay, aber mit Spannungen in einzelnen Teams.', value: 3 },
-          { label: 'Angespannt — vieles wird vorsichtig formuliert.', value: 2 },
-          { label: 'Misstrauisch und politisch — jeder schützt seine Position.', value: 1 }
+          { label: 'Ich führe auf eine Weise, die mich langfristig nicht erschöpft. Es gibt Rhythmus und Erholung.', value: 4 },
+          { label: 'Es gibt Phasen, in denen ich mich verausgabe — aber ich finde meistens wieder zurück.', value: 3 },
+          { label: 'Ehrlich gesagt belastet mich die Führungsrolle mehr, als ich es nach außen zeige.', value: 2 },
+          { label: 'Ich funktioniere — aber ob das dauerhaft gut geht, weiß ich nicht wirklich.', value: 1 }
         ]
       },
       {
-        cat: 'Kultur',
-        text: 'Wie wird mit Fehlern in Ihrem Betrieb umgegangen?',
-        sub: 'Auch mit den eigenen.',
+        cat: 'Reflexion',
+        text: 'Was würden Ihre engsten Mitarbeiter an Ihrer Führung schätzen — und was würden sie sich anders wünschen?',
+        sub: 'Versuchen Sie, diese Frage wirklich aus deren Perspektive zu beantworten.',
         options: [
-          { label: 'Als Lernchance — wir analysieren und verbessern.', value: 4 },
-          { label: 'Meistens konstruktiv, manchmal mit Schuldzuweisungen.', value: 3 },
-          { label: 'Fehler werden vertuscht — niemand will sie zugeben.', value: 2 },
-          { label: 'Es geht um Schuld — nicht um Lösung.', value: 1 }
-        ]
-      },
-      {
-        cat: 'Entwicklung',
-        text: 'Wie werden Ihre Führungskräfte in Konflikt- und Führungs­kompetenz entwickelt?',
-        sub: 'Konkret — nicht theoretisch.',
-        options: [
-          { label: 'Systematisch — mit Coaching, Sparring und Feedback-Schleifen.', value: 4 },
-          { label: 'Punktuell — bei Bedarf gibt es Schulungen.', value: 3 },
-          { label: 'Selten — meist learning by doing.', value: 2 },
-          { label: 'Gar nicht — Führung gilt bei uns als Talent, nicht als Handwerk.', value: 1 }
-        ]
-      },
-      {
-        cat: 'Entwicklung',
-        text: 'Wie viel investieren Sie bewusst in die Weiterentwicklung von Teams und Strukturen?',
-        sub: 'Zeit, Geld, Aufmerksamkeit.',
-        options: [
-          { label: 'Bewusst und regelmäßig — es ist Teil unserer Strategie.', value: 4 },
-          { label: 'Wenn es brennt — dann reagieren wir.', value: 3 },
-          { label: 'Wenig — wir kommen nicht dazu.', value: 2 },
-          { label: 'Gar nicht — das Tagesgeschäft frisst alles auf.', value: 1 }
+          { label: 'Sie schätzen Klarheit und Verlässlichkeit — und wünschen sich vielleicht noch mehr echte Nähe.', value: 4 },
+          { label: 'Sie schätzen mein Engagement — und wünschen sich wahrscheinlich mehr Zeit und Aufmerksamkeit.', value: 3 },
+          { label: 'Sie schätzen die Ergebnisse — aber ich vermute, auf der Beziehungsebene gibt es Luft nach oben.', value: 2 },
+          { label: 'Ich bin nicht sicher. Das ist eine Frage, die ich mir selten so direkt stelle.', value: 1 }
         ]
       }
     ];
@@ -1011,82 +1012,82 @@
     const TIERS = [
       {
         min: 0, max: 25,
-        emTitle: 'Tief im <em>Konflikt-Modus</em>.',
+        emTitle: 'Tief im <em>Reaktions-Modus</em>.',
         // Sichtbar (vor E-Mail-Gate):
-        summary: 'Ihre Antworten zeigen ein klares Muster: In Struktur, Kommunikation und Führungskultur sind ernsthafte Schwächen erkennbar. Konflikte werden nicht systematisch gelöst — sie eskalieren oder werden ausgesessen.',
+        summary: 'Ihre Antworten zeigen ein klares Muster: Führung passiert vor allem reaktiv — aus dem Tagesdruck heraus. In Klarheit, Reflexion, Souveränität und Beziehung sind deutliche Entwicklungs­bereiche erkennbar.',
         // Locked (nach E-Mail-Gate):
-        deepSummary: 'Was die meisten Inhaber unterschätzen: In dieser Konflikt­intensität verbrennen typische KMU laut aktueller Studien zwischen 8–15 % ihres Jahresumsatzes durch ungelöste Konflikte — Geld, das in keiner BWA auftaucht. Hauptkostentreiber: Produktivitäts­verlust durch innere Kündigung, Quiet Quitting und stille Sabotage; massiv erhöhter Krankenstand; eskalierende Fluktuation kostbarer Fachkräfte; teure Fehlentscheidungen, weil ehrliches Feedback fehlt.',
-        costRange: '180.000 – 280.000 €',
+        deepSummary: 'Was die meisten Führungskräfte unterschätzen: Die größten Verluste durch reaktive Führung entstehen nicht im offenen Konflikt — sondern in dem, was nicht passiert. Die Gallup-Forschung ist eindeutig: Führung erklärt rund 70 % der Variation im Team-Engagement. In dieser Phase verlieren Unternehmen typischerweise die besten Köpfe leise, Engagement und Initiative bleiben deutlich unter Möglich, und Entscheidungen sind schwer nachvollziehbar. Die gute Nachricht: Bewusste Führung ist erlernbar — und der Hebel ist enorm.',
+        costRange: '160.000 – 260.000 €',
         costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
         costBreakdown: [
-          { label: 'Produktivitätsverlust (15–20 %)', value: '~ 96.000 €' },
-          { label: 'Fluktuation (3–5 Kündigungen)', value: '~ 78.000 €' },
-          { label: 'Erhöhter Krankenstand', value: '~ 38.000 €' },
-          { label: 'Fehlentscheidungen & Projektverzug', value: '~ 52.000 €' }
+          { label: 'Fluktuation Top-Performer (3–5 Stellen)', value: '~ 75.000 €' },
+          { label: 'Produktivitätsverlust (niedriges Engagement)', value: '~ 90.000 €' },
+          { label: 'Verzögerte / unklare Entscheidungen', value: '~ 35.000 €' },
+          { label: 'Verlust an Initiative & Innovation', value: '~ 40.000 €' }
         ],
-        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
-        recoTitle: 'Beginnen Sie mit der <em>Konfliktkosten-Analyse</em>.',
-        recoText: 'Da Sie das Quiz bereits abgeschlossen haben, ist die Vorbereitung erledigt: Wir nutzen Ihre persönliche Auswertung als Gesprächsgrundlage und beziffern in 30 Minuten konkret, was aktuell verbrannt wird — und welche Hebel kurzfristig den größten Effekt haben. Kostenfrei, vertraulich, sofort umsetzbar.',
+        sourceNote: 'Berechnung basiert auf Gallup Q12 Meta-Analysis (2020), Gallup State of the American Manager (2015), Deloitte Österreich Fluktuationskostenstudie (2019) und DDI Global Leadership Forecast (2023).',
+        recoTitle: 'Beginnen Sie mit dem <em>Führungs-Standortgespräch</em>.',
+        recoText: 'Da Sie das Quiz bereits abgeschlossen haben, ist die Vorbereitung erledigt: Wir nutzen Ihre persönliche Auswertung als Gesprächs­grundlage und identifizieren in 30 Minuten die zwei, drei konkreten Hebel, die Ihre Führung kurzfristig am stärksten weiterbringen. Kostenfrei, vertraulich, sofort umsetzbar.',
         primary: 'analyse'
       },
       {
         min: 25, max: 45,
-        emTitle: 'Deutliche <em>Warnzeichen</em> sichtbar.',
-        summary: 'In mehreren Bereichen sind Risse sichtbar. Was heute noch wie Alltagsreibung aussieht, entwickelt sich erfahrungsgemäß in 6–12 Monaten zu spürbaren wirtschaftlichen Schäden — wenn nichts geschieht.',
-        deepSummary: 'In dieser Phase summieren sich die Kosten schleichend, aber konsequent. Studien zeigen: Unternehmen mit diesem Konfliktprofil verlieren im Schnitt 3–7 % ihres Jahresumsatzes, ohne dass es jemand benennen kann. Die typischen Treiber: ein um 30 % erhöhter Krankenstand, eine Fluktuationsrate die um 40–60 % über dem Branchenschnitt liegt, sowie ein zunehmendes „Quiet Quitting" — Mitarbeiter, die innerlich gekündigt haben, aber bleiben. Diese Phase ist die kritischste, weil noch handlungsfähig — aber das Zeitfenster wird kleiner.',
-        costRange: '80.000 – 150.000 €',
+        emTitle: 'Deutliche <em>Spannungsfelder</em> sichtbar.',
+        summary: 'In mehreren Bereichen Ihrer Führung sind Risse sichtbar. Bewusstsein ist da — aber der Alltag zerreißt, was Sie eigentlich anders gestalten möchten. Was heute Reibung ist, entwickelt sich erfahrungs­gemäß in 6–12 Monaten zu spürbaren Auswirkungen auf Team und Ergebnisse.',
+        deepSummary: 'In dieser Phase summieren sich die Effekte schleichend, aber konsequent. Studien zeigen: Top-engagierte Teams (durch bewusste Führung) erzielen 23 % höhere Profitabilität und haben eine um 43 % niedrigere Fluktuation gegenüber dem Branchen­schnitt (Gallup Q12 Meta-Analysis). Wer hier stehen bleibt, verliert Spitzenleute leise — und die durchschnittlichen Fluktuationskosten in Österreich liegen bei 14.900 € pro Stelle (Deloitte 2019). Diese Phase ist die kritischste, weil noch handlungs­fähig — aber das Zeitfenster wird kleiner.',
+        costRange: '70.000 – 130.000 €',
         costContext: 'p. a. bei einem 60-Mitarbeiter-Betrieb',
         costBreakdown: [
-          { label: 'Krankenstand (+30 %)', value: '~ 28.000 €' },
-          { label: 'Fluktuation (1–2 Kündigungen)', value: '~ 32.000 €' },
-          { label: 'Produktivitätsverlust (5–8 %)', value: '~ 42.000 €' },
-          { label: 'Quiet Quitting / Reibung', value: '~ 22.000 €' }
+          { label: 'Erhöhte Fluktuation (1–2 Stellen)', value: '~ 30.000 €' },
+          { label: 'Engagement-Verlust (≈ 5–8 %)', value: '~ 45.000 €' },
+          { label: 'Reibung in Entscheidungen', value: '~ 15.000 €' },
+          { label: 'Belastung der Führungsperson', value: '~ 18.000 €' }
         ],
-        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
-        recoTitle: 'Mit <em>LeadResolve</em> die Konflikte entschärfen.',
-        recoText: 'Konfliktcoaching für Führungskräfte: organisationale Konflikte verstehen, entschärfen und als Chance nutzen. Vertraulich, direkt, lösungs­orientiert — bevor sich aus Warnzeichen ein Notfall entwickelt.',
-        primary: 'leadresolve'
+        sourceNote: 'Berechnung basiert auf Gallup Q12 Meta-Analysis (2020), Deloitte Österreich Fluktuationskostenstudie (2019) und DDI Global Leadership Forecast (2023).',
+        recoTitle: 'Mit <em>LeadShift</em> Klarheit und Wirkung gewinnen.',
+        recoText: 'Führungs­kräfte-Coaching für Inhaber, Geschäftsführer und Führungskräfte in KMU & Handwerk: Klarheit, Entscheidungs­sicherheit und Wirkung — praxisnah und ergebnis­orientiert. Bevor aus Spannungs­feldern Notfälle werden.',
+        primary: 'leadshift'
       },
       {
         min: 45, max: 60,
-        emTitle: '<em>Solide Basis</em> mit deutlichem Luftraum.',
-        summary: 'Ihr Unternehmen ist grundsätzlich aufgestellt — aber es gibt klar erkennbare Bereiche, in denen Sie Führung, Kultur oder Strukturen systematisch weiterentwickeln können. Wer hier stehen bleibt, verschenkt Potenzial.',
-        deepSummary: 'Die schlechte Nachricht: Auch in dieser Phase entstehen messbare Verluste — sie sind nur schwerer sichtbar. Studien zeigen: Unternehmen mit diesem Profil verlieren typischerweise 1–3 % ihres Jahres­umsatzes durch nicht ausgeschöpfte Potenziale, suboptimale Team-Performance und einzelne Reibungsverluste. Die gute Nachricht: Sie haben das Fundament. Mit gezielter Führungs­entwicklung holen Sie typischerweise 5–8 % Mehr-Performance heraus — bei deutlich geringerem Aufwand als ein Konflikt­fall in der Akut­phase.',
-        costRange: '30.000 – 60.000 €',
-        costContext: 'p. a. ungenutztes Potenzial · 60-MA-Betrieb',
+        emTitle: '<em>Klare Konturen</em> — mit Luftraum nach oben.',
+        summary: 'Ihre Führung steht auf einem soliden Fundament — Werte sind erkennbar, Reflexion findet statt, Beziehung ist Ihnen wichtig. Es gibt jedoch klar erkennbare Bereiche, in denen Sie systematisch weiter­wachsen können. Wer hier stehen bleibt, verschenkt Wirkung.',
+        deepSummary: 'Die DDI-Forschung zeigt: Unternehmen mit hoher Führungsqualität sind 4,5x wahrscheinlicher unter den Top-Finanz­performern ihrer Branche (Global Leadership Forecast 2023). Der Hebel zwischen "guter Führung" und "exzellenter Führung" ist überraschend groß — und liegt fast immer in Bereichen, die nicht unmittelbar sichtbar sind: tiefere Werte­klarheit, ehrliches 360°-Feedback, stabilere Souveränität unter Druck. Mit gezielter Führungs­entwicklung holen Sie typischerweise 5–8 % Mehr-Wirkung im Team heraus.',
+        costRange: '25.000 – 55.000 €',
+        costContext: 'p. a. ungenutztes Führungs-Potenzial · 60-MA-Betrieb',
         costBreakdown: [
-          { label: 'Suboptimale Team-Performance (1–2 %)', value: '~ 18.000 €' },
-          { label: 'Einzelne Reibungsverluste', value: '~ 14.000 €' },
-          { label: 'Ungenutzte Innovations-Impulse', value: '~ 16.000 €' },
-          { label: 'Verzögerte Entscheidungen', value: '~ 8.000 €' }
+          { label: 'Suboptimale Team-Performance (1–2 %)', value: '~ 22.000 €' },
+          { label: 'Verschenkte Spitzen-Impulse', value: '~ 14.000 €' },
+          { label: 'Ungenutzte Reflexions-Hebel', value: '~ 12.000 €' }
         ],
-        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
-        recoTitle: 'Mit <em>LeadResolve</em> Konflikte vorbeugen.',
-        recoText: 'LeadResolve setzt auch in dieser Phase an: latente Spannungen früh erkennen, Strukturen festigen, Konfliktkultur schärfen — bevor aus Reibung Notfälle werden. 9.800 € · 3 Monate.',
-        primary: 'leadresolve'
+        sourceNote: 'Berechnung basiert auf DDI Global Leadership Forecast (2023), Gallup Q12 Meta-Analysis (2020) und McKinsey „Decoding Leadership" (2015).',
+        recoTitle: 'Mit <em>LeadShift</em> auf das nächste Level.',
+        recoText: 'Leadership-Coaching für Führungs­kräfte mit Wachstums­ambition: Tiefere Werte­klarheit, ehrliches Feedback-System, stabilere Souveränität unter Druck. Holen Sie das ungenutzte Potenzial — mit Sparring auf Augenhöhe.',
+        primary: 'leadshift'
       },
       {
         min: 60, max: 101,
-        emTitle: 'Sehr <em>gut aufgestellt</em> — Feinschliff lohnt.',
-        summary: 'Ihr Unternehmen verfügt über eine ausgereifte Konfliktkultur und solide Führungs­strukturen. Selbst hier gibt es jedoch typischerweise blinde Flecken — gerade die guten Betriebe profitieren überproportional von gezieltem Sparring.',
-        deepSummary: 'Die spannende Erkenntnis aus aktuellen Top-Performer-Studien: Selbst hochperformante Organisationen verlieren noch 0,5–1,5 % ihres Umsatzes durch blinde Flecken in Führung und Konfliktkultur. Der Effekt ist klein in Prozent — aber der Hebel ist groß: Top-Betriebe, die sich gezielt sparring-begleiten lassen, steigern ihre Wettbewerbsposition meist signifikant, weil die letzten 10 % Performance den entscheidenden Unterschied zur Konkurrenz machen. Es geht nicht mehr um Reparatur, sondern um Vorsprung.',
-        costRange: '12.000 – 30.000 €',
-        costContext: 'p. a. ungenutzter Wettbewerbs­vorsprung',
+        emTitle: '<em>Bewusste Führung</em> — Feinschliff lohnt.',
+        summary: 'Sie führen mit Klarheit, Reflexion und Beziehungs­bewusstsein. Werte sind nicht Lehrbuch, sondern Praxis. Selbst hier gibt es jedoch typischerweise blinde Flecken — gerade die reflektiertesten Führungs­kräfte profitieren überproportional von gezieltem Sparring auf Augenhöhe.',
+        deepSummary: 'Die spannende Erkenntnis aus Top-Performer-Studien: Hochperformante Führungs­kräfte unterscheiden sich von guten weniger durch das, was sie wissen — sondern durch die Konsequenz, mit der sie ihre eigenen blinden Flecken bearbeiten. McKinsey „Decoding Leadership" (2015) und DDI Global Leadership Forecast (2023) zeigen: Die letzten 10 % Wirkung machen den entscheidenden Unterschied zur Konkurrenz. Es geht nicht mehr um Reparatur — sondern um Tiefe, Präsenz und Vorsprung.',
+        costRange: '10.000 – 25.000 €',
+        costContext: 'p. a. ungenutzter Wirkungs­vorsprung',
         costBreakdown: [
-          { label: 'Blinde Flecken in Führung', value: '~ 8.000 €' },
-          { label: 'Verschenkte Top-Performer-Impulse', value: '~ 9.000 €' },
-          { label: 'Suboptimale Konfliktkultur in Spitzen', value: '~ 6.000 €' }
+          { label: 'Blinde Flecken in der Außenwirkung', value: '~ 7.000 €' },
+          { label: 'Verschenkte Tiefe in Beziehungen', value: '~ 7.000 €' },
+          { label: 'Suboptimale Selbstführung', value: '~ 5.000 €' }
         ],
-        sourceNote: 'Berechnung basiert auf KPMG Conflict Management Studie 2023, Gallup Engagement Index 2024 und Hernstein Management Report.',
+        sourceNote: 'Berechnung basiert auf McKinsey „Decoding Leadership" (2015), DDI Global Leadership Forecast (2023) und Gallup State of the American Manager (2015).',
         recoTitle: 'Sparring auf <em>Augenhöhe</em>.',
-        recoText: 'In einem unverbindlichen Sparring-Gespräch (Konfliktkosten-Analyse, 30 Min) reflektieren wir die spezifischen Hebel, die für Ihren Betrieb den nächsten Wachstumsschritt ermöglichen. Auf Wunsch im Anschluss als LeadResolve-Begleitung.',
-        primary: 'analyse'
+        recoText: 'In einem unverbindlichen Sparring-Gespräch reflektieren wir die spezifischen Hebel, die Ihre Führung in den nächsten 12 Monaten am stärksten weiter­bringen — auf einem Niveau, auf dem die meisten Berater nicht mithalten.',
+        primary: 'leadshift'
       }
     ];
 
     const SERVICES = {
-      analyse: { tag: 'Einstieg · Kostenfrei', title: 'Konfliktkosten-Analyse', desc: '30-Min-Strategiegespräch auf Basis Ihrer persönlichen Quiz-Auswertung. Konkret, vorbereitet, beziffert in €.', href: 'https://calendly.com/bewerbung-kroes-consulting/30min', cta: 'Termin buchen →' },
-      leadresolve: { tag: 'Leistung · LeadResolve', title: 'LeadResolve', desc: 'Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben in AT + DE-Süd — vertraulich, direkt, lösungsorientiert. 9.800 € · 3 Monate.', href: 'leadresolve.html', cta: 'Programm ansehen →' }
+      analyse: { tag: 'Einstieg · Kostenfrei', title: 'Führungs-Standortgespräch', desc: '30-Min-Reflexionsgespräch auf Basis Ihrer persönlichen Quiz-Auswertung. Persönlich, vorbereitet, ohne Vertriebsgespräch.', href: 'https://calendly.com/bewerbung-kroes-consulting/30min', cta: 'Termin buchen →' },
+      leadshift: { tag: 'Leistung · LeadShift', title: 'LeadShift', desc: 'Leadership-Coaching: Klarheit, Entscheidungssicherheit, Wirkung — praxisnah für KMU & Handwerk.', href: 'leadshift.html', cta: 'Programm ansehen →' },
+      leadresolve: { tag: 'Leistung · LeadResolve', title: 'LeadResolve', desc: 'Konfliktcoaching für Führungskräfte — wenn akute Spannungen Ihre Führung blockieren.', href: 'leadresolve.html', cta: 'Gespräch anfragen →' }
     };
 
     let currentQ = 0;
@@ -1162,7 +1163,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
       let total = 0, max = 0;
-      const cats = ['Struktur', 'Kommunikation', 'Kultur', 'Entwicklung'];
+      const cats = ['Klarheit', 'Reflexion', 'Souveränität', 'Beziehung'];
       const catScores = {};
       cats.forEach(c => { catScores[c] = { score: 0, max: 0 }; });
 
@@ -1230,7 +1231,7 @@
       document.getElementById('recoText').textContent = tier.recoText;
       const recoServices = document.getElementById('recoServices');
       recoServices.innerHTML = '';
-      ['analyse', 'leadresolve'].forEach(key => {
+      ['analyse', 'leadshift', 'leadresolve'].forEach(key => {
         const s = SERVICES[key];
         const a = document.createElement('a');
         a.href = key === 'analyse' ? CALENDLY_URL : s.href;
@@ -1293,7 +1294,7 @@
         const url = URL.createObjectURL(pdfBlob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `Konflikt-Quiz-Auswertung_${fullName.replace(/\s+/g,'_')}.pdf`;
+        link.download = `Fuehrungs-Quiz-Auswertung_${fullName.replace(/\s+/g,'_')}.pdf`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -1430,7 +1431,7 @@
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(9);
         doc.setTextColor(...PERI);
-        doc.text('CONSULTING & COACHING · FAMILIEN- & HANDWERKSBETRIEBE · AT + DE-SÜD', M, 34);
+        doc.text('CONSULTING & COACHING · KMU & HANDWERK', M, 34);
         headerHeight = 50;
       }
 
@@ -1443,7 +1444,7 @@
       doc.setFont('times', 'bold');
       doc.setFontSize(15);
       doc.setTextColor(...NAVY);
-      doc.text('Auswertung Konflikt-Quiz', M, y);
+      doc.text('Auswertung Führungs-Quiz', M, y);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(10);
       doc.setTextColor(...INK);
@@ -1480,7 +1481,7 @@
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9);
       doc.setTextColor(...INK);
-      doc.text('Gesamtscore · Konfliktfähigkeit Ihres Unternehmens', M + 38, y + 24);
+      doc.text('Gesamtscore · Führungs-Bewusstheit', M + 38, y + 24);
       y += 42;
 
       // === KURZ-SUMMARY ===
@@ -1541,7 +1542,7 @@
       // Page break check
       if (y > 220) { doc.addPage(); y = M; }
 
-      // === KONFLIKTKOSTEN-BLOCK ===
+      // === FÜHRUNGSKOSTEN-BLOCK ===
       doc.setFillColor(...WARM);
       doc.rect(M, y, W - 2*M, 56, 'F');
       doc.setFillColor(...PERI);
@@ -1550,7 +1551,7 @@
       doc.setFont('times', 'bold');
       doc.setFontSize(11);
       doc.setTextColor(...NAVY);
-      doc.text('WAS SIE DAS AKTUELL KOSTET', M + 4, yc);
+      doc.text('WAS SCHWACHE FÜHRUNG IHR UNTERNEHMEN KOSTET', M + 4, yc);
       doc.setFont('times', 'bold');
       doc.setFontSize(20);
       doc.setTextColor(...RED);
@@ -1609,10 +1610,10 @@
       doc.setFont('times', 'bold');
       doc.setFontSize(12);
       doc.setTextColor(...NAVY);
-      doc.text('Konfliktkosten-Analyse buchen', M + 6, y + 10);
+      doc.text('Führungs-Standortgespräch buchen', M + 6, y + 10);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(9);
-      doc.text('Kostenfreies 30-Min-Strategiegespräch · auf Basis Ihrer Auswertung', M + 6, y + 16);
+      doc.text('Kostenfreies 30-Min-Reflexionsgespräch · auf Basis Ihrer Auswertung', M + 6, y + 16);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
       doc.setTextColor(...NAVY);
