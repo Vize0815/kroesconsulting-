@@ -69,14 +69,14 @@
   --t-slow:   540ms var(--ease-out);
 
   /* Header-Stack-Höhen */
-  --topbar-h: 40px;
+  --topbar-h:0px;
 }
 
 @media (max-width: 768px) {
-  :root { --topbar-h: 36px; }
+  :root { --topbar-h:0px; }
 }
 @media (max-width: 540px) {
-  :root { --topbar-h: 34px; }
+  :root { --topbar-h:0px; }
 }
 
 /* --- 2. Reset ---------------------------------------------- */
