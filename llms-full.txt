@@ -1,12 +1,12 @@
 # Kroes Consulting & Coaching — Vollständige Inhalte
 
-> Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland (10–150 Mitarbeiter). Inhaber Alexander Kroes (Alexander Kroes e.U.) macht die wirtschaftlichen Verluste durch ungelöste Konflikte sichtbar und beseitigt sie systematisch — damit Unternehmen Fachkräfte halten, Konflikte lösen und profitabel wachsen.
+> Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland (20 bis 80 Mitarbeiter). Inhaber Alexander Kroes (Alexander Kroes e.U.) macht die wirtschaftlichen Verluste durch ungelöste Konflikte sichtbar und beseitigt sie systematisch — damit Unternehmen Fachkräfte halten, Konflikte lösen und profitabel wachsen.
 
 Diese Datei enthält die vollständigen Inhalte aller Hauptseiten von kroes-consulting.com in strukturierter Markdown-Form. Für eine kompakte Übersicht siehe [llms.txt](https://www.kroes-consulting.com/llms.txt).
 
 **Positionierung:** „Konflikte kosten Unternehmen Geld – ich mache diese Verluste sichtbar und beseitige sie systematisch."
 
-**Zielgruppe:** Inhaber und Geschäftsführer von Familien- und Handwerksbetrieben in Österreich und Süddeutschland mit 10–150 Mitarbeitern. Typische Branchen: Metallverarbeitung, Tischlerei, Maler, Elektro, SHK, Bau- und Ausbau-Handwerk.
+**Zielgruppe:** Inhaber und Geschäftsführer von Familien- und Handwerksbetrieben in Österreich und Süddeutschland mit 20 bis 80 Mitarbeitern. Typische Branchen: Metallverarbeitung, Tischlerei, Maler, Elektro, SHK, Bau- und Ausbau-Handwerk.
 
 **Standort:** Unterer Stadtplatz 11, 6330 Kufstein, Österreich.
 
@@ -18,7 +18,7 @@ Diese Datei enthält die vollständigen Inhalte aller Hauptseiten von kroes-cons
 - Zertifizierter Konfliktcoach (kein Mediator)
 
 **Signature-Programm (Frontend-Offer):**
-- **LeadResolve** — Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben. Standard-Programm: 9.800 € netto, 3 Monate. Sprint-Format (4–6 Wochen) und längere Begleitung (bis 12 Monate) auf Anfrage.
+- **LeadResolve** — Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben. Standard-Programm: 3 Monate. Sprint-Format (4–6 Wochen) und längere Begleitung (bis 12 Monate) auf Anfrage. Investition individuell nach Konfliktkosten-Analyse.
 
 **Funnel:** Konflikt-Quiz → Konfliktkosten-Analyse (kostenfreies 30-Min-Strategiegespräch) → LeadResolve.
 
@@ -29,7 +29,7 @@ Diese Datei enthält die vollständigen Inhalte aller Hauptseiten von kroes-cons
 URL: https://www.kroes-consulting.com/index.html
 
 ### Hero
-**Konfliktlösungssysteme für Inhaber von Familien- und Handwerksbetrieben** · Österreich + Süddeutschland · 10–150 Mitarbeiter
+**Konfliktlösungssysteme für Inhaber von Familien- und Handwerksbetrieben** · Österreich + Süddeutschland · 20 bis 80 Mitarbeiter
 
 Konflikte entstehen nicht plötzlich – sie entwickeln sich im Alltag: in der Kommunikation, in der Zusammenarbeit und oft unbemerkt über Wochen oder Monate. Wenn Spannungen im Team bestehen bleiben, verlieren Unternehmen nicht nur Zeit und Energie, sondern auch Leistung und Vertrauen.
 
@@ -68,7 +68,7 @@ Konservativ kalkuliert auf Basis öffentlich zugänglicher Studien.
 
 LeadResolve ist das Konfliktcoaching-Programm für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland. Spannungen im Betrieb verstehen, entschärfen und als Wendepunkt nutzen — vertraulich, direkt und konsequent lösungsorientiert begleitet.
 
-**Standard-Programm: 9.800 € netto · 3 Monate.**
+**Standard-Programm: 3 Monate.** Investition individuell nach Konfliktkosten-Analyse.
 
 **Funnel:** Vor dem Coaching steht das Konflikt-Quiz. Nach dem Quiz folgt die kostenfreie Konfliktkosten-Analyse (30 Min Strategiegespräch). Erst danach das schriftliche Angebot.
 
@@ -103,7 +103,7 @@ Weil Sie Teil des Systems sind. Ein externer Blick bringt Struktur, Klarheit und
 
 URL: https://www.kroes-consulting.com/leistungen.html
 
-**Konflikt-Management für Familien- und Handwerksbetriebe** in Österreich und Süddeutschland, 10–150 Mitarbeiter.
+**Konflikt-Management für Familien- und Handwerksbetriebe** in Österreich und Süddeutschland, 20 bis 80 Mitarbeiter.
 
 LeadResolve — das Konfliktcoaching-Programm für Inhaber. Konflikte lösen, Fachkräfte halten, profitabel wachsen.
 
@@ -117,7 +117,7 @@ Ungelöste Konflikte kosten Zeit, Geld, Energie und Motivation — und schwäche
 
 Bis zu 50 % der Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte. Bei Führungskräften bindet Konfliktarbeit oft 30–50 % der wöchentlichen Arbeitszeit.
 
-**Standard-Programm: 9.800 € netto · 3 Monate.**
+**Standard-Programm: 3 Monate.** Investition individuell nach Konfliktkosten-Analyse.
 
 **Leistungsumfang:**
 - 1:1 Coaching für Inhaber & Geschäftsführer
@@ -127,7 +127,7 @@ Bis zu 50 % der Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte. Be
 - Konfliktanalyse & Mustererkennung
 - Praxis-Transfer in den Führungsalltag
 
-**Für wen:** Inhaber von Familien- und Handwerksbetrieben in AT + DE-Süd, Geschäftsführer mit 10–150 Mitarbeitern, Bereichs-, Abteilungs- und Projektleiter:innen.
+**Für wen:** Inhaber von Familien- und Handwerksbetrieben in AT + DE-Süd, Geschäftsführer mit 20 bis 80 Mitarbeitern, Bereichs-, Abteilungs- und Projektleiter:innen.
 
 **Format:** Inhouse, intern oder nach Absprache. Persönlich · diskret · nachhaltig. Absolute Verschwiegenheit garantiert.
 
@@ -139,7 +139,7 @@ Bis zu 50 % der Mitarbeiterkündigungen erfolgen wegen ungelöster Konflikte. Be
 
 URL: https://www.kroes-consulting.com/leadresolve.html
 
-**LeadResolve** ist das Konfliktcoaching-Programm für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland (10–150 Mitarbeiter). Es macht Konflikte im Unternehmen sichtbar und beseitigt sie systematisch, bevor sie weitere Zeit, Geld und Fachkräfte kosten.
+**LeadResolve** ist das Konfliktcoaching-Programm für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland (20 bis 80 Mitarbeiter). Es macht Konflikte im Unternehmen sichtbar und beseitigt sie systematisch, bevor sie weitere Zeit, Geld und Fachkräfte kosten.
 
 Konflikte erkennen. Klarheit gewinnen. Führungsstärke entfalten.
 
@@ -153,7 +153,7 @@ LeadResolve setzt genau dort an. Das Programm vermittelt Führungskräften, wie 
 
 ### Programm im Überblick
 
-**Zielgruppe:** Inhaber, Geschäftsführer und Führungskräfte in Familien- und Handwerksbetrieben (AT + DE-Süd, 10–150 MA) — die echte Verantwortung tragen und Veränderung wirklich wollen.
+**Zielgruppe:** Inhaber, Geschäftsführer und Führungskräfte in Familien- und Handwerksbetrieben (AT + DE-Süd, 20 bis 80 MA) — die echte Verantwortung tragen und Veränderung wirklich wollen.
 
 **Methoden & Formate:** 1:1 Coaching, Reflexions- & Strategie-Sessions, Team-Workshops. Persönlich, diskret, nachhaltig. Praxisnah und sofort anwendbar — keine PowerPoint-Theorie, sondern Werkzeuge für den Montagmorgen.
 
@@ -162,9 +162,10 @@ LeadResolve setzt genau dort an. Das Programm vermittelt Führungskräften, wie 
 **Format:** Einzelcoaching (1 Person), Kleingruppen (4–6 Personen), Workshops (6–10 Personen). Bevorzugt Kleingruppen mit max. 6 Führungskräften.
 
 **Zeitraum & Investition:**
-- **Standard-Programm: 3 Monate · 9.800 € netto.**
+- **Standard-Programm: 3 Monate.**
 - Sprint-Format: 4–6 Wochen (auf Anfrage)
 - Längere Begleitung: bis 12 Monate (auf Anfrage)
+- Investition individuell nach Konfliktkosten-Analyse.
 
 Schriftliches Angebot nach der Konfliktkosten-Analyse (kostenfreies Strategiegespräch nach Quiz).
 
@@ -201,17 +202,17 @@ Volkswirtschaftlich allein in AT & DE über 50 Mrd. € jährlich durch ungelös
 
 **Wie läuft das Coaching ab?** Jedes Coaching beginnt mit dem Konflikt-Quiz und der anschließenden kostenfreien Konfliktkosten-Analyse (30 Min Strategiegespräch). Danach definieren wir gemeinsam Ihre aktuellen Herausforderungen und Ziele. Strukturiert, lösungsorientiert, praxisnah — in vertraulicher Atmosphäre.
 
-**Wie lange dauert ein Coachingprozess?** Standard-Programm: 3 Monate (9.800 € netto). Sprint-Format: 4–6 Wochen. Längere Begleitung: bis 12 Monate.
+**Wie lange dauert ein Coachingprozess?** Standard-Programm: 3 Monate. Sprint-Format: 4–6 Wochen. Längere Begleitung: bis 12 Monate. Investition individuell nach Konfliktkosten-Analyse.
 
-**Für wen eignet sich LeadResolve?** Inhaber, Geschäftsführer und Führungskräfte in Familien- und Handwerksbetrieben (AT + DE-Süd, 10–150 MA); Bereichs-, Abteilungs- und Projektleiter:innen; Unternehmer:innen vor einem Generationenwechsel.
+**Für wen eignet sich LeadResolve?** Inhaber, Geschäftsführer und Führungskräfte in Familien- und Handwerksbetrieben (AT + DE-Süd, 20 bis 80 MA); Bereichs-, Abteilungs- und Projektleiter:innen; Unternehmer:innen vor einem Generationenwechsel.
 
 **Wie individuell wird auf meine Situation eingegangen?** Komplett individuell. Es gibt kein Standard-Curriculum. Methoden und Tempo passen sich Ihnen an, nicht umgekehrt.
 
-**Was unterscheidet Ihr Coaching?** Drei Dinge: Praxis (über 25 Jahre Erfahrung in Handwerk, Projektmanagement und Beratung), spitze Positionierung (Familien- und Handwerksbetriebe in AT + DE-Süd, 10–150 MA, nicht Konzern), echte Menschlichkeit (vertrauliche Gespräche, individuelle Anpassung).
+**Was unterscheidet Ihr Coaching?** Drei Dinge: Praxis (über 25 Jahre Erfahrung in Handwerk, Projektmanagement und Beratung), spitze Positionierung (Familien- und Handwerksbetriebe in AT + DE-Süd, 20 bis 80 MA, nicht Konzern), echte Menschlichkeit (vertrauliche Gespräche, individuelle Anpassung).
 
 **Wie ist die Vertraulichkeit gewährleistet?** Absolute Verschwiegenheit. Inhalte aus Coachings, Sessions und Workshops verlassen den Raum nicht.
 
-**Was kostet LeadResolve?** Standard-Programm (3 Monate 1:1-Begleitung): **9.800 € netto**. Sprint-Format und längere Begleitung auf Anfrage. Vergleichswert: Ein einziger konfliktbedingter Krankenstand-Cluster oder eine ungewollte Fachkraft-Kündigung übersteigt diese Investition meist deutlich.
+**Was kostet LeadResolve?** Die Investition wird auf Basis Ihrer Konfliktkosten-Analyse individuell beziffert. Standard-Programm: 3 Monate 1:1-Begleitung. Sprint-Format und längere Begleitung auf Anfrage. Vergleichswert: Ein einziger konfliktbedingter Krankenstand-Cluster oder eine ungewollte Fachkraft-Kündigung übersteigt die Investition meist deutlich.
 
 **Wie läuft die Terminvereinbarung ab?** Über das Konflikt-Quiz: 10 Fragen, sofortige Auswertung, danach die kostenlose Konfliktkosten-Analyse (30 Min). In akuten Situationen direkt telefonisch: +43 (0) 5338 20105.
 
@@ -237,7 +238,7 @@ Dann kam ein persönlicher Schicksalsschlag, der alles veränderte. „Erst als 
 - **Betriebswirt des Handwerks** — Weiterbildung mit Fokus auf Betriebsführung, Kalkulation, Mitarbeiterführung.
 - **15 Jahre internationale Projektleitung** — Projekte im In- und Ausland, u.a. mehrjähriges Finnland-Projekt für einen damals führenden Mobiltelefon-Hersteller.
 - **Persönliche Wendung** — Ein einschneidendes Ereignis bringt alles zum Stillstand und macht klar, was zählt: Klarheit, Verantwortung, ehrliche Kommunikation.
-- **Gründung Kroes Consulting & Coaching** — Heute begleite ich Familien- und Handwerksbetriebe in AT + DE-Süd (10–150 MA) als Konfliktcoach & Unternehmensberater.
+- **Gründung Kroes Consulting & Coaching** — Heute begleite ich Familien- und Handwerksbetriebe in AT + DE-Süd (20 bis 80 MA) als Konfliktcoach & Unternehmensberater.
 
 ### Geprüfte Praxis & Expertise
 
@@ -287,11 +288,11 @@ Nehmen Sie Kontakt auf — unverbindlich, vertraulich und auf Augenhöhe. Wir me
 
 **Arbeiten Sie auch remote / online?** Ja. Beratung und Coaching können vollständig online durchgeführt werden per Zoom-Call.
 
-**Für welche Unternehmen sind Sie tätig?** Spitze Zielgruppe: Familien- und Inhaberbetriebe im Handwerk in Österreich und Süddeutschland mit 10–150 Mitarbeitern. Typische Branchen: Metallverarbeitung, Tischlerei, Maler, Elektro, SHK, Bau- und Ausbau-Handwerk.
+**Für welche Unternehmen sind Sie tätig?** Spitze Zielgruppe: Familien- und Inhaberbetriebe im Handwerk in Österreich und Süddeutschland mit 20 bis 80 Mitarbeitern. Typische Branchen: Metallverarbeitung, Tischlerei, Maler, Elektro, SHK, Bau- und Ausbau-Handwerk.
 
 **Wie vertraulich sind Ihre Leistungen?** Absolut vertraulich. Berufliche Schweigepflicht ohne Ausnahmen.
 
-**Wie lange dauert ein typisches Mandat?** Standard-Programm: 3 Monate (9.800 € netto). Sprint: 4–6 Wochen. Längere Begleitung bis 12 Monate auf Anfrage.
+**Wie lange dauert ein typisches Mandat?** Standard-Programm: 3 Monate. Sprint: 4–6 Wochen. Längere Begleitung bis 12 Monate auf Anfrage. Investition individuell nach Konfliktkosten-Analyse.
 
 ---
 
