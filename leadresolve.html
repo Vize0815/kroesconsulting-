@@ -23,7 +23,8 @@
   <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="preload" href="assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
 
   <!-- JSON-LD: Service -->
   <script type="application/ld+json">
