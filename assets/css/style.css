@@ -2286,11 +2286,11 @@ em, .italic { font-style: italic; }
   position: relative;
   background: var(--warm-50);
   border-bottom: 1px solid var(--ink-200);
-  min-height: 82svh;
+  min-height: 60svh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: clamp(4.5rem, 7vh, 6rem);
+  padding-top: clamp(1rem, 2vh, 2rem);
   padding-bottom: 0;
 }
 
