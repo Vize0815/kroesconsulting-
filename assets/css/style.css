@@ -293,8 +293,9 @@ em, .italic { font-style: italic; }
 
 .nav {
   position: fixed;
-  inset-block-start: var(--topbar-h);
-  inset-inline: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 300;
   padding-block: 1.1rem;
   background: var(--navy);
