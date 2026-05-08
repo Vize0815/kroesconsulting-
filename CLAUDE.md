@@ -1,7 +1,7 @@
 # Kroes Consulting — Website
 
 ## Projektübersicht
-Professionelle Unternehmenswebsite für **Kroes Consulting & Coaching** (Alexander Kroes e.U.) — Konfliktcoaching für **KMU & Handwerk**. Standort: Breitenbach am Inn (Raum Kufstein, Tirol, Österreich).
+Professionelle Unternehmenswebsite für **Kroes Consulting** (Alexander Kroes e.U.) — Konfliktcoaching für **KMU & Handwerk**. Standort: Breitenbach am Inn (Raum Kufstein, Tirol, Österreich).
 
 ## Projektkontext (wichtig!)
 - Es wird eine neue komplette Website erstellt, die NICHT mehr auf die alte Webseite https://www.kroes-consulting.com/ zugreift 
