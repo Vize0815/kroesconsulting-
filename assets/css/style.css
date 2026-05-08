@@ -292,10 +292,7 @@ em, .italic { font-style: italic; }
 /* --- 6b. Navigation (Navy, sticky, permanent) -------------- */
 
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 300;
   padding-block: 1.1rem;
   background: var(--navy);
