@@ -513,6 +513,11 @@
      - Re-open-Button bleibt sichtbar zur Widerrufsmöglichkeit
   --------------------------------------------------------------- */
   (function cookieBanner() {
+    // DEAKTIVIERT: Cloudflare Web Analytics ist cookieless + DSGVO-konform
+    // (Art. 6 Abs. 1 lit. f DSGVO, kein Consent erforderlich), siehe Datenschutz §5.
+    // Kein Cookie-Banner noetig -> keine Render-/Speed-Index-Kosten.
+    return;
+    /* eslint-disable no-unreachable */
     var STORAGE_KEY = 'cookieConsent_v1';
     var consent = null;
     try { consent = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch (_) { consent = null; }
