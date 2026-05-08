@@ -2272,8 +2272,8 @@ em, .italic { font-style: italic; }
 
 /* Logo-Bild im Header */
 .nav-logo-img {
-  width: 178px;
-  height: 146px;
+  width: 188px;
+  height: 156px;
   display: block;
   flex-shrink: 0;
   object-fit: contain;
@@ -2608,7 +2608,7 @@ em, .italic { font-style: italic; }
   .nav-end    { display: none; }
   .nav-toggle { display: flex; margin-inline-start: 2.5rem; }
   .nav-inner  { gap: 2.5rem; }
-  .nav-logo-img { width: 134px; height: 110px; }
+  .nav-logo-img { width: 141px; height: 117px; }
 
   /* Hero LinkedIn */
   .hero-lk-badge { white-space: normal; }
