@@ -2272,7 +2272,7 @@ em, .italic { font-style: italic; }
 
 /* Logo-Bild im Header */
 .nav-logo-img {
-  height: 56px;
+  height: 96px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -2607,7 +2607,7 @@ em, .italic { font-style: italic; }
   .nav-end    { display: none; }
   .nav-toggle { display: flex; margin-inline-start: 2.5rem; }
   .nav-inner  { gap: 2.5rem; }
-  .nav-logo-img { height: 44px; }
+  .nav-logo-img { height: 72px; }
 
   /* Hero LinkedIn */
   .hero-lk-badge { white-space: normal; }
