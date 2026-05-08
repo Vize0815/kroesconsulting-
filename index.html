@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <meta name="description" content="Konfliktcoaching für Inhaber von Familien- und Handwerksbetrieben in Österreich und Süddeutschland, 20 bis 80 MA. Konflikte sichtbar machen und systematisch lösen, in 3 Monaten.">
   <!-- Hero-Bild vorab laden (Speed Index / LCP) -->
-  <link rel="preload" as="image" href="assets/img/alexander-kroes-konfliktmanagement.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/alexander-kroes-konfliktmanagement.avif" type="image/avif" fetchpriority="high">
   <!-- Body-Font vorab laden (verhindert Reflow bei swap) -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/libre-franklin-400.woff2" crossorigin>
   <!-- Critical CSS inline (above-the-fold), Rest deferred -->
@@ -95,7 +95,10 @@
         <!-- RIGHT: Portrait -->
         <div class="lb-portrait">
           <div class="lb-portrait-frame">
-            <img src="assets/img/alexander-kroes-konfliktmanagement.webp" alt="Alexander Kroes — Kroes Consulting &amp; Coaching" loading="eager" fetchpriority="high" decoding="async" width="1080" height="864">
+            <picture>
+              <source srcset="assets/img/alexander-kroes-konfliktmanagement.avif" type="image/avif">
+              <img src="assets/img/alexander-kroes-konfliktmanagement.webp" alt="Alexander Kroes — Kroes Consulting &amp; Coaching" loading="eager" fetchpriority="high" decoding="async" width="1080" height="864">
+            </picture>
           </div>
           <p class="lb-portrait-cap">Alexander Kroes<br><span>Gründer · Kroes Consulting &amp; Coaching</span></p>
         </div>
