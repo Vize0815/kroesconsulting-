@@ -2272,10 +2272,11 @@ em, .italic { font-style: italic; }
 
 /* Logo-Bild im Header */
 .nav-logo-img {
-  height: 96px;
-  width: auto;
+  width: 178px;
+  height: 146px;
   display: block;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 /* Nav ist permanent navy — AK-Signet immer hell */
@@ -2607,7 +2608,7 @@ em, .italic { font-style: italic; }
   .nav-end    { display: none; }
   .nav-toggle { display: flex; margin-inline-start: 2.5rem; }
   .nav-inner  { gap: 2.5rem; }
-  .nav-logo-img { height: 72px; }
+  .nav-logo-img { width: 134px; height: 110px; }
 
   /* Hero LinkedIn */
   .hero-lk-badge { white-space: normal; }
