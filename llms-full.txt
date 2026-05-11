@@ -58,11 +58,11 @@ Denn jede Konfliktsituation ist eine Chance, Klarheit über Strukturen, Beziehun
 
 Konservativ kalkuliert auf Basis öffentlich zugänglicher Studien.
 
-**Szenario · Klein (8 Mitarbeiter · Handwerksbetrieb):** Ungelöster Konflikt zwischen Meister und zwei langgedienten Gesellen. **Pro Jahr ≈ 41.200 €.**
+**Szenario · Klein (20 Mitarbeiter · Handwerksbetrieb):** Ungelöster Konflikt zwischen Meister und zwei langgedienten Gesellen. **Pro Jahr ≈ 68.400 €.**
 
-**Szenario · Mittel (25 Mitarbeiter · Handwerksbetrieb):** Eskalierter Teamkonflikt zwischen zwei Bereichen. **Pro Jahr ≈ 99.300 €.**
+**Szenario · Mittel (60 Mitarbeiter · KMU):** Eskalierter Teamkonflikt zwischen zwei Bereichen. **Pro Jahr ≈ 189.400 €.**
 
-**Szenario · Größer (50 Mitarbeiter · Handwerksbetrieb):** Führungskonflikt zwischen Geschäftsführung und zwei Bereichsleitern. **Pro Jahr ≈ 213.250 €.**
+**Szenario · Größer (80 Mitarbeiter · Mittelständisches Handwerk):** Führungskonflikt zwischen Geschäftsführung und zwei Bereichsleitern. **Pro Jahr ≈ 291.000 €.**
 
 ### Die Lösung: LeadResolve
 
