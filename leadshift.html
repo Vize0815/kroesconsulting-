@@ -3,114 +3,372 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <title>LEADSHIFT, Führungskräftecoaching für KMU & Handwerk | Kroes Consulting</title>
+  <title>LeadShift – Führungskräfte-Coaching für gewachsene Teams | Kroes Consulting</title>
   <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <meta name="description" content="LEADSHIFT, Führungskräftecoaching mit Weitblick. Klarheit, Entscheidungssicherheit und Wirkung für Inhaber und Führungskräfte in KMU & Handwerk.">
-  <link rel="canonical" href="https://www.kroes-consulting.com/leadshift.html">
+  <meta name="description" content="LeadShift – Tagesworkshop für Führungskräfte in Kooperation mit einer Mentaltraining-Expertin. Folge-Angebot für Inhaber nach LeadResolve.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="LEADSHIFT, Führungskräftecoaching für KMU & Handwerk | Kroes Consulting">
-  <meta property="og:description" content="Führung entscheidet über Motivation, Leistung und Zukunftsfähigkeit. LEADSHIFT entwickelt Sie als moderne Führungskraft, praxisorientiert, ergebnisorientiert, nachhaltig.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_AT">
-  <meta property="og:url" content="https://www.kroes-consulting.com/leadshift.html">
-
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LEADSHIFT, Führungskräftecoaching für KMU & Handwerk">
-  <meta name="twitter:description" content="Klarheit, Entscheidungssicherheit, Wirkung. Das Coaching-Programm für Führungskräfte in KMU & Handwerk.">
+  <!-- Versteckte Upsell-Seite: nicht indexieren, keinen Linkjuice weitergeben -->
+  <meta name="robots" content="noindex, nofollow">
 
   <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
-
-  <!-- Styles -->
   <link rel="preload" href="assets/css/style.min.css?v=17" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/css/style.min.css?v=17"></noscript>
 
-  <!-- JSON-LD: Service -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "LEADSHIFT, Führungskräftecoaching",
-    "serviceType": "Leadership Coaching",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Kroes Consulting",
-      "legalName": "Alexander Kroes e.U.",
-      "url": "https://www.kroes-consulting.com/",
-      "telephone": "+43-5338-20105",
-      "email": "info@kroes-consulting.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unterer Stadtplatz 11",
-        "postalCode": "6330",
-        "addressLocality": "Kufstein",
-        "addressCountry": "AT"
+  <style>
+    /* ===== LeadShift – seitenspezifisches Layout ===== */
+
+    /* Hero 2-Spalten (Content links, Bild rechts) */
+    .ls-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    /* Hero-Bild im Site-Look (vgl. .about-hero-portrait-frame) */
+    .ls-hero-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: var(--warm-100, #f3f0ea);
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 0 1px 0 rgba(31,47,88,0.08), 0 18px 40px -20px rgba(31,47,88,0.25);
+      transform: translateZ(0);
+      transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+    .ls-hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(31,47,88,0.08);
+      pointer-events: none;
+      transition: border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  inset 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ls-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .ls-hero-image:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1px 0 rgba(31,47,88,0.10), 0 28px 55px -22px rgba(31,47,88,0.40);
+    }
+    .ls-hero-image:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.08) contrast(1.02);
+    }
+    .ls-hero-image:hover::after {
+      border-color: rgba(118,140,253,0.55);
+      inset: 6px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ls-hero-image,
+      .ls-hero-image img,
+      .ls-hero-image::after { transition: none; }
+      .ls-hero-image:hover { transform: none; }
+      .ls-hero-image:hover img { transform: none; filter: none; }
+    }
+
+    /* Workshop-Blöcke 01–04 */
+    .ls-ablauf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .ls-ablauf-block {
+      background: var(--warm-50, #faf8f5);
+      border: 1px solid rgba(31, 47, 88, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+    }
+    .ls-ablauf-block .nummer {
+      display: inline-block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--peri, #768CFD);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .ls-ablauf-block h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      margin: 0 0 0.75rem;
+      color: var(--navy, #1F2F58);
+    }
+    .ls-ablauf-block p {
+      margin: 0;
+      color: var(--ink-700, #555);
+      line-height: 1.6;
+    }
+
+    /* Coach-Grid */
+    .ls-coach-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .ls-coach {
+      background: var(--warm-50, #faf8f5);
+      border: 1px solid rgba(31, 47, 88, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .ls-coach h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      margin: 0 0 0.25rem;
+      color: var(--navy, #1F2F58);
+    }
+    .ls-coach .rolle {
+      font-style: italic;
+      color: var(--peri, #768CFD);
+      margin: 0 0 1rem;
+      font-weight: 500;
+    }
+    .ls-coach .rolle-im-workshop {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(31, 47, 88, 0.1);
+      font-size: 0.95rem;
+    }
+    .ls-coach-portrait {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      background: var(--warm-100, #f3f0ea);
+      border: 3px solid var(--peri, #768CFD);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transform: translateZ(0);
+      box-shadow: 0 1px 0 rgba(31,47,88,0.08), 0 14px 28px -16px rgba(31,47,88,0.25);
+      transition: box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .ls-coach-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .ls-coach-portrait:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1px 0 rgba(31,47,88,0.10), 0 22px 40px -18px rgba(31,47,88,0.40);
+      border-color: var(--peri, #768CFD);
+    }
+    .ls-coach-portrait:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.08) contrast(1.02);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ls-coach-portrait,
+      .ls-coach-portrait img { transition: none; }
+      .ls-coach-portrait:hover { transform: none; }
+      .ls-coach-portrait:hover img { transform: none; filter: none; }
+    }
+    .ls-coach-portrait-placeholder {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--navy, #1F2F58);
+      letter-spacing: 0.05em;
+    }
+    .ls-coach { text-align: center; }
+    .ls-coach .rolle-im-workshop { text-align: left; }
+    .ls-coach > p:not(.rolle):not(.rolle-im-workshop) { text-align: left; }
+
+    /* Video-Block */
+    .ls-video-wrap {
+      max-width: 960px;
+      margin: 2.5rem auto 0;
+      background: var(--navy, #1F2F58);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(31, 47, 88, 0.15);
+    }
+    .ls-video-wrap video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Format-Tiles */
+    .ls-format-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .ls-format-item {
+      background: var(--warm-50, #faf8f5);
+      border-left: 3px solid var(--peri, #768CFD);
+      padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+      border-radius: 4px;
+    }
+    .ls-format-item h3 {
+      font-family: 'Libre Franklin', system-ui, sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 0.5rem;
+      color: var(--peri, #768CFD);
+      font-weight: 600;
+    }
+    .ls-format-item p {
+      margin: 0;
+      color: var(--navy, #1F2F58);
+      font-weight: 500;
+    }
+
+    /* Zielgruppe-Liste */
+    .ls-zielgruppe-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+    .ls-zielgruppe-list li {
+      padding: 0.75rem 0 0.75rem 1.75rem;
+      position: relative;
+      border-bottom: 1px solid rgba(31, 47, 88, 0.08);
+    }
+    .ls-zielgruppe-list li:last-child { border-bottom: none; }
+    .ls-zielgruppe-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.15rem;
+      width: 8px;
+      height: 8px;
+      background: var(--peri, #768CFD);
+      border-radius: 50%;
+    }
+
+    /* Kontakt-Block (reine Info, kein CTA-Button) */
+    .ls-kontakt {
+      background: var(--warm-100, #f3f0ea);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+    .ls-kontakt-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+    }
+    .ls-kontakt-info p { margin: 0; }
+    .ls-kontakt-info a {
+      color: var(--navy, #1F2F58);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .ls-hinweis {
+      font-size: 0.9rem;
+      color: var(--ink-700, #555);
+      font-style: italic;
+      margin: 1.5rem 0 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(31, 47, 88, 0.1);
+    }
+
+    /* Pros-Liste */
+    .ls-pros-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+    .ls-pros-list li {
+      padding: 0 0 0 2rem;
+      position: relative;
+      line-height: 1.5;
+      color: var(--ink-900, #141210);
+    }
+    .ls-pros-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+      width: 18px;
+      height: 18px;
+      background: var(--peri, #768CFD);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='5 12 10 17 19 7'/></svg>");
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .ls-pros-list li strong {
+      display: block;
+      color: var(--navy, #1F2F58);
+      margin-bottom: 0.15rem;
+    }
+
+    /* ===== Mobile-Responsive (Pflicht) ===== */
+    @media (max-width: 900px) {
+      .ls-ablauf-grid,
+      .ls-coach-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
-    },
-    "areaServed": { "@type": "Country", "name": "Österreich" },
-    "audience": {
-      "@type": "BusinessAudience",
-      "audienceType": "KMU, Handwerk, Inhaber, Geschäftsführer, Führungskräfte"
-    },
-    "url": "https://www.kroes-consulting.com/leadshift.html"
-  }
-  </script>
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.kroes-consulting.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://www.kroes-consulting.com/leistungen.html" },
-      { "@type": "ListItem", "position": 3, "name": "LEADSHIFT", "item": "https://www.kroes-consulting.com/leadshift.html" }
-    ]
-  }
-  </script>
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wie läuft das Coaching bei Ihnen ab?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jedes Coaching beginnt mit einem unverbindlichen Kennenlerngespräch. Danach definieren wir gemeinsam Ihre Führungsthemen und Ziele und legen einen klaren Ablauf fest. Das Coaching erfolgt strukturiert, lösungsorientiert und praxisnah, mit unmittelbarem Transfer in Ihren Führungsalltag."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wie lange dauert ein LEADSHIFT-Programm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Übliche Formate reichen von einem 6-Wochen-Sprint bis zu einer 12-Monats-Begleitung. Welcher Rahmen sinnvoll ist, hängt von Ihren Zielen, Ihrer Rolle und Ihrer Lernkurve ab. Den passenden Rahmen klären wir im Erstgespräch."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Für wen eignet sich LEADSHIFT?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LEADSHIFT richtet sich an Führungskräfte in KMU und Handwerk, Team- und Abteilungsleiter:innen in Übergangssituationen sowie Unternehmer:innen, die Leadership menschlicher und wirksamer gestalten möchten."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Was kostet LEADSHIFT?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Die Investition richtet sich nach Format (1:1, Kleingruppe, Workshop), Umfang und Zielsetzung. Nach dem kostenlosen Erstgespräch erhalten Sie ein konkretes, schriftliches Angebot. Studien zeigen für effektive Führungs­entwicklung einen Return-on-Invest von 10–15x."
-        }
+      .ls-format-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
       }
-    ]
-  }
-  </script>
+    }
+    @media (max-width: 900px) {
+      .ls-pros-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 900px) {
+      .ls-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .ls-hero-image {
+        max-width: 480px;
+        aspect-ratio: 4 / 3;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 600px) {
+      .ls-format-grid {
+        grid-template-columns: 1fr;
+      }
+      .ls-ablauf-block,
+      .ls-coach,
+      .ls-kontakt {
+        padding: 1.5rem;
+      }
+      .ls-ablauf-block .nummer { font-size: 1.6rem; }
+      .ls-kontakt-info { gap: 0.75rem 0; flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
@@ -124,7 +382,7 @@
       <div class="nav-end">
         <ul class="nav-links" role="list">
           <li><a href="index.html" class="nav-link">Start</a></li>
-          <li><a href="leistungen.html" class="nav-link active">Leistungen</a></li>
+          <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
           <li><a href="ueber-uns.html" class="nav-link">Über mich</a></li>
           <li><a href="medien.html" class="nav-link">Medien</a></li>
           <li><a href="quiz.html" class="nav-link">Konflikt-Quiz</a></li>
@@ -167,522 +425,309 @@
 
   <main>
 
-    <!-- ============================================================
-         HERO – Wydra-Style: Text links, Portrait rechts
-         ============================================================ -->
+    <!-- ============================================ -->
+    <!-- BLOCK 1: HERO                                -->
+    <!-- ============================================ -->
     <section class="about-hero" aria-labelledby="ls-hero-heading">
       <div class="container">
-        <nav class="breadcrumb breadcrumb-light" aria-label="Seitenpfad">
-          <a href="index.html">Start</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <a href="leistungen.html">Leistungen</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <span class="current">LEADSHIFT</span>
-        </nav>
-        <div class="about-hero-grid">
-
-          <div class="about-hero-content">
+        <div class="ls-hero-grid">
+          <div class="ls-hero-content">
             <div class="eyebrow-row">
               <span class="peri-rule" aria-hidden="true"></span>
-              <span class="t-label">Leistung 02 · LEADSHIFT</span>
+              <span class="t-label">Das Folge-Angebot nach LeadResolve</span>
             </div>
 
             <h1 class="about-hero-title reveal" id="ls-hero-heading">
-              LeadShift —
-              <span class="row2"><em>Führungskraft-Konflikte</em> lösen, Team führen</span>
+              LeadShift
+              <span class="row2"><em>Führungskräfte-Coaching<br>für gewachsene Teams</em></span>
             </h1>
 
             <p class="about-hero-lead reveal d-1">
-              Sinn stiften. Orientierung geben. Echte Verbindung schaffen.
+              Ein Tagesworkshop für Ihre Führungsebene, in Kooperation mit
+              <strong>Sandra Maderecker</strong>, Expertin für Mentaltraining.
             </p>
-
-            <div class="about-hero-bio reveal d-2">
-              <p>
-                <strong>LEADSHIFT</strong> ist das Führungskräfte-Coaching für Inhaber, Geschäftsführer und Führungskräfte in <em>KMU &amp; Handwerk</em>. Es entwickelt Sie als moderne Führungskraft mit Klarheit, Entscheidungssicherheit und der Fähigkeit, Veränderung wirksam zu gestalten.
-              </p>
-              <p>
-                Schlechte Führung kostet Fachkräfte. Gute Führung gewinnt sie. Führung entscheidet über Motivation, Leistung und Zukunftsfähigkeit, und damit direkt über Ihren Unternehmenserfolg.
-              </p>
-              <p class="about-hero-tagline">
-                <span>Praxisorientiert</span>
-                <span class="dot" aria-hidden="true"></span>
-                <span>Ergebnisorientiert</span>
-                <span class="dot" aria-hidden="true"></span>
-                <span>Nachhaltig</span>
-              </p>
-            </div>
           </div>
 
-          <div class="about-hero-portrait reveal">
-            <div class="about-hero-portrait-frame">
-              <img src="assets/img/alexander-kroes-7.webp" alt="Alexander Kroes, Führungskräftecoaching für KMU & Handwerk" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('no-img');">
-              <div class="about-hero-portrait-fallback" aria-hidden="true">
-                <span class="ak-mark"><span class="ak-mark-inner">AK</span></span>
-              </div>
-            </div>
-            <p class="about-hero-portrait-cap">Alexander Kroes<br><span>Business Coach &amp; Unternehmensberater</span></p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         INTRO – Vortext: Was ist LEADSHIFT und warum jetzt?
-         ============================================================ -->
-    <section class="lr-intro" aria-labelledby="ls-intro-heading">
-      <div class="container">
-        <div class="lr-intro-grid">
-          <div>
-            <div class="eyebrow-row">
-              <span class="peri-rule" aria-hidden="true"></span>
-              <span class="t-label">Das Programm</span>
-            </div>
-            <h2 class="lr-intro-h2 reveal" id="ls-intro-heading">
-              Führung entscheidet über Motivation,<br>Leistung und<br><em>Zukunftsfähigkeit.</em>
-            </h2>
-          </div>
-          <div class="lr-intro-body reveal d-1">
-            <p>
-              Viele Führungskräfte navigieren täglich zwischen wirtschaftlichem Druck, Mitarbeiterführung und strategischen Zielen. Wer in diesem Spannungsfeld Klarheit und Wirkung behält, hält Fachkräfte, gewinnt neue und sichert Wachstum. Wer das nicht schafft, verliert beides, Menschen und Marktanteile.
-            </p>
-            <p>
-              <strong>LEADSHIFT</strong> ist das Führungskräfte-Coaching, das genau hier ansetzt. Führung heute bedeutet, <em>Sinn zu stiften</em>, <em>Orientierung zu geben</em> und <em>echte Verbindung zu schaffen</em>, gerade in unsicheren Zeiten. Im geschützten Rahmen entwickeln Sie die Klarheit, mit der Sie sicher entscheiden, Teams führen und Veränderung umsetzen.
-            </p>
-            <p>
-              Das Ergebnis: Sichere Entscheidungen, höheres Team-Engagement, strukturierte Veränderungs­umsetzung, und ein Betrieb, in dem Führung wieder spürbar trägt.
-            </p>
+          <div class="ls-hero-image">
+            <img src="assets/img/alexander-kroes-5.webp" alt="Alexander Kroes" loading="eager">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         INFO-GRID – 6 Boxen
-         ============================================================ -->
-    <section class="lr-info" aria-labelledby="ls-info-heading">
-      <div class="container">
-        <div class="lr-info-header reveal">
-          <div class="eyebrow-row">
-            <span class="peri-rule" aria-hidden="true"></span>
-            <span class="t-label">Programm im Überblick</span>
-          </div>
-          <h2 id="ls-info-heading">
-            Sechs Antworten<br>auf Ihre <em>wichtigsten Fragen</em>
-          </h2>
-          <p>
-            Damit Sie sofort einschätzen können, ob LEADSHIFT zu Ihrer Situation passt.
-          </p>
-          <p>
-            Format, Ablauf und Investition transparent auf einen Blick.
-          </p>
+    <!-- ============================================ -->
+    <!-- BLOCK 2: ZIELGRUPPE                          -->
+    <!-- ============================================ -->
+    <section class="section" id="zielgruppe" aria-labelledby="ls-zielgruppe-heading">
+      <div class="container" style="max-width: 920px;">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Zielgruppe</span>
         </div>
+        <h2 class="t-display" id="ls-zielgruppe-heading">Für wen LeadShift gemacht ist</h2>
 
-        <div class="lr-info-grid">
+        <p class="t-body-lg" style="margin-top: 1.5rem;">
+          LeadShift ist <strong>kein Konfliktcoaching für Inhaber</strong>.
+          LeadShift ist das Folge-Angebot, wenn die Strukturen auf Inhaber-Ebene
+          stehen und jetzt die Führungsebene darunter handlungsfähig werden soll.
+        </p>
 
-          <!-- 01 Zielgruppe -->
-          <article class="lr-info-card reveal">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
-            <h3>Zielgruppe</h3>
-            <p class="lr-info-card-sub">An wen richtet sich LEADSHIFT?</p>
-            <ul>
-              <li>Führungskräfte in KMU &amp; Handwerk</li>
-              <li>Team- &amp; Abteilungsleiter:innen in Übergangssituationen</li>
-              <li>Unternehmer:innen mit Wachstumsambition</li>
-            </ul>
-            <p class="lr-info-card-note">
-              Für alle, die Leadership menschlicher und wirksamer gestalten möchten — in einem Umfeld, das nicht stillsteht.
+        <p class="t-body" style="margin-top: 1.25rem;">
+          Wir arbeiten ausschließlich mit Führungskräften aus Familien- und
+          Handwerksbetrieben, die ihren Inhaber entlasten und eigenständig
+          Konfliktsituationen im Team souverän führen sollen.
+        </p>
+
+        <ul class="ls-zielgruppe-list">
+          <li>Bereichsleiter, Vorarbeiter, Meister mit Personalverantwortung</li>
+          <li>Familienangehörige in operativen Führungsrollen</li>
+          <li>Nachfolgeebene, die sich auf die Übernahme vorbereitet</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BLOCK 3: ABLAUF / WORKSHOP-INHALTE          -->
+    <!-- ============================================ -->
+    <section class="section" id="ablauf" style="background: var(--warm-100, #f3f0ea);" aria-labelledby="ls-ablauf-heading">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Ablauf</span>
+        </div>
+        <h2 class="t-display" id="ls-ablauf-heading">Was im Workshop passiert</h2>
+
+        <p class="t-body-lg" style="margin-top: 1.5rem; max-width: 720px;">
+          Ein voller Tag, vor Ort bei Ihnen, ausschließlich für Ihr Unternehmen
+          und Ihr Team. Kein offenes Seminar, kein Lehrbuch-Programm.
+        </p>
+
+        <div class="ls-ablauf-grid">
+          <div class="ls-ablauf-block">
+            <span class="nummer">01</span>
+            <h3>Konfliktdiagnose im Team</h3>
+            <p>
+              Bestandsaufnahme der aktuellen Spannungen und Reibungspunkte
+              zwischen den Führungskräften. Vertraulich, ehrlich, strukturiert.
             </p>
-          </article>
+          </div>
 
-          <!-- 02 Methoden & Formate -->
-          <article class="lr-info-card reveal d-1">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            </span>
-            <h3>Methoden &amp; Formate</h3>
-            <p class="lr-info-card-sub">Wie verläuft das Coaching?</p>
-            <ul>
-              <li>1:1 Coaching (Präsenz &amp; online)</li>
-              <li>Blended Learning</li>
-              <li>Team-Workshops</li>
-              <li>Follow-up &amp; Transfer-Coaching</li>
-            </ul>
-            <p class="lr-info-card-note">
-              Praxisnah, nicht akademisch. Werkzeuge, die Sie direkt am nächsten Montagmorgen einsetzen können.
+          <div class="ls-ablauf-block">
+            <span class="nummer">02</span>
+            <h3>Mentale Grundlagen für Führung</h3>
+            <p>
+              Mentaltraining-Tools von Sandra Maderecker. Wie Führungskräfte
+              in Drucksituationen handlungsfähig bleiben und nicht reaktiv werden.
             </p>
-          </article>
+          </div>
 
-          <!-- 03 Ort -->
-          <article class="lr-info-card reveal d-2">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
+          <div class="ls-ablauf-block">
+            <span class="nummer">03</span>
+            <h3>Konflikt-Werkzeuge in der Praxis</h3>
+            <p>
+              Konkrete Gesprächsformate und Strukturen für schwierige
+              Situationen, übertragen auf Ihre realen Fallbeispiele aus dem Betrieb.
+            </p>
+          </div>
+
+          <div class="ls-ablauf-block">
+            <span class="nummer">04</span>
+            <h3>Individuelle Begleitung</h3>
+            <p>
+              Jede Führungskraft bekommt im Tagesverlauf mindestens eine
+              1:1-Sequenz mit uns — zur eigenen Situation und den nächsten Schritten.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BLOCK 4: COACHES                             -->
+    <!-- ============================================ -->
+    <section class="section" id="coaches" aria-labelledby="ls-coaches-heading">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Die beiden Coaches</span>
+        </div>
+        <h2 class="t-display" id="ls-coaches-heading">Wer Sie durch den Tag führt</h2>
+
+        <div class="ls-coach-grid">
+          <div class="ls-coach">
+            <div class="ls-coach-portrait">
+              <img src="assets/img/alexander-kroes-9.webp" alt="Alexander Kroes" loading="lazy">
+            </div>
+            <h3>Alexander Kroes</h3>
+            <p class="rolle">Konfliktcoach &amp; Unternehmensberater</p>
+            <p>
+              Diplom-Konfliktcoach für betriebliches Konfliktmanagement,
+              Zert. Unternehmensberater (WKO). Unternehmer aus Kufstein,
+              spezialisiert auf Inhaber und Führungskräfte in Familien-
+              und Handwerksbetrieben in Österreich und Süddeutschland.
+            </p>
+            <p class="rolle-im-workshop">
+              <strong>Rolle im Workshop:</strong> Konfliktdiagnose,
+              strukturelle Werkzeuge, Führungs-Tools.
+            </p>
+          </div>
+
+          <div class="ls-coach">
+            <div class="ls-coach-portrait">
+              <img src="assets/img/sandra-maderecker.webp" alt="Sandra Maderecker" loading="lazy">
+            </div>
+            <h3>Sandra Maderecker</h3>
+            <p class="rolle">Expertin für Mentaltraining</p>
+            <p>
+              Studium der Wirtschaftspsychologie und zahlreiche Ausbildungen
+              im Bereich Persönlichkeitsentwicklung. Unternehmerin aus Salzburg,
+              kombiniert Coaching, Mentaltraining, NLP und tiefgreifende Tools
+              zu einem Ansatz, der Veränderung nachhaltig wirken lässt.
+            </p>
+            <p class="rolle-im-workshop">
+              <strong>Rolle im Workshop:</strong> Mentale Resilienz,
+              Selbstführung, individuelle Begleitung.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BLOCK 5: VIDEO (selbst gehostet, kein YT)   -->
+    <!-- ============================================ -->
+    <section class="section" id="video" style="background: var(--warm-100, #f3f0ea);" aria-labelledby="ls-video-heading">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Video</span>
+        </div>
+        <h2 class="t-display" id="ls-video-heading">Lernen Sie uns kennen</h2>
+
+        <p class="t-body-lg" style="margin-top: 1.5rem; max-width: 720px;">
+          In 5 Minuten sprechen die Mentalcoachin Sandra Maderecker und ich
+          darüber, wie dieses Angebot entstanden ist und warum der innere
+          Blick für Führungskräfte entscheidend ist, um Spannungen klar zu
+          führen statt sie persönlich zu nehmen.
+        </p>
+
+        <div class="ls-video-wrap">
+          <!-- Selbst gehostetes Video — KEIN YouTube/Vimeo-Embed -->
+          <!-- TODO: assets/video/leadshift.mp4 und Poster-Bild ablegen -->
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            poster="assets/img/leadshift-video-poster.jpg">
+            <source src="assets/video/leadshift.mp4" type="video/mp4">
+            <source src="assets/video/leadshift.webm" type="video/webm">
+            Ihr Browser unterstützt das Video-Format nicht.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BLOCK 6: FORMAT UND RAHMEN (ohne Preis)     -->
+    <!-- ============================================ -->
+    <section class="section" id="format" aria-labelledby="ls-format-heading">
+      <div class="container">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Format &amp; Rahmen</span>
+        </div>
+        <h2 class="t-display" id="ls-format-heading">So läuft ein LeadShift-Tag</h2>
+
+        <div class="ls-format-grid">
+          <div class="ls-format-item">
+            <h3>Dauer</h3>
+            <p>1 voller Tag, ca. 8 Stunden inklusive Pausen</p>
+          </div>
+          <div class="ls-format-item">
             <h3>Ort</h3>
-            <p class="lr-info-card-sub">Wo findet das Coaching statt?</p>
-            <ul>
-              <li>Inhouse, bei Ihnen im Betrieb</li>
-              <li>Online, flexibel &amp; effizient</li>
-              <li>Intern, in unseren Räumen in Kufstein</li>
-            </ul>
-            <p class="lr-info-card-note">
-              Online-Sessions sparen Wege und integrieren sich in den Führungsalltag. Präsenz schafft Tiefe, wir kombinieren beides.
-            </p>
-          </article>
-
-          <!-- 04 Teilnehmende -->
-          <article class="lr-info-card reveal">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M18 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </span>
-            <h3>Anzahl Teilnehmende</h3>
-            <p class="lr-info-card-sub">Welche Formate gibt es?</p>
-            <ul>
-              <li>Einzelcoaching: 1 Person</li>
-              <li>Kleingruppen: 4–6 Personen</li>
-              <li>Workshops: 6–10 Personen</li>
-            </ul>
-            <p class="lr-info-card-note">
-              In Kleingruppen entsteht Lerngemeinschaft, Führungskräfte profitieren oft am meisten vom Austausch mit Peers.
-            </p>
-          </article>
-
-          <!-- 05 Zeitraum -->
-          <article class="lr-info-card reveal d-1">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </span>
-            <h3>Zeitraum</h3>
-            <p class="lr-info-card-sub">Wie lange dauert das Programm?</p>
-            <ul>
-              <li>Sprint: 6 Wochen</li>
-              <li>Standard-Programm: 3–6 Monate</li>
-              <li>Begleitung: bis 12 Monate</li>
-            </ul>
-            <p class="lr-info-card-note">
-              Führungs­entwicklung ist kein Workshop. Nachhaltiger Transfer braucht Wiederholung, wir planen den Rahmen, der wirkt.
-            </p>
-          </article>
-
-          <!-- 06 Investition -->
-          <article class="lr-info-card reveal d-2">
-            <span class="lr-info-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </span>
+            <p>Vor Ort im Betrieb oder externer Tagungsraum nach Wunsch</p>
+          </div>
+          <div class="ls-format-item">
+            <h3>Gruppengröße</h3>
+            <p>Maximal 8 Führungskräfte aus einem Unternehmen</p>
+          </div>
+          <div class="ls-format-item">
+            <h3>Format</h3>
+            <p>Ausschließlich Inhouse, ein Unternehmen pro Workshop, keine offene Veranstaltung</p>
+          </div>
+          <div class="ls-format-item">
+            <h3>Geografie</h3>
+            <p>Tirol, Salzburg, Süddeutschland. Andere Regionen auf Anfrage.</p>
+          </div>
+          <div class="ls-format-item">
             <h3>Investition</h3>
-            <p class="lr-info-card-sub">Wieviel Budget ist notwendig?</p>
-            <ul>
-              <li>Individuell auf Format &amp; Umfang abgestimmt</li>
-              <li>Schriftliches Angebot nach Erstgespräch</li>
-              <li>Studien zeigen 10–15x Return-on-Invest</li>
-            </ul>
-            <div class="lr-info-card-cta">
-              <a href="mailto:info@kroes-consulting.com?subject=Kroes%20Consulting%20%E2%80%93%20Anfrage%20zum%20Angebot%20LEADSHIFT" class="btn btn-peri" data-booking-modal data-subject="Kroes Consulting – Anfrage zum Angebot LEADSHIFT">
-                Jetzt Buchung anfragen
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </article>
-
+            <p>Auf Anfrage. Individuelles Angebot je nach Herausforderung.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         AWARENESS – Was Führung wert ist (positiver ROI)
-         ============================================================ -->
-    <section class="lr-awareness" aria-labelledby="ls-awareness-heading">
-      <div class="container">
+    <!-- ============================================ -->
+    <!-- BLOCK 7: KONTAKT (reine Info, kein CTA)     -->
+    <!-- ============================================ -->
+    <section class="section" id="kontakt" aria-labelledby="ls-kontakt-heading">
+      <div class="container" style="max-width: 920px;">
+        <div class="eyebrow-row">
+          <span class="peri-rule" aria-hidden="true"></span>
+          <span class="t-label">Interesse?</span>
+        </div>
+        <h2 class="t-display" id="ls-kontakt-heading">Interesse an LeadShift?</h2>
 
-        <div class="lr-awareness-header reveal">
-          <div class="eyebrow-row">
-            <span class="peri-rule" aria-hidden="true"></span>
-            <span class="t-label">Was gute Führung wert ist</span>
-          </div>
-          <h2 class="lr-awareness-h2" id="ls-awareness-heading">
-            Führung ist der Hebel.<br><em>Messbar. Nachhaltig.</em>
-          </h2>
-          <p class="lr-awareness-lead">
-            Effektive Führung ist kein Soft-Faktor, sie ist der quantifizierbare Hebel für Mitarbeiterbindung, Produktivität und Wachstum. Studien zeigen:
+        <div class="ls-kontakt">
+          <p class="t-body-lg" style="margin: 0;">
+            LeadShift ist ein Folge-Angebot für Inhaber, die mit Kroes Consulting
+            bereits an den Strukturen ihres Betriebs gearbeitet haben oder kurz
+            davor stehen. Wenn Sie überlegen, ob LeadShift für Ihre Führungsebene
+            sinnvoll ist, sprechen Sie mich direkt an.
           </p>
-          <p class="lr-awareness-lead">
-            Wer Führung systematisch entwickelt, schlägt seinen Wettbewerb messbar.
+
+          <ul class="ls-pros-list">
+            <li>
+              <strong>Zwei Disziplinen, ein Tag.</strong>
+              Konfliktmanagement und Mentaltraining greifen ineinander —
+              Werkzeuge und mentale Resilienz aus einer Hand.
+            </li>
+            <li>
+              <strong>Inhouse und vertraulich.</strong>
+              Ein Unternehmen pro Workshop, kein offenes Seminar,
+              keine fremden Teilnehmer im Raum.
+            </li>
+            <li>
+              <strong>Maximal 8 Führungskräfte.</strong>
+              Plus 1:1-Sequenz für jede Teilnehmerin und jeden
+              Teilnehmer im Tagesverlauf.
+            </li>
+            <li>
+              <strong>Eigene Fallbeispiele.</strong>
+              Wir arbeiten an realen Konflikten aus Ihrem Betrieb,
+              nicht an Lehrbuch-Szenarien.
+            </li>
+            <li>
+              <strong>Inhaber-Entlastung.</strong>
+              Ihre Führungsebene wird eigenständig konflikt-handlungs­fähig
+              und entscheidungs­sicher.
+            </li>
+            <li>
+              <strong>Nachhaltige Wirkung.</strong>
+              Strukturen, mentale Tools und konkrete Gesprächs­formate,
+              die ab Montag im Betriebsalltag tragen.
+            </li>
+          </ul>
+
+          <div class="ls-kontakt-info">
+            <p><strong>E-Mail:</strong> <a href="mailto:info@kroes-consulting.com">info@kroes-consulting.com</a></p>
+          </div>
+
+          <p class="ls-hinweis">
+            Hinweis: LeadShift wird ausschließlich in Kooperation mit
+            Sandra Maderecker angeboten. Verfügbarkeit nach Terminabstimmung
+            zwischen beiden Coaches.
           </p>
-          <p class="lr-awareness-source">
-            Alle Zahlen in diesem Abschnitt sind mit Quellenangabe belegt. Details siehe <a href="#ls-sources-heading">Quellen &amp; Methodik</a> unten.
-          </p>
-        </div>
-
-        <!-- 4 Stats -->
-        <div class="lr-stat-grid">
-
-          <div class="lr-stat reveal">
-            <div class="lr-stat-num">70<span class="unit">%</span></div>
-            <p class="lr-stat-desc">der Variation im Team-Engagement geht direkt auf die Führungskraft zurück.<a href="#fn-1" class="fn-ref" aria-label="Quelle 1">¹</a></p>
-          </div>
-
-          <div class="lr-stat reveal d-1">
-            <div class="lr-stat-num">23<span class="unit">%</span></div>
-            <p class="lr-stat-desc">höhere Profitabilität in Unternehmen mit top-engagierten Teams gegenüber dem Branchenschnitt.<a href="#fn-2" class="fn-ref" aria-label="Quelle 2">²</a></p>
-          </div>
-
-          <div class="lr-stat reveal d-2">
-            <div class="lr-stat-num">43<span class="unit">%</span></div>
-            <p class="lr-stat-desc">niedrigere Fluktuation in top-engagierten Teams gegenüber dem Branchenschnitt.<a href="#fn-2" class="fn-ref" aria-label="Quelle 2">²</a></p>
-          </div>
-
-          <div class="lr-stat reveal d-3">
-            <div class="lr-stat-num">14<span class="unit">.900&nbsp;€</span></div>
-            <p class="lr-stat-desc">durchschnittliche Fluktuationskosten pro verlorener Stelle in Österreich. Bei Führungspositionen deutlich höher.<a href="#fn-3" class="fn-ref" aria-label="Quelle 3">³</a></p>
-          </div>
-
-        </div>
-
-        <!-- ROI-Calculator -->
-        <div class="lr-calc reveal">
-          <div class="lr-calc-intro">
-            <div class="eyebrow-row" style="margin-bottom: 1.25rem;">
-              <span class="peri-rule" aria-hidden="true"></span>
-              <span class="t-label" style="color: var(--peri);">Beispielrechnung</span>
-            </div>
-            <h3>
-              Was LEADSHIFT in einem Jahr <em>für Sie bewegt</em>
-            </h3>
-            <p>
-              Konservative Schätzung für einen 100-Mitarbeiter-Betrieb, basiert auf veröffentlichten Branchen-Benchmarks zu Fehlzeiten, Fluktuation und Produktivität.
-            </p>
-            <p style="margin-top:auto;"><em>Anmerkung: Indirekte Effekte auf Innovations­fähigkeit und Kundenbindung sind hier noch nicht berücksichtigt.</em></p>
-          </div>
-
-          <div class="lr-calc-rows">
-            <div class="lr-calc-row">
-              <span>Reduktion Fehlzeiten (≈ 10&nbsp;% weniger Tage)<a href="#fn-4" class="fn-ref" aria-label="Quelle 4">⁴</a></span>
-              <span class="val">≈ 35.000 €</span>
-            </div>
-            <div class="lr-calc-row">
-              <span>Geringere Fluktuation (2 bis 4 vermiedene Stellenwechsel)<a href="#fn-3" class="fn-ref" aria-label="Quelle 3">³</a></span>
-              <span class="val">30.000 – 60.000 €</span>
-            </div>
-            <div class="lr-calc-row">
-              <span>Produktivitäts­steigerung (konservativ ≈ 3&nbsp;%)<a href="#fn-2" class="fn-ref" aria-label="Quelle 2">²</a></span>
-              <span class="val">≈ 90.000 €</span>
-            </div>
-            <div class="lr-calc-row total">
-              <span>Gesamtnutzen pro Jahr</span>
-              <span class="val">155.000 – 185.000 €</span>
-            </div>
-            <p class="lr-calc-note">
-              Bei einem typischen Programm-Umfang ergibt sich daraus ein Return-on-Invest im Bereich von 5x bis 8x, bereits innerhalb des ersten Jahres, ohne mittelfristige Effekte auf Strategie und Kultur einzurechnen.<a href="#fn-5" class="fn-ref" aria-label="Quelle 5">⁵</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Quellenverzeichnis -->
-        <aside class="lr-sources reveal" aria-labelledby="ls-sources-heading">
-          <header class="lr-sources-header">
-            <div class="lr-sources-headtext">
-              <h3 id="ls-sources-heading">Quellen &amp; Methodik</h3>
-              <p class="lr-sources-intro">
-                Alle hier genannten Zahlen basieren auf veröffentlichten Studien und Branchendaten zu Mitarbeiter-Engagement, Führungs­wirkung, Krankenständen und Fluktuation. Es handelt sich um nachvollziehbare, dokumentierte Werte, keine Phantasiezahlen.
-              </p>
-            </div>
-            <span class="lr-sources-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4.75A1.75 1.75 0 0 1 5.75 3h9.5A1.75 1.75 0 0 1 17 4.75v14.5A1.75 1.75 0 0 1 15.25 21h-9.5A1.75 1.75 0 0 1 4 19.25V4.75Z"/>
-                <path d="M17 7h1.25A1.75 1.75 0 0 1 20 8.75v10.5A1.75 1.75 0 0 1 18.25 21H8"/>
-                <path d="M7.5 7.5h6"/>
-                <path d="M7.5 11h6"/>
-                <path d="M7.5 14.5h4"/>
-              </svg>
-            </span>
-          </header>
-          <ol class="lr-sources-list">
-            <li id="fn-1">
-              <span class="fn-num">1</span>
-              <span class="fn-text">Gallup (2015): „State of the American Manager. Analytics and Advice for Leaders". Manager erklären rund 70&nbsp;% der Variation in Team-Engagement-Werten. Bestätigt in Folgestudien (Gallup Q12 Meta-Analysen, jährlich aktualisiert).</span>
-            </li>
-            <li id="fn-2">
-              <span class="fn-num">2</span>
-              <span class="fn-text">Gallup Q12 Meta-Analysis (10. Auflage, 2020): Vergleich top- vs. bottom-quartile-engagierter Geschäftseinheiten. Top-Quartile-Teams erzielen u.&nbsp;a. 23&nbsp;% höhere Profitabilität, 18&nbsp;% höhere Produktivität und 43&nbsp;% niedrigere Fluktuation. Methodik basiert auf 112.312 Geschäftseinheiten in 96 Ländern.</span>
-            </li>
-            <li id="fn-3">
-              <span class="fn-num">3</span>
-              <span class="fn-text">Deloitte Österreich (2019): Studie zu Fluktuationskosten österreichischer Unternehmen, Befragung von 110 Führungskräften. Durchschnittliche Fluktuationskosten pro verlorener Stelle: 14.900&nbsp;€ (Gesamtdurchschnitt), 13.705&nbsp;€ in Unternehmen mit weniger als 100 Mitarbeitern. Bei Führungspositionen typischerweise höher (1,5- bis 3-faches Jahresgehalt). Quelle: <a href="https://www.die-wirtschaft.at/allgemein/so-viel-kostet-mitarbeiterfluktuation-41285/" target="_blank" rel="noopener">die-wirtschaft.at</a>.</span>
-            </li>
-            <li id="fn-4">
-              <span class="fn-num">4</span>
-              <span class="fn-text">Berechnung Reduktion Fehlzeiten: 100 MA × ≈ 14 Krankenstandstage/Jahr (ÖGK-Fehlzeitenbericht; vergleichbar AOK/WIdO Fehlzeiten-Report) × ≈ 250&nbsp;€ Tageskosten (Lohnfortzahlung + Produktivitäts­ausfall + anteilige Lohnneben­kosten, Quellen: WIFO, IW Köln, Statistik Austria) × 10&nbsp;% Reduktion bei verbessertem Führungs­klima (im Einklang mit Gallup-Engagement-Effekten auf Abwesenheit).</span>
-            </li>
-            <li id="fn-5">
-              <span class="fn-num">5</span>
-              <span class="fn-text">DDI Global Leadership Forecast 2023: Unternehmen mit hoher Führungs­qualität sind 4,5x wahrscheinlicher unter den Top-Finanzperformern ihrer Branche. Bestätigt durch McKinsey „Decoding Leadership" (2015) und Boston Consulting Group „Creating People Advantage" (Folgejahre).</span>
-            </li>
-          </ol>
-          <p class="lr-sources-note">
-            Quellenstand: Mai 2026. Bei Fragen zu einzelnen Werten oder Studien gerne direkt anfragen unter <a href="mailto:info@kroes-consulting.com">info@kroes-consulting.com</a>.
-          </p>
-        </aside>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ – Accordion
-         ============================================================ -->
-    <section class="faq-v2" aria-labelledby="ls-faq-heading">
-      <div class="container">
-        <div class="faq-v2-header reveal">
-          <div class="eyebrow-row">
-            <span class="peri-rule" aria-hidden="true"></span>
-            <span class="t-label">Häufige Fragen</span>
-          </div>
-          <h2 class="faq-v2-h2" id="ls-faq-heading">
-            Was Sie zu LEADSHIFT<br><em>noch wissen möchten</em>
-          </h2>
-        </div>
-
-        <div class="faq-v2-list">
-
-          <details class="faq-v2-item" open>
-            <summary class="faq-v2-question">
-              <span>Wie läuft das Coaching bei Ihnen ab?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Jedes Coaching beginnt mit einem unverbindlichen Kennenlerngespräch. Danach definieren wir gemeinsam Ihre Führungsthemen und Ziele, und legen einen klaren Ablauf fest. Das Coaching erfolgt strukturiert, lösungsorientiert und praxisnah, mit unmittelbarem Transfer in Ihren Führungsalltag.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Wie lange dauert ein LEADSHIFT-Programm?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Übliche Formate reichen von einem 6-Wochen-Sprint bis zu einer 12-Monats-Begleitung. Welcher Rahmen sinnvoll ist, hängt von Ihren Zielen, Ihrer Rolle und Ihrer Lernkurve ab. Führungs­entwicklung ist kein Eintags-Workshop, Wiederholung und Transfer schaffen die nachhaltige Wirkung.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Für wen eignet sich LEADSHIFT?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              LEADSHIFT richtet sich an Führungskräfte in KMU und Handwerk, an Team- und Abteilungsleiter:innen in Übergangs­situationen sowie an Unternehmer:innen, die Leadership menschlicher und wirksamer gestalten möchten. Auch Quereinsteiger:innen in Führungs­positionen profitieren stark.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Wie individuell wird auf meine Situation eingegangen?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Komplett individuell. Es gibt kein Standard-Curriculum. Wir starten mit einer Standortbestimmung. Ihre Rolle, Ihr Team, Ihre Themen. Daraus entsteht ein Coaching-Plan, der auf Ihren Betrieb zugeschnitten ist. Methoden und Tempo passen sich Ihnen an, nicht umgekehrt.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Was unterscheidet Ihr Coaching von anderen Angeboten?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Drei Dinge: Praxis. Über 25 Jahre Erfahrung in Handwerk, Projektmanagement und Beratung. Spitze Positionierung. KMU und Handwerk, nicht Konzern-Theorie. Verbindung. Führungs­entwicklung &amp; Konflikt­lösung aus einer Hand, weil beides ineinandergreift.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Wie ist die Vertraulichkeit gewährleistet?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Absolute Verschwiegenheit. Inhalte aus Coachings, Sessions und Workshops verlassen den Raum nicht. Bei Bedarf werden Vertraulichkeits­vereinbarungen schriftlich fixiert. Diskretion ist die Voraussetzung dafür, dass im Coaching das ausgesprochen wird, was wirklich wirkt.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Wie läuft die Terminvereinbarung ab?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Telefonisch (<a href="tel:+43533820105">+43 (0) 5338 20105</a>), per E-Mail (<a href="mailto:info@kroes-consulting.com">info@kroes-consulting.com</a>) oder über das Kontakt­formular. Für laufende Programme arbeiten wir mit festen Terminschienen, das schafft Verbindlichkeit und Routine.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Was passiert, wenn ein Termin nicht wahrgenommen werden kann?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Bis 24 Stunden vor dem Termin können Sie kostenfrei absagen oder verschieben. Bei kurzfristigeren Absagen wird der Termin berechnet, fair für beide Seiten, da Coaching-Zeit reserviert wurde, die kurzfristig nicht mehr neu belegt werden kann.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Was kostet LEADSHIFT?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Die Investition richtet sich nach Format, Umfang und Zielsetzung. Nach dem kostenlosen Erstgespräch erhalten Sie ein konkretes, schriftliches Angebot. Vergleichswert: Studien zeigen für effektive Führungs­entwicklung einen Return-on-Invest von 10–15x, bereits innerhalb des ersten Jahres.
-            </div>
-          </details>
-
-          <details class="faq-v2-item">
-            <summary class="faq-v2-question">
-              <span>Ist ein unverbindliches Erstgespräch möglich?</span>
-              <span class="faq-v2-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-v2-answer">
-              Ja, und es ist kostenfrei. 30–45&nbsp;Minuten, in denen wir Ihre Situation klären, prüfen, ob LEADSHIFT passt, und nächste Schritte definieren. Kein Verkaufsgespräch, sondern ein offenes Sondieren auf Augenhöhe.
-            </div>
-          </details>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem;" class="reveal">
-          <a href="kontakt.html" class="btn btn-outline-navy">
-            Ihre Frage war nicht dabei? Jetzt fragen
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CTA — Portrait + Button
-         ============================================================ -->
-    <section class="cta-section cta-section--portrait" aria-labelledby="ls-cta-heading">
-      <div class="container">
-        <div class="cta-portrait-grid">
-          <div class="cta-portrait-content">
-            <h2 id="ls-cta-heading" class="reveal">
-              Führung entscheidet.<br><em>Lassen Sie uns daran arbeiten.</em>
-            </h2>
-            <p class="cta-sub reveal d-1">
-              Im kostenlosen Erstgespräch klären wir gemeinsam, ob und wie LEADSHIFT zu Ihrer Situation passt, unverbindlich, vertraulich, klar.
-            </p>
-            <div class="cta-portrait-action reveal d-2">
-              <a href="kontakt.html" class="btn btn-navy" data-calendly="https://calendly.com/bewerbung-kroes-consulting/30min">
-                Erstgespräch vereinbaren
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <span class="cta-portrait-action-sub">Unverbindlich. Persönlich. Vertraulich.</span>
-            </div>
-          </div>
-          <figure class="cta-portrait-media reveal">
-            <img src="assets/img/alexander-kroes-2.webp"
-                 alt="Alexander Kroes, Inhaber von Kroes Consulting"
-                 loading="lazy" decoding="async"
-                 width="600" height="720">
-          </figure>
         </div>
       </div>
     </section>
@@ -701,9 +746,9 @@
           <p>Konfliktcoaching für Familien- und Handwerksbetriebe in Österreich und Süddeutschland.</p>
           <p class="footer-tagline">Fachlich. Strategisch. Persönlich.</p>
           <div class="footer-certificates footer-certificates--start">
-            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20.png" alt="Kroes Consulting, staatlich geprüft" loading="lazy">
-            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20ppc.png" alt="Kroes Consulting, staatlich geprüft, PPC" loading="lazy">
-            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting, staatlich geprüft, ÖCERT" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20.png" alt="Kroes Consulting — staatlich geprüft" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20ppc.png" alt="Kroes Consulting — staatlich geprüft, PPC" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting — staatlich geprüft, ÖCERT" loading="lazy">
           </div>
         </div>
         <div class="footer-col"><p class="footer-col-title">Navigation</p>
