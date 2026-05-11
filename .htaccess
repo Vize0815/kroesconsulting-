@@ -1,5 +1,38 @@
 # Kroes Consulting — Apache config
 
+# ===== Eigene Fehlerseite =====
+# Wichtig: ueberschreibt eine evtl. kaputte Server-/Hoster-Default-Fehlerseite
+# (z.B. alte WordPress-Theme-Reste), die sonst 500 statt 404 ausliefert.
+# /404.html ist reines statisches HTML -> kann nicht selbst 500 werfen.
+ErrorDocument 404 /404.html
+
+# ===== Alte WordPress-Pfade: 410 Gone =====
+# Google entfernt 410-URLs schneller aus dem Index als 404 und re-crawlt sie nicht.
+# Verhindert ausserdem, dass eine kaputte WP-Fehlerseite triggert.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Klassische WordPress-Endpunkte
+  RewriteRule ^wp-admin(/.*)?$        - [G,L]
+  RewriteRule ^wp-login\.php$         - [G,L]
+  RewriteRule ^wp-content(/.*)?$      - [G,L]
+  RewriteRule ^wp-includes(/.*)?$     - [G,L]
+  RewriteRule ^wp-json(/.*)?$         - [G,L]
+  RewriteRule ^wp-cron\.php$          - [G,L]
+  RewriteRule ^xmlrpc\.php$           - [G,L]
+
+  # RSS / Atom Feeds der alten WP-Site
+  RewriteRule ^feed/?$                - [G,L]
+  RewriteRule ^.+/feed/?$             - [G,L]
+  RewriteRule ^comments/feed/?$       - [G,L]
+
+  # Author-/Category-/Tag-/Date-Archive
+  RewriteRule ^author/.+$             - [G,L]
+  RewriteRule ^category/.+$           - [G,L]
+  RewriteRule ^tag/.+$                - [G,L]
+  RewriteRule ^[0-9]{4}/[0-9]{2}/.+$  - [G,L]
+</IfModule>
+
 # XML-Dateien (sitemap.xml) korrekt als application/xml ausliefern,
 # damit Google/Bing sie als gueltige Sitemap erkennen.
 <IfModule mod_mime.c>
