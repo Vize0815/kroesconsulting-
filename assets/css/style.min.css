@@ -99,3 +99,16 @@ width:600px){.cookie-banner-actions{flex-direction:column}.cookie-btn{width:100%
 .v1-scen-total span:last-child{font-size:1.4rem}
 .v1-scen-sources{padding:1.5rem 1.25rem;margin-top:2.25rem}
 }
+/* Mobile-Fix Die Lösung (v15) */
+@media (max-width:900px){
+.v1-offer-grid{grid-template-columns:1fr;gap:1.25rem}
+.v1-offer-sub{margin-bottom:2rem;max-width:none}
+.v1-offer-card{padding:2rem 1.5rem}
+.v1-offer-portrait{width:100%;max-width:340px;margin-left:auto;margin-right:auto}
+}
+@media (max-width:600px){
+.v1-offer-card{padding:1.75rem 1.25rem}
+.v1-offer-card h3{font-size:1.25rem}
+.v1-offer-card p{font-size:.875rem;margin-bottom:1.25rem}
+.v1-offer-num{font-size:2.5rem}
+}
