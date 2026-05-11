@@ -31,6 +31,32 @@ ErrorDocument 404 /404.html
   RewriteRule ^category/.+$           - [G,L]
   RewriteRule ^tag/.+$                - [G,L]
   RewriteRule ^[0-9]{4}/[0-9]{2}/.+$  - [G,L]
+
+  # ===== 301-Redirects: alte WordPress-Slugs -> neue Seiten =====
+  # Sichtbar in Google-Sitelinks (KROES CONSULTING & COACHING / Konfliktcoaching).
+  # Behebt 500-Fehler beim Klick auf alte Suchergebnisse.
+  RedirectMatch 301 ^/alexander-kroes/?$                                /ueber-uns.html
+  RedirectMatch 301 ^/alexander-kroes-2/?$                              /ueber-uns.html
+  RedirectMatch 301 ^/ueber-mich/?$                                     /ueber-uns.html
+  RedirectMatch 301 ^/about/?$                                          /ueber-uns.html
+  RedirectMatch 301 ^/konfliktcoaching(-fuer-[a-z-]+)?/?$                /leistungen.html
+  RedirectMatch 301 ^/konfliktmanagement(-fuer-[a-z-]+)?/?$              /leistungen.html
+  RedirectMatch 301 ^/angebot(-fuer-[a-z-]+)?/?$                         /leistungen.html
+  RedirectMatch 301 ^/consulting(-[a-z-]+)?/?$                           /leistungen.html
+  RedirectMatch 301 ^/coaching(-[a-z-]+)?/?$                             /leistungen.html
+  RedirectMatch 301 ^/leistung(en)?/?$                                   /leistungen.html
+  RedirectMatch 301 ^/services?/?$                                       /leistungen.html
+  RedirectMatch 301 ^/home/?$                                            /
+
+  # ===== Extensionless URLs -> .html =====
+  # /ueber-uns -> /ueber-uns.html (sofern .html-Datei existiert).
+  # Verhindert 500, weil alte WP-URLs ohne Endung in Google-Index sind.
+  RewriteCond %{REQUEST_URI} !\.(html|css|js|webp|png|jpe?g|gif|svg|ico|woff2?|xml|txt|pdf|map)$ [NC]
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [R=301,L]
 </IfModule>
 
 # XML-Dateien (sitemap.xml) korrekt als application/xml ausliefern,
