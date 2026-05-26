@@ -25,41 +25,29 @@
 
   <style>
     /* Förderungen Seite — scoped styles */
-    .foe-intro { background: var(--warm-50); padding: clamp(2rem, 5vw, 4rem) 0 clamp(1rem, 3vw, 2rem); }
-    .foe-intro-grid {
+    /* Page-Header: H1 links, Intro-Text rechts daneben */
+    .foe-page-header .foe-header-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: clamp(2rem, 6vw, 5rem);
-      align-items: start;
-      max-width: 1180px;
-      margin: 0 auto;
+      grid-template-columns: 1fr 1.3fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: end;
     }
-    .foe-intro-h2 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--peri);
-      text-transform: uppercase;
-      margin: 0;
-    }
-    .foe-intro-text p {
+    .foe-header-right p {
       font-family: var(--font-body);
       font-size: clamp(1rem, 1.15vw, 1.1rem);
       line-height: 1.7;
       color: var(--ink-700, rgba(20,18,16,.78));
-      margin: 0 0 1rem;
+      margin: 0;
       max-width: 60ch;
     }
-    .foe-intro-text p strong { color: var(--navy); font-weight: 600; }
+    .foe-header-right p strong { color: var(--navy); font-weight: 600; }
 
     .foe-section { background: var(--warm-100); padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(4rem, 7vw, 6.5rem); }
     .foe-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: clamp(1.5rem, 2.5vw, 2.25rem);
-      max-width: 1180px;
+      max-width: 820px;
       margin: 0 auto;
     }
     .foe-card {
@@ -156,12 +144,11 @@
 
     /* Tablet */
     @media (max-width: 960px) {
-      .foe-intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .foe-page-header .foe-header-grid { grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
       .foe-grid { grid-template-columns: 1fr; max-width: 540px; }
     }
     /* Mobile */
     @media (max-width: 600px) {
-      .foe-intro-h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
       .foe-card { padding: 1.75rem 1.4rem 2.25rem; }
       .foe-icon { width: 60px; height: 60px; }
       .foe-card-title { font-size: 1.2rem; margin-bottom: 1.4rem; }
@@ -228,68 +215,31 @@
   </div>
 
   <main>
-    <!-- PAGE HEADER -->
-    <header class="page-header" aria-label="Seitenüberschrift">
-      <div class="container page-header-inner">
-        <nav class="breadcrumb" aria-label="Seitenpfad">
-          <a href="index.html">Start</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <span class="current">Förderungen</span>
-        </nav>
-        <h1>Förderungen</h1>
-        <p>Staatliche Förderprogramme für Unternehmen in Österreich und Deutschland.</p>
-      </div>
-    </header>
-
-    <!-- INTRO -->
-    <section class="foe-intro" aria-labelledby="foeIntroHeading">
+    <!-- PAGE HEADER (H1 links, Intro-Text rechts daneben) -->
+    <header class="page-header foe-page-header" aria-label="Seitenüberschrift">
       <div class="container">
-        <div class="foe-intro-grid">
-          <h2 class="foe-intro-h2" id="foeIntroHeading">Förderungen</h2>
-          <div class="foe-intro-text">
+        <div class="foe-header-grid">
+          <div class="foe-header-left">
+            <nav class="breadcrumb" aria-label="Seitenpfad">
+              <a href="index.html">Start</a>
+              <span class="sep" aria-hidden="true">/</span>
+              <span class="current">Förderungen</span>
+            </nav>
+            <h1>Förderungen</h1>
+          </div>
+          <div class="foe-header-right">
             <p>Wir unterstützen Unternehmen bei der Nutzung staatlicher <strong>Förderprogramme im Bereich Digitalisierung, E-Commerce und Internationalisierung</strong>. Wir begleiten österreichische und deutsche Unternehmen durch den gesamten Förderprozess. Von der Auswahl geeigneter Programme bis zur erfolgreichen Abwicklung.</p>
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
     <!-- FÖRDER-KARTEN -->
     <section class="foe-section" aria-label="Förderprogramme">
       <div class="container">
         <div class="foe-grid">
 
-          <!-- Card 1: KMU-DIGITAL -->
-          <article class="foe-card">
-            <div class="foe-icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64">
-                <rect x="6" y="10" width="44" height="32" rx="2"/>
-                <path d="M6 36h44"/>
-                <path d="M22 48h16M28 42v6M36 42v6"/>
-                <path d="M14 30l6-6 6 4 8-10"/>
-                <circle cx="50" cy="48" r="8"/>
-                <path d="M56 54l4 4"/>
-              </svg>
-            </div>
-            <h3 class="foe-card-title">KMU-DIGITAL<br><span style="font-weight:400;font-style:italic;color:var(--peri-dark,#5a72e8);">(Österreich)</span></h3>
-            <div class="foe-block">
-              <p class="foe-block-label">Für wen?</p>
-              <p>Für österreichische KMU, die digitale Geschäftsmodelle, E-Commerce oder interne Prozesse weiterentwickeln möchten.</p>
-            </div>
-            <div class="foe-block">
-              <p class="foe-block-label">Fördervolumen</p>
-              <p>Bis zu 80 % Zuschuss auf förderfähige Beratungsleistungen.</p>
-            </div>
-            <div class="foe-block">
-              <p class="foe-block-label">Warum interessant?</p>
-              <p>Eine der attraktivsten Digitalförderungen des Landes. Hohe Zuschüsse, einfache Beantragung und ideal für Unternehmen, die digitale Projekte effizient voranbringen wollen.</p>
-            </div>
-            <a href="kontakt.html" class="foe-card-cta">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </article>
-
-          <!-- Card 2: BAFA -->
+          <!-- Card 1: BAFA -->
           <article class="foe-card">
             <div class="foe-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
@@ -318,7 +268,7 @@
             </a>
           </article>
 
-          <!-- Card 3: go-international -->
+          <!-- Card 2: go-international -->
           <article class="foe-card">
             <div class="foe-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
@@ -367,7 +317,7 @@
             </div>
           </div>
           <figure class="cta-portrait-media cta-portrait-media--rect">
-            <img src="assets/img/alexander-kroes-14.webp" alt="Alexander Kroes — Förderberatung für KMU in Österreich und Deutschland" loading="lazy" decoding="async" width="1022" height="1536">
+            <img src="assets/img/alexander-kroes-4.webp" alt="Alexander Kroes — Förderberatung für KMU in Österreich und Deutschland" loading="lazy" decoding="async" width="1022" height="1536">
           </figure>
         </div>
       </div>
