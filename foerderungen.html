@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Förderungen | Kroes Consulting</title>
+  <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="description" content="Förderprogramme für Unternehmen in Österreich und Deutschland: KMU-DIGITAL, BAFA und go-international. Begleitung durch den gesamten Förderprozess.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.kroes-consulting.com/foerderungen.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Förderungen | Kroes Consulting">
+  <meta property="og:description" content="Staatliche Förderprogramme im Bereich Digitalisierung, E-Commerce und Internationalisierung – AT + DE.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:url" content="https://www.kroes-consulting.com/foerderungen.html">
+  <meta property="og:site_name" content="Kroes Consulting">
+
+  <!-- Self-hosted Fonts via assets/css/style.css (DSGVO-konform) -->
+
+  <link rel="preload" href="assets/css/style.min.css?v=22" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/style.min.css?v=22"></noscript>
+
+  <style>
+    /* Förderungen Seite — scoped styles */
+    .foe-intro { background: var(--warm-50); padding: clamp(2rem, 5vw, 4rem) 0 clamp(1rem, 3vw, 2rem); }
+    .foe-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: start;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .foe-intro-h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--peri);
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .foe-intro-text p {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.15vw, 1.1rem);
+      line-height: 1.7;
+      color: var(--ink-700, rgba(20,18,16,.78));
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+    .foe-intro-text p strong { color: var(--navy); font-weight: 600; }
+
+    .foe-section { background: var(--warm-100); padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(4rem, 7vw, 6.5rem); }
+    .foe-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 2.5vw, 2.25rem);
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .foe-card {
+      background: #ffffff;
+      border-radius: 4px;
+      padding: clamp(2rem, 3vw, 2.75rem) clamp(1.5rem, 2.4vw, 2.25rem) clamp(2.25rem, 3.2vw, 3rem);
+      box-shadow: 0 1px 0 rgba(31,47,88,.06), 0 18px 40px -22px rgba(31,47,88,.22);
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s cubic-bezier(.22,1,.36,1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .foe-card::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 3px;
+      background: var(--peri);
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+    .foe-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1px 0 rgba(31,47,88,.08), 0 32px 60px -22px rgba(31,47,88,.32);
+    }
+    .foe-card:hover::before { opacity: 1; }
+
+    .foe-icon {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--navy);
+    }
+    .foe-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+    .foe-card-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 1.8vw, 1.6rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      text-align: center;
+      margin: 0 0 1.75rem;
+    }
+
+    .foe-block { margin: 0 0 1.35rem; text-align: center; }
+    .foe-block:last-of-type { margin-bottom: 1.75rem; }
+    .foe-block-label {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--navy);
+      margin: 0 0 .4rem;
+    }
+    .foe-block p {
+      font-family: var(--font-body);
+      font-size: .95rem;
+      line-height: 1.65;
+      color: var(--ink-700, rgba(20,18,16,.78));
+      margin: 0;
+    }
+
+    .foe-card-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      align-self: center;
+      margin-top: auto;
+      padding: .85rem 1.5rem;
+      background: var(--peri);
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .foe-card-cta:hover {
+      background: #5e76ec;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(118,140,253,.35);
+    }
+    .foe-card-cta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* Tablet */
+    @media (max-width: 960px) {
+      .foe-intro-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .foe-grid { grid-template-columns: 1fr; max-width: 540px; }
+    }
+    /* Mobile */
+    @media (max-width: 600px) {
+      .foe-intro-h2 { font-size: clamp(2rem, 9vw, 2.8rem); }
+      .foe-card { padding: 1.75rem 1.4rem 2.25rem; }
+      .foe-icon { width: 60px; height: 60px; }
+      .foe-card-title { font-size: 1.2rem; margin-bottom: 1.4rem; }
+      .foe-block p, .foe-block-label { font-size: .9rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .foe-card, .foe-card::before, .foe-card-cta { transition: none; }
+      .foe-card:hover { transform: none; }
+      .foe-card-cta:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo nav-logo-mark" aria-label="Kroes Consulting – Startseite">
+        <img src="assets/img/logo.png" alt="Kroes Consulting" class="nav-logo-img" />
+      </a>
+
+      <div class="nav-end">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Start</a></li>
+          <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
+          <li><a href="ueber-uns.html" class="nav-link">Über mich</a></li>
+          <li><a href="medien.html" class="nav-link">Medien</a></li>
+          <li><a href="quiz.html" class="nav-link">Konflikt-Quiz</a></li>
+        </ul>
+
+        <div class="nav-social" aria-label="Social Media">
+          <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/kroesconsulting" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menü -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Mobilnavigation">
+    <a href="index.html">Start</a>
+    <a href="leistungen.html">Leistungen</a>
+    <a href="ueber-uns.html">Über mich</a>
+    <a href="medien.html">Medien</a>
+    <a href="quiz.html">Konflikt-Quiz</a>
+    <a href="kontakt.html" class="accent">Kontakt</a>
+    <div class="mobile-menu-social" aria-label="Social Media">
+      <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/kroesconsulting" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+      </a>
+    </div>
+    <p class="mobile-menu-footer">Kroes Consulting · Tirol · Österreich</p>
+  </div>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <header class="page-header" aria-label="Seitenüberschrift">
+      <div class="container page-header-inner">
+        <nav class="breadcrumb" aria-label="Seitenpfad">
+          <a href="index.html">Start</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">Förderungen</span>
+        </nav>
+        <h1>Förderungen</h1>
+        <p>Staatliche Förderprogramme für Unternehmen in Österreich und Deutschland.</p>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="foe-intro" aria-labelledby="foeIntroHeading">
+      <div class="container">
+        <div class="foe-intro-grid">
+          <h2 class="foe-intro-h2" id="foeIntroHeading">Förderungen</h2>
+          <div class="foe-intro-text">
+            <p>Wir unterstützen Unternehmen bei der Nutzung staatlicher <strong>Förderprogramme im Bereich Digitalisierung, E-Commerce und Internationalisierung</strong>. Wir begleiten österreichische und deutsche Unternehmen durch den gesamten Förderprozess. Von der Auswahl geeigneter Programme bis zur erfolgreichen Abwicklung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÖRDER-KARTEN -->
+    <section class="foe-section" aria-label="Förderprogramme">
+      <div class="container">
+        <div class="foe-grid">
+
+          <!-- Card 1: KMU-DIGITAL -->
+          <article class="foe-card">
+            <div class="foe-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <rect x="6" y="10" width="44" height="32" rx="2"/>
+                <path d="M6 36h44"/>
+                <path d="M22 48h16M28 42v6M36 42v6"/>
+                <path d="M14 30l6-6 6 4 8-10"/>
+                <circle cx="50" cy="48" r="8"/>
+                <path d="M56 54l4 4"/>
+              </svg>
+            </div>
+            <h3 class="foe-card-title">KMU-DIGITAL<br><span style="font-weight:400;font-style:italic;color:var(--peri-dark,#5a72e8);">(Österreich)</span></h3>
+            <div class="foe-block">
+              <p class="foe-block-label">Für wen?</p>
+              <p>Für österreichische KMU, die digitale Geschäftsmodelle, E-Commerce oder interne Prozesse weiterentwickeln möchten.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Fördervolumen</p>
+              <p>Bis zu 80 % Zuschuss auf förderfähige Beratungsleistungen.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Warum interessant?</p>
+              <p>Eine der attraktivsten Digitalförderungen des Landes. Hohe Zuschüsse, einfache Beantragung und ideal für Unternehmen, die digitale Projekte effizient voranbringen wollen.</p>
+            </div>
+            <a href="kontakt.html" class="foe-card-cta">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 2: BAFA -->
+          <article class="foe-card">
+            <div class="foe-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M14 26a8 8 0 1 1 16 0 8 8 0 0 1-16 0z"/>
+                <path d="M8 50c1-7 7-12 14-12s13 5 14 12"/>
+                <path d="M40 12h16a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-3l-4 5-1-5h-8a3 3 0 0 1-3-3V15a3 3 0 0 1 3-3z"/>
+                <path d="M45 19h7M45 24h5"/>
+              </svg>
+            </div>
+            <h3 class="foe-card-title">BAFA<br><span style="font-weight:400;font-style:italic;color:var(--peri-dark,#5a72e8);">(Deutschland)</span></h3>
+            <div class="foe-block">
+              <p class="foe-block-label">Für wen?</p>
+              <p>Für kleine und mittlere Unternehmen in Deutschland, die professionelle Unterstützung in Digitalisierung, Strategie oder Organisationsentwicklung suchen.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Fördervolumen</p>
+              <p>Bis zu 80 % Zuschuss auf förderfähige Beratungsleistungen.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Warum interessant?</p>
+              <p>Ermöglicht hochwertige Beratung mit geringem Eigenaufwand. Ideal für Unternehmen, die sich digital oder strategisch neu ausrichten möchten.</p>
+            </div>
+            <a href="kontakt.html" class="foe-card-cta">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Card 3: go-international -->
+          <article class="foe-card">
+            <div class="foe-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <rect x="6" y="10" width="52" height="36" rx="3"/>
+                <path d="M6 20h52"/>
+                <circle cx="12" cy="15" r="1.4"/>
+                <circle cx="17" cy="15" r="1.4"/>
+                <circle cx="22" cy="15" r="1.4"/>
+                <path d="M22 32l8 8 4-3 6 6"/>
+                <path d="M40 32l4-4 4 4"/>
+                <path d="M30 52l4 6 4-6"/>
+              </svg>
+            </div>
+            <h3 class="foe-card-title">go-international<br><span style="font-weight:400;font-style:italic;color:var(--peri-dark,#5a72e8);">(Österreich)</span></h3>
+            <div class="foe-block">
+              <p class="foe-block-label">Für wen?</p>
+              <p>Für Unternehmen, die neue internationale Märkte erschließen oder digitale Exportaktivitäten aufbauen möchten.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Fördervolumen</p>
+              <p>Bis zu 50 % Zuschuss für ausgewählte Internationalisierungsmaßnahmen.</p>
+            </div>
+            <div class="foe-block">
+              <p class="foe-block-label">Warum interessant?</p>
+              <p>Unterstützt gezielt beim Einstieg in neue Märkte, bei digitalen Exportstrategien und beim internationalen E-Commerce-Ausbau.</p>
+            </div>
+            <a href="kontakt.html" class="foe-card-cta">
+              Mehr erfahren
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section cta-section--portrait">
+      <div class="container">
+        <div class="cta-portrait-grid">
+          <div class="cta-portrait-content">
+            <h2>Förderung für Ihr <em>Unternehmen</em> prüfen lassen?</h2>
+            <p class="cta-sub">Wir prüfen kostenfrei, welches Förderprogramm zu Ihrem Vorhaben passt, und begleiten Sie durch Antragstellung und Umsetzung.</p>
+            <div class="cta-portrait-action">
+              <a href="kontakt.html" class="btn btn-navy">Kostenloses Erstgespräch</a>
+            </div>
+          </div>
+          <figure class="cta-portrait-media cta-portrait-media--rect">
+            <img src="assets/img/alexander-kroes-14.webp" alt="Alexander Kroes — Förderberatung für KMU in Österreich und Deutschland" loading="lazy" decoding="async" width="1022" height="1536">
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom: 0.25rem;">
+            <span class="nav-logo-name" style="color: var(--warm-50);">Kroes Consulting</span>
+            <span class="nav-logo-sub">Consulting & Coaching</span>
+          </div>
+          <p>Konfliktcoaching für Familien- und Handwerksbetriebe in Österreich und Süddeutschland.</p>
+          <p class="footer-tagline">Fachlich. Strategisch. Persönlich.</p>
+          <div class="footer-certificates footer-certificates--start">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20.png" alt="Kroes Consulting — staatlich geprüft" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20ppc.png" alt="Kroes Consulting — staatlich geprüft, PPC" loading="lazy">
+            <img src="assets/img/kroes%20consulting%20-%20staatlich%20gepr%C3%BCft%20-%20%C3%B6cert%20.png" alt="Kroes Consulting — staatlich geprüft, ÖCERT" loading="lazy">
+          </div>
+        </div>
+        <div class="footer-col"><p class="footer-col-title">Navigation</p>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="leistungen.html">Leistungen</a></li>
+            <li><a href="ueber-uns.html">Alexander Kroes</a></li>
+            <li><a href="medien.html">Medien</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul></div>
+        <div class="footer-col"><p class="footer-col-title">Leistungen</p>
+          <ul class="footer-links" role="list">
+            <li><a href="leadresolve.html">LeadResolve</a></li>
+            <li><a href="quiz.html">Konflikt-Quiz</a></li>
+          </ul></div>
+        <div class="footer-col"><p class="footer-col-title">Kontakt</p>
+          <div class="footer-contact"><p>Alexander Kroes e.U.<br>Büro:<br>Unterer Stadtplatz 11<br>6330 Kufstein<br>Österreich<br><br><a href="mailto:info@kroes-consulting.com" style="color:inherit;">info@kroes-consulting.com</a></p></div></div>
+      </div>
+      <div class="footer-social-row" aria-label="Social Media">
+        <a href="https://www.linkedin.com/in/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/kroesconsulting/" target="_blank" rel="noopener" aria-label="Kroes Consulting auf Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 23.91v-9.29h3.12l.47-3.62H13.4V8.69c0-1.05.29-1.76 1.79-1.76h1.91V3.69c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.69-4.65 4.78V11H6.54v3.62h3.11v9.29h3.76z"/></svg>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Alexander Kroes e.U. Alle Rechte vorbehalten.</p>
+        <p class="footer-credit-text">Website by <a href="https://upprime-connect.at/" target="_blank" rel="noopener"><strong>Upprime</strong> <span class="credit-accent">Connect</span></a></p>
+        <nav class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0da3c59f06a34f4aaf22c33a0c50015e"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- BAFA Siegel: Registriertes Beratungsunternehmen -->
+  <a class="bafa-badge" href="https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html" target="_blank" rel="noopener" aria-label="BAFA - Registriertes Beratungsunternehmen (mehr Infos zur Foerderung)">
+    <img src="assets/img/bafa-siegel.png?v=3" alt="BAFA - Staatlich subventionierte Unternehmensberatung. Registriertes Beratungsunternehmen." loading="lazy" />
+  </a>
+</body>
+</html>
