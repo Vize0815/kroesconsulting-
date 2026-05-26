@@ -5833,7 +5833,7 @@ body.callback-modal-open {
 }
 .bafa-badge img {
   display: block;
-  width: 250px;
+  width: 200px;
   height: auto;
 }
 .bafa-badge:hover {
@@ -5842,7 +5842,7 @@ body.callback-modal-open {
 }
 @media (max-width: 900px) {
   .bafa-badge { padding: 8px 10px; }
-  .bafa-badge img { width: 190px; }
+  .bafa-badge img { width: 160px; }
 }
 @media (max-width: 600px) {
   .bafa-badge {
@@ -5853,6 +5853,6 @@ body.callback-modal-open {
     right: 10px;
     padding: 6px 8px;
   }
-  .bafa-badge img { width: 140px; }
+  .bafa-badge img { width: 120px; }
   .bafa-badge:hover { transform: translateX(-2px); }
 }
