@@ -113,7 +113,7 @@ width:600px){.cookie-banner-actions{flex-direction:column}.cookie-btn{width:100%
 .v1-offer-num{font-size:2.5rem}
 }
 .bafa-badge{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:250;background:#fff;padding:10px 12px;border-top-left-radius:10px;border-bottom-left-radius:10px;box-shadow:0 6px 24px rgba(20,18,16,.12),0 2px 6px rgba(20,18,16,.06);transition:transform .25s ease,box-shadow .25s ease;line-height:0}
-.bafa-badge img{display:block;width:220px;height:auto}
+.bafa-badge img{display:block;width:250px;height:auto}
 .bafa-badge:hover{transform:translateY(-50%) translateX(-4px);box-shadow:0 10px 32px rgba(20,18,16,.18),0 3px 8px rgba(20,18,16,.08)}
-@media (max-width:900px){.bafa-badge{padding:8px 10px}.bafa-badge img{width:170px}}
-@media (max-width:600px){.bafa-badge{top:auto;bottom:16px;transform:none;border-radius:10px;right:10px;padding:6px 8px}.bafa-badge img{width:130px}.bafa-badge:hover{transform:translateX(-2px)}}
+@media (max-width:900px){.bafa-badge{padding:8px 10px}.bafa-badge img{width:190px}}
+@media (max-width:600px){.bafa-badge{top:auto;bottom:16px;transform:none;border-radius:10px;right:10px;padding:6px 8px}.bafa-badge img{width:140px}.bafa-badge:hover{transform:translateX(-2px)}}
