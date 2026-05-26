@@ -35,6 +35,14 @@
   </url>
 
   <url>
+    <loc>https://www.kroes-consulting.com/foerderungen.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://www.kroes-consulting.com/foerderungen.html"/>
+  </url>
+
+  <url>
     <loc>https://www.kroes-consulting.com/ueber-uns.html</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
