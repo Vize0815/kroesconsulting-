@@ -116,4 +116,4 @@ width:600px){.cookie-banner-actions{flex-direction:column}.cookie-btn{width:100%
 .bafa-badge img{display:block;width:200px;height:auto}
 .bafa-badge:hover{transform:translateY(-50%) translateX(-4px);box-shadow:0 10px 32px rgba(20,18,16,.18),0 3px 8px rgba(20,18,16,.08)}
 @media (max-width:900px){.bafa-badge{padding:8px 10px}.bafa-badge img{width:160px}}
-@media (max-width:600px){.bafa-badge{top:auto;bottom:16px;transform:none;border-radius:10px;right:10px;padding:6px 8px}.bafa-badge img{width:120px}.bafa-badge:hover{transform:translateX(-2px)}}
+@media (max-width:600px){.bafa-badge{display:none}}

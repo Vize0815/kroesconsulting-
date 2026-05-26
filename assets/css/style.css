@@ -5845,14 +5845,5 @@ body.callback-modal-open {
   .bafa-badge img { width: 160px; }
 }
 @media (max-width: 600px) {
-  .bafa-badge {
-    top: auto;
-    bottom: 16px;
-    transform: none;
-    border-radius: 10px;
-    right: 10px;
-    padding: 6px 8px;
-  }
-  .bafa-badge img { width: 120px; }
-  .bafa-badge:hover { transform: translateX(-2px); }
+  .bafa-badge { display: none; }
 }
