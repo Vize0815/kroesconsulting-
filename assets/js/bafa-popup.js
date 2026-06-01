@@ -82,7 +82,7 @@
     '  text-align:center; padding:10px 44px; font-weight:700; }',
     '.kc-body{ flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:24px 26px 22px; }',
     '.kc-banner{ text-align:center; padding:14px 16px; margin:0 0 18px;',
-    '  background:#f7f9fc; border:1px solid var(--line); border-radius:12px; }',
+    '  background:#ffffff; border:1px solid var(--line); border-radius:12px; }',
     '.kc-banner img{ width:100%; max-width:300px; height:auto; display:inline-block; }',
     '.kc-content{ width:100%; }',
     '#kc-title{ margin:0 0 12px; color:var(--navy);',
