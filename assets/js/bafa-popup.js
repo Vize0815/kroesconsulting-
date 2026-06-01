@@ -21,7 +21,7 @@
   };
   // =======================================
 
-  var BAFA_SRC = "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACgAZADASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAYHBAUIAwIJAf/EAE8QAAEDBAECAgUFCA0MAwEAAAECAwQABQYREgchEzEUFSJBUQgyYYGTFiNFcYKRobIXJCczQlJVYnWSsdHTCSY0Q0RTVnKUs8HSNmNkdP/EABsBAQACAwEBAAAAAAAAAAAAAAAEBQEDBgIH/8QANBEAAgEDAgQDBgUEAwAAAAAAAAECAwQRBSEGEhMxQVGBYXGRocHRFSJysfAHFLLhNENi/9oADAMBAAIRAxEAPwDsulKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUf/Z";
+  var BAFA_SRC = "assets/img/bafa-siegel.png?v=3";
 
   var HTML = '' +
     '<div id="kc-bafa-popup" aria-hidden="true">' +
@@ -34,8 +34,8 @@
     '        <img id="kc-bafa" alt="BAFA . Registriertes Beratungsunternehmen . Staatlich subventionierte Unternehmensberatung" />' +
     '      </div>' +
     '      <div class="kc-content">' +
-    '        <h2 id="kc-title">Sparen Sie bis zu <span>2.800&nbsp;&euro;</span></h2>' +
-    '        <p class="kc-lead">Kroes Consulting ist jetzt registrierter Berater beim Bundesamt f&uuml;r Wirtschaft und Ausfuhrkontrolle. Ihre Konfliktberatung wird dadurch bis zu 50% gef&ouml;rdert. F&uuml;r mich wenig, f&uuml;r Sie viel.</p>' +
+    '        <h2 id="kc-title">Sparen Sie bis zu <span>2.800&nbsp;&euro;<sup>*</sup></span></h2>' +
+    '        <p class="kc-lead">Kroes Consulting ist ein registriertes Beratungsunternehmen beim Bundesamt f&uuml;r Wirtschaft und Ausfuhrkontrolle (BAFA). Ihre Investition in Konfliktl&ouml;sungssysteme kann somit bei Firmensitz in Deutschland bis zu <strong>50&nbsp;%</strong> gef&ouml;rdert werden.</p>' +
     '        <ul class="kc-points">' +
     '          <li>Staatlich subventionierte Beratung f&uuml;r KMU in Deutschland</li>' +
     '          <li>Fester Ansprechpartner, kein Callcenter</li>' +
@@ -44,7 +44,7 @@
     '        <div class="kc-cta">' +
     '          <a class="kc-btn kc-btn-primary" id="kc-book" href="#" target="_blank" rel="noopener">Kostenloses Erstgespr&auml;ch</a>' +
     '        </div>' +
-    '        <p class="kc-fine">Kroes Consulting &middot; Alexander Kroes e.U. &middot; FN 639208 m &middot; F&ouml;rderh&ouml;he abh&auml;ngig von Programm und Unternehmensstatus</p>' +
+    '        <p class="kc-fine">* Maximaler BAFA-F&ouml;rderbetrag bei voller Bezuschussung. Tats&auml;chliche F&ouml;rderh&ouml;he abh&auml;ngig von Programm und Unternehmensstatus.<br>Kroes Consulting &middot; Alexander Kroes e.U. &middot; FN 639208 m &middot; Berater-ID 228480</p>' +
     '      </div>' +
     '    </div>' +
     '  </div>' +
