@@ -42,7 +42,7 @@
     '          <li>Berater&#8209;ID 228480, gelistet beim BAFA</li>' +
     '        </ul>' +
     '        <div class="kc-cta">' +
-    '          <a class="kc-btn kc-btn-primary" id="kc-book" href="#" target="_blank" rel="noopener">Kostenloses Erstgespr&auml;ch</a>' +
+    '          <a class="kc-btn kc-btn-primary" id="kc-book" href="#" target="_blank" rel="noopener">Ja, ich interessiere mich f&uuml;r die F&ouml;rderung</a>' +
     '        </div>' +
     '        <p class="kc-fine">* Maximaler BAFA-F&ouml;rderbetrag bei voller Bezuschussung. Tats&auml;chliche F&ouml;rderh&ouml;he abh&auml;ngig von Programm und Unternehmensstatus.<br>Kroes Consulting &middot; Alexander Kroes e.U. &middot; FN 639208 m &middot; Berater-ID 228480</p>' +
     '      </div>' +
