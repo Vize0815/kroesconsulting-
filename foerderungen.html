@@ -151,6 +151,41 @@
     }
     .foe-card-cta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
+    .foe-cta-stack {
+      margin-top: auto;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      align-items: stretch;
+    }
+    .foe-cta-stack .foe-card-cta { margin-top: 0; align-self: stretch; }
+    .foe-card-cta-pdf {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .75rem 1.25rem;
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+      font-family: var(--font-body);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .foe-card-cta-pdf:hover {
+      background: var(--navy);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(31,47,88,.18);
+    }
+    .foe-card-cta-pdf svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
     /* Tablet */
     @media (max-width: 960px) {
       .foe-page-header .foe-header-grid { grid-template-columns: 1fr; gap: 1.25rem; align-items: start; }
@@ -279,10 +314,16 @@
               <p class="foe-block-label">Warum interessant?</p>
               <p>Ermöglicht hochwertige Beratung mit geringem Eigenaufwand. Ideal für Unternehmen, die sich digital oder strategisch neu ausrichten möchten.</p>
             </div>
-            <a href="https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html" target="_blank" rel="noopener" class="foe-card-cta">
-              Mehr erfahren
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            <div class="foe-cta-stack">
+              <a href="assets/pdf/BAFA%20Flyer%202025.pdf" target="_blank" rel="noopener" class="foe-card-cta-pdf" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v5h5M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM12 12v6M9 15l3 3 3-3"/></svg>
+                Info Flyer BAFA Förderung
+              </a>
+              <a href="https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html" target="_blank" rel="noopener" class="foe-card-cta">
+                Mehr erfahren
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </article>
 
           <!-- Card 2: go-international -->
