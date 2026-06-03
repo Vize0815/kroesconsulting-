@@ -28,3 +28,6 @@ Screenshot*.png
 
 # Selbst gehostete Videos (am Server abgelegt, nicht im Git-Repo)
 assets/video/
+
+# Secrets: Vorab-Fragebogen Passwoerter und Firmenliste (nur am Server)
+diagnose/NEU/config.php
