@@ -5831,6 +5831,12 @@ body.callback-modal-open {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   line-height: 0;
 }
+.bafa-badge a {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+  border: 0;
+}
 .bafa-badge img {
   display: block;
   width: 200px;
